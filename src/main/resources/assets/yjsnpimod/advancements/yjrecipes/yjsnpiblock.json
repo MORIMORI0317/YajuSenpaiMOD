@@ -1,0 +1,20 @@
+{
+    "parent": "yjsnpimod:yjrecipes/root",
+    "criteria": {
+        "iron_pickaxe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:nether_star"
+                    }
+                ]
+            }
+
+        }
+        
+    },
+    "rewards": {
+        "recipes": ["yjsnpimod:yjsnpiblock"]
+    }
+}

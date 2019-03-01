@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "yjsnpimod:record_karatebu"
+        },
+        "title": {
+            "translate": "advancements.yj.getrecordkaratebu.title"
+        },
+        "description": {
+            "translate": "advancements.yj.getrecordkaratebu.description"
+        }
+    },
+    "parent": "yjsnpimod:yjsnpimod/getyjblock",
+    "criteria": {
+        "karatebu": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "yjsnpimod:record_karatebu"
+                    }
+                ]
+            }
+        }
+    }
+}

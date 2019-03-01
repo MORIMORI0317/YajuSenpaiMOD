@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "yjsnpimod:record_yjin"
+        },
+        "title": {
+            "translate": "advancements.yj.getrecordyjin.title"
+        },
+        "description": {
+            "translate": "advancements.yj.getrecordyjin.description"
+        }
+    },
+    "parent": "yjsnpimod:yjsnpimod/getyjblock",
+    "criteria": {
+        "yjin": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "yjsnpimod:record_yjin"
+                    }
+                ]
+            }
+        }
+    }
+}

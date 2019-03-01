@@ -1,0 +1,34 @@
+
+#Blocks#
+tile.yjblock.name=野獣ブロック
+#CreativeTabs#
+itemGroup.yjblocktab=野獣先輩MOD
+#Sounds
+yjsnpimod.subtitle.nna=ンアッー！（絶頂）
+yjsnpimod.subtitle.yarimasunexe=やりますねぇ！！
+yjsnpimod.subtitle.onaon=オォン！アォン！
+yjsnpimod.subtitle.mazuutisaxa=まずうちさぁ…屋上あるんだけど…焼いてかない？
+yjsnpimod.subtitle.kataku=硬くなってんぜ
+yjsnpimod.subtitle.fookimatii=foo↑ 気持ちい～
+yjsnpimod.subtitle.dedemasuyo=で、でますよ...
+yjsnpimod.subtitle.osuonegai=オッスお願いしまーす
+yjsnpimod.subtitle.ikisugi=イキスギィ！
+yjsnpimod.subtitle.buttipa=ブッチッパ
+yjsnpimod.subtitle.nuwatikareta=ぬわああああん疲れたもおおおおおおおおおん
+#record
+item.record.yjin.desc=Y810 - 野獣先輩インタビュー
+item.record.yonsyou.desc=Y810 - ４章 昏睡レ〇プ！ 野獣と化した先輩
+item.record.karatebu.desc=Y810 - ３章 空手部・性の裏技
+#tooltip
+tooltip.yjblock=注意！ このブロックはワールドを壊します！（どうなっても知ら）ないです。
+#Rdvancements
+advancements.yj.root.title=野獣先輩MOD
+advancements.yj.root.description=とても汚いMOD
+advancements.yj.getyjblock.title=汚物の塊
+advancements.yj.getyjblock.description=野獣先輩ブロックを手に入れる
+advancements.yj.getrecordyjin.title=親の声より聞いた声
+advancements.yj.getrecordyjin.description=野獣先輩インタビューレコードを手に入れる
+advancements.yj.getrecordyonsyou.title=４章は純愛
+advancements.yj.getrecordyonsyou.description=４章 昏睡レ〇プ！ 野獣と化した先輩レコードを手に入れる
+advancements.yj.getrecordkaratebu.title=とてもくさい
+advancements.yj.getrecordkaratebu.description=３章 空手部・性の裏技レコードを手に入れる

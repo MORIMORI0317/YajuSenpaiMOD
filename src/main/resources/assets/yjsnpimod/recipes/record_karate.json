@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "yj:record",
+  "pattern": [
+    " 2 ",
+    "212",
+    " 2 "
+  ],
+  "key": {
+    "1": {
+      "item": "yjsnpimod:yj_block",
+      "data": 0
+    },
+    "2": {
+      "item": "minecraft:arrow",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:record_karatebu"
+  }
+}

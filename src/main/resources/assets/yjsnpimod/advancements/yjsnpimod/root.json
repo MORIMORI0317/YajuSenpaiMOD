@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "yjsnpimod:yj_block"
+        },
+        "title": {
+            "translate": "advancements.yj.root.title"
+        },
+        "description": {
+            "translate": "advancements.yj.root.description"
+        },
+        "background": "yjsnpimod:textures/blocks/yj_block.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "yj": {
+            "trigger": "minecraft:inventory_changed",
+             "conditions": {
+                "items": [
+                    {
+                        "item": "yjsnpimod:yj_block"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "display": {
+        "icon": {
+            "item": "yjsnpimod:yj_block"
+        },
+        "title": {
+            "translate": "advancements.yj.getyjblock.title"
+        },
+        "description": {
+            "translate": "advancements.yj.getyjblock.description"
+        }
+    },
+    "parent": "yjsnpimod:yjsnpimod/root",
+    "criteria": {
+        "yjblock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "yjsnpimod:yj_block"
+                    }
+                ]
+            }
+        }
+    },
+        "rewards": {
+        "recipes": ["yjsnpimod:record_yjin", "yjsnpimod:record_karate", "yjsnpimod:record_4syou"]
+    }
+}
