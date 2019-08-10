@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CBC",
+    "BAB",
+    "CBC"
+  ],
+  "key": {
+    "A": {
+      "item": "yjsnpimod:yj_star"
+    },
+        "B": {
+      "item": "yjsnpimod:yj_senpai_block"
+    },
+        "C": {
+      "item": "yjsnpimod:baked_potato_senpai"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:proliferation_yjsnpi_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    " #",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/yj"
+    },
+    "X": {
+      "item": "yjsnpimod:diamond_senpai"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:diamond_senpai_hoe"
+  }
+}

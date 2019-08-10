@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:ingots/yj"
+    },
+        "B": {
+      "item": "yjsnpimod:yj_star"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:yj_core"
+  }
+}

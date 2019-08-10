@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "yjsnpimod:yj_star"
+    },
+    "X": {
+      "tag": "forge:ingots/infinity_senpai"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:infinity_senpai_shovel"
+  }
+}

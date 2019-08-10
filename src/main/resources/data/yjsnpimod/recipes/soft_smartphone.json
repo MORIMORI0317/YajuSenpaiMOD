@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BAB",
+    "BBB"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:ingots/yj"
+    },
+        "B": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:soft_smartphone"
+  }
+}

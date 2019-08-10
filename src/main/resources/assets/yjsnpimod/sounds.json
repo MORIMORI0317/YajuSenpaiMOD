@@ -4,6 +4,14 @@
     "subtitle": "yjsnpimod.subtitle.nna",
     "sounds": [ "yjsnpimod:nna" ]
   },
+   "cyclopssnpi": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:cyclopssnpi",
+        "stream": true
+      }
+    ]
+  },
    "yjin": {
     "sounds": [
       {
@@ -77,5 +85,70 @@
     "category": "block",
     "subtitle": "yjsnpimod.subtitle.yarimasunexe",
     "sounds": [ "yjsnpimod:yarimasunexe" ]
+  },
+  "114514": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.114514",
+    "sounds": [ "yjsnpimod:114514" ]
+  },
+  "nijuyonsai": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.nijuyonsai",
+    "sounds": [ "yjsnpimod:nijuyonsai" ]
+  },
+  "on": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.on",
+    "sounds": [ "yjsnpimod:on" ]
+  },
+  "za": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.za",
+    "sounds": [ "yjsnpimod:za" ]
+  },
+  "hun": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.hun",
+    "sounds": [ "yjsnpimod:hun" ]
+  },
+  "syu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.syu",
+    "sounds": [ "yjsnpimod:syu" ]
+  },
+  "yokuwakaranakattadesu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yokuwakaranakattadesu",
+    "sounds": [ "yjsnpimod:yokuwakaranakattadesu" ]
+  },
+  "gakuseidesu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.gakuseidesu",
+    "sounds": [ "yjsnpimod:gakuseidesu" ]
+  },
+  "dasoutoomoeba": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.dasoutoomoeba",
+    "sounds": [ "yjsnpimod:dasoutoomoeba" ]
+  },
+  "taizyuandsintyou": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.taizyuandsintyou",
+    "sounds": [ "yjsnpimod:taizyuandsintyou" ]
+  },
+  "nu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.nu",
+    "sounds": [ "yjsnpimod:nu" ]
+  },
+  "horahorahora": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.horahorahora",
+    "sounds": [ "yjsnpimod:horahorahora" ]
+  },
+  "fa": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.fa",
+    "sounds": [ "yjsnpimod:fa" ]
   }
 }

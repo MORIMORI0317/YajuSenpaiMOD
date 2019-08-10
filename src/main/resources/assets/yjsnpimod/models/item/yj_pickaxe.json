@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "yjsnpimod:items/yj_pickaxe"
+    }
+}
