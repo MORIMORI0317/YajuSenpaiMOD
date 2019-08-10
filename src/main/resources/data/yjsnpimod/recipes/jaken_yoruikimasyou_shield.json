@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "BBB",
+    " B "
+  ],
+  "key": {
+    "A": {
+      "item": "yjsnpimod:diamond_senpai"
+    },
+        "B": {
+      "item": "yjsnpimod:big_pillow"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:jaken_yoruikimasyou_shield"
+  }
+}

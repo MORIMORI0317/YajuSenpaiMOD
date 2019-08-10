@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "yjsnpimod:potato_senpai"
+  },
+  "result": "yjsnpimod:baked_potato_senpai",
+  "experience": 0.35,
+  "cookingtime": 100
+}

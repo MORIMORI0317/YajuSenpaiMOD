@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "BAB",
+    " C "
+  ],
+  "key": {
+    "A": {
+      "item": "yjsnpimod:yj_core"
+    },
+        "B": {
+      "tag": "forge:ingots/yj"
+    },
+            "C": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:record_karatebu"
+  }
+}

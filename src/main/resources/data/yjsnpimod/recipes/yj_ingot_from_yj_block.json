@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "iron_ingot",
+  "ingredients": [
+    {
+      "item": "yjsnpimod:yj_senpai_block"
+    }
+  ],
+  "result": {
+    "item": "yjsnpimod:yj_ingot",
+    "count": 9
+  }
+}

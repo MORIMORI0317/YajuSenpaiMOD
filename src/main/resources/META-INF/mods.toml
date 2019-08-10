@@ -1,0 +1,29 @@
+modLoader="javafml" 
+
+loaderVersion="[25,)" #mandatory (24 is current forge version)
+
+issueTrackerURL="http://my.issue.tracker/"
+
+[[mods]] 
+
+modId="yjsnpimod" 
+
+version="1.1.0.0" 
+
+displayName="The YJSNPI MOD" 
+
+updateJSONURL="http://myurl.me/" 
+
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod" 
+
+logoFile="otycraft_logo.png" 
+
+credits=""
+
+authors="MORIMORI0317" 
+
+description='''
+Thank you for downloading!
+
+'''
+

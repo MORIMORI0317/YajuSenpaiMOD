@@ -1,0 +1,124 @@
+{
+	//Items
+    "item.yjsnpimod.record_yjin": "Music Disc",
+    "item.yjsnpimod.record_yonsyou": "Music Disc",
+    "item.yjsnpimod.record_karatebu": "Music Disc",
+    "item.yjsnpimod.record_cyclops": "Music Disc",
+    "item.yjsnpimod.jaken_yoruikimasyoune_sword": "Jaken Yoru Ikimasyoune",
+    "item.yjsnpimod.jaken_yoruikimasyou_shield": "Jaken Yoru Ikimasyou", 
+    "item.minecraft.potion.effect.beast_fiction": "Potion of Beast Fiction",
+    "item.minecraft.splash_potion.effect.beast_fiction": "Splash Potion of Beast Fiction",
+    "item.minecraft.lingering_potion.effect.beast_fiction": "Lingering Potion of Beast Fiction",
+    "item.minecraft.tipped_arrow.effect.beast_fiction": "Arrow of Beast Fiction",
+    "item.yjsnpimod.yj_core": "Yajuu Core",
+    "item.minecraft.potion.effect.cum": "Potion of Cum",
+    "item.minecraft.splash_potion.effect.cum": "Splash Potion of Cum",
+    "item.minecraft.lingering_potion.effect.cum": "Lingering Potion of Cum",
+    "item.minecraft.tipped_arrow.effect.cum": "Arrow of Cum",
+    "item.yjsnpimod.soft_smartphone": "Yawaraka Smartphone",
+    "item.yjsnpimod.potato_senpai": "Potato Senpai",
+    
+
+    "item.yjsnpimod.yj_ingot": "Yajuu Ingot",
+    "item.yjsnpimod.infinity_senpai_ingot": "Infinity Senpai Ingot",
+    "item.yjsnpimod.infinity_senpai_catalyst": "Infinity Senpai Catalyst",
+    "item.yjsnpimod.yj_star": "Yajuu Star",
+    "item.yjsnpimod.baked_potato_senpai": "Baked Potato Senpai",
+    
+
+    "item.yjsnpimod.yj_sword": "Yajuu Sword",
+    "item.yjsnpimod.yj_axe": "Yajuu Axe",
+    "item.yjsnpimod.yj_pickaxe": "Yajuu Pickaxe",
+    "item.yjsnpimod.yj_shovel": "Yajuu Shovel",
+    "item.yjsnpimod.yj_hoe": "Yajuu Hoe",
+
+    "item.yjsnpimod.infinity_senpai_sword": "Infinity Senpai Sword",
+    "item.yjsnpimod.infinity_senpai_axe": "Infinity Senpai Axe",
+    "item.yjsnpimod.infinity_senpai_pickaxe": "Infinity Senpai Pickaxe",
+    "item.yjsnpimod.infinity_senpai_shovel": "Infinity Senpai Shovel",
+    "item.yjsnpimod.infinity_senpai_hoe": "Infinity Senpai Hoe",
+
+    
+    
+    
+    
+    
+    
+    "item.yjsnpimod.diamond_senpai": "Diamond Senpai",
+    "item.yjsnpimod.diamond_senpai_sword": "Diamond Senpai Sword",
+    "item.yjsnpimod.diamond_senpai_axe": "Diamond Senpai Axe",
+    "item.yjsnpimod.diamond_senpai_pickaxe": "Diamond Senpai Pickaxe",
+    "item.yjsnpimod.diamond_senpai_shovel": "Diamond Senpai Shovel",
+    "item.yjsnpimod.diamond_senpai_hoe": "Diamond Senpai Hoe",
+    
+    
+    
+	//Blocks
+    "block.yjsnpimod.proliferation_yjsnpi_block": "Proliferation Yajuu Senpai Block",
+    "block.yjsnpimod.yj_senpai_block": "Yajuu Senpai Block",
+    "block.yjsnpimod.big_pillow": "Big Pillow",
+    "block.yjsnpimod.yj_rose": "Yajuu Rose",
+
+
+
+	//Effects
+    "effect.yjsnpimod.beastfiction": "Beast Fiction",
+    "effect.yjsnpimod.cum": "Cum",
+    "effect.yjsnpimod.coma": "Coma",
+    
+    
+	//Death
+	"death.attack.rape":"%s has been raped",
+
+	
+	//Sounds
+    "yjsnpimod.subtitle.nna": "Nna-!(cum)",
+    "yjsnpimod.subtitle.yarimasunexe": "Yarimasune!!",
+    "yjsnpimod.subtitle.onaon": "On Aon!",
+    "yjsnpimod.subtitle.mazuutisaxa": "Mazu Utisa... Okuzyou Arundakedo... Yaiteikanai?",
+    "yjsnpimod.subtitle.kataku": "Kataku Natteruze",
+    "yjsnpimod.subtitle.fookimatii": "Foo-Kimoti-",
+    "yjsnpimod.subtitle.dedemasuyo": "De,Demasuyo...",
+    "yjsnpimod.subtitle.osuonegai": "Ossu Onegai simarsu",
+    "yjsnpimod.subtitle.ikisugi": "Ikisugi!",
+    "yjsnpimod.subtitle.buttipa": "Buttipa",
+    "yjsnpimod.subtitle.nuwatikareta": "Nuwaaaaan Tukaretamooooooon",
+    "yjsnpimod.subtitle.114514": "Iiyo! Koiyo!",
+    "yjsnpimod.subtitle.nijuyonsai": "24 Years Old",
+    "yjsnpimod.subtitle.on": "On Aon!",
+    "yjsnpimod.subtitle.za": "Za-",
+    "yjsnpimod.subtitle.hun": "Hun",
+    "yjsnpimod.subtitle.syu": "Syu-",
+    "yjsnpimod.subtitle.yokuwakaranakattadesu": "I did not understand well",
+    "yjsnpimod.subtitle.gakuseidesu": "I'm student",
+    "yjsnpimod.subtitle.dasoutoomoeba": "Dasoutoomoeba",
+    "yjsnpimod.subtitle.taizyuandsintyou": "170 cm tall,74 kg weight",
+    
+    "yjsnpimod.subtitle.nu": "Nu",
+    "yjsnpimod.subtitle.horahorahora": "Hora Hora Hora",
+    "yjsnpimod.subtitle.fa": "fa!?",
+    
+    
+	//Description
+    "block.yjsnpimod.proliferation_yjsnpi_block.desc": "Waring! This is World Breaker!",
+    "item.yjsnpimod.jaken_yoruikimasyoune_sword.desc": "%s/%s chance of 1145141919 damage + add Beast Fiction",
+    "item.yjsnpimod.jaken_yoruikimasyou_shield.desc": "%s/%s chance of reducing all damage + add Beast Fiction",
+    "block.yjsnpimod.big_pillow.desc": "The pillow is too big",
+    "item.yjsnpimod.soft_smartphone.desc": "Yaju Senpai favorite smartphone",
+    
+    
+    "keypressed.desc": "Open the description with the %s",
+    "url.desc": "Using BB material : %s",
+    "lodingful.desc": "Failed to load title",
+	
+
+	#CreativeTabs#
+    "itemGroup.yjsnpi": "YJSNPI MOD",
+	//Desc
+    "item.yjsnpimod.record_yjin.desc": "Y810 - Yajuu Interview",
+    "item.yjsnpimod.record_yonsyou.desc": "Y114514 - Chapter 4 Coma Ra*e! Senior Became Yajuu",
+    "item.yjsnpimod.record_karatebu.desc": "Y364364 - Chapter 3 Karate Club. Sexual tricks",
+    "item.yjsnpimod.record_cyclops.desc": "Y931 - SCOOOP!!!1 - Virtual Sex squid party spectators !!! - Opening song"
+
+   
+}
