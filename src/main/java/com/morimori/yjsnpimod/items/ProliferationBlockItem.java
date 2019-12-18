@@ -33,7 +33,7 @@ public class ProliferationBlockItem extends BlockItem{
 
 	   @OnlyIn(Dist.CLIENT)
 	   public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.keyBindSneak,tooltip)) {
+		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.field_228046_af_,tooltip)) {
 	      tooltip.add(this.getIDescription().applyTextStyle(TextFormatting.RED));
 		   	}
 	   }

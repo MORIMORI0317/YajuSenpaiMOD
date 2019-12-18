@@ -1,61 +1,72 @@
 package com.morimori.yjsnpimod.other;
 
-import java.util.function.Supplier;
-
 import com.morimori.yjsnpimod.blocks.MODBlocks;
-import com.morimori.yjsnpimod.items.MODItems;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadBase;
+import net.minecraft.util.IItemProvider;
 
-public enum MODItemTier implements IItemTier {
-   YJ(1, 114514, 1.0F, 2.19F, 26, () -> {
-	      return Ingredient.fromItems(MODBlocks.YJ_SNPAI_BLOCK);
-   }),
-	   DIAMOND_SENPAI(4, 1919, 8.0F, 3.0F, 10, () -> {
-		      return Ingredient.fromItems(MODItems.DIAMOND_SENPAI);
-	   }),
-	   INFINITY_SENPAI(1919, 1151419119, 810.0F, 1919.0F, 931, () -> {
-		      return Ingredient.fromItems(MODItems.INFINITY_SENPAI_INGOT);
-	   });
-   private final int harvestLevel;
-   private final int maxUses;
-   private final float efficiency;
-   private final float attackDamage;
-   private final int enchantability;
-   private final LazyLoadBase<Ingredient> repairMaterial;
+public class MODItemTier implements IItemTier {
+	public static MODItemTier YJ = new MODItemTier(1, 114514, 1, 2, 26,
+			new IItemProvider[] { MODBlocks.YJ_SNPAI_BLOCK });
+	public static MODItemTier DIAMOND_SENPAI = new MODItemTier(4, 1919, 8, 3, 10,
+			new IItemProvider[] { MODBlocks.YJ_SNPAI_BLOCK });
 
-   private MODItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialIn) {
-      this.harvestLevel = harvestLevelIn;
-      this.maxUses = maxUsesIn;
-      this.efficiency = efficiencyIn;
-      this.attackDamage = attackDamageIn;
-      this.enchantability = enchantabilityIn;
-      this.repairMaterial = new LazyLoadBase<>(repairMaterialIn);
-   }
+	public static MODItemTier INFINITY_SENPAI = new MODItemTier(1919, 1151419119, 810, 1919, 931,
+			new IItemProvider[] { MODBlocks.YJ_SNPAI_BLOCK });
 
-   public int getMaxUses() {
-      return this.maxUses;
-   }
+	private float AttackDamage;
+	private float Efficiency;
+	private int Enchantability;
+	private int HarvestLevel;
+	private int MaxUses;
+	private IItemProvider[] RepairMaterial;
 
-   public float getEfficiency() {
-      return this.efficiency;
-   }
+	public MODItemTier(float attackdamageIn, float efficiencyIn, int enchantabilityIn, int harvestlevelIn,
+			int maxusesIn, IItemProvider[] repairmaterialIn) {
+		this.AttackDamage = attackdamageIn;
+		this.Efficiency = efficiencyIn;
+		this.Enchantability = enchantabilityIn;
+		this.HarvestLevel = harvestlevelIn;
+		this.MaxUses = maxusesIn;
+		this.RepairMaterial = repairmaterialIn;
 
-   public float getAttackDamage() {
-      return this.attackDamage;
-   }
+	}
 
-   public int getHarvestLevel() {
-      return this.harvestLevel;
-   }
+	@Override
+	public float getAttackDamage() {
 
-   public int getEnchantability() {
-      return this.enchantability;
-   }
+		return AttackDamage;
+	}
 
-   public Ingredient getRepairMaterial() {
-      return this.repairMaterial.getValue();
-   }
+	@Override
+	public float getEfficiency() {
+
+		return Efficiency;
+	}
+
+	@Override
+	public int getEnchantability() {
+
+		return Enchantability;
+	}
+
+	@Override
+	public int getHarvestLevel() {
+
+		return HarvestLevel;
+	}
+
+	@Override
+	public int getMaxUses() {
+
+		return MaxUses;
+	}
+
+	@Override
+	public Ingredient getRepairMaterial() {
+
+		return Ingredient.fromItems(RepairMaterial);
+	}
+
 }

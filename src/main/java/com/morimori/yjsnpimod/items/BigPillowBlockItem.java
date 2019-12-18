@@ -29,7 +29,7 @@ public class BigPillowBlockItem extends BlockItem{
 	}
 	   @OnlyIn(Dist.CLIENT)
 	   public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.keyBindSneak,tooltip)) {
+		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.field_228046_af_,tooltip)) {
 	      tooltip.add(this.getIDescription());
 	      YJToolTipUtils.genSozaiURL(tooltip, "https://www.nicovideo.jp/watch/sm19360333", SOZAI_TITEL);
 

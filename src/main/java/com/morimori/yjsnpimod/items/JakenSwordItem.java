@@ -60,7 +60,7 @@ public class JakenSwordItem extends SwordItem{
 		   int kakurituue=810;
 		   int kakuritusita=114514;
 
-		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.keyBindSneak,tooltip)) {
+		   	if(YJToolTipUtils.iskyePush(Minecraft.getInstance().gameSettings.field_228046_af_,tooltip)) {
 	      tooltip.add(this.getIDescription(kakurituue,kakuritusita).applyTextStyle(TextFormatting.GRAY));
 		   	}
 	   }
