@@ -1,6 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "yjsnpimod:blocks/yj_rose"
-    }
-}

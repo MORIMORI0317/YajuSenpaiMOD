@@ -1,6 +1,0 @@
-{
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "yjsnpimod:items/diamond_senpai_axe"
-    }
-}

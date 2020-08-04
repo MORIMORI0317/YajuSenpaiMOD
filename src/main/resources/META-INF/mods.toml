@@ -1,29 +1,20 @@
-modLoader="javafml" 
-
-loaderVersion="[25,)" #mandatory (24 is current forge version)
-
-issueTrackerURL="http://my.issue.tracker/"
-
-[[mods]] 
-
-modId="yjsnpimod" 
-
-version="1.1.0.0" 
-
-displayName="The YJSNPI MOD" 
-
-updateJSONURL="http://myurl.me/" 
-
-displayURL="https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod" 
-
-logoFile="otycraft_logo.png" 
-
+modLoader="javafml"
+loaderVersion="[32,)" 
+issueTrackerURL="https://github.com/MORIMORI0317/YJSNPIMOD/issues"
+logoFile="logo.png" 
+[[mods]]
+modId="yjsnpimod"
+version="${file.jarVersion}" 
+displayName="The YJSNPI MOD"
+updateJSONURL="https://raw.githubusercontent.com/MORIMORI0317/YJSNPIMOD/master/update_check.json" 
+displayURL="https://github.com/MORIMORI0317/YJSNPIMOD" 
 credits=""
-
 authors="MORIMORI0317" 
+description="Thank you for downloading!\nThe Ikisugi MOD."
 
-description='''
-Thank you for downloading!
-
-'''
-
+[[dependencies.kimnarutree]]
+    modId="otyacraftengine"
+    mandatory=true
+    versionRange="[1.0,)"
+    ordering="NONE"
+    side="BOTH"
