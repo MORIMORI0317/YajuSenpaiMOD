@@ -1,0 +1,21 @@
+{
+  "_comment": "Item",
+  "item.yjsnpimod.test_item": "Test Item",
+
+  "_comment": "Block",
+  "block.yjsnpimod.yjsnpi_interview_block": "野獣先輩ブロック (インタビュー)",
+  "block.yjsnpimod.yjsnpi_gomanetsu_block": "ご満悦先輩ブロック",
+  "block.yjsnpimod.yjsnpi_ennui_block": "アンニュウイ先輩ブロック",
+  "block.yjsnpimod.yjsnpi_mezikara_block": "目力先輩ブロック",
+  "block.yjsnpimod.yjsnpi_nehan_block": "涅槃先輩ブロック",
+  "block.yjsnpimod.yjsnpi_shitarigao_block": "したり顔先輩ブロック",
+  "block.yjsnpimod.yjsnpi_ikisugi_block": "野獣先輩ブロック (イキスギ)",
+  "block.yjsnpimod.yjsnpi_imdkoji_block": "今田耕司先輩ブロック",
+  "block.yjsnpimod.yjsnpi_kunekune_block": "くねくね先輩ブロック",
+
+  "_comment": "CreativeTab",
+  "itemGroup.yjsnpimod": "野獣先輩MOD",
+
+  "_comment": "Last"
+  
+}

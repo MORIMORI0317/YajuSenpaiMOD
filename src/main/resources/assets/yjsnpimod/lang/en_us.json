@@ -1,0 +1,21 @@
+{
+  "_comment": "Item",
+  "item.yjsnpimod.test_item": "Test Item",
+
+  "_comment": "Block",
+  "block.yjsnpimod.yjsnpi_interview_block": "YJSNPI Block (Interview)",
+  "block.yjsnpimod.yjsnpi_gomanetsu_block": "Satisfaction SNPI Block",
+  "block.yjsnpimod.yjsnpi_ennui_block": "Ennui SNPI Block",
+  "block.yjsnpimod.yjsnpi_mezikara_block": "Eyesight SNPI Block",
+  "block.yjsnpimod.yjsnpi_nehan_block": "Nirvana SNPI Block",
+  "block.yjsnpimod.yjsnpi_shitarigao_block": "Triumphant Face SNPI Block",
+  "block.yjsnpimod.yjsnpi_ikisugi_block": "YJSNPI Block (Ikisugi)",
+  "block.yjsnpimod.yjsnpi_imdkoji_block": "Imada Koji SNPI Block",
+  "block.yjsnpimod.yjsnpi_kunekune_block": "Winding SNPI Block",
+
+  "_comment": "CreativeTab",
+  "itemGroup.yjsnpimod": "The YJSNPI MOD",
+
+  "_comment": "Last"
+  
+}

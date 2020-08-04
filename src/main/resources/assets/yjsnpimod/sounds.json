@@ -1,0 +1,27 @@
+{
+  "yj.nna": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.nna",
+    "sounds": [ "yjsnpimod:yj/nna" ]
+  },
+  "yj.hun": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.hun",
+    "sounds": [ "yjsnpimod:yj/hun" ]
+  },
+  "yj.on": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.on",
+    "sounds": [ "yjsnpimod:yj/on" ]
+  },
+    "yj.fookimatii": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.fookimatii",
+    "sounds": [ "yjsnpimod:yj/fookimatii" ]
+  },
+     "yj.buttipa": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.buttipa",
+    "sounds": [ "yjsnpimod:yj/buttipa" ]
+  }
+}
