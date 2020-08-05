@@ -23,6 +23,7 @@ public class YJBlocks {
     public static final Block YJSNPI_KUNEKUNE_BLOCK = newBlock("yjsnpi_kunekune_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
 
     public static final Block PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f)).setRegistryName(YJSNPIMOD.MODID, "proliferation_yjsnpi_block");
+    public static final Block PROLIFERATION_IKISUGI_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f)).setRegistryName(YJSNPIMOD.MODID, "proliferation_ikisugi_yjsnpi_block");
 
     public static void registerBlock(IForgeRegistry<Block> r) {
         registryBlock(r, YJSNPI_INTERVIEW_BLOCK);
@@ -36,6 +37,7 @@ public class YJBlocks {
         registryBlock(r, YJSNPI_KUNEKUNE_BLOCK);
 
         registryBlock(r, PROLIFERATION_YJSNPI_BLOCK);
+        registryBlock(r, PROLIFERATION_IKISUGI_YJSNPI_BLOCK);
 
     }
 
@@ -51,6 +53,8 @@ public class YJBlocks {
         registryBlockItem(r, YJSNPI_KUNEKUNE_BLOCK);
 
         registryBlockItem(r, PROLIFERATION_YJSNPI_BLOCK);
+        registryBlockItem(r, PROLIFERATION_IKISUGI_YJSNPI_BLOCK);
+
 
     }
 
