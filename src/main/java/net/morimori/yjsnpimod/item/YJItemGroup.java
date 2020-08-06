@@ -14,5 +14,5 @@ public class YJItemGroup {
         public ItemStack createIcon() {
             return new ItemStack(Items.APPLE);
         }
-    };
+    }.setBackgroundImageName("yjsnpi.png");
 }

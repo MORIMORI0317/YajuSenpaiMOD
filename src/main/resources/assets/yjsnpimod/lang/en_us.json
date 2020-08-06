@@ -1,9 +1,9 @@
 {
   "_comment": "Item",
-  "item.yjsnpimod.test_item": "Test Item",
+  "item.yjsnpimod.yjnium_ingot": "Yjnium Ingot",
 
   "_comment": "Block",
-  "block.yjsnpimod.yjsnpi_interview_block": "YJSNPI Block (Interview)",
+  "block.yjsnpimod.yjsnpi_interview_block": "YJSNPI Block",
   "block.yjsnpimod.yjsnpi_gomanetsu_block": "Satisfaction SNPI Block",
   "block.yjsnpimod.yjsnpi_ennui_block": "Ennui SNPI Block",
   "block.yjsnpimod.yjsnpi_mezikara_block": "Eyesight SNPI Block",
@@ -12,6 +12,20 @@
   "block.yjsnpimod.yjsnpi_ikisugi_block": "YJSNPI Block (Ikisugi)",
   "block.yjsnpimod.yjsnpi_imdkoji_block": "Imada Koji SNPI Block",
   "block.yjsnpimod.yjsnpi_kunekune_block": "Winding SNPI Block",
+
+  "block.yjsnpimod.yjnium_ore": "Yjnium Ore",
+  "block.yjsnpimod.yjnium_block": "Block of Yjnium",
+
+  "block.yjsnpimod.proliferation_yjsnpi_block": "Proliferation YJSNPI Block",
+  "block.yjsnpimod.ikisugi_proliferation_yjsnpi_block": "Ikisugi Proliferation YJSNPI Block",
+  "block.yjsnpimod.gomanetsu_proliferation_yjsnpi_block": "Satisfaction Proliferation YJSNPI Block",
+
+  "tooltip.detailedinformation.block.yjsnpimod.proliferation_yjsnpi_block": "Waring! This is World Breaker!(Does not erode other solid blocks)",
+  "tooltip.detailedinformation.block.yjsnpimod.ikisugi_proliferation_yjsnpi_block": "Waring! This is Ikisugi World Breaker!(Erodes other solid blocks)",
+  "tooltip.detailedinformation.block.yjsnpimod.gomanetsu_proliferation_yjsnpi_block": "Waring! This is Safe World Breaker!(You can only increase 19 blocks without eroding other solid blocks)",
+
+  "_comment": "Gamerule",
+  "gamerule.yjsnpiBlockProliferation": "Yjsnpi Block Proliferation",
 
   "_comment": "CreativeTab",
   "itemGroup.yjsnpimod": "The YJSNPI MOD",
