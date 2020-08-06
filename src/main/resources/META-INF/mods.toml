@@ -2,17 +2,18 @@ modLoader="javafml"
 loaderVersion="[32,)" 
 issueTrackerURL="https://github.com/MORIMORI0317/YJSNPIMOD/issues"
 logoFile="logo.png" 
+license="Ikisugi License"
 [[mods]]
 modId="yjsnpimod"
 version="${file.jarVersion}" 
 displayName="The YJSNPI MOD"
 updateJSONURL="https://raw.githubusercontent.com/MORIMORI0317/YJSNPIMOD/master/update_check.json" 
-displayURL="https://github.com/MORIMORI0317/YJSNPIMOD" 
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod" 
 credits=""
 authors="MORIMORI0317" 
 description="Thank you for downloading!\nThe Ikisugi MOD."
 
-[[dependencies.kimnarutree]]
+[[dependencies.yjsnpimod]]
     modId="otyacraftengine"
     mandatory=true
     versionRange="[1.0,)"
