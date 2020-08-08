@@ -19,6 +19,8 @@ public class ProliferationBlockItem extends SimpleFoiledBlockItem implements IDe
             coloer = TextFormatting.RED;
         } else if (this.getBlock() == YJBlocks.GOMANETSU_PROLIFERATION_YJSNPI_BLOCK) {
             coloer = TextFormatting.BLUE;
+        } else if (this.getBlock() == YJBlocks.ANTI_PROLIFERATION_YJSNPI_BLOCK) {
+            coloer = TextFormatting.DARK_PURPLE;
         }
         e.getToolTip().add((new TranslationTextComponent("tooltip.detailedinformation." + e.getItemStack().getItem().getTranslationKey())).func_240699_a_(coloer));
     }

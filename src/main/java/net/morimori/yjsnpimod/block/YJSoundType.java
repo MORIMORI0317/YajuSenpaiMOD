@@ -4,5 +4,5 @@ import net.minecraft.block.SoundType;
 import net.morimori.yjsnpimod.YJSoundEvents;
 
 public class YJSoundType {
-    public static final SoundType YJ = new SoundType(1.0F, 1.2F, YJSoundEvents.YJ_NNA, YJSoundEvents.YJ_HUN, YJSoundEvents.YJ_ON, YJSoundEvents.YJ_FOOKIMATII, YJSoundEvents.YJ_BUTTIPA);
+    public static final SoundType YJ = new SoundType(3.0F, 1.2F, YJSoundEvents.YJ_BREAK, YJSoundEvents.YJ_STEP, YJSoundEvents.YJ_PLACE, YJSoundEvents.YJ_HIT, YJSoundEvents.YJ_FALL);
 }

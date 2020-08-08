@@ -1,27 +1,167 @@
 {
-  "yj.nna": {
+  "yj.buttipa": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.nna",
-    "sounds": [ "yjsnpimod:yj/nna" ]
+    "subtitle": "yjsnpimod.subtitle.yj.buttipa",
+    "sounds": [ "yjsnpimod:yj/buttipa" ]
   },
-  "yj.hun": {
+     "yj.dasoutoomoeba": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.hun",
-    "sounds": [ "yjsnpimod:yj/hun" ]
+    "subtitle": "yjsnpimod.subtitle.yj.dasoutoomoeba",
+    "sounds": [ "yjsnpimod:yj/dasoutoomoeba" ]
   },
-  "yj.on": {
+     "yj.dedemasuyo": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.on",
-    "sounds": [ "yjsnpimod:yj/on" ]
+    "subtitle": "yjsnpimod.subtitle.yj.dedemasuyo",
+    "sounds": [ "yjsnpimod:yj/dedemasuyo" ]
   },
-    "yj.fookimatii": {
+     "yj.fa": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.fa",
+    "sounds": [ "yjsnpimod:yj/fa" ]
+  },
+     "yj.fookimatii": {
     "category": "block",
     "subtitle": "yjsnpimod.subtitle.yj.fookimatii",
     "sounds": [ "yjsnpimod:yj/fookimatii" ]
   },
-     "yj.buttipa": {
+     "yj.gakuseidesu": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.buttipa",
-    "sounds": [ "yjsnpimod:yj/buttipa" ]
+    "subtitle": "yjsnpimod.subtitle.yj.gakuseidesu",
+    "sounds": [ "yjsnpimod:yj/gakuseidesu" ]
+  },
+     "yj.horahorahora": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.horahorahora",
+    "sounds": [ "yjsnpimod:yj/horahorahora" ]
+  },
+     "yj.hun": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.hun",
+    "sounds": [ "yjsnpimod:yj/hun" ]
+  },
+     "yj.iiyokoiyo": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.iiyokoiyo",
+    "sounds": [ "yjsnpimod:yj/iiyokoiyo" ]
+  },
+     "yj.ikisugi": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.ikisugi",
+    "sounds": [ "yjsnpimod:yj/ikisugi" ]
+  },
+     "yj.kataku": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.kataku",
+    "sounds": [ "yjsnpimod:yj/kataku" ]
+  },
+     "yj.mazuutisaxa": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.mazuutisaxa",
+    "sounds": [ "yjsnpimod:yj/mazuutisaxa" ]
+  },
+     "yj.mezikara": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.mezikara",
+    "sounds": [ "yjsnpimod:yj/mezikara" ]
+  },
+     "yj.nijuyonsai": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.nijuyonsai",
+    "sounds": [ "yjsnpimod:yj/nijuyonsai" ]
+  },
+     "yj.nna": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.nna",
+    "sounds": [ "yjsnpimod:yj/nna" ]
+  },
+     "yj.nu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.nu",
+    "sounds": [ "yjsnpimod:yj/nu" ]
+  },
+     "yj.nuwatikareta": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.nuwatikareta",
+    "sounds": [ "yjsnpimod:yj/nuwatikareta" ]
+  },
+     "yj.on": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.on",
+    "sounds": [ "yjsnpimod:yj/on" ]
+  },
+     "yj.onaon": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.onaon",
+    "sounds": [ "yjsnpimod:yj/onaon" ]
+  },
+     "yj.osuonegai": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.osuonegai",
+    "sounds": [ "yjsnpimod:yj/osuonegai" ]
+  },
+     "yj.syu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.syu",
+    "sounds": [ "yjsnpimod:yj/syu" ]
+  },
+     "yj.taizyuandsintyou": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.taizyuandsintyou",
+    "sounds": [ "yjsnpimod:yj/taizyuandsintyou" ]
+  },
+     "yj.yarimasunexe": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.yarimasunexe",
+    "sounds": [ "yjsnpimod:yj/yarimasunexe" ]
+  },
+     "yj.yokuwakaranakattadesu": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.yokuwakaranakattadesu",
+    "sounds": [ "yjsnpimod:yj/yokuwakaranakattadesu" ]
+  },
+     "yj.za": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.za",
+    "sounds": [ "yjsnpimod:yj/za" ]
+  },
+     "yj.break": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/fa","yjsnpimod:yj/za" ]
+  },
+     "yj.place": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [ "yjsnpimod:yj/on","yjsnpimod:yj/syu","yjsnpimod:yj/nu" ]
+  },
+     "yj.step": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [ "yjsnpimod:yj/hun","yjsnpimod:yj/kataku","yjsnpimod:yj/syu" ]
+  },
+     "yj.hit": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [ "yjsnpimod:yj/horahorahora","yjsnpimod:yj/fookimatii","yjsnpimod:yj/dasoutoomoeba","yjsnpimod:yj/iiyokoiyo","yjsnpimod:yj/osuonegai","yjsnpimod:yj/yarimasunexe" ]
+  },
+     "yj.fall": {
+    "category": "block",
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [ "yjsnpimod:yj/buttipa","yjsnpimod:yj/onaon","yjsnpimod:yj/iiyokoiyo" ]
+  },
+     "yj.proliferation": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.proliferation",
+    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/buttipa","yjsnpimod:yj/dedemasuyo","yjsnpimod:yj/fookimatii","yjsnpimod:yj/gakuseidesu","yjsnpimod:yj/horahorahora","yjsnpimod:yj/iiyokoiyo","yjsnpimod:yj/mazuutisaxa","yjsnpimod:yj/nijuyonsai","yjsnpimod:yj/onaon","yjsnpimod:yj/syu","yjsnpimod:yj/taizyuandsintyou","yjsnpimod:yj/yarimasunexe" ]
+  },
+     "yj.equip": {
+    "category": "block",
+    "subtitle": "subtitles.item.armor.equip_yjsnpi",
+    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/nu","yjsnpimod:yj/kataku","yjsnpimod:yj/on","yjsnpimod:yj/osuonegai" ]
+  },
+     "yj.antiproliferation": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.antiproliferation",
+    "sounds": [ "yjsnpimod:yj/fa","yjsnpimod:yj/hun","yjsnpimod:yj/kataku","yjsnpimod:yj/nu","yjsnpimod:yj/nuwatikareta","yjsnpimod:yj/yokuwakaranakattadesu","yjsnpimod:yj/za" ]
   }
 }

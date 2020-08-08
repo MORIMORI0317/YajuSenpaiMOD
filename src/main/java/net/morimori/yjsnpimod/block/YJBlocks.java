@@ -23,9 +23,10 @@ public class YJBlocks {
     public static final Block YJSNPI_IMDKOJI_BLOCK = newBlock("yjsnpi_imdkoji_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_KUNEKUNE_BLOCK = newBlock("yjsnpi_kunekune_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
 
-    public static final Block PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false).setRegistryName(YJSNPIMOD.MODID, "proliferation_yjsnpi_block");
-    public static final Block IKISUGI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), true, false).setRegistryName(YJSNPIMOD.MODID, "ikisugi_proliferation_yjsnpi_block");
-    public static final Block GOMANETSU_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, true).setRegistryName(YJSNPIMOD.MODID, "gomanetsu_proliferation_yjsnpi_block");
+    public static final Block PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false, false).setRegistryName(YJSNPIMOD.MODID, "proliferation_yjsnpi_block");
+    public static final Block IKISUGI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), true, false, false).setRegistryName(YJSNPIMOD.MODID, "ikisugi_proliferation_yjsnpi_block");
+    public static final Block GOMANETSU_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, true, false).setRegistryName(YJSNPIMOD.MODID, "gomanetsu_proliferation_yjsnpi_block");
+    public static final Block ANTI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false, true).setRegistryName(YJSNPIMOD.MODID, "anti_proliferation_yjsnpi_block");
 
     public static final Block YJNIUM_ORE = new Block(AbstractBlock.Properties.create(YJMaterial.YJSNPI).func_235861_h_().hardnessAndResistance(3.0F, 3.0F).sound(SoundType.STONE)).setRegistryName("yjnium_ore");
     public static final Block YJNIUM_BLOCK = new Block(AbstractBlock.Properties.create(YJMaterial.YJSNPI).func_235861_h_().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL)).setRegistryName("yjnium_block");
@@ -44,6 +45,7 @@ public class YJBlocks {
         registryBlock(r, PROLIFERATION_YJSNPI_BLOCK);
         registryBlock(r, IKISUGI_PROLIFERATION_YJSNPI_BLOCK);
         registryBlock(r, GOMANETSU_PROLIFERATION_YJSNPI_BLOCK);
+        registryBlock(r, ANTI_PROLIFERATION_YJSNPI_BLOCK);
 
         registryBlock(r, YJNIUM_ORE);
         registryBlock(r, YJNIUM_BLOCK);
@@ -63,6 +65,7 @@ public class YJBlocks {
         r.register(new ProliferationBlockItem(PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(IKISUGI_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(IKISUGI_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(GOMANETSU_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(GOMANETSU_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
+        r.register(new ProliferationBlockItem(ANTI_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(ANTI_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
 
         registryBlockItem(r, YJNIUM_ORE);
         registryBlockItem(r, YJNIUM_BLOCK);

@@ -12,7 +12,7 @@ public class YJItemGroup {
     public static final ItemGroup MOD_TAB = new ItemGroup(YJSNPIMOD.MODID) {
         @OnlyIn(Dist.CLIENT)
         public ItemStack createIcon() {
-            return new ItemStack(Items.APPLE);
+            return new ItemStack(YJItems.YJ_ICON);
         }
     }.setBackgroundImageName("yjsnpi.png");
 }
