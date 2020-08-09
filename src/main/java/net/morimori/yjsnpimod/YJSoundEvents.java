@@ -17,7 +17,6 @@ public class YJSoundEvents {
     public static final SoundEvent YJ_IKISUGI = newSound("yj.ikisugi");
     public static final SoundEvent YJ_KATAKU = newSound("yj.kataku");
     public static final SoundEvent YJ_MAZUUTISAXA = newSound("yj.mazuutisaxa");
-    public static final SoundEvent YJ_MEZIKARA = newSound("yj.mezikara");
     public static final SoundEvent YJ_NIJUYONSAI = newSound("yj.nijuyonsai");
     public static final SoundEvent YJ_NNA = newSound("yj.nna");
     public static final SoundEvent YJ_NU = newSound("yj.nu");
@@ -30,6 +29,8 @@ public class YJSoundEvents {
     public static final SoundEvent YJ_YARIMASUNEXE = newSound("yj.yarimasunexe");
     public static final SoundEvent YJ_YOKUWAKARANAKATTADESU = newSound("yj.yokuwakaranakattadesu");
     public static final SoundEvent YJ_ZA = newSound("yj.za");
+    public static final SoundEvent YJ_OTTODAIJOUBUKA = newSound("yj.ottodaijoubuka");
+
 
     public static final SoundEvent YJ_BREAK = newSound("yj.break");
     public static final SoundEvent YJ_PLACE = newSound("yj.place");
@@ -40,6 +41,25 @@ public class YJSoundEvents {
 
     public static final SoundEvent YJ_PROLIFERATION = newSound("yj.proliferation");
     public static final SoundEvent YJ_ANTIPROLIFERATION = newSound("yj.antiproliferation");
+    public static final SoundEvent YJ_DAMEGE = newSound("yj.damege");
+    public static final SoundEvent YJ_OVERWRITE = newSound("yj.overwrite");
+
+    public static final SoundEvent MEZIKARA_ALL = newSound("mezikara.all");
+    public static final SoundEvent MEZIKARA_N1 = newSound("mezikara.n1");
+    public static final SoundEvent MEZIKARA_N2 = newSound("mezikara.n2");
+    public static final SoundEvent MEZIKARA_N3 = newSound("mezikara.n3");
+    public static final SoundEvent MEZIKARA_HONTAI = newSound("mezikara.hontai");
+    public static final SoundEvent MEZIKARA_MAEBURI = newSound("mezikara.maeburi");
+    public static final SoundEvent MEZIKARA_NS = newSound("mezikara.ns");
+
+    public static final SoundEvent TON_ALL = newSound("ton.all");
+    public static final SoundEvent TON_SEKAINOTON = newSound("ton.sekainoton");
+    public static final SoundEvent TON_A1 = newSound("ton.a1");
+    public static final SoundEvent TON_A2 = newSound("ton.a2");
+    public static final SoundEvent TON_A3 = newSound("ton.a3");
+    public static final SoundEvent TON_A4 = newSound("ton.a4");
+    public static final SoundEvent TON_STAGGER = newSound("ton.stagger");
+
 
     public static void registerSoundEvent(IForgeRegistry<SoundEvent> r) {
         registrySoundEvent(r, YJ_BUTTIPA);
@@ -55,7 +75,6 @@ public class YJSoundEvents {
         registrySoundEvent(r, YJ_IKISUGI);
         registrySoundEvent(r, YJ_KATAKU);
         registrySoundEvent(r, YJ_MAZUUTISAXA);
-        registrySoundEvent(r, YJ_MEZIKARA);
         registrySoundEvent(r, YJ_NIJUYONSAI);
         registrySoundEvent(r, YJ_NNA);
         registrySoundEvent(r, YJ_NU);
@@ -68,6 +87,7 @@ public class YJSoundEvents {
         registrySoundEvent(r, YJ_YARIMASUNEXE);
         registrySoundEvent(r, YJ_YOKUWAKARANAKATTADESU);
         registrySoundEvent(r, YJ_ZA);
+        registrySoundEvent(r, YJ_OTTODAIJOUBUKA);
 
         registrySoundEvent(r, YJ_BREAK);
         registrySoundEvent(r, YJ_PLACE);
@@ -78,6 +98,24 @@ public class YJSoundEvents {
 
         registrySoundEvent(r, YJ_PROLIFERATION);
         registrySoundEvent(r, YJ_ANTIPROLIFERATION);
+        registrySoundEvent(r, YJ_DAMEGE);
+        registrySoundEvent(r, YJ_OVERWRITE);
+
+        registrySoundEvent(r, MEZIKARA_ALL);
+        registrySoundEvent(r, MEZIKARA_N1);
+        registrySoundEvent(r, MEZIKARA_N2);
+        registrySoundEvent(r, MEZIKARA_N3);
+        registrySoundEvent(r, MEZIKARA_HONTAI);
+        registrySoundEvent(r, MEZIKARA_MAEBURI);
+        registrySoundEvent(r, MEZIKARA_NS);
+
+        registrySoundEvent(r, TON_ALL);
+        registrySoundEvent(r, TON_SEKAINOTON);
+        registrySoundEvent(r, TON_A1);
+        registrySoundEvent(r, TON_A2);
+        registrySoundEvent(r, TON_A3);
+        registrySoundEvent(r, TON_A4);
+        registrySoundEvent(r, TON_STAGGER);
     }
 
     private static void registrySoundEvent(IForgeRegistry<SoundEvent> r, SoundEvent s) {

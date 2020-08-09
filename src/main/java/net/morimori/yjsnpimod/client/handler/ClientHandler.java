@@ -2,6 +2,7 @@ package net.morimori.yjsnpimod.client.handler;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
+import net.minecraft.item.Items;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.morimori.yjsnpimod.YJSNPIMOD;
@@ -17,7 +18,6 @@ public class ClientHandler {
 
         if (mc.player == null || e.getSound().getSoundLocation().getNamespace().equals(YJSNPIMOD.MODID) || !YJUtil.isYJOverwrite(mc.player))
             return;
-
-        e.setResultSound(SimpleSound.master(YJSoundEvents.YJ_PROLIFERATION, 1, 1));
+        e.setResultSound(SimpleSound.master(YJSoundEvents.YJ_OVERWRITE, 1, 1));
     }
 }

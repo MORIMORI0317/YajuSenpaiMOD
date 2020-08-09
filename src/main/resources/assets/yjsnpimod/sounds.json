@@ -124,44 +124,224 @@
     "subtitle": "yjsnpimod.subtitle.yj.za",
     "sounds": [ "yjsnpimod:yj/za" ]
   },
+     "yj.ottodaijoubuka": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.ottodaijoubuka",
+    "sounds": [ "yjsnpimod:yj/ottodaijoubuka" ]
+  },
      "yj.break": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
-    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/fa","yjsnpimod:yj/za" ]
+    "sounds": [ 
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/fa",
+    "yjsnpimod:yj/za"
+     ]
   },
      "yj.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
-    "sounds": [ "yjsnpimod:yj/on","yjsnpimod:yj/syu","yjsnpimod:yj/nu" ]
+    "sounds": [ 
+    "yjsnpimod:yj/on",
+    "yjsnpimod:yj/syu",
+    "yjsnpimod:yj/nu"
+     ]
   },
      "yj.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
-    "sounds": [ "yjsnpimod:yj/hun","yjsnpimod:yj/kataku","yjsnpimod:yj/syu" ]
+    "sounds": [ 
+    "yjsnpimod:yj/hun",
+    "yjsnpimod:yj/kataku",
+    "yjsnpimod:yj/syu" 
+    ]
   },
      "yj.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
-    "sounds": [ "yjsnpimod:yj/horahorahora","yjsnpimod:yj/fookimatii","yjsnpimod:yj/dasoutoomoeba","yjsnpimod:yj/iiyokoiyo","yjsnpimod:yj/osuonegai","yjsnpimod:yj/yarimasunexe" ]
+    "sounds": [ 
+    "yjsnpimod:yj/horahorahora",
+    "yjsnpimod:yj/fookimatii",
+    "yjsnpimod:yj/dasoutoomoeba",
+    "yjsnpimod:yj/iiyokoiyo",
+    "yjsnpimod:yj/osuonegai",
+    "yjsnpimod:yj/yarimasunexe"
+     ]
   },
      "yj.fall": {
     "category": "block",
     "subtitle": "subtitles.entity.generic.big_fall",
-    "sounds": [ "yjsnpimod:yj/buttipa","yjsnpimod:yj/onaon","yjsnpimod:yj/iiyokoiyo" ]
+    "sounds": [ 
+    "yjsnpimod:yj/buttipa",
+    "yjsnpimod:yj/onaon",
+    "yjsnpimod:yj/iiyokoiyo" 
+    ]
   },
      "yj.proliferation": {
     "category": "block",
     "subtitle": "yjsnpimod.subtitle.yj.proliferation",
-    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/buttipa","yjsnpimod:yj/dedemasuyo","yjsnpimod:yj/fookimatii","yjsnpimod:yj/gakuseidesu","yjsnpimod:yj/horahorahora","yjsnpimod:yj/iiyokoiyo","yjsnpimod:yj/mazuutisaxa","yjsnpimod:yj/nijuyonsai","yjsnpimod:yj/onaon","yjsnpimod:yj/syu","yjsnpimod:yj/taizyuandsintyou","yjsnpimod:yj/yarimasunexe" ]
+    "sounds": [ 
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/buttipa",
+    "yjsnpimod:yj/dedemasuyo",
+    "yjsnpimod:yj/fookimatii",
+    "yjsnpimod:yj/gakuseidesu",
+    "yjsnpimod:yj/horahorahora",
+    "yjsnpimod:yj/iiyokoiyo",
+    "yjsnpimod:yj/mazuutisaxa",
+    "yjsnpimod:yj/nijuyonsai",
+    "yjsnpimod:yj/onaon",
+    "yjsnpimod:yj/syu",
+    "yjsnpimod:yj/taizyuandsintyou",
+    "yjsnpimod:yj/yarimasunexe"
+     ]
   },
      "yj.equip": {
     "category": "block",
     "subtitle": "subtitles.item.armor.equip_yjsnpi",
-    "sounds": [ "yjsnpimod:yj/nna","yjsnpimod:yj/nu","yjsnpimod:yj/kataku","yjsnpimod:yj/on","yjsnpimod:yj/osuonegai" ]
+    "sounds": [ 
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/nu",
+    "yjsnpimod:yj/kataku",
+    "yjsnpimod:yj/on",
+    "yjsnpimod:yj/osuonegai"
+     ]
   },
      "yj.antiproliferation": {
     "category": "block",
     "subtitle": "yjsnpimod.subtitle.yj.antiproliferation",
-    "sounds": [ "yjsnpimod:yj/fa","yjsnpimod:yj/hun","yjsnpimod:yj/kataku","yjsnpimod:yj/nu","yjsnpimod:yj/nuwatikareta","yjsnpimod:yj/yokuwakaranakattadesu","yjsnpimod:yj/za" ]
+    "sounds": [ 
+    "yjsnpimod:yj/fa",
+    "yjsnpimod:yj/hun",
+    "yjsnpimod:yj/kataku",
+    "yjsnpimod:yj/nu",
+    "yjsnpimod:yj/nuwatikareta",
+    "yjsnpimod:yj/yokuwakaranakattadesu",
+    "yjsnpimod:yj/za" 
+    ]
+  },
+     "yj.damege": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.damege",
+    "sounds": [ 
+    "yjsnpimod:yj/fa",
+    "yjsnpimod:yj/hun",
+    "yjsnpimod:yj/iiyokoiyo",
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/nu",
+    "yjsnpimod:yj/on",
+    "yjsnpimod:yj/onaon",
+    "yjsnpimod:yj/za"
+     ]
+  },
+     "yj.overwrite": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.overwrite",
+    "sounds": [ 
+    "yjsnpimod:yj/buttipa",
+    "yjsnpimod:yj/dasoutoomoeba",
+    "yjsnpimod:yj/dedemasuyo",
+    "yjsnpimod:yj/fa",
+    "yjsnpimod:yj/fookimatii",
+    "yjsnpimod:yj/gakuseidesu",
+    "yjsnpimod:yj/horahorahora",
+    "yjsnpimod:yj/hun",
+    "yjsnpimod:yj/iiyokoiyo",
+    "yjsnpimod:yj/ikisugi",
+    "yjsnpimod:yj/kataku",
+    "yjsnpimod:yj/mazuutisaxa",
+    "yjsnpimod:yj/nijuyonsai",
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/nu",
+    "yjsnpimod:yj/nuwatikareta",
+    "yjsnpimod:yj/on",
+    "yjsnpimod:yj/onaon",
+    "yjsnpimod:yj/osuonegai",
+    "yjsnpimod:yj/syu",
+    "yjsnpimod:yj/nna",
+    "yjsnpimod:yj/taizyuandsintyou",
+    "yjsnpimod:yj/yarimasunexe",
+    "yjsnpimod:yj/yokuwakaranakattadesu",
+    "yjsnpimod:yj/za"
+     ]
+  },
+     "mezikara.all": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.all",
+    "sounds": [ "yjsnpimod:mezikara/all" ]
+  },
+     "mezikara.n1": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.n1",
+    "sounds": [ "yjsnpimod:mezikara/n1" ]
+  },
+     "mezikara.n2": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.n2",
+    "sounds": [ "yjsnpimod:mezikara/n2" ]
+  },
+     "mezikara.n3": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.n3",
+    "sounds": [ "yjsnpimod:mezikara/n3" ]
+  },
+     "mezikara.hontai": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.hontai",
+    "sounds": [ "yjsnpimod:mezikara/hontai" ]
+  },
+     "mezikara.maeburi": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.maeburi",
+    "sounds": [ "yjsnpimod:mezikara/maeburi" ]
+  },
+     "mezikara.ns": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.mezikara.ns",
+    "sounds": [ 
+    "yjsnpimod:mezikara/n1",
+    "yjsnpimod:mezikara/n2",
+    "yjsnpimod:mezikara/n3" 
+    ]
+  },
+     "ton.all": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.all",
+    "sounds": [ "yjsnpimod:ton/all" ]
+  },
+     "ton.sekainoton": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.sekainoton",
+    "sounds": [ "yjsnpimod:ton/sekainoton" ]
+  },
+     "ton.a1": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.a1",
+    "sounds": [ "yjsnpimod:ton/a1" ]
+  },
+     "ton.a2": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.a2",
+    "sounds": [ "yjsnpimod:ton/a2" ]
+  },
+     "ton.a3": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.a3",
+    "sounds": [ "yjsnpimod:ton/a3" ]
+  },
+     "ton.a4": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.ton.a4",
+    "sounds": [ "yjsnpimod:ton/a4" ]
+  },
+     "ton.stagger": {
+    "category": "voice",
+    "subtitle": "yjsnpimod.subtitle.ton.stagger",
+    "sounds": [ 
+    "yjsnpimod:ton/a1",
+    "yjsnpimod:ton/a2",
+    "yjsnpimod:ton/a3",
+    "yjsnpimod:ton/a4" 
+    ]
   }
 }

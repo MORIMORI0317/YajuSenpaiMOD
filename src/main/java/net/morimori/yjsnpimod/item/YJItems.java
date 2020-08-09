@@ -6,6 +6,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import red.felnull.otyacraftengine.item.HorseArmorItemByIKSG;
 
+import javax.annotation.Nonnull;
+
 public class YJItems {
     public static final Item YJ_ICON = new Item(new Item.Properties()).setRegistryName(YJSNPIMOD.MODID, "yj_icon");
 
@@ -41,6 +43,10 @@ public class YJItems {
     public static final Item YJSNPI_LEGGINGS = new ArmorItem(YJArmorMaterial.YJSNPI, EquipmentSlotType.LEGS, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_leggings");
     public static final Item YJSNPI_BOOTS = new ArmorItem(YJArmorMaterial.YJSNPI, EquipmentSlotType.FEET, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_boots");
 
+    public static final Item CYCLOPS_SUNGLASSES = new ArmorItem(YJArmorMaterial.CYCLOPS_SUNGLASSES, EquipmentSlotType.HEAD, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "cyclops_sunglasses");
+
+    public static final Item ICE_TEA = new IceTeaItem(new Item.Properties().group(YJItemGroup.MOD_TAB).food(YJFoods.ICE_TEA)).setRegistryName(YJSNPIMOD.MODID, "ice_tea");
+
 
     public static void registerItem(IForgeRegistry<Item> r) {
         registryItem(r, YJ_ICON);
@@ -73,12 +79,16 @@ public class YJItems {
         registryItem(r, YJSNPI_CHESTPLATE);
         registryItem(r, YJSNPI_LEGGINGS);
         registryItem(r, YJSNPI_BOOTS);
+
+        registryItem(r, CYCLOPS_SUNGLASSES);
+        registryItem(r, ICE_TEA);
     }
 
     private static void registryItem(IForgeRegistry<Item> r, Item i) {
         r.register(i);
     }
 
+    @Nonnull
     private static Item newFoodItem(String name, Food foos) {
         return new Item(new Item.Properties().group(YJItemGroup.MOD_TAB).food(foos)).setRegistryName(YJSNPIMOD.MODID, name);
     }

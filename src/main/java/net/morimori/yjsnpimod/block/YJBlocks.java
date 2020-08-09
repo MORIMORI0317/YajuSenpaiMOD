@@ -16,7 +16,7 @@ public class YJBlocks {
     public static final Block YJSNPI_INTERVIEW_BLOCK = newBlock("yjsnpi_interview_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_GOMANETSU_BLOCK = newBlock("yjsnpi_gomanetsu_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_ENNUI_BLOCK = newBlock("yjsnpi_ennui_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
-    public static final Block YJSNPI_MEZIKARA_BLOCK = newBlock("yjsnpi_mezikara_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
+    public static final Block YJSNPI_MEZIKARA_BLOCK = new MezikaraBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.MEZIKARA).hardnessAndResistance(1, 10f)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_mezikara_block");
     public static final Block YJSNPI_NEHAN_BLOCK = newBlock("yjsnpi_nehan_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_SHITARIGAO_BLOCK = newBlock("yjsnpi_shitarigao_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_IKISUGI_BLOCK = newBlock("yjsnpi_ikisugi_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
@@ -28,8 +28,10 @@ public class YJBlocks {
     public static final Block GOMANETSU_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, true, false).setRegistryName(YJSNPIMOD.MODID, "gomanetsu_proliferation_yjsnpi_block");
     public static final Block ANTI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false, true).setRegistryName(YJSNPIMOD.MODID, "anti_proliferation_yjsnpi_block");
 
-    public static final Block YJNIUM_ORE = new Block(AbstractBlock.Properties.create(YJMaterial.YJSNPI).func_235861_h_().hardnessAndResistance(3.0F, 3.0F).sound(SoundType.STONE)).setRegistryName("yjnium_ore");
-    public static final Block YJNIUM_BLOCK = new Block(AbstractBlock.Properties.create(YJMaterial.YJSNPI).func_235861_h_().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL)).setRegistryName("yjnium_block");
+    public static final Block YJNIUM_ORE = newBlock("yjnium_ore", Material.ROCK, SoundType.STONE, 3.0F, 3.0F);
+    public static final Block YJNIUM_BLOCK = newBlock("yjnium_block", Material.IRON, SoundType.METAL, 5.0F, 6.0F);
+
+    public static final Block TOILET = new ToiletBlock(AbstractBlock.Properties.create(Material.IRON).func_235861_h_().notSolid().hardnessAndResistance(1.0F, 3.0F).sound(SoundType.METAL)).setRegistryName("toilet");
 
     public static void registerBlock(IForgeRegistry<Block> r) {
         registryBlock(r, YJSNPI_INTERVIEW_BLOCK);
@@ -49,6 +51,8 @@ public class YJBlocks {
 
         registryBlock(r, YJNIUM_ORE);
         registryBlock(r, YJNIUM_BLOCK);
+
+        registryBlock(r, TOILET);
     }
 
     public static void registerItem(IForgeRegistry<Item> r) {
@@ -69,6 +73,8 @@ public class YJBlocks {
 
         registryBlockItem(r, YJNIUM_ORE);
         registryBlockItem(r, YJNIUM_BLOCK);
+
+        registryBlockItem(r, TOILET);
     }
 
     private static Block newBlock(String name, Material materialIn, SoundType sound, float hardness, float resistance) {
