@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IRegistryDelegate;
 import red.felnull.otyacraftengine.asm.lib.ObfuscationReflectionUtil;
+import red.felnull.otyacraftengine.asm.lib.RefName;
 
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class ColorHandler {
     public static void onItemColor(ColorHandlerEvent.Item e) {
         ItemColors c = e.getItemColors();
 
-        Map<IRegistryDelegate<Item>, IItemColor> colors = ObfuscationReflectionUtil.getPrivateValue(ItemColors.class, c, "colors");
+        Map<IRegistryDelegate<Item>, IItemColor> colors = ObfuscationReflectionUtil.getPrivateValue(ItemColors.class, c, new RefName("colors", "field_186732_a"));
 
         c.register(new IItemColor() {
             public int getColor(ItemStack item, int layer) {

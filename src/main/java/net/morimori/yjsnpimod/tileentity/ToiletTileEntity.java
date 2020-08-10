@@ -8,7 +8,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.morimori.yjsnpimod.block.ToiletBlock;
 import net.morimori.yjsnpimod.item.YJItems;
-import red.felnull.otyacraftengine.client.handler.ClientHandler;
 import red.felnull.otyacraftengine.tileentity.IClientSyncbleTileEntity;
 import red.felnull.otyacraftengine.tileentity.IkisugiTileEntity;
 

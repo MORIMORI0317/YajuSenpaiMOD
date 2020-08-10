@@ -20,9 +20,9 @@ import net.morimori.yjsnpimod.tileentity.BigPillowTileEntity;
 import javax.annotation.Nullable;
 
 public class BigPillowBlock extends HorizontalBlock implements IWaterLoggable {
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape ATARIZ = Block.makeCuboidShape(3, 0, 0, 13, 3, 16);
     private static final VoxelShape ATARIX = Block.makeCuboidShape(0, 0, 3, 16, 3, 13);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public BigPillowBlock(Properties builder) {
         super(builder);

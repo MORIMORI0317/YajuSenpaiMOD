@@ -22,8 +22,8 @@ import red.felnull.otyacraftengine.client.util.IKSGRenderUtil;
 
 public class RenderHandler {
 
-    private static Minecraft mc = Minecraft.getInstance();
     public static final ResourceLocation CYCLOPS_SUNGLASSES = new ResourceLocation(YJSNPIMOD.MODID, "textures/misc/cyclops_sunglasses.png");
+    private static Minecraft mc = Minecraft.getInstance();
 
     @SubscribeEvent
     public static void onRender(TickEvent.RenderTickEvent e) {

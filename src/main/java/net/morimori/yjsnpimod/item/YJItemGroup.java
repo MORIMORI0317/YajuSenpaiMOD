@@ -2,7 +2,6 @@ package net.morimori.yjsnpimod.item;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.morimori.yjsnpimod.YJSNPIMOD;

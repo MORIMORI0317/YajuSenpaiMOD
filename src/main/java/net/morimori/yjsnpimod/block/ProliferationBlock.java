@@ -12,18 +12,18 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
-import net.morimori.yjsnpimod.YJSoundEvents;
 import net.morimori.yjsnpimod.YJGamerules;
+import net.morimori.yjsnpimod.YJSoundEvents;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class ProliferationBlock extends Block {
+    public static final IntegerProperty PROLIFERATION = YJBlockStateProperties.PROLIFERATION_0_19;
     private boolean penetration;
     private boolean safety;
     private boolean anti;
-    public static final IntegerProperty PROLIFERATION = YJBlockStateProperties.PROLIFERATION_0_19;
 
     public ProliferationBlock(Properties properties, boolean penetration, boolean safety, boolean anti) {
         super(properties.tickRandomly());
