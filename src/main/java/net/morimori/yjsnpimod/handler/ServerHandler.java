@@ -140,6 +140,13 @@ public class ServerHandler {
                 LivingEntity entity = (LivingEntity) e.getTarget();
                 e.getEntityLiving().world.playSound((PlayerEntity) null, e.getEntityLiving().getPosX(), e.getEntityLiving().getPosY(), e.getEntityLiving().getPosZ(), YJSoundEvents.YJ_IKISUGI, SoundCategory.VOICE, 3, 1);
                 entity.addPotionEffect(new EffectInstance(YJEffects.CUM, 220, 0));
+                Random r = new Random();
+                if (r.nextInt(19) == 0) {
+                    e.getEntityLiving().addPotionEffect(new EffectInstance(YJEffects.CUM, 220, 0));
+                }
+                if (!e.getPlayer().isCreative()) {
+                    stack.shrink(1);
+                }
             }
         }
     }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "key": {
+    "Y": {
+      "item": "yjsnpimod:yjsnpi_gomanetsu_block"
+    },
+    "X": {
+      "tag": "forge:nuggets/yjsnpi"
+    },
+    "Z": {
+      "item": "yjsnpimod:yj_core"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:gomanetsu_proliferation_yjsnpi_block"
+  }
+}

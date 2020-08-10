@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "yjsnpimod:yjsnpi_interview_block",
+    "yjsnpimod:yjsnpi_gomanetsu_block",
+    "yjsnpimod:yjsnpi_ennui_block",
+    "yjsnpimod:yjsnpi_mezikara_block",
+    "yjsnpimod:yjsnpi_nehan_block",
+    "yjsnpimod:yjsnpi_shitarigao_block",
+    "yjsnpimod:yjsnpi_ikisugi_block",
+    "yjsnpimod:yjsnpi_imdkoji_block",
+    "yjsnpimod:yjsnpi_kunekune_block"
+  ]
+}

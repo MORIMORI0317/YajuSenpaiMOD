@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "YZA",
+    " B "
+  ],
+  "key": {
+    "Y": {
+      "item": "yjsnpimod:big_pillow"
+    },
+    "X": {
+      "tag": "yjsnpimod:yjsnpi_block"
+    },
+    "Z": {
+      "item": "yjsnpimod:yj_core"
+    },
+    "A": {
+      "item": "yjsnpimod:soft_smartphone"
+    },
+    "B": {
+      "item": "yjsnpimod:cyclops_sunglasses"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:yj_core"
+  }
+}

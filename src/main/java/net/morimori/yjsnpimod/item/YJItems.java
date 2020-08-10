@@ -10,14 +10,11 @@ import javax.annotation.Nonnull;
 
 public class YJItems {
     public static final Item YJ_ICON = new Item(new Item.Properties()).setRegistryName(YJSNPIMOD.MODID, "yj_icon");
-
     public static final Item YJ_CORE = newItem("yj_core");
     public static final Item YJ_STAR = new SimpleFoiledItem(new Item.Properties().group(YJItemGroup.MOD_TAB).rarity(Rarity.UNCOMMON)).setRegistryName(YJSNPIMOD.MODID, "yj_star");
-
-    public static final Item YJNIUM_INGOT = newItem("yjnium_ingot");
+    public static final Item YJNIUM_INGOT = new DetarItem(new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_ingot");
     public static final Item YJNIUM_NUGGET = newItem("yjnium_nugget");
     public static final Item YJNIUM_HORSE_ARMOR = new HorseArmorItemByIKSG(5, (new Item.Properties()).maxStackSize(1).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_horse_armor");
-
     public static final Item YJNIUM_SWORD = new SwordItem(YJItemTiers.YJNIUM, 3, -2.4F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_sword");
     public static final Item YJNIUM_PICKAXE = new PickaxeItem(YJItemTiers.YJNIUM, 1, -2.8F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_pickaxe");
     public static final Item YJNIUM_AXE = new AxeItem(YJItemTiers.YJNIUM, 6.0F, -3.1F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_axe");
@@ -27,11 +24,9 @@ public class YJItems {
     public static final Item YJNIUM_CHESTPLATE = new ArmorItem(YJArmorMaterial.YJNIUM, EquipmentSlotType.CHEST, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_chestplate");
     public static final Item YJNIUM_LEGGINGS = new ArmorItem(YJArmorMaterial.YJNIUM, EquipmentSlotType.LEGS, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_leggings");
     public static final Item YJNIUM_BOOTS = new ArmorItem(YJArmorMaterial.YJNIUM, EquipmentSlotType.FEET, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjnium_boots");
-
-    public static final Item YJSNPI_INGOT = newItem("yjsnpi_ingot");
+    public static final Item YJSNPI_INGOT = new DetarItem(new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_ingot");
     public static final Item YJSNPI_NUGGET = newItem("yjsnpi_nugget");
     public static final Item YJSNPI_HORSE_ARMOR = new HorseArmorItemByIKSG(5, (new Item.Properties()).maxStackSize(1).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_horse_armor");
-
     public static final Item YJSNPI_SWORD = new YJSwordItem(YJItemTiers.YJSNPI, 3, -2.4F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_sword");
     public static final Item YJSNPI_PICKAXE = new PickaxeItem(YJItemTiers.YJSNPI, 1, -2.8F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_pickaxe");
     public static final Item YJSNPI_AXE = new AxeItem(YJItemTiers.YJSNPI, 6.0F, -3.1F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_axe");
@@ -41,15 +36,11 @@ public class YJItems {
     public static final Item YJSNPI_CHESTPLATE = new ArmorItem(YJArmorMaterial.YJSNPI, EquipmentSlotType.CHEST, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_chestplate");
     public static final Item YJSNPI_LEGGINGS = new ArmorItem(YJArmorMaterial.YJSNPI, EquipmentSlotType.LEGS, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_leggings");
     public static final Item YJSNPI_BOOTS = new ArmorItem(YJArmorMaterial.YJSNPI, EquipmentSlotType.FEET, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "yjsnpi_boots");
-
     public static final Item CYCLOPS_SUNGLASSES = new CyclopsSunglassesItem(YJArmorMaterial.CYCLOPS_SUNGLASSES, EquipmentSlotType.HEAD, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "cyclops_sunglasses");
-
     public static final Item ICE_TEA = new IceTeaItem(new Item.Properties().group(YJItemGroup.MOD_TAB).food(YJFoods.ICE_TEA)).setRegistryName(YJSNPIMOD.MODID, "ice_tea");
-
     public static final Item JAKEN_YORUIKIMASYOUNE = new JakenSwordItem(YJItemTiers.JAKEN_YORUIKIMASYOUNE, 16, 806F, (new Item.Properties()).group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "jaken_yoruikimasyoune_sword");
     public static final Item JAKEN_YORUIKIMASYOU = new JakenShieldItem((new Item.Properties()).group(YJItemGroup.MOD_TAB).maxStackSize(1).maxDamage(114514)).setRegistryName(YJSNPIMOD.MODID, "jaken_yoruikimasyou_shield");
-
-    public static final Item SOFT_SMARTPHONE = new SoftSwordItem(new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(YJSNPIMOD.MODID, "soft_smartphone");
+    public static final Item SOFT_SMARTPHONE = new SoftSwordItem(new Item.Properties().group(YJItemGroup.MOD_TAB).maxStackSize(1)).setRegistryName(YJSNPIMOD.MODID, "soft_smartphone");
 
 
     public static void registerItem(IForgeRegistry<Item> r) {
@@ -68,7 +59,6 @@ public class YJItems {
         registryItem(r, YJNIUM_LEGGINGS);
         registryItem(r, YJNIUM_BOOTS);
         registryItem(r, YJNIUM_HORSE_ARMOR);
-
         registryItem(r, YJSNPI_INGOT);
         registryItem(r, YJSNPI_NUGGET);
         registryItem(r, YJSNPI_HORSE_ARMOR);
@@ -82,11 +72,9 @@ public class YJItems {
         registryItem(r, YJSNPI_CHESTPLATE);
         registryItem(r, YJSNPI_LEGGINGS);
         registryItem(r, YJSNPI_BOOTS);
-
         registryItem(r, CYCLOPS_SUNGLASSES);
         registryItem(r, ICE_TEA);
         registryItem(r, SOFT_SMARTPHONE);
-
         registryItem(r, JAKEN_YORUIKIMASYOUNE);
         registryItem(r, JAKEN_YORUIKIMASYOU);
     }

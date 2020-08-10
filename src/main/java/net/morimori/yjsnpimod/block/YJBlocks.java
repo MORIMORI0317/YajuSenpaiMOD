@@ -23,15 +23,12 @@ public class YJBlocks {
     public static final Block YJSNPI_IKISUGI_BLOCK = newBlock("yjsnpi_ikisugi_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_IMDKOJI_BLOCK = newBlock("yjsnpi_imdkoji_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_KUNEKUNE_BLOCK = newBlock("yjsnpi_kunekune_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
-
     public static final Block PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false, false).setRegistryName(YJSNPIMOD.MODID, "proliferation_yjsnpi_block");
     public static final Block IKISUGI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), true, false, false).setRegistryName(YJSNPIMOD.MODID, "ikisugi_proliferation_yjsnpi_block");
     public static final Block GOMANETSU_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, true, false).setRegistryName(YJSNPIMOD.MODID, "gomanetsu_proliferation_yjsnpi_block");
     public static final Block ANTI_PROLIFERATION_YJSNPI_BLOCK = new ProliferationBlock(AbstractBlock.Properties.create(YJMaterial.YJSNPI).sound(YJSoundType.YJ).hardnessAndResistance(1, 10f), false, false, true).setRegistryName(YJSNPIMOD.MODID, "anti_proliferation_yjsnpi_block");
-
     public static final Block YJNIUM_ORE = newBlock("yjnium_ore", Material.ROCK, SoundType.STONE, 3.0F, 3.0F);
     public static final Block YJNIUM_BLOCK = newBlock("yjnium_block", Material.IRON, SoundType.METAL, 5.0F, 6.0F);
-
     public static final Block TOILET = new ToiletBlock(AbstractBlock.Properties.create(Material.IRON).func_235861_h_().notSolid().hardnessAndResistance(1.0F, 3.0F).sound(SoundType.METAL)).setRegistryName("toilet");
     public static final Block BIG_PILLOW = new BigPillowBlock(AbstractBlock.Properties.create(Material.WOOL).func_235861_h_().notSolid().hardnessAndResistance(1.0F, 3.0F).sound(SoundType.SNOW)).setRegistryName("big_pillow");
 
@@ -45,15 +42,12 @@ public class YJBlocks {
         registryBlock(r, YJSNPI_IKISUGI_BLOCK);
         registryBlock(r, YJSNPI_IMDKOJI_BLOCK);
         registryBlock(r, YJSNPI_KUNEKUNE_BLOCK);
-
         registryBlock(r, PROLIFERATION_YJSNPI_BLOCK);
         registryBlock(r, IKISUGI_PROLIFERATION_YJSNPI_BLOCK);
         registryBlock(r, GOMANETSU_PROLIFERATION_YJSNPI_BLOCK);
         registryBlock(r, ANTI_PROLIFERATION_YJSNPI_BLOCK);
-
         registryBlock(r, YJNIUM_ORE);
         registryBlock(r, YJNIUM_BLOCK);
-
         registryBlock(r, TOILET);
         registryBlock(r, BIG_PILLOW);
     }
@@ -68,17 +62,14 @@ public class YJBlocks {
         registryBlockItem(r, YJSNPI_IKISUGI_BLOCK);
         registryBlockItem(r, YJSNPI_IMDKOJI_BLOCK);
         registryBlockItem(r, YJSNPI_KUNEKUNE_BLOCK, "https://www.nicovideo.jp/watch/sm25608032");
-
         r.register(new ProliferationBlockItem(PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(IKISUGI_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(IKISUGI_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(GOMANETSU_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(GOMANETSU_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(ANTI_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(ANTI_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
-
         registryBlockItem(r, YJNIUM_ORE);
         registryBlockItem(r, YJNIUM_BLOCK);
-
         registryBlockItem(r, TOILET);
-        registryBlockItem(r, BIG_PILLOW);
+        registryBlockItem(r, BIG_PILLOW, "https://www.nicovideo.jp/watch/sm19360333");
     }
 
     private static Block newBlock(String name, Material materialIn, SoundType sound, float hardness, float resistance) {
