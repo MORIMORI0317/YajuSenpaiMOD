@@ -30,6 +30,7 @@ public class YJSoundEvents {
     public static final SoundEvent YJ_YOKUWAKARANAKATTADESU = newSound("yj.yokuwakaranakattadesu");
     public static final SoundEvent YJ_ZA = newSound("yj.za");
     public static final SoundEvent YJ_OTTODAIJOUBUKA = newSound("yj.ottodaijoubuka");
+    public static final SoundEvent YJ_BUTTIPA_MIZIKAME = newSound("yj.buttipa_mizikame");
 
 
     public static final SoundEvent YJ_BREAK = newSound("yj.break");
@@ -43,6 +44,7 @@ public class YJSoundEvents {
     public static final SoundEvent YJ_ANTIPROLIFERATION = newSound("yj.antiproliferation");
     public static final SoundEvent YJ_DAMEGE = newSound("yj.damege");
     public static final SoundEvent YJ_OVERWRITE = newSound("yj.overwrite");
+    public static final SoundEvent YJ_ATTACK = newSound("yj.attack");
 
     public static final SoundEvent MEZIKARA_ALL = newSound("mezikara.all");
     public static final SoundEvent MEZIKARA_N1 = newSound("mezikara.n1");
@@ -59,6 +61,16 @@ public class YJSoundEvents {
     public static final SoundEvent TON_A3 = newSound("ton.a3");
     public static final SoundEvent TON_A4 = newSound("ton.a4");
     public static final SoundEvent TON_STAGGER = newSound("ton.stagger");
+
+    public static final SoundEvent CYCLOPS_POPOPOPO = newSound("cyclops.popopopo");
+    public static final SoundEvent CYCLOPS_AIKISO = newSound("cyclops.aikiso");
+    public static final SoundEvent CYCLOPS_BADY = newSound("cyclops.bady");
+    public static final SoundEvent CYCLOPS_CAPTURE = newSound("cyclops.capture");
+    public static final SoundEvent CYCLOPS_EVERY = newSound("cyclops.every");
+    public static final SoundEvent CYCLOPS_NAZOOTO = newSound("cyclops.nazooto");
+    public static final SoundEvent CYCLOPS_SANDSTOME = newSound("cyclops.sandstome");
+
+    public static final SoundEvent CYCLOPS_SANGRASSED = newSound("cyclops.sangrassed");
 
 
     public static void registerSoundEvent(IForgeRegistry<SoundEvent> r) {
@@ -88,6 +100,7 @@ public class YJSoundEvents {
         registrySoundEvent(r, YJ_YOKUWAKARANAKATTADESU);
         registrySoundEvent(r, YJ_ZA);
         registrySoundEvent(r, YJ_OTTODAIJOUBUKA);
+        registrySoundEvent(r, YJ_BUTTIPA_MIZIKAME);
 
         registrySoundEvent(r, YJ_BREAK);
         registrySoundEvent(r, YJ_PLACE);
@@ -100,6 +113,7 @@ public class YJSoundEvents {
         registrySoundEvent(r, YJ_ANTIPROLIFERATION);
         registrySoundEvent(r, YJ_DAMEGE);
         registrySoundEvent(r, YJ_OVERWRITE);
+        registrySoundEvent(r, YJ_ATTACK);
 
         registrySoundEvent(r, MEZIKARA_ALL);
         registrySoundEvent(r, MEZIKARA_N1);
@@ -116,6 +130,15 @@ public class YJSoundEvents {
         registrySoundEvent(r, TON_A3);
         registrySoundEvent(r, TON_A4);
         registrySoundEvent(r, TON_STAGGER);
+
+        registrySoundEvent(r, CYCLOPS_POPOPOPO);
+        registrySoundEvent(r, CYCLOPS_AIKISO);
+        registrySoundEvent(r, CYCLOPS_BADY);
+        registrySoundEvent(r, CYCLOPS_CAPTURE);
+        registrySoundEvent(r, CYCLOPS_EVERY);
+        registrySoundEvent(r, CYCLOPS_NAZOOTO);
+        registrySoundEvent(r, CYCLOPS_SANDSTOME);
+        registrySoundEvent(r, CYCLOPS_SANGRASSED);
     }
 
     private static void registrySoundEvent(IForgeRegistry<SoundEvent> r, SoundEvent s) {

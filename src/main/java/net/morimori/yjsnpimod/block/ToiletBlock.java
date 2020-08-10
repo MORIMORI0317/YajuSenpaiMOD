@@ -17,8 +17,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.entity.ToiletSitEntity;
 import net.morimori.yjsnpimod.tileentity.ToiletTileEntity;
 import red.felnull.otyacraftengine.util.IKSGEntityUtil;
@@ -99,9 +101,16 @@ public class ToiletBlock extends HorizontalBlock {
                         }
                     }
                 } else {
-                    ToiletSitEntity tse = new ToiletSitEntity(worldIn);
-                    worldIn.addEntity(tse);
-                    return ActionResultType.SUCCESS;
+                    if (player.getRidingEntity() == null) {
+                        ToiletSitEntity tse = new ToiletSitEntity(worldIn);
+                        tse.setPosition(pos.getX() + 0.5f, pos.getY() + 0.2f, pos.getZ() + 0.5f);
+                        worldIn.addEntity(tse);
+                        player.startRiding(tse);
+                        if (worldIn.isRemote) {
+                            player.sendStatusMessage(new TranslationTextComponent("message.toilet.untisuru", YJSNPIMOD.proxy.getMinecraft().gameSettings.keyBindJump.func_238171_j_()), false);
+                        }
+                        return ActionResultType.SUCCESS;
+                    }
                 }
             }
         }

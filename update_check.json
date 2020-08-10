@@ -1,10 +1,10 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod",
   "1.16.1": {
-    "1.0": "The 2020 Release."
+    "1.2": "The 2020 Release."
   },
   "promos": {
-    "1.16.1-latest": "2020-1.0",
-    "1.16.1-recommended": "2020-1.0"
+    "1.16.1-latest": "2020-1.2",
+    "1.16.1-recommended": "2020-1.2"
   }
 }

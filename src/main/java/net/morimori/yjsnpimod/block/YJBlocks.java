@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.item.ProliferationBlockItem;
+import net.morimori.yjsnpimod.item.ReferenceBlockItem;
 import net.morimori.yjsnpimod.item.YJItemGroup;
 
 public class YJBlocks {
@@ -32,6 +33,7 @@ public class YJBlocks {
     public static final Block YJNIUM_BLOCK = newBlock("yjnium_block", Material.IRON, SoundType.METAL, 5.0F, 6.0F);
 
     public static final Block TOILET = new ToiletBlock(AbstractBlock.Properties.create(Material.IRON).func_235861_h_().notSolid().hardnessAndResistance(1.0F, 3.0F).sound(SoundType.METAL)).setRegistryName("toilet");
+    public static final Block BIG_PILLOW = new BigPillowBlock(AbstractBlock.Properties.create(Material.WOOL).func_235861_h_().notSolid().hardnessAndResistance(1.0F, 3.0F).sound(SoundType.SNOW)).setRegistryName("big_pillow");
 
     public static void registerBlock(IForgeRegistry<Block> r) {
         registryBlock(r, YJSNPI_INTERVIEW_BLOCK);
@@ -53,18 +55,19 @@ public class YJBlocks {
         registryBlock(r, YJNIUM_BLOCK);
 
         registryBlock(r, TOILET);
+        registryBlock(r, BIG_PILLOW);
     }
 
     public static void registerItem(IForgeRegistry<Item> r) {
         registryBlockItem(r, YJSNPI_INTERVIEW_BLOCK);
         registryBlockItem(r, YJSNPI_GOMANETSU_BLOCK);
         registryBlockItem(r, YJSNPI_ENNUI_BLOCK);
-        registryBlockItem(r, YJSNPI_MEZIKARA_BLOCK);
+        registryBlockItem(r, YJSNPI_MEZIKARA_BLOCK, "https://www.nicovideo.jp/watch/sm30519482");
         registryBlockItem(r, YJSNPI_NEHAN_BLOCK);
-        registryBlockItem(r, YJSNPI_SHITARIGAO_BLOCK);
+        registryBlockItem(r, YJSNPI_SHITARIGAO_BLOCK, "https://www.nicovideo.jp/watch/sm22931530");
         registryBlockItem(r, YJSNPI_IKISUGI_BLOCK);
         registryBlockItem(r, YJSNPI_IMDKOJI_BLOCK);
-        registryBlockItem(r, YJSNPI_KUNEKUNE_BLOCK);
+        registryBlockItem(r, YJSNPI_KUNEKUNE_BLOCK, "https://www.nicovideo.jp/watch/sm25608032");
 
         r.register(new ProliferationBlockItem(PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
         r.register(new ProliferationBlockItem(IKISUGI_PROLIFERATION_YJSNPI_BLOCK, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(IKISUGI_PROLIFERATION_YJSNPI_BLOCK.getRegistryName()));
@@ -75,6 +78,7 @@ public class YJBlocks {
         registryBlockItem(r, YJNIUM_BLOCK);
 
         registryBlockItem(r, TOILET);
+        registryBlockItem(r, BIG_PILLOW);
     }
 
     private static Block newBlock(String name, Material materialIn, SoundType sound, float hardness, float resistance) {
@@ -90,4 +94,7 @@ public class YJBlocks {
         r.register(new BlockItem(b, new Item.Properties().group(YJItemGroup.MOD_TAB)).setRegistryName(b.getRegistryName()));
     }
 
+    private static void registryBlockItem(IForgeRegistry<Item> r, Block b, String url) {
+        r.register(new ReferenceBlockItem(b, new Item.Properties().group(YJItemGroup.MOD_TAB), url).setRegistryName(b.getRegistryName()));
+    }
 }

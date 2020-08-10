@@ -4,7 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.morimori.yjsnpimod.block.ToiletBlock;
+import net.morimori.yjsnpimod.item.YJItems;
+import red.felnull.otyacraftengine.client.handler.ClientHandler;
 import red.felnull.otyacraftengine.tileentity.IClientSyncbleTileEntity;
 import red.felnull.otyacraftengine.tileentity.IkisugiTileEntity;
 
@@ -24,6 +28,25 @@ public class ToiletTileEntity extends IkisugiTileEntity implements ITickableTile
         return tag;
     }
 
+    public void bukkake() {
+        setBukkakeItem(bukkaededItem(getBukkakeItem()));
+    }
+
+    public ItemStack bukkaededItem(ItemStack stack) {
+
+        if (stack.getItem() == YJItems.YJNIUM_INGOT) {
+            return new ItemStack(YJItems.YJSNPI_INGOT, stack.getCount());
+        } else if (stack.getItem() == YJItems.YJSNPI_INGOT) {
+            return stack;
+        }
+
+        CompoundNBT tag = stack.getOrCreateTag();
+        tag.putBoolean("Bukkaked", true);
+        if (!(stack.getDisplayName() instanceof TranslationTextComponent) || !((TranslationTextComponent) stack.getDisplayName()).getKey().equals("item.yjsnpimod.bukkaeditem")) {
+            stack.setDisplayName(new TranslationTextComponent("item.yjsnpimod.bukkaeditem", stack.getDisplayName()).func_240699_a_(TextFormatting.GOLD));
+        }
+        return stack;
+    }
 
     @Override
     public void readByIKSG(BlockState state, CompoundNBT tag) {
