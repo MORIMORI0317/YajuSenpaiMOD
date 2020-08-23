@@ -3,8 +3,13 @@
   "1.16.1": {
     "1.2": "The 2020 Release."
   },
+  "1.16.2": {
+    "1.2.1": "Update for MC 1.16.2 and recipe bug fix"
+  },
   "promos": {
     "1.16.1-latest": "2020-1.2",
-    "1.16.1-recommended": "2020-1.2"
+    "1.16.1-recommended": "2020-1.2",
+    "1.16.2-latest": "2020-1.2.1",
+    "1.16.2-recommended": "2020-1.2.1"
   }
 }

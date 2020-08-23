@@ -11,4 +11,5 @@ public class YJEntityTypes {
     public static void registerEntity(IForgeRegistry<EntityType<?>> r) {
         r.register(TOILET_SIT.setRegistryName(YJSNPIMOD.MODID, "toilet_sit"));
     }
+
 }

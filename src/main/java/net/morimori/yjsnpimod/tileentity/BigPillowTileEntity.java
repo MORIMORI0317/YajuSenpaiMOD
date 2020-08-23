@@ -1,6 +1,8 @@
 package net.morimori.yjsnpimod.tileentity;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -37,5 +39,15 @@ public class BigPillowTileEntity extends IkisugiTileEntity implements ITickableT
         List<LivingEntity> entitysf = world.getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(pos.getX() - 5, pos.getY(), pos.getZ() - 5, pos.getX() + 5, pos.getY() + 5, pos.getZ() + 5), n -> n.isAlive());
         entitysf.stream().filter(n -> n.getHeldItemMainhand().getItem() == YJItems.SOFT_SMARTPHONE).forEach(n -> n.addPotionEffect(new EffectInstance(YJEffects.BEASTFICTION, 10, 0)));
 
+    }
+
+    @Override
+    public CompoundNBT instructionFromClient(ServerPlayerEntity serverPlayerEntity, String s, CompoundNBT compoundNBT) {
+        return null;
+    }
+
+    @Override
+    public boolean canInteractWith(ServerPlayerEntity serverPlayerEntity, String s, CompoundNBT compoundNBT) {
+        return false;
     }
 }

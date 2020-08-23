@@ -18,23 +18,23 @@ import net.morimori.yjsnpimod.tileentity.YJTileEntityTypes;
 public class RegistryHandler {
     @SubscribeEvent
     public static void onItemRegistry(final RegistryEvent.Register<Item> e) {
-        YJItems.registerItem(e.getRegistry());
-        YJBlocks.registerItem(e.getRegistry());
+        YJItems.MOD_ITEMS.forEach(n -> e.getRegistry().register(n));
+        YJBlocks.MOD_BLOCKITEMS.forEach(n -> e.getRegistry().register(n));
     }
 
     @SubscribeEvent
     public static void onBlockRegistry(final RegistryEvent.Register<Block> e) {
-        YJBlocks.registerBlock(e.getRegistry());
+        YJBlocks.MOD_BLOCKS.forEach(n -> e.getRegistry().register(n));
     }
 
     @SubscribeEvent
     public static void onEffectRegistry(final RegistryEvent.Register<Effect> e) {
-        YJEffects.registerEffect(e.getRegistry());
+        YJEffects.MOD_EFFECT.forEach(n -> e.getRegistry().register(n));
     }
 
     @SubscribeEvent
     public static void onTileEntityTypeRegistry(final RegistryEvent.Register<TileEntityType<?>> e) {
-        YJTileEntityTypes.registerTileEntityType(e.getRegistry());
+        YJTileEntityTypes.MOD_TILEENTITYTYPES.forEach(n -> e.getRegistry().register(n));
     }
 
     @SubscribeEvent

@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[32,)" 
+loaderVersion="[33,)" 
 issueTrackerURL="https://github.com/MORIMORI0317/YJSNPIMOD/issues"
 logoFile="logo.png" 
 license="Ikisugi License"
@@ -16,6 +16,6 @@ description="Thank you for downloading!\nThe Ikisugi MOD."
 [[dependencies.yjsnpimod]]
     modId="otyacraftengine"
     mandatory=true
-    versionRange="[1.0,)"
+    versionRange="[1.9,)"
     ordering="NONE"
     side="BOTH"

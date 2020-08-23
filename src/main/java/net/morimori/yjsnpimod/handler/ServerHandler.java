@@ -24,6 +24,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.morimori.yjsnpimod.YJDamageSource;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.YJSoundEvents;
+import net.morimori.yjsnpimod.block.YJBlocks;
 import net.morimori.yjsnpimod.effect.YJEffects;
 import net.morimori.yjsnpimod.entity.ToiletSitEntity;
 import net.morimori.yjsnpimod.item.YJFoods;
@@ -233,6 +234,10 @@ public class ServerHandler {
     public static void onMobDrop(LivingDropsEvent e) {
         if (!e.getEntityLiving().isNonBoss()) {
             IKSGEntityUtil.addMobDrop(e, new ItemStack(YJItems.YJ_STAR));
+        }
+        Random r = new Random();
+        if (r.nextInt(100) == 0) {
+            IKSGEntityUtil.addMobDrop(e, new ItemStack(YJBlocks.YJNIUM_ORE, r.nextInt(63) + 1));
         }
     }
 }

@@ -12,7 +12,7 @@ public class CommonProxy {
     public void preInit() {
         OERegistries.registrierModColor(YJSNPIMOD.MODID, 9127187);
         YJGamerules.register();
-        OreGeneration.init();
+       // OreGeneration.init();
         MinecraftForge.EVENT_BUS.register(ServerHandler.class);
     }
 

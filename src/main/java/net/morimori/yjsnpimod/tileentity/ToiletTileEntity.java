@@ -1,6 +1,7 @@
 package net.morimori.yjsnpimod.tileentity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -11,7 +12,7 @@ import net.morimori.yjsnpimod.item.YJItems;
 import red.felnull.otyacraftengine.tileentity.IClientSyncbleTileEntity;
 import red.felnull.otyacraftengine.tileentity.IkisugiTileEntity;
 
-public class ToiletTileEntity extends IkisugiTileEntity implements ITickableTileEntity, IClientSyncbleTileEntity {
+public class ToiletTileEntity extends IkisugiTileEntity implements ITickableTileEntity {
     public float doorAngle;
     protected ItemStack bukkakeItem = ItemStack.EMPTY;
 
@@ -80,5 +81,15 @@ public class ToiletTileEntity extends IkisugiTileEntity implements ITickableTile
         }
 
         this.syncble(this);
+    }
+
+    @Override
+    public CompoundNBT instructionFromClient(ServerPlayerEntity serverPlayerEntity, String s, CompoundNBT compoundNBT) {
+        return null;
+    }
+
+    @Override
+    public boolean canInteractWith(ServerPlayerEntity serverPlayerEntity, String s, CompoundNBT compoundNBT) {
+        return false;
     }
 }
