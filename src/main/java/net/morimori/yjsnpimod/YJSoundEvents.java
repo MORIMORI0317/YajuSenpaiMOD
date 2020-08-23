@@ -76,7 +76,7 @@ public class YJSoundEvents {
     public static final SoundEvent CYCLOPS_SANDSTOME = register("cyclops.sandstome");
 
     public static final SoundEvent CYCLOPS_SANGRASSED = register("cyclops.sangrassed");
-    
+
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name)).setRegistryName(name);
         MOD_SOUNDS.add(se);
