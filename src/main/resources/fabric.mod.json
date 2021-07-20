@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "yjsnpimod",
+  "version": "${version}",
+  "name": "The YJSNPI MOD",
+  "description": "Thank you for downloading! The Ikisugi MOD.",
+  "authors": [
+    "MORIMORI0317"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod",
+    "sources": "https://github.com/MORIMORI0317/YJSNPIMOD"
+  },
+  "license": "LGPL v3",
+  "icon": "assets/yjsnpimod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.morimori.yjsnpimod.YJSNPIMOD"
+    ],
+    "client": [
+      "net.morimori.yjsnpimod.client.YJSNPIMODClient"
+    ]
+  },
+  "mixins": [
+    "yjsnpimod.mixins.json"
+  ],
+  "accessWidener": "yjsnpimod.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": ">=1.17",
+    "java": ">=16"
+  }
+}

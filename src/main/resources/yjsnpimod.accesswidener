@@ -1,0 +1,5 @@
+accessWidener	v1	named
+
+accessible method net/minecraft/world/item/PickaxeItem <init> (Lnet/minecraft/world/item/Tier;IFLnet/minecraft/world/item/Item$Properties;)V
+accessible method net/minecraft/world/item/AxeItem <init> (Lnet/minecraft/world/item/Tier;FFLnet/minecraft/world/item/Item$Properties;)V
+accessible method net/minecraft/world/item/HoeItem <init> (Lnet/minecraft/world/item/Tier;IFLnet/minecraft/world/item/Item$Properties;)V
