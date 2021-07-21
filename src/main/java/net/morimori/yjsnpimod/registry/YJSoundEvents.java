@@ -83,6 +83,8 @@ public class YJSoundEvents {
     public static final SoundEvent YJ_BU = register("yj.bu");
     public static final SoundEvent YJ_TI = register("yj.ti");
     public static final SoundEvent YJ_PA = register("yj.pa");
+    public static final SoundEvent KATYOU_NYA = register("katyou.nya");
+
 
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name));

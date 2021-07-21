@@ -22,6 +22,7 @@ public class YJDesertBiome {
         generationSettings.addStructureStart(StructureFeatures.VILLAGE_DESERT);
         generationSettings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
         generationSettings.addStructureStart(StructureFeatures.DESERT_PYRAMID);
+        generationSettings.addStructureStart(StructureFeatures.WOODLAND_MANSION);
         BiomeDefaultFeatures.addFossilDecoration(generationSettings);
 
         BiomeDefaultFeatures.addDefaultOverworldLandStructures(generationSettings);

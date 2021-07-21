@@ -14,6 +14,9 @@ public class YJHorseArmorItem extends HorseArmorItem {
 
     @Override
     public ResourceLocation getTexture() {
+        if (yjsnpi)
+            return new ResourceLocation(YJSNPIMOD.MODID, "textures/models/horse_armor/yjsnpi_horse_armor.png");
+
         return new ResourceLocation(YJSNPIMOD.MODID, "textures/models/horse_armor/yjnium_horse_armor.png");
     }
 }

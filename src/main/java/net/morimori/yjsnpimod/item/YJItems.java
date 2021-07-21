@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.morimori.yjsnpimod.YJSNPIMOD;
+import net.morimori.yjsnpimod.entity.YJEntityTypes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,9 +40,10 @@ public class YJItems {
     public static final Item YJSNPI_HELMET = register("yjsnpi_helmet", new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.HEAD, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
     public static final Item YJSNPI_CHESTPLATE = register("yjsnpi_chestplate", new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.CHEST, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
     public static final Item YJSNPI_LEGGINGS = register("yjsnpi_leggings", new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.LEGS, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
-    public static final Item YJSNPI_BOOTS = register("yjsnpi_boots", new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.FEET, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
+    public static final Item YJSNPI_BOOTS = register("yjsnpi_boots", new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.FEET, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
     public static final Item CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", new CyclopsSunglassesItem(YJArmorMaterials.CYCLOPS_SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+    public static final Item KATYOU_CAT_SPAWN_EGG = register("katyou_cat_spawn_egg", new SpawnEggItem(YJEntityTypes.KATYOU_CAT, 0xa87668, 0x131311, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
     private static Item register(String name) {
         return register(name, new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
