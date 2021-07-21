@@ -129,6 +129,8 @@
   "yjsnpimod.subtitle.yj.ti": "ti",
   "yjsnpimod.subtitle.yj.pa": "pa!",
   "yjsnpimod.subtitle.katyou.nya": "nya-",
+  "yjsnpimod.subtitle.katyou.broken": "Katyou Broken",
+  "yjsnpimod.subtitle.katyou": "Katyou",
   "_comment.g": "Gamerule",
   "gamerule.yjsnpiBlockProliferation": "Yjsnpi Block Proliferation",
   "_comment.c": "CreativeTab",

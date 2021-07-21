@@ -546,5 +546,36 @@
       "yjsnpimod:katyou/nya7",
       "yjsnpimod:katyou/nya8"
     ]
+  },
+  "katyou.broken": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.katyou.broken",
+    "sounds": [
+      "yjsnpimod:katyou/broken1",
+      "yjsnpimod:katyou/broken2"
+    ]
+  },
+  "katyou": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.katyou",
+    "sounds": [
+      "yjsnpimod:katyou/katyou1",
+      "yjsnpimod:katyou/katyou2",
+      "yjsnpimod:katyou/katyou3",
+      "yjsnpimod:katyou/katyou4",
+      "yjsnpimod:katyou/katyou5",
+      "yjsnpimod:katyou/katyou6",
+      "yjsnpimod:katyou/katyou7",
+      "yjsnpimod:katyou/katyou8",
+      "yjsnpimod:katyou/katyou9",
+      "yjsnpimod:katyou/katyou10",
+      "yjsnpimod:katyou/katyou11",
+      "yjsnpimod:katyou/katyou12",
+      "yjsnpimod:katyou/katyou13",
+      "yjsnpimod:katyou/katyou14",
+      "yjsnpimod:katyou/katyou15",
+      "yjsnpimod:katyou/katyou16",
+      "yjsnpimod:katyou/katyou17"
+    ]
   }
 }
