@@ -1,5 +1,6 @@
 package net.morimori.yjsnpimod.registry;
 
+import net.fabricmc.fabric.impl.dimension.FabricDimensionInternals;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -76,6 +77,12 @@ public class YJSoundEvents {
     public static final SoundEvent CYCLOPS_SANDSTOME = register("cyclops.sandstome");
 
     public static final SoundEvent CYCLOPS_SANGRASSED = register("cyclops.sangrassed");
+
+    public static final SoundEvent YJ_DOOR_OPEN = register("yj.door_open");
+    public static final SoundEvent YJ_DOOR_CLOSE = register("yj.door_close");
+    public static final SoundEvent YJ_BU = register("yj.bu");
+    public static final SoundEvent YJ_TI = register("yj.ti");
+    public static final SoundEvent YJ_PA = register("yj.pa");
 
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name));

@@ -4,6 +4,10 @@
   "package": "net.morimori.yjsnpimod.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "CactusBlockMixin",
+    "DoorBlockMixin",
+    "EntityMixin",
+    "SugarCaneBlockMixin"
   ],
   "client": [
   ],

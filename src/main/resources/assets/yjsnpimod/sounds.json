@@ -211,8 +211,8 @@
       "subtitle": "subtitles.block.generic.footsteps",
       "sounds": [
          "yjsnpimod:yj/hun",
-         "yjsnpimod:yj/kataku",
-         "yjsnpimod:yj/syu"
+         "yjsnpimod:yj/syu",
+         "yjsnpimod:yj/nu"
       ]
    },
    "yj.hit": {
@@ -465,7 +465,7 @@
    },
    "cyclops.nazooto": {
       "category": "voice",
-      "subtitle": "yjsnpimod.subtitle.tcyclopson.nazooto",
+      "subtitle": "yjsnpimod.subtitle.cyclops.nazooto",
       "sounds": [
          "yjsnpimod:cyclops/nazooto"
       ]
@@ -496,6 +496,41 @@
          "yjsnpimod:cyclops/every",
          "yjsnpimod:cyclops/popopopo",
          "yjsnpimod:cyclops/nazooto"
+      ]
+   },
+   "yj.door_open": {
+      "category": "block",
+      "subtitle": "yjsnpimod.subtitle.yj.door_open",
+      "sounds": [
+         "yjsnpimod:yj/door_open"
+      ]
+   },
+   "yj.door_close": {
+      "category": "block",
+      "subtitle": "yjsnpimod.subtitle.yj.door_close",
+      "sounds": [
+         "yjsnpimod:yj/door_close"
+      ]
+   },
+   "yj.bu": {
+      "category": "block",
+      "subtitle": "yjsnpimod.subtitle.yj.bu",
+      "sounds": [
+         "yjsnpimod:yj/bu"
+      ]
+   },
+   "yj.ti": {
+      "category": "block",
+      "subtitle": "yjsnpimod.subtitle.yj.ti",
+      "sounds": [
+         "yjsnpimod:yj/ti"
+      ]
+   },
+   "yj.pa": {
+      "category": "block",
+      "subtitle": "yjsnpimod.subtitle.yj.pa",
+      "sounds": [
+         "yjsnpimod:yj/pa"
       ]
    }
 }
