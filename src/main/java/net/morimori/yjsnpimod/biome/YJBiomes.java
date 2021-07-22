@@ -37,6 +37,7 @@ public class YJBiomes {
 
         IkisugiBiome.init();
         YJDesertBiome.init();
+        BBOcean.init();
     }
 
 

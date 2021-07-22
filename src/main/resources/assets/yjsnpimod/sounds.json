@@ -577,5 +577,19 @@
       "yjsnpimod:katyou/katyou16",
       "yjsnpimod:katyou/katyou17"
     ]
+  },
+  "yj.ikisugi_exploding": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.ikisugi_exploding",
+    "sounds": [
+      "yjsnpimod:yj/ikisugi_exploding"
+    ]
+  },
+  "yj.ikisugi_onry": {
+    "category": "block",
+    "subtitle": "yjsnpimod.subtitle.yj.ikisugi_onry",
+    "sounds": [
+      "yjsnpimod:yj/ikisugi_onry"
+    ]
   }
 }

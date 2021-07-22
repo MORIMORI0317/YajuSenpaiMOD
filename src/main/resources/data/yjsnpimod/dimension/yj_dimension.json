@@ -47,7 +47,7 @@
           }
         },
         {
-          "biome": "minecraft:ocean",
+          "biome": "yjsnpimod:bb_ocean",
           "parameters": {
             "altitude": 0,
             "temperature": 0,

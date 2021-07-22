@@ -3,6 +3,7 @@ package net.morimori.yjsnpimod.block;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -30,12 +31,20 @@ public class YJBlocks {
     public static final Block YJSNPI_IMDKOJI_BLOCK = register("yjsnpi_imdkoji_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_KUNEKUNE_BLOCK = register("yjsnpi_kunekune_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
 
+    public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.1f, 0f);
+    public static final Block YJSNPI_EXPLODING_BLOCK = register("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 10f)));
+
     public static final Block YJNIUM_ORE = register("yjnium_ore", Material.STONE, SoundType.STONE, 3.0F, 3.0F);
     public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
 
-    public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()));
 
     public static final Block YJ_SAND = register("yj_sand", new YJSandBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).sound(YJSoundType.YJ_SAND).strength(0.5F)));
+
+
+    private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
+        return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));
+    }
 
     private static Block register(String name, Material materialIn, SoundType sound, float hardness, float resistance) {
 

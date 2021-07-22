@@ -8,6 +8,7 @@
     "DoorBlockMixin",
     "EntityMixin",
     "EntityTypeMixin",
+    "ExplosionMixin",
     "SugarCaneBlockMixin"
   ],
   "client": [

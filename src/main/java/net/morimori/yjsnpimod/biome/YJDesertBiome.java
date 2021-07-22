@@ -47,7 +47,7 @@ public class YJDesertBiome {
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.DESERT)
-                .depth(0.125F)
+                .depth(-0.2F)
                 .scale(0.05F)
                 .temperature(2.0F)
                 .downfall(0.0F)

@@ -86,6 +86,8 @@ public class YJSoundEvents {
     public static final SoundEvent KATYOU_NYA = register("katyou.nya");
     public static final SoundEvent KATYOU_BROKEN = register("katyou.broken");
     public static final SoundEvent KATYOU = register("katyou");
+    public static final SoundEvent YJ_IKISUGI_EXPLODING = register("yj.ikisugi_exploding");
+    public static final SoundEvent YJ_IKISUGI_ONRY = register("yj.ikisugi_onry");
 
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name));
