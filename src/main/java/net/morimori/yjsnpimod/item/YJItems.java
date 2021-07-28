@@ -3,6 +3,7 @@ package net.morimori.yjsnpimod.item;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.entity.YJEntityTypes;
@@ -45,10 +46,15 @@ public class YJItems {
     public static final Item CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", new CyclopsSunglassesItem(YJArmorMaterials.CYCLOPS_SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     public static final Item KATYOU_CAT_SPAWN_EGG = register("katyou_cat_spawn_egg", new SpawnEggItem(YJEntityTypes.KATYOU_CAT, 0xa87668, 0x131311, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
-    public static final Item APPLE = register("apple");
+    public static final Item APPLE = register("apple", YJFoods.APPLE);
+    public static final Item ICE_TEA = register("ice_tea", YJFoods.APPLE);
 
     private static Item register(String name) {
         return register(name, new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+    }
+
+    private static Item register(String name, FoodProperties foods) {
+        return register(name, new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).food(foods)));
     }
 
     private static Item register(String name, Item item) {

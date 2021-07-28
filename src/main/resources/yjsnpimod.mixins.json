@@ -10,6 +10,8 @@
     "EntityTypeMixin",
     "ExplosionDamageCalculatorMixin",
     "LivingEntityMixin",
+    "MobMixin",
+    "StructurePieceMixin",
     "SugarCaneBlockMixin"
   ],
   "client": [
