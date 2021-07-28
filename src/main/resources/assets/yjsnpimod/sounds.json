@@ -580,16 +580,385 @@
   },
   "yj.ikisugi_exploding": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.ikisugi_exploding",
     "sounds": [
       "yjsnpimod:yj/ikisugi_exploding"
     ]
   },
   "yj.ikisugi_onry": {
     "category": "block",
-    "subtitle": "yjsnpimod.subtitle.yj.ikisugi_onry",
     "sounds": [
       "yjsnpimod:yj/ikisugi_onry"
+    ]
+  },
+  "ton.aaiissune": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/aaiissune"
+    ]
+  },
+  "ton.haesuggoiookii": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/haesuggoiookii"
+    ]
+  },
+  "ton.honotuniookkiisune": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/honotuniookkiisune"
+    ]
+  },
+  "ton.iytyottohontoni": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/iytyottohontoni"
+    ]
+  },
+  "ton.kyouhatukaremasitayo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/kyouhatukaremasitayo"
+    ]
+  },
+  "ton.mazuidesuyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/mazuidesuyo"
+    ]
+  },
+  "ton.nanisurunsuka": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/nanisurunsuka"
+    ]
+  },
+  "ton.senapai": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/senapai"
+    ]
+  },
+  "ton.tadokorosanmazuidesuyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/tadokorosanmazuidesuyo"
+    ]
+  },
+  "ton.umou": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/umou"
+    ]
+  },
+  "ton.yametekudasaiyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/yametekudasaiyo"
+    ]
+  },
+  "ton.yametekudasaiyohonotni": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:ton/yametekudasaiyohonotni"
+    ]
+  },
+  "ton.break": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yjsnpimod:ton/mazuidesuyo",
+      "yjsnpimod:ton/sekainoton",
+      "yjsnpimod:ton/senapai",
+      "yjsnpimod:ton/umou"
+    ]
+  },
+  "ton.place": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yjsnpimod:ton/aaiissune",
+      "yjsnpimod:ton/haesuggoiookii",
+      "yjsnpimod:ton/honotuniookkiisune",
+      "yjsnpimod:ton/umou"
+    ]
+  },
+  "ton.step": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yjsnpimod:ton/a1",
+      "yjsnpimod:ton/a2",
+      "yjsnpimod:ton/a3",
+      "yjsnpimod:ton/a4",
+      "yjsnpimod:ton/umou",
+      "yjsnpimod:ton/kyouhatukaremasitayo"
+    ]
+  },
+  "ton.hit": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yjsnpimod:ton/iytyottohontoni",
+      "yjsnpimod:ton/mazuidesuyo",
+      "yjsnpimod:ton/nanisurunsuka",
+      "yjsnpimod:ton/senapai",
+      "yjsnpimod:ton/tadokorosanmazuidesuyo",
+      "yjsnpimod:ton/yametekudasaiyohonotni",
+      "yjsnpimod:ton/yametekudasaiyo"
+    ]
+  },
+  "ton.fall": {
+    "category": "block",
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yjsnpimod:ton/senapai",
+      "yjsnpimod:ton/haesuggoiookii",
+      "yjsnpimod:ton/yametekudasaiyohonotni"
+    ]
+  },
+  "kmr.arigatogozaimasu": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/arigatogozaimasu"
+    ]
+  },
+  "kmr.e": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/e"
+    ]
+  },
+  "kmr.iyamitenaidesuyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/iyamitenaidesuyo"
+    ]
+  },
+  "kmr.iyasonnnakoto": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/iyasonnnakoto"
+    ]
+  },
+  "kmr.iyaxasonna": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/iyaxasonna"
+    ]
+  },
+  "kmr.nandemiruhituyougaarundesuka": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/nandemiruhituyougaarundesuka"
+    ]
+  },
+  "kmr.naokidesu": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/naokidesu"
+    ]
+  },
+  "kmr.yametekureyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:kmr/yametekureyo"
+    ]
+  },
+  "kmr.break": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yjsnpimod:kmr/e",
+      "yjsnpimod:kmr/yametekureyo"
+    ]
+  },
+  "kmr.place": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yjsnpimod:kmr/naokidesu",
+      "yjsnpimod:kmr/arigatogozaimasu",
+      "yjsnpimod:kmr/nandemiruhituyougaarundesuka",
+      "yjsnpimod:kmr/iyaxasonna"
+    ]
+  },
+  "kmr.step": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yjsnpimod:kmr/yametekureyo"
+    ]
+  },
+  "kmr.hit": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yjsnpimod:kmr/iyasonnnakoto",
+      "yjsnpimod:kmr/iyamitenaidesuyo",
+      "yjsnpimod:kmr/yametekureyo"
+    ]
+  },
+  "kmr.fall": {
+    "category": "block",
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yjsnpimod:kmr/yametekureyo"
+    ]
+  },
+  "mur.atarimaedayona": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/atarimaedayona"
+    ]
+  },
+  "mur.attu": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/attu"
+    ]
+  },
+  "mur.dousukkana": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/dousukkana"
+    ]
+  },
+  "mur.harahettana": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/harahettana"
+    ]
+  },
+  "mur.iizokore": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/iizokore"
+    ]
+  },
+  "mur.ikiteena": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/ikiteena"
+    ]
+  },
+  "mur.miroyomiroyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/miroyomiroyo"
+    ]
+  },
+  "mur.mitakeryamiseteyaruyo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/mitakeryamiseteyaruyo"
+    ]
+  },
+  "mur.oimate": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/oimate"
+    ]
+  },
+  "mur.ossudana": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/ossudana"
+    ]
+  },
+  "mur.pottyama": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/pottyama"
+    ]
+  },
+  "mur.soudayo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/soudayo"
+    ]
+  },
+  "mur.suggekitukattazo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/suggekitukattazo"
+    ]
+  },
+  "mur.tiratiramitetadaro": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/tiratiramitetadaro"
+    ]
+  },
+  "mur.uresiidaro": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/uresiidaro"
+    ]
+  },
+  "mur.usotukezettaimitetazo": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/usotukezettaimitetazo"
+    ]
+  },
+  "mur.assokka": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:mur/assokka"
+    ]
+  },
+  "mur.break": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yjsnpimod:mur/assokka",
+      "yjsnpimod:mur/uresiidaro",
+      "yjsnpimod:mur/oimate",
+      "yjsnpimod:mur/attu",
+      "yjsnpimod:mur/dousukkana",
+      "yjsnpimod:mur/pottyama"
+    ]
+  },
+  "mur.place": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yjsnpimod:mur/atarimaedayona",
+      "yjsnpimod:mur/harahettana",
+      "yjsnpimod:mur/miroyomiroyo",
+      "yjsnpimod:mur/mitakeryamiseteyaruyo",
+      "yjsnpimod:mur/ossudana",
+      "yjsnpimod:mur/soudayo",
+      "yjsnpimod:mur/suggekitukattazo",
+      "yjsnpimod:mur/tiratiramitetadaro",
+      "yjsnpimod:mur/uresiidaro",
+      "yjsnpimod:mur/usotukezettaimitetazo"
+    ]
+  },
+  "mur.step": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yjsnpimod:mur/attu",
+      "yjsnpimod:mur/iizokore",
+      "yjsnpimod:mur/ikiteena",
+      "yjsnpimod:mur/oimate"
+    ]
+  },
+  "mur.hit": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yjsnpimod:mur/oimate",
+      "yjsnpimod:mur/pottyama",
+      "yjsnpimod:mur/soudayo"
+    ]
+  },
+  "mur.fall": {
+    "category": "block",
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yjsnpimod:mur/iizokore"
     ]
   }
 }

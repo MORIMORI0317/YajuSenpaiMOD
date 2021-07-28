@@ -16,11 +16,11 @@ import net.morimori.yjsnpimod.block.YJBlocks;
 
 public class IkisugiBiome {
     public static void init() {
-        ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJSNPI_INTERVIEW_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_INTERVIEW_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_INTERVIEW_BLOCK.defaultBlockState()));
+        ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState()));
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
-     //   BiomeDefaultFeatures.farmAnimals(spawnSettings);
-     //   BiomeDefaultFeatures.monsters(spawnSettings, 95, 5, 100);
+        //   BiomeDefaultFeatures.farmAnimals(spawnSettings);
+        //   BiomeDefaultFeatures.monsters(spawnSettings, 95, 5, 100);
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
         generationSettings.surfaceBuilder(SURFACE_BUILDER);

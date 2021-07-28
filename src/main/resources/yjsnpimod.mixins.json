@@ -8,10 +8,12 @@
     "DoorBlockMixin",
     "EntityMixin",
     "EntityTypeMixin",
-    "ExplosionMixin",
+    "ExplosionDamageCalculatorMixin",
+    "LivingEntityMixin",
     "SugarCaneBlockMixin"
   ],
   "client": [
+    "client.MultiPlayerGameModeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
