@@ -14,4 +14,8 @@ public class YJUtils {
     public static boolean yjRandom(Random random) {
         return 364 > random.nextInt(1919);
     }
+
+    public static boolean veryYjRandom(Random random) {
+        return 114514 > random.nextInt(1919810);
+    }
 }

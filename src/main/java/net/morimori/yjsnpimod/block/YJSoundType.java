@@ -12,6 +12,8 @@ public class YJSoundType extends SoundType {
     public static final SoundType MUR = new YJSoundType(1.2f, YJSoundEvents.MUR_BREAK, YJSoundEvents.MUR_STEP, YJSoundEvents.MUR_PLACE, YJSoundEvents.MUR_HIT, YJSoundEvents.MUR_FALL);
     public static final SoundType MEZIKARA = new YJSoundType(10f, YJSoundEvents.MEZIKARA_HONTAI, YJSoundEvents.MEZIKARA_NS, YJSoundEvents.MEZIKARA_MAEBURI, YJSoundEvents.MEZIKARA_NS, YJSoundEvents.MEZIKARA_MAEBURI);
     public static final SoundType YJ_SAND = new SoundType(1.0F, 1.0F, SoundEvents.SAND_BREAK, YJSoundEvents.YJ_STEP, SoundEvents.SAND_PLACE, SoundEvents.SAND_HIT, YJSoundEvents.YJ_FALL);
+    public static final SoundType YJ_GRASS = new SoundType(1.0F, 1.0F, SoundEvents.GRASS_BREAK, YJSoundEvents.YJ_STEP, SoundEvents.GRASS_PLACE, SoundEvents.GRASS_HIT, YJSoundEvents.YJ_FALL);
+    public static final SoundType YJ_WOOD = new SoundType(1.0F, 1.0F, SoundEvents.WOOD_BREAK, YJSoundEvents.YJ_STEP, SoundEvents.WOOD_PLACE, SoundEvents.WOOD_HIT, YJSoundEvents.YJ_FALL);
 
     private final SoundType normal;
     private final SoundType highPitch;

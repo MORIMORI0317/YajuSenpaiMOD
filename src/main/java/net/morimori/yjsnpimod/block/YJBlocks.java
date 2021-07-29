@@ -6,11 +6,14 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.AcaciaTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.morimori.yjsnpimod.YJSNPIMOD;
+import net.morimori.yjsnpimod.block.grower.YJTreeGrower;
 import net.morimori.yjsnpimod.item.YJCreativeModeTab;
 
 import java.util.ArrayList;
@@ -22,7 +25,7 @@ import java.util.function.Function;
 public class YJBlocks {
     private static final Map<ResourceLocation, Item> MOD_ITEMS = new HashMap<>();
     private static final Map<ResourceLocation, Block> MOD_BLOCKS = new HashMap<>();
-    public static final List<Block> ENDERMAN_BLOCKS = new ArrayList<>();
+    public static final List<Block> INM_BLOCKS = new ArrayList<>();
 
     public static final Block YJSNPI_INTERVIEW_BLOCK = register("yjsnpi_interview_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
     public static final Block YJSNPI_GOMANETSU_BLOCK = register("yjsnpi_gomanetsu_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
@@ -47,14 +50,15 @@ public class YJBlocks {
     public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()));
 
     public static final Block YJ_SAND = register("yj_sand", new YJSandBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).sound(YJSoundType.YJ_SAND).strength(0.5F)));
-
+    public static final Block YJ_SAPLING = register("yj_sapling", new YJSaplingBlock(new YJTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final Block YJ_LEAVES = register("yj_leaves", Blocks.leaves(YJSoundType.YJ_GRASS));
+    public static final Block YJ_LOG = register("yj_log", new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(YJSoundType.YJ_WOOD).strength(2)));
 
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));
     }
 
     private static Block register(String name, Material materialIn, SoundType sound, float hardness, float resistance) {
-
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn).sound(sound).strength(hardness, resistance)));
     }
 
@@ -73,19 +77,19 @@ public class YJBlocks {
         MOD_ITEMS.forEach((n, m) -> Registry.register(Registry.ITEM, n, m));
         MOD_BLOCKS.forEach((n, m) -> Registry.register(Registry.BLOCK, n, m));
 
-        ENDERMAN_BLOCKS.add(YJSNPI_INTERVIEW_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_GOMANETSU_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_ENNUI_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_MEZIKARA_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_NEHAN_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_SHITARIGAO_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_IKISUGI_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_IMDKOJI_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_KUNEKUNE_BLOCK);
-        ENDERMAN_BLOCKS.add(TON_BLOCK);
-        ENDERMAN_BLOCKS.add(KMR_BLOCK);
-        ENDERMAN_BLOCKS.add(MUR_BLOCK);
-        ENDERMAN_BLOCKS.add(YJSNPI_EXPLODING_BLOCK);
+        INM_BLOCKS.add(YJSNPI_INTERVIEW_BLOCK);
+        INM_BLOCKS.add(YJSNPI_GOMANETSU_BLOCK);
+        INM_BLOCKS.add(YJSNPI_ENNUI_BLOCK);
+        INM_BLOCKS.add(YJSNPI_MEZIKARA_BLOCK);
+        INM_BLOCKS.add(YJSNPI_NEHAN_BLOCK);
+        INM_BLOCKS.add(YJSNPI_SHITARIGAO_BLOCK);
+        INM_BLOCKS.add(YJSNPI_IKISUGI_BLOCK);
+        INM_BLOCKS.add(YJSNPI_IMDKOJI_BLOCK);
+        INM_BLOCKS.add(YJSNPI_KUNEKUNE_BLOCK);
+        INM_BLOCKS.add(TON_BLOCK);
+        INM_BLOCKS.add(KMR_BLOCK);
+        INM_BLOCKS.add(MUR_BLOCK);
+        INM_BLOCKS.add(YJSNPI_EXPLODING_BLOCK);
     }
 
 }

@@ -5,6 +5,8 @@ import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.StructureFeatures;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.surfacebuilders.ConfiguredSurfaceBuilder;
@@ -22,7 +24,6 @@ public class YJDesertBiome {
         generationSettings.addStructureStart(StructureFeatures.VILLAGE_DESERT);
         generationSettings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
         generationSettings.addStructureStart(StructureFeatures.DESERT_PYRAMID);
-        generationSettings.addStructureStart(StructureFeatures.WOODLAND_MANSION);
         BiomeDefaultFeatures.addFossilDecoration(generationSettings);
 
         BiomeDefaultFeatures.addDefaultOverworldLandStructures(generationSettings);
@@ -44,6 +45,9 @@ public class YJDesertBiome {
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.monsters(spawnSettings, 19, 1, 100);
+        BiomeDefaultFeatures.caveSpawns(spawnSettings);
+        spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.DESERT)

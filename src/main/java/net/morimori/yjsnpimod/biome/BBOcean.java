@@ -2,6 +2,7 @@ package net.morimori.yjsnpimod.biome;
 
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.VanillaBiomes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.*;
@@ -16,6 +17,7 @@ public class BBOcean {
         ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.BB.defaultBlockState(), YJBlocks.BB.defaultBlockState(), YJBlocks.BB.defaultBlockState()));
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnSettings);
 
         BiomeGenerationSettings.Builder generationSettings = VanillaBiomes.baseOceanGeneration(SURFACE_BUILDER, true, false, true);
 

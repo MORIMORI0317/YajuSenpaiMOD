@@ -6,3 +6,4 @@ accessible method net/minecraft/world/item/HoeItem <init> (Lnet/minecraft/world/
 accessible method net/minecraft/data/worldgen/biome/VanillaBiomes baseOceanGeneration (Lnet/minecraft/world/level/levelgen/surfacebuilders/ConfiguredSurfaceBuilder;ZZZ)Lnet/minecraft/world/level/biome/BiomeGenerationSettings$Builder;
 accessible method net/minecraft/world/level/levelgen/NoiseGeneratorSettings <init> (Lnet/minecraft/world/level/levelgen/StructureSettings;Lnet/minecraft/world/level/levelgen/NoiseSettings;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;IIIIZZZZZZ)V
 accessible field net/minecraft/world/level/Explosion fire Z
+accessible method net/minecraft/world/level/block/Blocks leaves (Lnet/minecraft/world/level/block/SoundType;)Lnet/minecraft/world/level/block/LeavesBlock;
