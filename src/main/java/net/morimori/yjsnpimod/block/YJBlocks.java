@@ -5,10 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.grower.AcaciaTreeGrower;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -42,7 +39,11 @@ public class YJBlocks {
     public static final Block MUR_BLOCK = register("mur_block", YJMaterial.MUR, YJSoundType.MUR, 1f, 10f);
 
     public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.1f, 0f);
-    public static final Block YJSNPI_EXPLODING_BLOCK = register("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f)));
+    public static final Block YJSNPI_EXPLODING_BLOCK = register("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
+        float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 15f) / 15;
+        float alevel = Math.min(level, 1f - level) * 2f;
+        return (int) (alevel * 16f);
+    })));
 
     public static final Block YJNIUM_ORE = register("yjnium_ore", Material.STONE, SoundType.STONE, 3.0F, 3.0F);
     public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
@@ -52,7 +53,17 @@ public class YJBlocks {
     public static final Block YJ_SAND = register("yj_sand", new YJSandBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).sound(YJSoundType.YJ_SAND).strength(0.5F)));
     public static final Block YJ_SAPLING = register("yj_sapling", new YJSaplingBlock(new YJTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final Block YJ_LEAVES = register("yj_leaves", Blocks.leaves(YJSoundType.YJ_GRASS));
-    public static final Block YJ_LOG = register("yj_log", new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(YJSoundType.YJ_WOOD).strength(2)));
+    public static final Block YJ_LOG = register("yj_log", new YJLogBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(YJSoundType.YJ_WOOD).strength(2)));
+    public static final Block YJ_PLANKS = register("yj_planks", new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_SLAB = register("yj_slab", new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_STAIRS = register("yj_stairs", new YJStairBlock(YJ_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(YJ_PLANKS)));
+    public static final Block YJ_DOOR = register("yj_door", new YJDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(3.0F).sound(YJSoundType.YJ_WOOD).noOcclusion()));
+    public static final Block YJ_FENCE = register("yj_fence", new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_BUTTON = register("yj_button", new YJWoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_PRESSURE_PLATE = register("yj_pressure_plate", new YJPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).noCollission().strength(0.5F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_FENCE_GATE = register("yj_fence_gate", new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
+    public static final Block YJ_TRAPDOOR = register("yj_trapdoor", new YJTrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(3.0F).sound(YJSoundType.YJ_WOOD).noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, object) -> false)));
+
 
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));

@@ -12,6 +12,10 @@ public class YJTreeGrower extends AbstractTreeGrower {
     @Nullable
     @Override
     protected ConfiguredFeature<TreeConfiguration, ?> getConfiguredFeature(Random random, boolean bl) {
-        return YJFeatures.YJ_TREE;
+        if (random.nextInt(10) == 0) {
+            return YJFeatures.FANCY_YJ_TREE;
+        } else {
+            return YJFeatures.YJ_TREE;
+        }
     }
 }
