@@ -1,0 +1,6 @@
+{
+  "parent": "yjsnpimod:item/generated",
+  "textures": {
+    "layer0": "yjsnpimod:item/yj_door"
+  }
+}

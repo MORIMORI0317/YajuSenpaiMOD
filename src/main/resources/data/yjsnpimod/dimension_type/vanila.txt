@@ -1,7 +1,6 @@
-
-
+https://misode.github.io/dimension/
 {
-	https://misode.github.io/dimension/
+
 "type": "minecraft:overworld",
 	"generator": {
 		"type": "minecraft:noise",

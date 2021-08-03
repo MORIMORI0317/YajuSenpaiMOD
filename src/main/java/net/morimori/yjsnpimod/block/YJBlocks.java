@@ -2,6 +2,7 @@ package net.morimori.yjsnpimod.block;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -57,13 +58,6 @@ public class YJBlocks {
     public static final Block YJ_PLANKS = register("yj_planks", new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
     public static final Block YJ_SLAB = register("yj_slab", new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
     public static final Block YJ_STAIRS = register("yj_stairs", new YJStairBlock(YJ_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(YJ_PLANKS)));
-    public static final Block YJ_DOOR = register("yj_door", new YJDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(3.0F).sound(YJSoundType.YJ_WOOD).noOcclusion()));
-    public static final Block YJ_FENCE = register("yj_fence", new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
-    public static final Block YJ_BUTTON = register("yj_button", new YJWoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(YJSoundType.YJ_WOOD)));
-    public static final Block YJ_PRESSURE_PLATE = register("yj_pressure_plate", new YJPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).noCollission().strength(0.5F).sound(YJSoundType.YJ_WOOD)));
-    public static final Block YJ_FENCE_GATE = register("yj_fence_gate", new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, YJ_PLANKS.defaultMaterialColor()).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
-    public static final Block YJ_TRAPDOOR = register("yj_trapdoor", new YJTrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(3.0F).sound(YJSoundType.YJ_WOOD).noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, object) -> false)));
-
 
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));

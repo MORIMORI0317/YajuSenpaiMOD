@@ -1,0 +1,7 @@
+{
+  "parent": "yjsnpimod:block/door_bottom_rh",
+  "textures": {
+    "top": "yjsnpimod:block/yj_planks",
+    "bottom": "yjsnpimod:block/yj_planks"
+  }
+}

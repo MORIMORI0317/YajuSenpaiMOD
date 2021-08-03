@@ -71,6 +71,8 @@
   "block.yjsnpimod.yj_leaves": "野樹先輩の葉",
   "block.yjsnpimod.yj_log": "野樹先輩の原木",
   "block.yjsnpimod.yj_planks": "野樹先輩の板材",
+  "block.yjsnpimod.yj_slab": "野樹先輩のハーフブロック",
+  "block.yjsnpimod.yj_stairs": "野樹先輩の階段",
   "_comment.m": "Message",
   "message.toilet.untisuru": "%s キーでうんちする",
   "death.attack.rape": "%s はレ〇プ死した",

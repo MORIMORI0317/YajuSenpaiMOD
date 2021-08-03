@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "yjsnpimod:block/yj_planks",
+    "top": "yjsnpimod:block/yj_planks",
+    "side": "yjsnpimod:block/yj_planks"
+  }
+}
