@@ -39,7 +39,7 @@ public class YJDesertBiome {
         BiomeDefaultFeatures.addDefaultGrass(generationSettings);
         BiomeDefaultFeatures.addDesertVegetation(generationSettings);
         BiomeDefaultFeatures.addDefaultMushrooms(generationSettings);
-        BiomeDefaultFeatures.addDesertExtraVegetation(generationSettings);
+       // BiomeDefaultFeatures.addDesertExtraVegetation(generationSettings);
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);
         BiomeDefaultFeatures.addDesertExtraDecoration(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);

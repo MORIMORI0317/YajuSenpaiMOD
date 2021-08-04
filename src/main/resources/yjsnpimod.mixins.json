@@ -9,10 +9,12 @@
     "EntityMixin",
     "EntityTypeMixin",
     "ExplosionDamageCalculatorMixin",
+    "ExplosionMixin",
     "LivingEntityMixin",
     "MobMixin",
     "StructurePieceMixin",
-    "SugarCaneBlockMixin"
+    "SugarCaneBlockMixin",
+    "WalkNodeEvaluatorMixin"
   ],
   "client": [
     "client.MultiPlayerGameModeMixin"

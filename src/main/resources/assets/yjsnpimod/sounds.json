@@ -203,7 +203,8 @@
     "sounds": [
       "yjsnpimod:yj/on",
       "yjsnpimod:yj/syu",
-      "yjsnpimod:yj/nu"
+      "yjsnpimod:yj/nu",
+      "yjsnpimod:yj/horahorahora"
     ]
   },
   "yj.step": {
@@ -959,6 +960,46 @@
     "subtitle": "subtitles.entity.generic.big_fall",
     "sounds": [
       "yjsnpimod:mur/iizokore"
+    ]
+  },
+  "honpen.yonsyou": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:honpen/yonsyou",
+        "stream": true
+      }
+    ]
+  },
+  "honpen.yjinterview": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:honpen/yjinterview",
+        "stream": true
+      }
+    ]
+  },
+  "honpen.karatebu": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:honpen/karatebu",
+        "stream": true
+      }
+    ]
+  },
+  "honpen.cyclops": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:honpen/cyclops",
+        "stream": true
+      }
+    ]
+  },
+  "honpen.katyou": {
+    "sounds": [
+      {
+        "name": "yjsnpimod:honpen/katyou",
+        "stream": true
+      }
     ]
   }
 }

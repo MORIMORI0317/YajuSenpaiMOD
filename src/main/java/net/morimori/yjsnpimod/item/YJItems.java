@@ -7,6 +7,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.entity.YJEntityTypes;
+import net.morimori.yjsnpimod.registry.YJSoundEvents;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +49,12 @@ public class YJItems {
 
     public static final Item APPLE = register("apple", YJFoods.APPLE);
     public static final Item ICE_TEA = register("ice_tea", YJFoods.APPLE);
+
+    public static final Item MUSIC_DISC_YONSYOU = register("music_disc_yonsyou", new YJRecordItem(1, YJSoundEvents.HONPEN_YONSYOU, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final Item MUSIC_DISC_YJINTERVIEW = register("music_disc_yjinterview", new YJRecordItem(1, YJSoundEvents.HONPEN_YJINTERVIEW, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final Item MUSIC_DISC_KARATEBU = register("music_disc_karatebu", new YJRecordItem(4, YJSoundEvents.HONPEN_KARATEBU, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final Item MUSIC_DISC_CYCLOPS = register("music_disc_cyclops", new YJRecordItem(5, YJSoundEvents.HONPEN_CYCLOPS, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final Item MUSIC_DISC_KATYOU = register("music_disc_katyou", new YJRecordItem(1, YJSoundEvents.HONPEN_KATYOU, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
     private static Item register(String name) {
         return register(name, new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

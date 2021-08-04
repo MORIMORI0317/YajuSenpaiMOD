@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.morimori.yjsnpimod.registry.YJSoundEvents;
+import net.morimori.yjsnpimod.util.YJUtils;
 
 import java.util.Random;
 
@@ -85,7 +86,7 @@ public class YJExplodingBlock extends Block {
             serverLevel.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
             serverLevel.explode(null, blockPos.getX() + 0.5d, blockPos.getY() + 0.5d, blockPos.getZ() + 0.5d, 8.10F, blockState.getValue(YJ_FIRE) || isFire(blockState, serverLevel, blockPos), Explosion.BlockInteraction.DESTROY);
         } else {
-            if (cont == 141)
+            if (cont == 141 && !YJUtils.isYJDim(serverLevel))
                 serverLevel.playSound(null, blockPos, YJSoundEvents.YJ_NNA, SoundSource.BLOCKS, 3, 1);
             serverLevel.setBlock(blockPos, blockState.setValue(YJ_TIMER, cont + 1), 2);
             serverLevel.getBlockTicks().scheduleTick(blockPos, this, 0);

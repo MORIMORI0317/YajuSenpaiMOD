@@ -2,8 +2,8 @@ package net.morimori.yjsnpimod.block;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -41,9 +41,9 @@ public class YJBlocks {
 
     public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.1f, 0f);
     public static final Block YJSNPI_EXPLODING_BLOCK = register("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
-        float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 15f) / 15;
+        float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 14f) / 14;
         float alevel = Math.min(level, 1f - level) * 2f;
-        return (int) (alevel * 16f);
+        return (int) (alevel * 16f) + 1;
     })));
 
     public static final Block YJNIUM_ORE = register("yjnium_ore", Material.STONE, SoundType.STONE, 3.0F, 3.0F);
@@ -58,6 +58,9 @@ public class YJBlocks {
     public static final Block YJ_PLANKS = register("yj_planks", new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
     public static final Block YJ_SLAB = register("yj_slab", new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(YJSoundType.YJ_WOOD)));
     public static final Block YJ_STAIRS = register("yj_stairs", new YJStairBlock(YJ_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(YJ_PLANKS)));
+    public static final Block YJ_GRASS = register("yj_grass", new YJTallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)));
+    public static final Block TALL_YJ_GRASS = register("tall_yj_grass", new DoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)), n -> new DoubleHighBlockItem(n, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
+    public static final Block YJ_GRASS_BLOCK = register("yj_grass_block", new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(YJSoundType.YJ_GRASS)));
 
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));
@@ -68,7 +71,6 @@ public class YJBlocks {
     }
 
     private static Block register(String name, Block block) {
-
         return register(name, block, n -> new BlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }
 

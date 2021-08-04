@@ -1,5 +1,78 @@
 {
     "variants": {
-        "": { "model": "yjsnpimod:block/yj_sand" }
+        "": [
+            {
+                "model": "yjsnpimod:block/yj_sand"
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "x": 90
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "x": 180
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "x": 270
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 90
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 90,
+                "x": 90
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 90,
+                "x": 180
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 90,
+                "x": 270
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 180
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 180,
+                "x": 90
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 180,
+                "x": 180
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 180,
+                "x": 270
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 270
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 270,
+                "x": 90
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 270,
+                "x": 180
+            },
+            {
+                "model": "yjsnpimod:block/yj_sand",
+                "y": 270,
+                "x": 270
+            }
+        ]
     }
 }

@@ -57,32 +57,12 @@
           }
         },
         {
-          "biome": "minecraft:snowy_tundra",
-          "parameters": {
-            "altitude": 0,
-            "temperature": 1.5,
-            "humidity": 0,
-            "weirdness": 0,
-            "offset": 0
-          }
-        },
-        {
           "biome": "yjsnpimod:yj_desert",
           "parameters": {
             "altitude": 0.4,
             "temperature": 0.1,
             "humidity": 0.1,
             "weirdness": 1,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "minecraft:mountains",
-          "parameters": {
-            "altitude": 1,
-            "temperature": 1,
-            "humidity": 0,
-            "weirdness": 0,
             "offset": 0
           }
         },

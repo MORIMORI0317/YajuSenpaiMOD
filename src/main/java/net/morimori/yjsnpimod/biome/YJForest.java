@@ -3,7 +3,6 @@ package net.morimori.yjsnpimod.biome;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.Features;
 import net.minecraft.data.worldgen.StructureFeatures;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.AmbientMoodSettings;
@@ -16,10 +15,11 @@ import net.minecraft.world.level.levelgen.surfacebuilders.ConfiguredSurfaceBuild
 import net.minecraft.world.level.levelgen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.level.levelgen.surfacebuilders.SurfaceBuilderBaseConfiguration;
 import net.morimori.yjsnpimod.YJSNPIMOD;
+import net.morimori.yjsnpimod.block.YJBlocks;
 
 public class YJForest {
     public static void init() {
-        ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+        ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJ_GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
@@ -35,7 +35,6 @@ public class YJForest {
         BiomeDefaultFeatures.addDefaultLakes(generationSettings);
         BiomeDefaultFeatures.addDefaultCrystalFormations(generationSettings);
         BiomeDefaultFeatures.addDefaultMonsterRoom(generationSettings);
-        BiomeDefaultFeatures.addForestFlowers(generationSettings);
 
         BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
         BiomeDefaultFeatures.addDefaultOres(generationSettings);
@@ -43,8 +42,8 @@ public class YJForest {
 
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.BIRCH_YJ);
 
-        BiomeDefaultFeatures.addDefaultFlowers(generationSettings);
-        BiomeDefaultFeatures.addForestGrass(generationSettings);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.PATCH_GRASS_FOREST_YJ);
+        // BiomeDefaultFeatures.addForestGrass(generationSettings);
 
         BiomeDefaultFeatures.addDefaultMushrooms(generationSettings);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generationSettings);

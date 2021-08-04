@@ -145,6 +145,12 @@ public class YJSoundEvents {
     public static final SoundEvent MUR_HIT = register("mur.hit");
     public static final SoundEvent MUR_FALL = register("mur.fall");
 
+    public static final SoundEvent HONPEN_YONSYOU = register("honpen.yonsyou");
+    public static final SoundEvent HONPEN_YJINTERVIEW = register("honpen.yjinterview");
+    public static final SoundEvent HONPEN_KARATEBU = register("honpen.karatebu");
+    public static final SoundEvent HONPEN_CYCLOPS = register("honpen.cyclops");
+    public static final SoundEvent HONPEN_KATYOU = register("honpen.katyou");
+
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name));
         MOD_SOUNDEVENTS.put(new ResourceLocation(YJSNPIMOD.MODID, name), se);
