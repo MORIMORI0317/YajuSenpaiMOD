@@ -18,8 +18,6 @@ public class IkisugiBiome {
     public static void init() {
         ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState(), YJBlocks.YJSNPI_EXPLODING_BLOCK.defaultBlockState()));
 
-        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
-
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
         generationSettings.surfaceBuilder(SURFACE_BUILDER);
         BiomeDefaultFeatures.addDefaultOverworldLandStructures(generationSettings);
@@ -31,6 +29,10 @@ public class IkisugiBiome {
         BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
+
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+        spawnSettings.setPlayerCanSpawn();
+
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.NONE)

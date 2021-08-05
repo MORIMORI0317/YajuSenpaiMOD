@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.surfacebuilders.SurfaceBuilderBaseConf
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.block.YJBlocks;
 
-public class BBOcean {
+public class BBOceanBiome {
     public static void init() {
         ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.BB.defaultBlockState(), YJBlocks.BB.defaultBlockState(), YJBlocks.BB.defaultBlockState()));
 

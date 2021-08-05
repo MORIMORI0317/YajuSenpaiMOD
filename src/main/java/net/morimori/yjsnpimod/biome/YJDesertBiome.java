@@ -48,6 +48,7 @@ public class YJDesertBiome {
         BiomeDefaultFeatures.monsters(spawnSettings, 19, 1, 100);
         BiomeDefaultFeatures.caveSpawns(spawnSettings);
         spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HUSK, 80, 4, 4));
+        spawnSettings.setPlayerCanSpawn();
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.DESERT)

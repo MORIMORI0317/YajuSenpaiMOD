@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.morimori.yjsnpimod.biome.YJBiomes;
 import net.morimori.yjsnpimod.biome.YJFeatures;
 import net.morimori.yjsnpimod.block.YJBlocks;
+import net.morimori.yjsnpimod.blockentity.YJBlockEntityTypes;
 import net.morimori.yjsnpimod.entity.YJEntityTypes;
 import net.morimori.yjsnpimod.item.YJItems;
 import net.morimori.yjsnpimod.registry.StructureReplace;
@@ -18,6 +19,7 @@ public class YJSNPIMOD implements ModInitializer {
     public void onInitialize() {
         YJItems.init();
         YJBlocks.init();
+        YJBlockEntityTypes.init();
         YJSoundEvents.init();
         YJMotives.init();
         YJFeatures.init();

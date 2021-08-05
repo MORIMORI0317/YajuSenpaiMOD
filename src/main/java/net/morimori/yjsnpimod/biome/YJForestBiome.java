@@ -4,6 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.StructureFeatures;
+import net.minecraft.data.worldgen.biome.VanillaBiomes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.AmbientMoodSettings;
 import net.minecraft.world.level.biome.Biome;
@@ -17,10 +18,9 @@ import net.minecraft.world.level.levelgen.surfacebuilders.SurfaceBuilderBaseConf
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.block.YJBlocks;
 
-public class YJForest {
+public class YJForestBiome {
     public static void init() {
         ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJ_GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
-
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
         generationSettings.surfaceBuilder(SURFACE_BUILDER);
@@ -52,6 +52,7 @@ public class YJForest {
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnSettings);
+        spawnSettings.setPlayerCanSpawn();
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.FOREST)

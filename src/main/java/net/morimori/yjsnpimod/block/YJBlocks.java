@@ -50,6 +50,7 @@ public class YJBlocks {
     public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
 
     public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()));
+    public static final Block YJ_PORTAL = register("yj_portal", new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noDrops()), null);
 
     public static final Block YJ_SAND = register("yj_sand", new YJSandBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).sound(YJSoundType.YJ_SAND).strength(0.5F)));
     public static final Block YJ_SAPLING = register("yj_sapling", new YJSaplingBlock(new YJTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
@@ -76,7 +77,8 @@ public class YJBlocks {
 
     private static Block register(String name, Block block, Function<Block, Item> item) {
         MOD_BLOCKS.put(new ResourceLocation(YJSNPIMOD.MODID, name), block);
-        MOD_ITEMS.put(new ResourceLocation(YJSNPIMOD.MODID, name), item.apply(block));
+        if (item != null)
+            MOD_ITEMS.put(new ResourceLocation(YJSNPIMOD.MODID, name), item.apply(block));
         return block;
     }
 

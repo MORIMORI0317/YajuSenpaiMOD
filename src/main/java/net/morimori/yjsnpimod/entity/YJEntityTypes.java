@@ -17,7 +17,7 @@ public class YJEntityTypes {
     private static final Map<ResourceLocation, EntityType<?>> MOD_ENTITYS = new HashMap<>();
     public static final EntityType<KatyouCat> KATYOU_CAT = register("katyou_cat", MobCategory.CREATURE, KatyouCat::new, 0.6F, 0.7F, 8);
 
-    public static <T extends Entity> EntityType<T> register(String name, MobCategory spawnGroup, EntityType.EntityFactory<T> factory, float sizeX, float sizeY, int range) {
+    private static <T extends Entity> EntityType<T> register(String name, MobCategory spawnGroup, EntityType.EntityFactory<T> factory, float sizeX, float sizeY, int range) {
         EntityType<T> type = FabricEntityTypeBuilder.create(spawnGroup, factory).dimensions(EntityDimensions.fixed(sizeX, sizeY)).trackRangeBlocks(range).build();
         MOD_ENTITYS.put(new ResourceLocation(YJSNPIMOD.MODID, name), type);
         return type;
