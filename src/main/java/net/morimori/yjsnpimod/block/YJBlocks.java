@@ -2,6 +2,7 @@ package net.morimori.yjsnpimod.block;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -62,6 +63,7 @@ public class YJBlocks {
     public static final Block YJ_GRASS = register("yj_grass", new YJTallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)));
     public static final Block TALL_YJ_GRASS = register("tall_yj_grass", new DoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)), n -> new DoubleHighBlockItem(n, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
     public static final Block YJ_GRASS_BLOCK = register("yj_grass_block", new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(YJSoundType.YJ_GRASS)));
+    public static final Block YJ_ROSE = register("yj_rose", new FlowerBlock(MobEffects.POISON, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)));
 
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));

@@ -37,7 +37,7 @@ public class YJPlainsBiome {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
         BiomeDefaultFeatures.addDefaultOres(generationSettings);
         BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
-        //BiomeDefaultFeatures.addPlainVegetation(generationSettings);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.YJ_FLOWERS);
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.PATCH_GRASS_PLAIN_YJ);
 
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);

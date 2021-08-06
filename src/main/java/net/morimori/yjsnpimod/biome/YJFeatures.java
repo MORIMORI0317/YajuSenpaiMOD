@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.FeatureDecorator;
@@ -29,6 +30,8 @@ import java.util.OptionalInt;
 public class YJFeatures {
     public static final RandomPatchConfiguration YJ_GRASS_CONFIG = (new RandomPatchConfiguration.GrassConfigurationBuilder(new SimpleStateProvider(YJBlocks.YJ_GRASS.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(32).build();
     public static final RandomPatchConfiguration TALL_YJ_GRASS_CONFIG = (new RandomPatchConfiguration.GrassConfigurationBuilder(new SimpleStateProvider(YJBlocks.TALL_YJ_GRASS.defaultBlockState()), new DoublePlantPlacer())).tries(64).noProjection().build();
+    public static final RandomPatchConfiguration YJ_FLOWER_CONFIG = (new RandomPatchConfiguration.GrassConfigurationBuilder(new WeightedStateProvider(Features.weightedBlockStateBuilder().add(YJBlocks.YJ_ROSE.defaultBlockState(), 2)), SimpleBlockPlacer.INSTANCE)).tries(64).build();
+    ;
 
     private static final Map<ResourceLocation, ConfiguredFeature<?, ?>> MOD_FEATURES = new HashMap<>();
     public static final ConfiguredFeature<TreeConfiguration, ?> YJ_TREE = register("yj_tree", Feature.TREE.configured((new TreeConfiguration.TreeConfigurationBuilder(new SimpleStateProvider(YJBlocks.YJ_LOG.defaultBlockState()), new StraightTrunkPlacer(4, 2, 0), new SimpleStateProvider(YJBlocks.YJ_LEAVES.defaultBlockState()), new SimpleStateProvider(YJBlocks.YJ_SAPLING.defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
@@ -38,6 +41,7 @@ public class YJFeatures {
     public static final ConfiguredFeature<?, ?> PATCH_GRASS_FOREST_YJ = register("patch_grass_forest_yj", Feature.RANDOM_PATCH.configured(YJ_GRASS_CONFIG).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).count(2));
     public static final ConfiguredFeature<?, ?> PATCH_TALL_GRASS_2_YJ = register("patch_tall_grass_2_yj", Feature.RANDOM_PATCH.configured(TALL_YJ_GRASS_CONFIG).decorated(Features.Decorators.ADD_32).decorated(Features.Decorators.HEIGHTMAP).squared().decorated(FeatureDecorator.COUNT_NOISE.configured(new NoiseDependantDecoratorConfiguration(-0.8D, 0, 7))));
     public static final ConfiguredFeature<?, ?> PATCH_GRASS_PLAIN_YJ = register("patch_grass_plain_yj", Feature.RANDOM_PATCH.configured(YJ_GRASS_CONFIG).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).decorated(FeatureDecorator.COUNT_NOISE.configured(new NoiseDependantDecoratorConfiguration(-0.8D, 5, 10))));
+    public static final ConfiguredFeature<?, ?> YJ_FLOWERS = register("yj_flowers", Feature.FLOWER.configured(YJ_FLOWER_CONFIG).decorated(Features.Decorators.ADD_32).decorated(Features.Decorators.HEIGHTMAP_SQUARE).count(2));
 
     private static <T extends FeatureConfiguration> ConfiguredFeature<T, ?> register(String name, ConfiguredFeature<T, ?> feature) {
         MOD_FEATURES.put(new ResourceLocation(YJSNPIMOD.MODID, name), feature);

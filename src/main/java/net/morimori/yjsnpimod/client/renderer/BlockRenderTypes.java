@@ -9,5 +9,6 @@ public class BlockRenderTypes {
         BlockRenderLayerMap.INSTANCE.putBlock(YJBlocks.YJ_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(YJBlocks.YJ_GRASS, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(YJBlocks.TALL_YJ_GRASS, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(YJBlocks.YJ_ROSE, RenderType.cutout());
     }
 }
