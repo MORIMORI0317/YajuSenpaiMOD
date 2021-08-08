@@ -19,8 +19,10 @@ public class YJItems {
     public static final Item YJ_STAR = register("yj_star", new SimpleFoiledItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).rarity(Rarity.UNCOMMON)));
     public static final Item YJNIUM_INGOT = register("yjnium_ingot");
     public static final Item YJNIUM_NUGGET = register("yjnium_nugget");
+    public static final Item RAW_YJNIUM = register("raw_yjnium");
     public static final Item YJSNPI_INGOT = register("yjsnpi_ingot");
     public static final Item YJSNPI_NUGGET = register("yjsnpi_nugget");
+    public static final Item RAW_YJSNPI = register("raw_yjsnpi");
 
     public static final Item YJNIUM_HORSE_ARMOR = register("yjnium_horse_armor", new YJHorseArmorItem(5, (new Item.Properties()).stacksTo(1).tab(YJCreativeModeTab.MOD_TAB), false));
     public static final Item YJNIUM_SWORD = register("yjnium_sword", new SwordItem(YJTiers.YJNIUM, 3, -2.4F, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
@@ -47,8 +49,8 @@ public class YJItems {
     public static final Item CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", new CyclopsSunglassesItem(YJArmorMaterials.CYCLOPS_SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     public static final Item KATYOU_CAT_SPAWN_EGG = register("katyou_cat_spawn_egg", new SpawnEggItem(YJEntityTypes.KATYOU_CAT, 0xa87668, 0x131311, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
-    public static final Item APPLE = register("apple", YJFoods.APPLE);
-    public static final Item ICE_TEA = register("ice_tea", YJFoods.APPLE);
+    public static final Item APPLE = register("apple", new YJAppleItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).food(YJFoods.APPLE)));
+    public static final Item ICE_TEA = register("ice_tea", new IceTeaItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).food(YJFoods.ICE_TEA)));
 
     public static final Item MUSIC_DISC_YONSYOU = register("music_disc_yonsyou", new YJRecordItem(1, YJSoundEvents.HONPEN_YONSYOU, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final Item MUSIC_DISC_YJINTERVIEW = register("music_disc_yjinterview", new YJRecordItem(1, YJSoundEvents.HONPEN_YJINTERVIEW, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));

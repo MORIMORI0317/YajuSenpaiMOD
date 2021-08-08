@@ -3,10 +3,7 @@ package net.morimori.yjsnpimod.block;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DoubleHighBlockItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -47,8 +44,6 @@ public class YJBlocks {
         return (int) (alevel * 16f) + 1;
     })));
 
-    public static final Block YJNIUM_ORE = register("yjnium_ore", Material.STONE, SoundType.STONE, 3.0F, 3.0F);
-    public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
 
     public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()));
     public static final Block YJ_PORTAL = register("yj_portal", new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noDrops()), null);
@@ -65,7 +60,16 @@ public class YJBlocks {
     public static final Block YJ_GRASS_BLOCK = register("yj_grass_block", new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(YJSoundType.YJ_GRASS)));
     public static final Block YJ_ROSE = register("yj_rose", new FlowerBlock(MobEffects.POISON, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS)));
 
+    public static final Block YJNIUM_ORE = register("yjnium_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+    public static final Block YJSNPI_ORE = register("yjsnpi_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).sound(YJSoundType.YJ)));
+    public static final Block DEEPSLATE_YJNIUM_ORE = register("deepslate_yjnium_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+    public static final Block DEEPSLATE_YJSNPI_ORE = register("deepslate_yjsnpi_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).sound(YJSoundType.YJ)));
+    public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
+    public static final Block RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, YJSoundType.STONE, 5.0F, 6.0F);
+    public static final Block RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, YJSoundType.YJ, 5.0F, 6.0F);
+
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
+
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));
     }
 

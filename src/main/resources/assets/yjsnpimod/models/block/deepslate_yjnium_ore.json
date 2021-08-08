@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "yjsnpimod:block/deepslate_yjnium_ore"
+    }
+}
