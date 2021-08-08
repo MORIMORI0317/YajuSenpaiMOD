@@ -20,6 +20,7 @@ public class BBOceanBiome {
         BiomeDefaultFeatures.commonSpawns(spawnSettings);
 
         BiomeGenerationSettings.Builder generationSettings = VanillaBiomes.baseOceanGeneration(SURFACE_BUILDER, true, false, true);
+        YJFeatures.addYJDimOres(generationSettings);
 
         Biome biome = (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)

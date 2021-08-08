@@ -39,6 +39,7 @@ public class YJForestBiome {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
         BiomeDefaultFeatures.addDefaultOres(generationSettings);
         BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
+        YJFeatures.addYJDimOres(generationSettings);
 
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.BIRCH_YJ);
 

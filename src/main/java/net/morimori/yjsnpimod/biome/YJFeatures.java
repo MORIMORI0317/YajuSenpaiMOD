@@ -6,6 +6,9 @@ import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.Features;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.biome.BiomeGenerationSettings;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -24,12 +27,13 @@ import net.minecraft.world.level.levelgen.placement.FrequencyWithExtraChanceDeco
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.block.YJBlocks;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.OptionalInt;
+import java.util.*;
 
 public class YJFeatures {
+    public static final List<ConfiguredFeature<?, ?>> ORE_INMBLOCKS = new ArrayList<>();
+
     public static final ImmutableList<OreConfiguration.TargetBlockState> ORE_YJNIUM_TARGET_LIST = ImmutableList.of(OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES, YJBlocks.YJNIUM_ORE.defaultBlockState()), OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES, YJBlocks.DEEPSLATE_YJNIUM_ORE.defaultBlockState()));
+    public static final ImmutableList<OreConfiguration.TargetBlockState> ORE_YJSNPI_TARGET_LIST = ImmutableList.of(OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES, YJBlocks.YJSNPI_ORE.defaultBlockState()), OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES, YJBlocks.DEEPSLATE_YJSNPI_ORE.defaultBlockState()));
 
     public static final RandomPatchConfiguration YJ_GRASS_CONFIG = (new RandomPatchConfiguration.GrassConfigurationBuilder(new SimpleStateProvider(YJBlocks.YJ_GRASS.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(32).build();
     public static final RandomPatchConfiguration TALL_YJ_GRASS_CONFIG = (new RandomPatchConfiguration.GrassConfigurationBuilder(new SimpleStateProvider(YJBlocks.TALL_YJ_GRASS.defaultBlockState()), new DoublePlantPlacer())).tries(64).noProjection().build();
@@ -44,7 +48,9 @@ public class YJFeatures {
     public static final ConfiguredFeature<?, ?> PATCH_TALL_GRASS_2_YJ = register("patch_tall_grass_2_yj", Feature.RANDOM_PATCH.configured(TALL_YJ_GRASS_CONFIG).decorated(Features.Decorators.ADD_32).decorated(Features.Decorators.HEIGHTMAP).squared().decorated(FeatureDecorator.COUNT_NOISE.configured(new NoiseDependantDecoratorConfiguration(-0.8D, 0, 7))));
     public static final ConfiguredFeature<?, ?> PATCH_GRASS_PLAIN_YJ = register("patch_grass_plain_yj", Feature.RANDOM_PATCH.configured(YJ_GRASS_CONFIG).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE).decorated(FeatureDecorator.COUNT_NOISE.configured(new NoiseDependantDecoratorConfiguration(-0.8D, 5, 10))));
     public static final ConfiguredFeature<?, ?> YJ_FLOWERS = register("yj_flowers", Feature.FLOWER.configured(YJ_FLOWER_CONFIG).decorated(Features.Decorators.ADD_32).decorated(Features.Decorators.HEIGHTMAP_SQUARE.count(2)));
-    public static final ConfiguredFeature<?, ?> ORE_YJNIUM = register("ore_yjnium", Feature.ORE.configured(new OreConfiguration(ORE_YJNIUM_TARGET_LIST, 9)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31)).squared().count(2));
+    public static final ConfiguredFeature<?, ?> ORE_YJNIUM = register("ore_yjnium", Feature.ORE.configured(new OreConfiguration(ORE_YJNIUM_TARGET_LIST, 9)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(63)).squared().count(5));
+    public static final ConfiguredFeature<?, ?> ORE_YJNIUM_YJDIM = register("ore_yjnium_yjdim", Feature.ORE.configured(new OreConfiguration(ORE_YJNIUM_TARGET_LIST, 9)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(63)).squared().count(40));
+    public static final ConfiguredFeature<?, ?> ORE_YJSNPI = register("ore_yjsnpi", Feature.ORE.configured(new OreConfiguration(ORE_YJSNPI_TARGET_LIST, 9)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31)).squared().count(10));
 
     private static <T extends FeatureConfiguration> ConfiguredFeature<T, ?> register(String name, ConfiguredFeature<T, ?> feature) {
         MOD_FEATURES.put(new ResourceLocation(YJSNPIMOD.MODID, name), feature);
@@ -52,9 +58,21 @@ public class YJFeatures {
     }
 
     public static void init() {
+        YJBlocks.INM_BLOCKS.forEach(n -> {
+            ResourceLocation location = Registry.BLOCK.getKey(n);
+            ORE_INMBLOCKS.add(register("ore_" + location.getPath(), createInmOreFeature(n)));
+        });
         MOD_FEATURES.forEach((n, m) -> Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, n, m));
-        //  var reg = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(YJSNPIMOD.MODID, "yjnium_ore"));
-        //  Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, reg.location(), YJNIUM_ORE);
-        //  BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES, reg);
+    }
+
+    private static ConfiguredFeature<?, ?> createInmOreFeature(Block block) {
+        ImmutableList<OreConfiguration.TargetBlockState> ORE_INM_TARGET_LIST = ImmutableList.of(OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES, block.defaultBlockState()), OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES, block.defaultBlockState()));
+        return Feature.ORE.configured(new OreConfiguration(ORE_INM_TARGET_LIST, 9)).rangeUniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(194)).squared().count(10);
+    }
+
+    public static void addYJDimOres(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ORE_YJNIUM_YJDIM);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ORE_YJSNPI);
+        ORE_INMBLOCKS.forEach(n -> builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, n));
     }
 }

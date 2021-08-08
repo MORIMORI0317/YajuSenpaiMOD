@@ -29,6 +29,7 @@ public class IkisugiBiome {
         BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
+        YJFeatures.addYJDimOres(generationSettings);
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
         spawnSettings.setPlayerCanSpawn();

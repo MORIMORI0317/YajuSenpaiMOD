@@ -39,10 +39,11 @@ public class YJDesertBiome {
         BiomeDefaultFeatures.addDefaultGrass(generationSettings);
         BiomeDefaultFeatures.addDesertVegetation(generationSettings);
         BiomeDefaultFeatures.addDefaultMushrooms(generationSettings);
-       // BiomeDefaultFeatures.addDesertExtraVegetation(generationSettings);
+        // BiomeDefaultFeatures.addDesertExtraVegetation(generationSettings);
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);
         BiomeDefaultFeatures.addDesertExtraDecoration(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
+        YJFeatures.addYJDimOres(generationSettings);
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.monsters(spawnSettings, 19, 1, 100);
