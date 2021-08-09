@@ -38,8 +38,8 @@ public class YJBlocks {
     public static final Block KMR_BLOCK = register("kmr_block", YJMaterial.KMR, YJSoundType.KMR, 1f, 10f);
     public static final Block MUR_BLOCK = register("mur_block", YJMaterial.MUR, YJSoundType.MUR, 1f, 10f);
 
-    public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.1f, 0f);
-    public static final Block GB = register("gb", Material.STONE, DyeColor.GREEN, SoundType.GLASS, 0.1f, 0f);
+    public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.5f, 0f);
+    public static final Block GB = register("gb", Material.STONE, DyeColor.GREEN, SoundType.GLASS, 0.5f, 0f);
     public static final Block YJSNPI_EXPLODING_BLOCK = registerFoiled("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
         float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 14f) / 14;
         float alevel = Math.min(level, 1f - level) * 2f;
@@ -66,7 +66,7 @@ public class YJBlocks {
     public static final Block DEEPSLATE_YJNIUM_ORE = register("deepslate_yjnium_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
     public static final Block DEEPSLATE_YJSNPI_ORE = register("deepslate_yjsnpi_ore", new OreBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).sound(YJSoundType.YJ)));
     public static final Block YJNIUM_BLOCK = register("yjnium_block", Material.METAL, SoundType.METAL, 5.0F, 6.0F);
-    public static final Block RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, YJSoundType.STONE, 5.0F, 6.0F);
+    public static final Block RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, SoundType.STONE, 5.0F, 6.0F);
     public static final Block RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, YJSoundType.YJ, 5.0F, 6.0F);
 
     public static final Block BIG_PILLOW = register("big_pillow", new BigPillowBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOD).strength(0.2F).noOcclusion()));

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#yjsnpimod:yjsnpi_block",
+    "yjsnpimod:ton_block",
+    "yjsnpimod:kmr_block",
+    "yjsnpimod:mur_block"
+  ]
+}

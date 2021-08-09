@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "yjsnpimod:yj_sand"
+    "yjsnpimod:yj_sand",
+    "yjsnpimod:yj_grass_block"
   ]
 }
