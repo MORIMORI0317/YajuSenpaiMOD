@@ -71,6 +71,8 @@ public class YJBlocks {
     public static final Block RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, YJSoundType.STONE, 5.0F, 6.0F);
     public static final Block RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, YJSoundType.YJ, 5.0F, 6.0F);
 
+    public static final Block BIG_PILLOW = register("big_pillow", new BigPillowBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOD).strength(0.2F).noOcclusion()));
+
     private static Block register(String name, Material materialIn, DyeColor dyeColor, SoundType sound, float hardness, float resistance) {
 
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound).strength(hardness, resistance)));
