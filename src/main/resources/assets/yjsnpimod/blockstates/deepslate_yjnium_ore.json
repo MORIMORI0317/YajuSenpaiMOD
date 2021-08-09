@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/deepslate_yjnium_ore" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/deepslate_yjnium_ore"
     }
+  }
 }

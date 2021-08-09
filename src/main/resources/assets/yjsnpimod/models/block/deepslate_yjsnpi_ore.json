@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "yjsnpimod:block/deepslate_yjsnpi_ore"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "yjsnpimod:block/deepslate_yjsnpi_ore"
+  }
 }

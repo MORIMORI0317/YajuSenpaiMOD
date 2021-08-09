@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "yjsnpimod:block/yjsnpi_interview_block"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "yjsnpimod:block/yjsnpi_interview_block"
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "yjsnpimod:block/kmr"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "yjsnpimod:block/kmr"
+  }
 }

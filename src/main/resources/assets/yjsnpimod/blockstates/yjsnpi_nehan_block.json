@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/yjsnpi_nehan_block" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/yjsnpi_nehan_block"
     }
+  }
 }

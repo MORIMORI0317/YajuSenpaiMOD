@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/yjsnpi_ore" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/yjsnpi_ore"
     }
+  }
 }

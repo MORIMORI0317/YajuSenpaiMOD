@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "yjsnpimod:block/yjsnpi_exploding_block/yj_30"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "yjsnpimod:block/yjsnpi_exploding_block/yj_30"
+  }
 }

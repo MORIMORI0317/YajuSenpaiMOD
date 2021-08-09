@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/yj_planks" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/yj_planks"
     }
+  }
 }

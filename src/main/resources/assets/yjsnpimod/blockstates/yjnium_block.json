@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/yjnium_block" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/yjnium_block"
     }
+  }
 }

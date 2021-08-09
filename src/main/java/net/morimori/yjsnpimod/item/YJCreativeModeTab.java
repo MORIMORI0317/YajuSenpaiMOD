@@ -7,5 +7,5 @@ import net.minecraft.world.item.ItemStack;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 
 public class YJCreativeModeTab {
-    public static final CreativeModeTab MOD_TAB = FabricItemGroupBuilder.build(new ResourceLocation(YJSNPIMOD.MODID,YJSNPIMOD.MODID), () -> new ItemStack(YJItems.ICON));
+    public static final CreativeModeTab MOD_TAB = FabricItemGroupBuilder.build(new ResourceLocation(YJSNPIMOD.MODID, YJSNPIMOD.MODID), () -> new ItemStack(YJItems.ICON));
 }

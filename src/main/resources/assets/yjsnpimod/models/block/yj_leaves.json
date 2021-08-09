@@ -1,6 +1,6 @@
 {
-    "parent": "block/leaves",
-    "textures": {
-        "all": "yjsnpimod:block/yj_leaves"
-    }
+  "parent": "block/leaves",
+  "textures": {
+    "all": "yjsnpimod:block/yj_leaves"
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "yjsnpimod:block/yj_leaves" }
+  "variants": {
+    "": {
+      "model": "yjsnpimod:block/yj_leaves"
     }
+  }
 }

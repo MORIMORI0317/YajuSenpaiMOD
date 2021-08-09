@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class YJBlockEntityTypes {
     private static final Map<ResourceLocation, BlockEntityType<?>> MOD_BLOCKENTITYTYPES = new HashMap<>();
-    public static final BlockEntityType<YJPortalBlockEntity> YJ_PORTAL = register("yj_portal",  FabricBlockEntityTypeBuilder.create(YJPortalBlockEntity::new, YJBlocks.YJ_PORTAL).build(null));
+    public static final BlockEntityType<YJPortalBlockEntity> YJ_PORTAL = register("yj_portal", FabricBlockEntityTypeBuilder.create(YJPortalBlockEntity::new, YJBlocks.YJ_PORTAL).build(null));
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType<T> types) {
         MOD_BLOCKENTITYTYPES.put(new ResourceLocation(YJSNPIMOD.MODID, name), types);
