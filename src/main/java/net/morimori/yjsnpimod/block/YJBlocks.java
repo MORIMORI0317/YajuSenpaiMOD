@@ -13,17 +13,15 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.block.grower.YJTreeGrower;
+import net.morimori.yjsnpimod.item.FoiledBlockItem;
 import net.morimori.yjsnpimod.item.YJCreativeModeTab;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Function;
 
 public class YJBlocks {
-    private static final Map<ResourceLocation, Item> MOD_ITEMS = new HashMap<>();
-    private static final Map<ResourceLocation, Block> MOD_BLOCKS = new HashMap<>();
+    private static final List<BlockEntry> MOD_BLOCKS = new ArrayList<>();
     public static final List<Block> INM_BLOCKS = new ArrayList<>();
 
     public static final Block YJSNPI_INTERVIEW_BLOCK = register("yjsnpi_interview_block", YJMaterial.YJSNPI, YJSoundType.YJ, 1f, 10f);
@@ -41,13 +39,13 @@ public class YJBlocks {
     public static final Block MUR_BLOCK = register("mur_block", YJMaterial.MUR, YJSoundType.MUR, 1f, 10f);
 
     public static final Block BB = register("bb", Material.STONE, DyeColor.BLUE, SoundType.GLASS, 0.1f, 0f);
-    public static final Block YJSNPI_EXPLODING_BLOCK = register("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
+    public static final Block GB = register("gb", Material.STONE, DyeColor.GREEN, SoundType.GLASS, 0.1f, 0f);
+    public static final Block YJSNPI_EXPLODING_BLOCK = registerFoiled("yjsnpi_exploding_block", new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
         float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 14f) / 14;
         float alevel = Math.min(level, 1f - level) * 2f;
         return (int) (alevel * 16f) + 1;
     })));
-
-
+    public static final Block YJSNPI_PROLIFERATION_BLOCK = registerFoiled("yjsnpi_proliferation_block", new YJProliferationBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).randomTicks().strength(1f, 0f)));
     public static final Block YJ_HOUSE_DOOR = register("yj_house_door", new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()));
     public static final Block YJ_PORTAL = register("yj_portal", new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noDrops()), null);
 
@@ -82,21 +80,25 @@ public class YJBlocks {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn).sound(sound).strength(hardness, resistance)));
     }
 
+    private static Block registerFoiled(String name, Block block) {
+        return register(name, block, n -> new FoiledBlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+    }
+
     private static Block register(String name, Block block) {
         return register(name, block, n -> new BlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }
 
     private static Block register(String name, Block block, Function<Block, Item> item) {
-        MOD_BLOCKS.put(new ResourceLocation(YJSNPIMOD.MODID, name), block);
-        if (item != null)
-            MOD_ITEMS.put(new ResourceLocation(YJSNPIMOD.MODID, name), item.apply(block));
+        MOD_BLOCKS.add(new BlockEntry(name, block, item == null ? null : item.apply(block)));
         return block;
     }
 
     public static void init() {
-        MOD_ITEMS.forEach((n, m) -> Registry.register(Registry.ITEM, n, m));
-        MOD_BLOCKS.forEach((n, m) -> Registry.register(Registry.BLOCK, n, m));
-
+        MOD_BLOCKS.forEach(n -> {
+            Registry.register(Registry.BLOCK, new ResourceLocation(YJSNPIMOD.MODID, n.name), n.block);
+            if (n.blockitem != null)
+                Registry.register(Registry.ITEM, new ResourceLocation(YJSNPIMOD.MODID, n.name), n.blockitem);
+        });
         INM_BLOCKS.add(YJSNPI_INTERVIEW_BLOCK);
         INM_BLOCKS.add(YJSNPI_GOMANETSU_BLOCK);
         INM_BLOCKS.add(YJSNPI_ENNUI_BLOCK);
@@ -110,6 +112,10 @@ public class YJBlocks {
         INM_BLOCKS.add(KMR_BLOCK);
         INM_BLOCKS.add(MUR_BLOCK);
         INM_BLOCKS.add(YJSNPI_EXPLODING_BLOCK);
+        INM_BLOCKS.add(YJSNPI_PROLIFERATION_BLOCK);
     }
 
+    private static record BlockEntry(String name, Block block, Item blockitem) {
+
+    }
 }

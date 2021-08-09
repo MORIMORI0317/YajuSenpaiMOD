@@ -45,9 +45,9 @@ public class YJPortalBlock extends BaseEntityBlock {
             Random r = new Random();
             if (entity instanceof ServerPlayer serverPlayer) {
                 serverPlayer.fallDistance = 0;
-                serverPlayer.teleportTo(serverLevel, entity.getX() + r.nextInt(10) - 5, entity.getY(), entity.getZ() + r.nextInt(10) - 5, serverPlayer.getYRot(), serverPlayer.getVoicePitch());
+                serverPlayer.teleportTo(serverLevel, entity.getX() + r.nextInt(10) - 5, entity.getY() + 5, entity.getZ() + r.nextInt(10) - 5, serverPlayer.getYRot(), serverPlayer.getVoicePitch());
             } else {
-                entity.teleportTo(entity.getX() + r.nextInt(30) - 15, entity.getY(), entity.getZ() + r.nextInt(30) - 15);
+                entity.teleportTo(entity.getX() + r.nextInt(30) - 15, entity.getY() + 5, entity.getZ() + r.nextInt(30) - 15);
                 entity.changeDimension(serverLevel);
             }
         }

@@ -12,6 +12,9 @@ public enum YJTiers implements Tier {
     }),
     YJSNPI(3, 1919, 8.10F, 3.0F, 19, () -> {
         return Ingredient.of(YJItems.YJSNPI_INGOT);
+    }),
+    JAKEN_YORUIKIMASYOUNE (1, 114514, 1, 2, 26, () -> {
+        return Ingredient.of(YJItems.YJ_CORE);
     });
     private final int level;
     private final int uses;

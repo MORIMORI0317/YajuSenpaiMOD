@@ -11,6 +11,7 @@
     "EntityTypeMixin",
     "ExplosionDamageCalculatorMixin",
     "ExplosionMixin",
+    "ItemStackMixin",
     "LivingEntityMixin",
     "MobMixin",
     "StructurePieceMixin",

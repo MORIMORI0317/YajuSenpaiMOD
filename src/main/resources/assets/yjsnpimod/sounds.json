@@ -1001,5 +1001,11 @@
         "stream": true
       }
     ]
+  },
+  "oremoitchau": {
+    "category": "block",
+    "sounds": [
+      "yjsnpimod:oremoitchau"
+    ]
   }
 }

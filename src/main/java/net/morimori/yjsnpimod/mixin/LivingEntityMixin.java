@@ -8,6 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.SoundType;
 import net.morimori.yjsnpimod.block.YJBlocks;
 import net.morimori.yjsnpimod.block.YJSoundType;
+import net.morimori.yjsnpimod.item.CyclopsSunglassesItem;
+import net.morimori.yjsnpimod.registry.YJSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,6 +30,8 @@ public abstract class LivingEntityMixin {
         ItemStack stack = getItemBySlot(EquipmentSlot.HEAD);
         if (stack.getItem() instanceof BlockItem && YJBlocks.INM_BLOCKS.contains(((BlockItem) stack.getItem()).getBlock())) {
             return ((BlockItem) stack.getItem()).getBlock().getSoundType(((BlockItem) stack.getItem()).getBlock().defaultBlockState()).getHitSound();
+        } else if (stack.getItem() instanceof CyclopsSunglassesItem) {
+            return YJSoundEvents.CYCLOPS_NAZOOTO;
         }
         return soundEvent;
     }
@@ -37,6 +41,8 @@ public abstract class LivingEntityMixin {
         ItemStack stack = getItemBySlot(EquipmentSlot.HEAD);
         if (stack.getItem() instanceof BlockItem && YJBlocks.INM_BLOCKS.contains(((BlockItem) stack.getItem()).getBlock())) {
             return ((BlockItem) stack.getItem()).getBlock().getSoundType(((BlockItem) stack.getItem()).getBlock().defaultBlockState()).getBreakSound();
+        } else if (stack.getItem() instanceof CyclopsSunglassesItem) {
+            return YJSoundEvents.CYCLOPS_AIKISO;
         }
         return soundEvent;
     }
@@ -46,6 +52,11 @@ public abstract class LivingEntityMixin {
         ItemStack stack = getItemBySlot(EquipmentSlot.HEAD);
         if (stack.getItem() instanceof BlockItem && YJBlocks.INM_BLOCKS.contains(((BlockItem) stack.getItem()).getBlock())) {
             return ((BlockItem) stack.getItem()).getBlock().getSoundType(((BlockItem) stack.getItem()).getBlock().defaultBlockState()).getBreakSound();
+        } else if (stack.getItem() instanceof CyclopsSunglassesItem) {
+            if (((LivingEntity) ((Object) this)).isAlive())
+                return YJSoundEvents.CYCLOPS_NAZOOTO;
+            else
+                return YJSoundEvents.CYCLOPS_AIKISO;
         }
         return soundEvent;
     }

@@ -9,11 +9,11 @@ import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.entity.YJEntityTypes;
 import net.morimori.yjsnpimod.registry.YJSoundEvents;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class YJItems {
-    private static final Map<ResourceLocation, Item> MOD_ITEMS = new HashMap<>();
+    private static final List<ItemEntry> MOD_ITEMS = new ArrayList<>();
     public static final Item ICON = register("icon", new Item(new Item.Properties()));
     public static final Item YJ_CORE = register("yj_core");
     public static final Item YJ_STAR = register("yj_star", new SimpleFoiledItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).rarity(Rarity.UNCOMMON)));
@@ -58,6 +58,8 @@ public class YJItems {
     public static final Item MUSIC_DISC_CYCLOPS = register("music_disc_cyclops", new YJRecordItem(5, YJSoundEvents.HONPEN_CYCLOPS, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final Item MUSIC_DISC_KATYOU = register("music_disc_katyou", new YJRecordItem(1, YJSoundEvents.HONPEN_KATYOU, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
+    public static final Item JAKEN_YORUIKIMASYOUNE = register("jaken_yoruikimasyoune_sword", new JakenSwordItem(YJTiers.JAKEN_YORUIKIMASYOUNE, 16, 806F, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+
     private static Item register(String name) {
         return register(name, new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }
@@ -67,11 +69,15 @@ public class YJItems {
     }
 
     private static Item register(String name, Item item) {
-        MOD_ITEMS.put(new ResourceLocation(YJSNPIMOD.MODID, name), item);
+        MOD_ITEMS.add(new ItemEntry(name, item));
         return item;
     }
 
     public static void init() {
-        MOD_ITEMS.forEach((n, m) -> Registry.register(Registry.ITEM, n, m));
+        MOD_ITEMS.forEach(n -> Registry.register(Registry.ITEM, new ResourceLocation(YJSNPIMOD.MODID, n.name), n.item));
+    }
+
+    private static record ItemEntry(String name, Item item) {
+
     }
 }

@@ -151,6 +151,8 @@ public class YJSoundEvents {
     public static final SoundEvent HONPEN_CYCLOPS = register("honpen.cyclops");
     public static final SoundEvent HONPEN_KATYOU = register("honpen.katyou");
 
+    public static final SoundEvent OREMOITCHAU = register("oremoitchau");
+
     private static SoundEvent register(String name) {
         SoundEvent se = new SoundEvent(new ResourceLocation(YJSNPIMOD.MODID, name));
         MOD_SOUNDEVENTS.put(new ResourceLocation(YJSNPIMOD.MODID, name), se);

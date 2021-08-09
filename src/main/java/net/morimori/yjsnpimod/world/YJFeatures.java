@@ -1,4 +1,4 @@
-package net.morimori.yjsnpimod.biome;
+package net.morimori.yjsnpimod.world;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Registry;
@@ -58,7 +58,7 @@ public class YJFeatures {
     }
 
     public static void init() {
-        YJBlocks.INM_BLOCKS.forEach(n -> {
+        YJBlocks.INM_BLOCKS.stream().filter(n -> n != YJBlocks.YJSNPI_PROLIFERATION_BLOCK).forEach(n -> {
             ResourceLocation location = Registry.BLOCK.getKey(n);
             ORE_INMBLOCKS.add(register("ore_" + location.getPath(), createInmOreFeature(n)));
         });

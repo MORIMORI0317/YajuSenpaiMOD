@@ -14,6 +14,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.morimori.yjsnpimod.block.YJBlocks;
 import net.morimori.yjsnpimod.block.YJSoundType;
+import net.morimori.yjsnpimod.item.CyclopsSunglassesItem;
+import net.morimori.yjsnpimod.registry.YJSoundEvents;
 import net.morimori.yjsnpimod.registry.YJSpawn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -54,6 +56,8 @@ public abstract class MobMixin {
                         return soundType.getStepSound();
                 }
             }
+        } else if (stack.getItem() instanceof CyclopsSunglassesItem) {
+            return YJSoundEvents.CYCLOPS_SANGRASSED;
         }
         return soundEvent;
     }

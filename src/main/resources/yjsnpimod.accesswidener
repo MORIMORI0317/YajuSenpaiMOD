@@ -10,3 +10,7 @@ accessible method net/minecraft/world/level/block/Blocks leaves (Lnet/minecraft/
 accessible class net/minecraft/data/worldgen/Features$Decorators
 accessible method net/minecraft/world/level/levelgen/feature/trunkplacers/TrunkPlacer placeLog (Lnet/minecraft/world/level/LevelSimulatedReader;Ljava/util/function/BiConsumer;Ljava/util/Random;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration;Ljava/util/function/Function;)Z
 accessible method net/minecraft/data/worldgen/Features weightedBlockStateBuilder ()Lnet/minecraft/util/random/SimpleWeightedRandomList$Builder;
+accessible class net/minecraft/world/damagesource/DamageSource
+accessible method net/minecraft/world/damagesource/DamageSource <init> (Ljava/lang/String;)V
+accessible method net/minecraft/world/damagesource/DamageSource bypassArmor ()Lnet/minecraft/world/damagesource/DamageSource;
+accessible method net/minecraft/world/damagesource/DamageSource bypassInvul ()Lnet/minecraft/world/damagesource/DamageSource;

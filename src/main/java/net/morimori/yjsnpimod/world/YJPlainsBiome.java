@@ -1,4 +1,4 @@
-package net.morimori.yjsnpimod.biome;
+package net.morimori.yjsnpimod.world;
 
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
@@ -17,36 +17,30 @@ import net.minecraft.world.level.levelgen.surfacebuilders.SurfaceBuilderBaseConf
 import net.morimori.yjsnpimod.YJSNPIMOD;
 import net.morimori.yjsnpimod.block.YJBlocks;
 
-public class YJForestBiome {
+public class YJPlainsBiome {
+
     public static void init() {
         ConfiguredSurfaceBuilder<SurfaceBuilderBaseConfiguration> SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderBaseConfiguration(YJBlocks.YJ_GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
-
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
         generationSettings.surfaceBuilder(SURFACE_BUILDER);
-        generationSettings.addStructureStart(StructureFeatures.VILLAGE_PLAINS);
-        generationSettings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
-        generationSettings.addStructureStart(StructureFeatures.WOODLAND_MANSION);
+
+        generationSettings.addStructureStart(StructureFeatures.VILLAGE_PLAINS).addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
 
         BiomeDefaultFeatures.addDefaultOverworldLandStructures(generationSettings);
-
         generationSettings.addStructureStart(StructureFeatures.RUINED_PORTAL_STANDARD);
         BiomeDefaultFeatures.addDefaultCarvers(generationSettings);
         BiomeDefaultFeatures.addDefaultLakes(generationSettings);
         BiomeDefaultFeatures.addDefaultCrystalFormations(generationSettings);
         BiomeDefaultFeatures.addDefaultMonsterRoom(generationSettings);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.PATCH_TALL_GRASS_2_YJ);
 
         BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
         BiomeDefaultFeatures.addDefaultOres(generationSettings);
         BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.YJ_FLOWERS);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.PATCH_GRASS_PLAIN_YJ);
         YJFeatures.addYJDimOres(generationSettings);
 
-        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.BIRCH_YJ);
-
-        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, YJFeatures.PATCH_GRASS_FOREST_YJ);
-        // BiomeDefaultFeatures.addForestGrass(generationSettings);
-
-        BiomeDefaultFeatures.addDefaultMushrooms(generationSettings);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(generationSettings);
         BiomeDefaultFeatures.addDefaultSprings(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
 
@@ -55,12 +49,21 @@ public class YJForestBiome {
         spawnSettings.setPlayerCanSpawn();
 
         Biome biome = new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN)
-                .biomeCategory(Biome.BiomeCategory.FOREST)
-                .depth(0.1f).scale(0.4f).temperature(0.7F).downfall(0.8F).specialEffects((new net.minecraft.world.level.biome.BiomeSpecialEffects.Builder()).waterColor(0x364364).waterFogColor(0x1919).fogColor(0x114514).skyColor(0x114514)
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+                .biomeCategory(Biome.BiomeCategory.PLAINS)
+                .depth(0.125F)
+                .scale(0.05F)
+                .temperature(0.8F)
+                .downfall(0.4F)
+                .specialEffects((new net.minecraft.world.level.biome.BiomeSpecialEffects.Builder())
+                        .waterColor(0x114514)
+                        .waterFogColor(0x364364)
+                        .fogColor(0x191919)
+                        .skyColor(0x810931)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build()).build();
 
-        Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new ResourceLocation(YJSNPIMOD.MODID, "yj_forest"), SURFACE_BUILDER);
-        Registry.register(BuiltinRegistries.BIOME, new ResourceLocation(YJSNPIMOD.MODID, "yj_forest"), biome);
-
+        Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new ResourceLocation(YJSNPIMOD.MODID, "yj_plains"), SURFACE_BUILDER);
+        Registry.register(BuiltinRegistries.BIOME, new ResourceLocation(YJSNPIMOD.MODID, "yj_plains"), biome);
     }
 }

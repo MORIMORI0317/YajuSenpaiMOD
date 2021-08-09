@@ -1,18 +1,19 @@
 package net.morimori.yjsnpimod;
 
 import net.fabricmc.api.ModInitializer;
-import net.morimori.yjsnpimod.biome.YJBiomes;
-import net.morimori.yjsnpimod.biome.YJFeatures;
-import net.morimori.yjsnpimod.biome.YJStructureFeatures;
-import net.morimori.yjsnpimod.biome.YJStructurePieceTypes;
 import net.morimori.yjsnpimod.block.YJBlocks;
 import net.morimori.yjsnpimod.blockentity.YJBlockEntityTypes;
+import net.morimori.yjsnpimod.enchantment.YJEnchantments;
 import net.morimori.yjsnpimod.entity.YJEntityTypes;
 import net.morimori.yjsnpimod.item.YJItems;
 import net.morimori.yjsnpimod.registry.StructureReplace;
 import net.morimori.yjsnpimod.registry.YJDimensions;
 import net.morimori.yjsnpimod.registry.YJMotives;
 import net.morimori.yjsnpimod.registry.YJSoundEvents;
+import net.morimori.yjsnpimod.world.YJBiomes;
+import net.morimori.yjsnpimod.world.YJFeatures;
+import net.morimori.yjsnpimod.world.YJStructureFeatures;
+import net.morimori.yjsnpimod.world.YJStructurePieceTypes;
 
 public class YJSNPIMOD implements ModInitializer {
     public static final String MODID = "yjsnpimod";
@@ -21,6 +22,7 @@ public class YJSNPIMOD implements ModInitializer {
     public void onInitialize() {
         YJItems.init();
         YJBlocks.init();
+        YJEnchantments.init();
         YJBlockEntityTypes.init();
         YJSoundEvents.init();
         YJMotives.init();

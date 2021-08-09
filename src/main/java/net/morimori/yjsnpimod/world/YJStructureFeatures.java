@@ -1,11 +1,11 @@
-package net.morimori.yjsnpimod.biome;
+package net.morimori.yjsnpimod.world;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
@@ -29,13 +29,13 @@ public class YJStructureFeatures {
 
     public static void init() {
 
-        FabricStructureBuilder.create(new ResourceLocation(YJSNPIMOD.MODID, "yj_house_st"), YJ_HOUSE_FUTER)
+        FabricStructureBuilder.create(new ResourceLocation(YJSNPIMOD.MODID, "yj_house"), YJ_HOUSE_FUTER)
                 .step(GenerationStep.Decoration.SURFACE_STRUCTURES)
-                .defaultConfig(64, 16, 12345)
+                .defaultConfig(36, 19, 0x114514)
                 .adjustsSurface()
                 .register();
 
         ORE_STRUCTUREFEATURES.forEach((n, m) -> Registry.register(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, n, m));
-        BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getResourceKey(YJ_HOUSE).ifPresent(n -> BiomeModifications.addStructure(l -> (l.getBiome().getBiomeCategory() != Biome.BiomeCategory.OCEAN) && (l.getBiome().getBiomeCategory() != Biome.BiomeCategory.RIVER) && (l.getBiome().getBiomeCategory() != Biome.BiomeCategory.NONE), n));
+        BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getResourceKey(YJ_HOUSE).ifPresent(n -> BiomeModifications.addStructure(BiomeSelectors.all(), n));
     }
 }

@@ -3,7 +3,7 @@ package net.morimori.yjsnpimod.mixin;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.morimori.yjsnpimod.biome.YJFeatures;
+import net.morimori.yjsnpimod.world.YJFeatures;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

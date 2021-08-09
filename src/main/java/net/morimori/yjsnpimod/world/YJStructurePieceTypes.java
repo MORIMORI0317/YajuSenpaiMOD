@@ -1,4 +1,4 @@
-package net.morimori.yjsnpimod.biome;
+package net.morimori.yjsnpimod.world;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;

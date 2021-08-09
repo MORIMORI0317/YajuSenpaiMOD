@@ -1,4 +1,4 @@
-package net.morimori.yjsnpimod.biome;
+package net.morimori.yjsnpimod.world;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -37,6 +37,12 @@ public class YJHousePieces {
         @Override
         protected void handleDataMarker(String string, BlockPos blockPos, ServerLevelAccessor serverLevelAccessor, Random random, BoundingBox boundingBox) {
 
+        }
+
+        @Override
+        protected void addAdditionalSaveData(ServerLevel serverLevel, CompoundTag compoundTag) {
+            super.addAdditionalSaveData(serverLevel, compoundTag);
+            compoundTag.putString("Rot", this.placeSettings.getRotation().name());
         }
 
         private static StructurePlaceSettings makeSettings(Rotation rotation, ResourceLocation resourceLocation) {
