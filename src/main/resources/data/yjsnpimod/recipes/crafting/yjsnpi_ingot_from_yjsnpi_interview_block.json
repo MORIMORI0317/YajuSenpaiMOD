@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yjsnpi_ingot",
+  "ingredients": [
+    {
+      "item": "yjsnpimod:yjsnpi_interview_block"
+    }
+  ],
+  "result": {
+    "item": "yjsnpimod:yjsnpi_ingot",
+    "count": 9
+  }
+}

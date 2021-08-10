@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "yjsnpimod:yjsnpi_ingot"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:yjsnpi_pickaxe"
+  }
+}

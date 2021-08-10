@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "yjnium_ingot",
+  "ingredient": {
+    "item": "yjsnpimod:yjnium_ore"
+  },
+  "result": "yjsnpimod:yjnium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

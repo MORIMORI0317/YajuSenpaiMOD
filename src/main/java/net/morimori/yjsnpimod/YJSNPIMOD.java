@@ -1,6 +1,8 @@
 package net.morimori.yjsnpimod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.EntityTrackingEvents;
 import net.morimori.yjsnpimod.block.YJBlocks;
 import net.morimori.yjsnpimod.blockentity.YJBlockEntityTypes;
 import net.morimori.yjsnpimod.enchantment.YJEnchantments;

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "yjsnpimod:raw_yjnium"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:raw_yjnium_block"
+  }
+}

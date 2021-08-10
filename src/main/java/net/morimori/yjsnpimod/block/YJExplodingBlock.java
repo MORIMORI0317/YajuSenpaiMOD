@@ -116,4 +116,9 @@ public class YJExplodingBlock extends Block {
             startIkisugi(blockState, level, blockPos);
         }
     }
+
+    @Override
+    public boolean dropFromExplosion(Explosion explosion) {
+        return false;
+    }
 }

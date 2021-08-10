@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "yjsnpimod:yjsnpi_ingot"
+    }
+  ],
+  "result": {
+    "item": "yjsnpimod:yjsnpi_nugget",
+    "count": 9
+  }
+}

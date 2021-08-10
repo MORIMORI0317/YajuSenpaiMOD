@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "yjsnpimod:yjsnpi_block"
+  },
+  "result": "yjsnpimod:yjsnpi_ennui_block",
+  "count": 1
+}

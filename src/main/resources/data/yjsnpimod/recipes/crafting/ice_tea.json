@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:potion"
+    },
+    "B": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:ice_tea"
+  }
+}

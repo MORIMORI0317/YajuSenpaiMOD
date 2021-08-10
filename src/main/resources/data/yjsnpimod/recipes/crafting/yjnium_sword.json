@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "yjsnpimod:yjnium_ingot"
+    }
+  },
+  "result": {
+    "item": "yjsnpimod:yjnium_sword"
+  }
+}
