@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_rh",
-  "textures": {
-    "top": "yjsnpimod:block/yj_house_door_top",
-    "bottom": "yjsnpimod:block/yj_house_door_bottom"
-  }
-}

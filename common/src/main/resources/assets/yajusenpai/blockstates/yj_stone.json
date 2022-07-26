@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "yajusenpai:block/yj_stone"
+      },
+      {
+        "model": "yajusenpai:block/yj_stone_mirrored"
+      },
+      {
+        "model": "yajusenpai:block/yj_stone",
+        "y": 180
+      },
+      {
+        "model": "yajusenpai:block/yj_stone_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

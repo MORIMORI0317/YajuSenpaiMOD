@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "net.morimori0317.yajusenpai.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "mixins": [
+    "BowItemMixin",
+    "EntityMixin",
+    "ItemStackMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

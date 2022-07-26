@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[41,)"
+#issueTrackerURL = ""
+license = "GNU LGPLv3"
+
+[[mods]]
+modId = "yajusenpai"
+version = "${version}"
+displayName = "Yaju Senpai"
+authors = "MORIMORI0317"
+description = '''
+The ikisugi mod...
+'''
+#logoFile = ""
+
+[[dependencies.yajusenpai]]
+modId = "forge"
+mandatory = true
+versionRange = "[41,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.yajusenpai]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.yajusenpai]]
+modId = "architectury"
+mandatory = true
+versionRange = "[5.7.28,)"
+ordering = "AFTER"
+side = "BOTH"

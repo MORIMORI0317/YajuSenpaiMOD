@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "yajusenpai",
+  "version": "${version}",
+  "name": "Yaju Senpai",
+  "description": "The ikisugi mod...",
+  "authors": [
+    "MORIMORI0317"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod",
+    "sources": "https://github.com/MORIMORI0317/YJSNPIMOD"
+  },
+  "license": "GNU LGPLv3",
+  "icon": "assets/examplemod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.morimori0317.yajusenpai.fabric.YajuSenpaiFabric"
+    ],
+    "client": [
+      "net.morimori0317.yajusenpai.fabric.client.YajuSenpaiClientFabric"
+    ]
+  },
+  "mixins": [
+    "yajusenpai.mixins.json",
+    "yajusenpai-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19",
+    "architectury": ">=5.7.28"
+  }
+}

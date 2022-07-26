@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "yjsnpimod:yjsnpi_block"
-  },
-  "result": "yjsnpimod:yjsnpi_gomanetsu_block",
-  "count": 1
-}

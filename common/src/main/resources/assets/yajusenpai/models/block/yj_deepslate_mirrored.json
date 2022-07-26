@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_mirrored",
+  "textures": {
+    "end": "yajusenpai:block/yj_deepslate",
+    "side": "yajusenpai:block/yj_deepslate"
+  }
+}

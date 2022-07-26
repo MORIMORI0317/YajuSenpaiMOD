@@ -1,0 +1,19 @@
+{
+    "providers": [
+        {
+            "type": "space",
+            "advances": {
+                " ": 4
+            }
+        },
+        {
+            "type": "bitmap",
+            "file": "yajusenpai:font/gaba_ana_daddy.png",
+            "ascent": 7,
+            "chars": [
+                "ガバ穴ダディー\u0000",
+                "GabAnDdy"
+            ]
+        }
+    ]
+}

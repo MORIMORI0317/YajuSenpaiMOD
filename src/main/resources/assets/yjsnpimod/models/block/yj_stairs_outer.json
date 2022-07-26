@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "yjsnpimod:block/yj_planks",
-    "top": "yjsnpimod:block/yj_planks",
-    "side": "yjsnpimod:block/yj_planks"
-  }
-}

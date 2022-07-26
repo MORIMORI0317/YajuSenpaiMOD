@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "yajusenpai:block/yj_deepslate"
+      },
+      {
+        "model": "yajusenpai:block/yj_deepslate_mirrored"
+      },
+      {
+        "model": "yajusenpai:block/yj_deepslate",
+        "y": 180
+      },
+      {
+        "model": "yajusenpai:block/yj_deepslate_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

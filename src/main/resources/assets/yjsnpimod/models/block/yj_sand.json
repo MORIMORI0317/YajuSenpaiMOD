@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "yjsnpimod:block/yj_sand"
-  }
-}
