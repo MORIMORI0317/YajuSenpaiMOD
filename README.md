@@ -1,6 +1,6 @@
-# YJSNPIMOD
+# Yaju Senpai MOD
 
-The YJSNPI MOD
+The minecraft mod
 
-CuresForge
-https://minecraft.curseforge.com/projects/the-yjsnpi-mod
+[CuresForge](https://minecraft.curseforge.com/projects/the-yjsnpi-mod)
+

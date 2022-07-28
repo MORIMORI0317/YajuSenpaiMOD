@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "yajusenpai:item/yjnium_horse_armor"
+  }
+}
