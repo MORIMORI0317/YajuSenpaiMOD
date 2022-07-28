@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "yajusenpai:block/tall_yj_grass_bottom"
+    },
+    "half=upper": {
+      "model": "yajusenpai:block/tall_yj_grass_top"
+    }
+  }
+}
