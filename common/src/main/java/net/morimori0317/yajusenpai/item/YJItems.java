@@ -44,7 +44,6 @@ public class YJItems {
     public static final RegistrySupplier<Item> YJSNPI_LEGGINGS = register("yjsnpi_leggings", () -> new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.LEGS, (new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB)));
     public static final RegistrySupplier<Item> YJSNPI_BOOTS = register("yjsnpi_boots", () -> new ArmorItem(YJArmorMaterials.YJSNPI, EquipmentSlot.FEET, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
-
     private static RegistrySupplier<Item> register(String name) {
         return register(name, () -> new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }

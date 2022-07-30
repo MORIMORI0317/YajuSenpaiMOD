@@ -1,11 +1,13 @@
 package net.morimori0317.yajusenpai.item;
 
+import dev.architectury.platform.Platform;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
 import java.util.function.Supplier;
@@ -24,8 +26,13 @@ public enum YJArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    YJArmorMaterials(String string2, int j, int[] is, int k, Supplier<SoundEvent> soundEvent, float f, float g, Supplier<Ingredient> supplier) {
-        this.name = string2;
+    YJArmorMaterials(String name, int j, int[] is, int k, Supplier<SoundEvent> soundEvent, float f, float g, Supplier<Ingredient> supplier) {
+        if (Platform.isForge())
+            this.name = YajuSenpai.MODID + ":" + name;
+        else
+            this.name = name;
+
+
         this.durabilityMultiplier = j;
         this.slotProtections = is;
         this.enchantmentValue = k;

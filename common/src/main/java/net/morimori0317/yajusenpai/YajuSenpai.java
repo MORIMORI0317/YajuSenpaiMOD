@@ -1,6 +1,7 @@
 package net.morimori0317.yajusenpai;
 
 import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.painting.YJPaintings;
@@ -16,6 +17,7 @@ public class YajuSenpai {
         YJItems.init();
         YJBlocks.init();
         YJEnchantments.init();
+        YJMobEffects.init();
         YJPaintings.init();
         ServerHandler.init();
         YJTreeFeatures.init();

@@ -15,7 +15,7 @@ public class YJSwordItem extends SwordItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
         if (!attacker.level.isClientSide())
-            attacker.level.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), YJSoundEvents.YJ_ATTACK.get(), SoundSource.NEUTRAL, 5, 1);
+            attacker.level.playSound(null, attacker, YJSoundEvents.YJ_ATTACK.get(), SoundSource.NEUTRAL, 5, 1);
         return super.hurtEnemy(itemStack, target, attacker);
     }
 }

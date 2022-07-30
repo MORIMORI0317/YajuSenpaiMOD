@@ -38,7 +38,7 @@ public abstract class ItemStackMixin {
                 soundEvents = YJSoundEvents.KATYOU_BROKEN.get();
                 brokenFlag = true;
             }
-            serverPlayer.level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), soundEvents, SoundSource.NEUTRAL, 0.5f, 1);
+            serverPlayer.level.playSound(null, serverPlayer, soundEvents, SoundSource.NEUTRAL, 0.5f, 1);
 
             if (brokenFlag) this.setDamageValue(this.getMaxDamage());
         }
@@ -59,14 +59,14 @@ public abstract class ItemStackMixin {
                 n.shrink(1);
             });
             if (0 < val[0])
-                serverPlayer.level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), YJSoundEvents.GABAANADADDY_OREMOITCHAU.get(), SoundSource.NEUTRAL, val[0], 1);
+                serverPlayer.level.playSound(null, serverPlayer, YJSoundEvents.GABAANADADDY_OREMOITCHAU.get(), SoundSource.NEUTRAL, val[0], 1);
         }
     }
 
     @Inject(method = "hurt", at = @At("RETURN"))
     private void hurt3(int i, RandomSource randomSource, ServerPlayer serverPlayer, CallbackInfoReturnable<Boolean> cir) {
         if (serverPlayer != null && YJUtils.hasGabaAnaDaddyEnchantment((ItemStack) (Object) this) && cir.getReturnValue())
-            serverPlayer.level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), YJSoundEvents.GABAANADADDY_IKUYO.get(), SoundSource.NEUTRAL, 0.5f, 1);
+            serverPlayer.level.playSound(null, serverPlayer, YJSoundEvents.GABAANADADDY_IKUYO.get(), SoundSource.NEUTRAL, 0.5f, 1);
     }
 
     @Inject(method = "inventoryTick", at = @At("TAIL"))

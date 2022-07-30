@@ -17,6 +17,6 @@ public class BowItemMixin {
     @Inject(method = "releaseUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V", shift = At.Shift.AFTER))
     private void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i, CallbackInfo ci) {
         if (YJUtils.hasGabaAnaDaddyEnchantment(itemStack) && livingEntity.getRandom().nextInt(10) == 0)
-            level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.GABAANADADDY_ARCHER.get(), SoundSource.PLAYERS, 1f, 1f);
+            level.playSound(null, livingEntity, YJSoundEvents.GABAANADADDY_ARCHER.get(), SoundSource.PLAYERS, 1f, 1f);
     }
 }
