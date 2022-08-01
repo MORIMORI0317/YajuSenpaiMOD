@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 public class YJTreeFeatures {
     private static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(YajuSenpai.MODID, Registry.CONFIGURED_FEATURE_REGISTRY);
     public static final Function<RegistrySupplier<ConfiguredFeature<TreeConfiguration, ?>>, Holder<ConfiguredFeature<TreeConfiguration, ?>>> HOLDER = Util.memoize(n -> Holder.direct(n.get()));
-    public static RegistrySupplier<ConfiguredFeature<TreeConfiguration, ?>> YJ_TREE = register("yj_tree", Feature.TREE, () -> createYJTree().build());
+    public static final RegistrySupplier<ConfiguredFeature<TreeConfiguration, ?>> YJ_TREE = register("yj_tree", Feature.TREE, () -> createYJTree().build());
 
     public static void init() {
         CONFIGURED_FEATURES.register();

@@ -8,7 +8,9 @@
     "BowItemMixin",
     "EntityMixin",
     "ItemStackMixin",
-    "LivingEntityMixin"
+    "LivingEntityAccessor",
+    "LivingEntityMixin",
+    "StructurePieceMixin"
   ],
   "injectors": {
     "defaultRequire": 1

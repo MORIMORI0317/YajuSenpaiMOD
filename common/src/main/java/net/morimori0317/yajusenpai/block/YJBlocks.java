@@ -34,7 +34,6 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> YJSNPI_IKISUGI_BLOCK = register("yjsnpi_ikisugi_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
     public static final RegistrySupplier<Block> YJSNPI_IMDKUJ_BLOCK = register("yjsnpi_imdkuj_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
     public static final RegistrySupplier<Block> YJSNPI_KUNEKUNE_BLOCK = register("yjsnpi_kunekune_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
-
     public static final RegistrySupplier<Block> YJSNPI_SZKFK_BLOCK = register("yjsnpi_szkfk_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
     public static final RegistrySupplier<Block> YJSNPI_CCCLKTJM_BLOCK = register("yjsnpi_ccclktjm_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
     public static final RegistrySupplier<Block> YJSNPI_CWCWTD_BLOCK = register("yjsnpi_cwcwtd_block", YJMaterial.YJSNPI, () -> YJSoundType.YJ, 1f, 10f);
@@ -43,6 +42,8 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> TON_BLOCK = register("ton_block", YJMaterial.TON, () -> YJSoundType.TON, 1f, 10f);
     public static final RegistrySupplier<Block> KMR_BLOCK = register("kmr_block", YJMaterial.KMR, () -> YJSoundType.KMR, 1f, 10f);
     public static final RegistrySupplier<Block> MUR_BLOCK = register("mur_block", YJMaterial.MUR, () -> YJSoundType.MUR, 1f, 10f);
+
+    public static final RegistrySupplier<Block>[] INM_BLOCKs = (RegistrySupplier<Block>[]) new RegistrySupplier[]{YJSNPI_INTERVIEW_BLOCK, YJSNPI_GOMANETSU_BLOCK, YJSNPI_ENNUI_BLOCK, YJSNPI_MEZIKARA_BLOCK, YJSNPI_NEHAN_BLOCK, YJSNPI_SHITARIGAO_BLOCK, YJSNPI_IKISUGI_BLOCK, YJSNPI_IMDKUJ_BLOCK, YJSNPI_KUNEKUNE_BLOCK, YJSNPI_SZKFK_BLOCK, YJSNPI_CCCLKTJM_BLOCK, YJSNPI_CWCWTD_BLOCK, YJSNPI_INTLNGTM_BLOCK, TON_BLOCK, KMR_BLOCK, MUR_BLOCK};
 
     public static final RegistrySupplier<Block> BB = register("bb", Material.STONE, DyeColor.BLUE, () -> SoundType.GLASS, 0.5f, 0.1f, l -> 15);
     public static final RegistrySupplier<Block> GB = register("gb", Material.STONE, DyeColor.GREEN, () -> SoundType.GLASS, 0.5f, 0.1f, l -> 15);

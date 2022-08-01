@@ -7,13 +7,16 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.SoundType;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.EnityIkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.IkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.YJDamageSource;
+import net.morimori0317.yajusenpai.item.CyclopsSunglassesItem;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
 import net.morimori0317.yajusenpai.util.YJUtils;
@@ -21,13 +24,12 @@ import net.morimori0317.yajusenpai.util.YJUtils;
 public class ServerHandler {
     public static void init() {
         TickEvent.PLAYER_POST.register(ServerHandler::onPlayerTick);
-        EntityEvent.LIVING_HURT.register(ServerHandler::onLivingHurt);
         EntityEvent.LIVING_DEATH.register(ServerHandler::onLivingDie);
     }
 
     private static EventResult onLivingDie(LivingEntity livingEntity, DamageSource source) {
         if (source instanceof IkisugiDamageSource || source instanceof EnityIkisugiDamageSource) {
-            livingEntity.level.playSound(null,  livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.VOICE, 3, 1);
+            livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.VOICE, 3, 1);
             if (source instanceof EnityIkisugiDamageSource ikisugiDamageSource && ikisugiDamageSource.getEntity() != null) {
                 if (livingEntity.getRandom().nextInt(19) == 0) {
                     var srce = ikisugiDamageSource.getEntity();
@@ -44,14 +46,26 @@ public class ServerHandler {
             livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.TON_SEKAINOTON.get(), SoundSource.VOICE, 3, 1);
         }
 
+        if (!livingEntity.getLevel().isClientSide()) {
+            if (YJUtils.isYJSound(livingEntity))
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.NEUTRAL, 3, 1);
+
+            SoundType ist = YJUtils.getInmSoundType(livingEntity.getItemBySlot(EquipmentSlot.HEAD));
+            if (ist != null)
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ist.getBreakSound(), SoundSource.NEUTRAL, 3, 1);
+
+            if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CyclopsSunglassesItem)
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.CYCLOPS_AIKISO.get(), SoundSource.NEUTRAL, 3, 1);
+        }
+
         return EventResult.pass();
     }
 
-    private static EventResult onLivingHurt(LivingEntity entity, DamageSource source, float amount) {
-        if (!entity.getLevel().isClientSide() && source.isFire()) {
+    public static void onLivingHurt(LivingEntity livingEntity, DamageSource source, float amount) {
+        if (!livingEntity.getLevel().isClientSide() && source.isFire()) {
             int kc = -1;
             int akc = 0;
-            for (ItemStack item : entity.getArmorSlots()) {
+            for (ItemStack item : livingEntity.getArmorSlots()) {
                 if (YJUtils.hasKynEnchantment(item)) {
                     int ikc = 0;
                     if (item.getTag() != null)
@@ -62,15 +76,27 @@ public class ServerHandler {
             }
 
             if (kc >= 0) {
-                entity.level.playSound(null, entity, YJSoundEvents.KYN_ATUIs[Mth.clamp(kc, 0, YJSoundEvents.KYN_ATUIs.length - 1)].get(), SoundSource.NEUTRAL, akc, 1);
+                livingEntity.level.playSound(null, livingEntity, YJSoundEvents.KYN_ATUIs[Mth.clamp(kc, 0, YJSoundEvents.KYN_ATUIs.length - 1)].get(), SoundSource.NEUTRAL, akc, 1);
                 kc = (kc + 1) % YJSoundEvents.KYN_ATUIs.length;
-                for (ItemStack item : entity.getArmorSlots()) {
+                for (ItemStack item : livingEntity.getArmorSlots()) {
                     if (YJUtils.hasKynEnchantment(item))
                         item.getOrCreateTag().putInt("kyn_count", kc);
                 }
             }
         }
-        return EventResult.pass();
+
+        if (!livingEntity.getLevel().isClientSide()) {
+            if (YJUtils.isYJSound(livingEntity))
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_DAMEGE.get(), SoundSource.NEUTRAL, 3, 1);
+
+            SoundType ist = YJUtils.getInmSoundType(livingEntity.getItemBySlot(EquipmentSlot.HEAD));
+            if (ist != null)
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ist.getHitSound(), SoundSource.NEUTRAL, 3, 1);
+
+            if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CyclopsSunglassesItem)
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.CYCLOPS_NAZOOTO.get(), SoundSource.NEUTRAL, 3, 1);
+        }
+
     }
 
     private static void onPlayerTick(Player player) {

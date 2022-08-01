@@ -6,7 +6,9 @@ import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.painting.YJPaintings;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
+import net.morimori0317.yajusenpai.server.world.features.YJOreFeatures;
 import net.morimori0317.yajusenpai.server.world.features.YJTreeFeatures;
+import net.morimori0317.yajusenpai.server.world.features.YJVegetationFeatures;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
 public class YajuSenpai {
@@ -21,6 +23,9 @@ public class YajuSenpai {
         YJPaintings.init();
         ServerHandler.init();
         YJTreeFeatures.init();
+        YJOreFeatures.init();
+        YJVegetationFeatures.init();
+
         //https://misode.github.io/dimension/
         //https://github.com/misode/vanilla-worldgen/tree/master/worldgen/biome
     }
