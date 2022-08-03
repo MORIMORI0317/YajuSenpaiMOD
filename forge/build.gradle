@@ -13,6 +13,10 @@ loom {
     forge {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+
+
+        mixinConfig "yajusenpai-common.mixins.json"
+        mixinConfig "yajusenpai.mixins.json"
     }
 }
 

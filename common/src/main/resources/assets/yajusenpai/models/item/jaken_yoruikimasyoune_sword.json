@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "yajusenpai:item/jaken_yoruikimasyoune_sword"
+  }
+}

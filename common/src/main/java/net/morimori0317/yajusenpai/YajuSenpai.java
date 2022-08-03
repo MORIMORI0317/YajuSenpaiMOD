@@ -16,10 +16,10 @@ public class YajuSenpai {
 
     public static void init() {
         YJSoundEvents.init();
-        YJItems.init();
-        YJBlocks.init();
-        YJEnchantments.init();
         YJMobEffects.init();
+        YJBlocks.init();
+        YJItems.init();
+        YJEnchantments.init();
         YJPaintings.init();
         ServerHandler.init();
         YJTreeFeatures.init();

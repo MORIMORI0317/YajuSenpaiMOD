@@ -2,3 +2,4 @@ accessWidener   v2  named
 accessible method net/minecraft/world/level/block/Blocks leaves (Lnet/minecraft/world/level/block/SoundType;)Lnet/minecraft/world/level/block/LeavesBlock;
 accessible method net/minecraft/data/worldgen/features/TreeFeatures createStraightBlobTree (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;IIII)Lnet/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration$TreeConfigurationBuilder;
 accessible method net/minecraft/data/worldgen/features/VegetationFeatures grassPatch (Lnet/minecraft/world/level/levelgen/feature/stateproviders/BlockStateProvider;I)Lnet/minecraft/world/level/levelgen/feature/configurations/RandomPatchConfiguration;
+accessible field net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer shieldModel Lnet/minecraft/client/model/ShieldModel;

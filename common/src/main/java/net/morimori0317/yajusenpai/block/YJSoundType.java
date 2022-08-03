@@ -16,6 +16,7 @@ public class YJSoundType extends SoundType {
     public static final SoundType YJ_SAND = new SoundType(1.0F, 1.0F, SoundEvents.SAND_BREAK, YJSoundEvents.YJ_STEP.get(), SoundEvents.SAND_PLACE, SoundEvents.SAND_HIT, YJSoundEvents.YJ_FALL.get());
     public static final SoundType YJ_GRASS = new SoundType(1.0F, 1.0F, SoundEvents.GRASS_BREAK, YJSoundEvents.YJ_STEP.get(), SoundEvents.GRASS_PLACE, SoundEvents.GRASS_HIT, YJSoundEvents.YJ_FALL.get());
     public static final SoundType YJ_WOOD = new SoundType(1.0F, 1.0F, SoundEvents.WOOD_BREAK, YJSoundEvents.YJ_STEP.get(), SoundEvents.WOOD_PLACE, SoundEvents.WOOD_HIT, YJSoundEvents.YJ_FALL.get());
+    public static final SoundType YJ_CROP = new SoundType(1.0F, 1.0F, SoundEvents.CROP_BREAK, YJSoundEvents.YJ_STEP.get(), SoundEvents.CROP_PLANTED, SoundEvents.CROP_BREAK, YJSoundEvents.YJ_FALL.get());
 
     private final SoundType normal;
     private final SoundType highPitch;

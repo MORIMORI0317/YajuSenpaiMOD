@@ -8,6 +8,8 @@ import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
 public class CommonHandler {
+    public static int IKISUGI_DIE_TIME = 20 * 8 + 3;
+
     public static void onLivingTick(LivingEntity livingEntity) {
         YJLivingEntity yjLiving = (YJLivingEntity) livingEntity;
 
@@ -16,10 +18,10 @@ public class CommonHandler {
             if (livingEntity.hasEffect(YJMobEffects.IKISUGI.get()) && effect != null) {
                 if (effect.getDuration() <= 20) {
                     livingEntity.removeEffect(YJMobEffects.IKISUGI.get());
-                    livingEntity.hurt(YJDamageSource.ikisugi(yjLiving.getGrantedIkisugiEntity()), livingEntity.getMaxHealth());
+                    livingEntity.hurt(YJDamageSource.ikisugi(yjLiving.getGrantedIkisugiEntity()), 114514f);
                 }
 
-                if (effect.getDuration() <= 20 * 8 + 3 && !yjLiving.isIkisugi()) {
+                if (effect.getDuration() <= IKISUGI_DIE_TIME && !yjLiving.isIkisugi()) {
                     yjLiving.setIkisugi(true);
                     livingEntity.level.playSound(null, livingEntity, YJSoundEvents.YJ_IKISUGI_ONRY.get(), SoundSource.VOICE, 3, 1);
                 }

@@ -1,12 +1,17 @@
 package net.morimori0317.yajusenpai.server.handler;
 
+import com.mojang.datafixers.util.Pair;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.EntityEvent;
+import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +22,7 @@ import net.morimori0317.yajusenpai.entity.EnityIkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.IkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.YJDamageSource;
 import net.morimori0317.yajusenpai.item.CyclopsSunglassesItem;
+import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
 import net.morimori0317.yajusenpai.util.YJUtils;
@@ -25,6 +31,27 @@ public class ServerHandler {
     public static void init() {
         TickEvent.PLAYER_POST.register(ServerHandler::onPlayerTick);
         EntityEvent.LIVING_DEATH.register(ServerHandler::onLivingDie);
+        InteractionEvent.INTERACT_ENTITY.register(ServerHandler::onEntityInteract);
+    }
+
+    private static EventResult onEntityInteract(Player player, Entity entity, InteractionHand hand) {
+        if (!entity.level.isClientSide()) {
+            ItemStack itemStack = player.getItemInHand(hand);
+            if (itemStack.is(YJItems.ICE_TEA.get()) && entity instanceof LivingEntity livingEntity) {
+                if (!player.getCooldowns().isOnCooldown(YJItems.ICE_TEA.get()) && !livingEntity.hasEffect(YJMobEffects.COMA.get())) {
+                    for (Pair<MobEffectInstance, Float> effect : YJItems.ICE_TEA.get().getFoodProperties().getEffects()) {
+                        livingEntity.addEffect(effect.getFirst());
+                    }
+
+                    player.level.playSound(null, player, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
+
+                    player.getCooldowns().addCooldown(YJItems.ICE_TEA.get(), 20);
+                    if (!player.getAbilities().instabuild)
+                        itemStack.shrink(1);
+                }
+            }
+        }
+        return EventResult.pass();
     }
 
     private static EventResult onLivingDie(LivingEntity livingEntity, DamageSource source) {

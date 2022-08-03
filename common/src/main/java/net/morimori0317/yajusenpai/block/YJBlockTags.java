@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.YajuSenpai;
 
 public class YJBlockTags {
+    public static final TagKey<Block> INM_BLOCK = create("inm_block");
     public static final TagKey<Block> YJ_STONE_ORE_REPLACEABLES = create("yj_stone_ore_replaceables");
     public static final TagKey<Block> YJ_DEEPSLATE_ORE_REPLACEABLES = create("yj_deepslate_ore_replaceables");
     public static final TagKey<Block> BASE_YJ_STONE_YJDIM = create("base_yj_stone_yjdim");
