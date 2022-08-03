@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "yajusenpai:item/soft_smartphone"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-36.23, -22.54, -24.13],
+			"translation": [-1, 2, 2],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-36.23, -22.54, -24.13],
+			"translation": [-1, 2, 2],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -17, -5],
+			"translation": [-1, -2.5, -10.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -17, -5],
+			"translation": [-1, -2.5, -10.5]
+		}
+	}
+}

@@ -1,6 +1,5 @@
 package net.morimori0317.yajusenpai.server.handler;
 
-import com.mojang.datafixers.util.Pair;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.EntityEvent;
 import dev.architectury.event.events.common.InteractionEvent;
@@ -10,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,7 +20,6 @@ import net.morimori0317.yajusenpai.entity.EnityIkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.IkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.YJDamageSource;
 import net.morimori0317.yajusenpai.item.CyclopsSunglassesItem;
-import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
 import net.morimori0317.yajusenpai.util.YJUtils;
@@ -35,7 +32,7 @@ public class ServerHandler {
     }
 
     private static EventResult onEntityInteract(Player player, Entity entity, InteractionHand hand) {
-        if (!entity.level.isClientSide()) {
+        /*if (!entity.level.isClientSide()) {
             ItemStack itemStack = player.getItemInHand(hand);
             if (itemStack.is(YJItems.ICE_TEA.get()) && entity instanceof LivingEntity livingEntity) {
                 if (!player.getCooldowns().isOnCooldown(YJItems.ICE_TEA.get()) && !livingEntity.hasEffect(YJMobEffects.COMA.get())) {
@@ -50,7 +47,7 @@ public class ServerHandler {
                         itemStack.shrink(1);
                 }
             }
-        }
+        }*/
         return EventResult.pass();
     }
 

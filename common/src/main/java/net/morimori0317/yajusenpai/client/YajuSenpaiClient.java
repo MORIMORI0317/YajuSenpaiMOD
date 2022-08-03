@@ -11,6 +11,8 @@ public class YajuSenpaiClient {
         YjBlockRenderTypes.init();
         YJItemRenderers.init();
 
+
         YJClientExpectPlatform.registerItemProperties(YJItems.JAKEN_YORUIKIMASYOU_SHIELD.get(), new ResourceLocation("blocking"), (p_174590_, p_174591_, p_174592_, p_174593_) -> p_174592_ != null && p_174592_.isUsingItem() && p_174592_.getUseItem() == p_174590_ ? 1.0F : 0.0F);
+        YJClientExpectPlatform.registerItemProperties(YJItems.SOFT_SMARTPHONE.get(), new ResourceLocation("using"), (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
     }
 }
