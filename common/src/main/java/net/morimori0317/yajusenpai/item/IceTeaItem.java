@@ -12,6 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.LeadItem;
 import net.minecraft.world.item.UseAnim;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -54,7 +55,7 @@ public class IceTeaItem extends Item {
         return InteractionResult.PASS;
     }
 
-    private void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
+    public void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
         if (!attacker.level.isClientSide) {
             for (Pair<MobEffectInstance, Float> effect : getFoodProperties().getEffects()) {
                 target.addEffect(effect.getFirst());

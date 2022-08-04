@@ -1,7 +1,9 @@
 package net.morimori0317.yajusenpai.util;
 
+import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -21,7 +23,7 @@ import net.morimori0317.yajusenpai.item.YJItems;
 import java.util.Arrays;
 
 public class YJUtils {
-    private static final ResourceLocation YJ_DIMENSION = new ResourceLocation(YajuSenpai.MODID, "the_yajusenpai");
+    private static final ResourceKey<Level> YJ_DIMENSION = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(YajuSenpai.MODID, "the_yajusenpai"));
 
     public static boolean hasKatyouEnchantment(ItemStack stack) {
         return EnchantmentHelper.getItemEnchantmentLevel(YJEnchantments.KATYOU_CURSE.get(), stack) > 0;
@@ -67,6 +69,11 @@ public class YJUtils {
     }
 
     public static boolean isYJDim(Level level) {
-        return level.dimension().location().equals(YJ_DIMENSION);
+        return level.dimension() == YJ_DIMENSION;
     }
+
+    public static ResourceKey<Level> getYJDimension() {
+        return YJ_DIMENSION;
+    }
+
 }

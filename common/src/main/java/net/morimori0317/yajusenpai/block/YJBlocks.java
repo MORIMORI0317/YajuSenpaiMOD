@@ -15,6 +15,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.grower.YJTreeGrower;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
+import net.morimori0317.yajusenpai.item.FoiledBlockItem;
 import net.morimori0317.yajusenpai.item.YJCreativeModeTab;
 
 import java.util.function.Function;
@@ -63,7 +64,7 @@ public class YJBlocks {
 
     public static final RegistrySupplier<Block> YJ_GRASS = register("yj_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).sound(YJSoundType.YJ_GRASS)));
     public static final RegistrySupplier<Block> TALL_YJ_GRASS = register("tall_yj_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).sound(YJSoundType.YJ_GRASS)), block -> new DoubleHighBlockItem(block, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
-    //YJMobEffects.BEASTFICTION.get()
+
     public static final RegistrySupplier<Block> YJ_ROSE = register("yj_rose", () -> new YJRoseBlock(YJMobEffects.RAW_BEASTFICTION, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 
     public static final RegistrySupplier<Block> YJ_SAPLING = register("yj_sapling", () -> new SaplingBlock(new YJTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(YJSoundType.YJ_GRASS)));
@@ -77,6 +78,19 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, () -> YJSoundType.YJ, 5.0F, 6.0F);
 
     public static final RegistrySupplier<Block> POTATOES_SENPAI = register("potatoes_senpai", () -> new YJPotatoBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(YJSoundType.YJ_CROP)), null);
+    public static final RegistrySupplier<Block> YJ_HOUSE_DOOR = register("yj_house_door", () -> new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()), b -> new DoubleHighBlockItem(b, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+
+    public static final RegistrySupplier<Block> YJSNPI_EXPLODING_BLOCK = registerFoiled("yjsnpi_exploding_block", () -> new YJExplodingBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).strength(1f, 0f).lightLevel(value -> {
+        float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 14f) / 14;
+        float alevel = Math.min(level, 1f - level) * 2f;
+        return (int) (alevel * 16f) + 1;
+    })));
+    public static final RegistrySupplier<Block> YJSNPI_PROLIFERATION_BLOCK = registerFoiled("yjsnpi_proliferation_block", () -> new YJProliferationBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).randomTicks().strength(1f, 0f)));
+    public static final RegistrySupplier<Block> YJ_PORTAL = register("yj_portal", () -> new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noLootTable()), null);
+
+    private static RegistrySupplier<Block> registerFoiled(String name, Supplier<Block> block) {
+        return register(name, block, n -> new FoiledBlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+    }
 
     private static RegistrySupplier<Block> register(String name, Material materialIn, DyeColor dyeColor, Supplier<SoundType> sound, float hardness, float resistance, ToIntFunction<BlockState> light) {
         return register(name, () -> new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound.get()).strength(hardness, resistance).lightLevel(light)), n -> new BlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

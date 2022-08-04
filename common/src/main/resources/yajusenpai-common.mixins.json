@@ -7,7 +7,10 @@
   ],
   "mixins": [
     "BowItemMixin",
+    "DoorBlockMixin",
     "EntityMixin",
+    "ExplosionDamageCalculatorMixin",
+    "ExplosionMixin",
     "ItemStackMixin",
     "LivingEntityAccessor",
     "LivingEntityMixin",
