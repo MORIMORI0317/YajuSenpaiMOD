@@ -49,6 +49,12 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> YJ_OVERWRITE = register("yj.overwrite");
     public static final RegistrySupplier<SoundEvent> YJ_ATTACK = register("yj.attack");
 
+    public static final RegistrySupplier<SoundEvent> YJ_ABARENNAYO = register("yj.abarennayo");
+    public static final RegistrySupplier<SoundEvent> YJ_BRIEF = register("yj.brief");
+    public static final RegistrySupplier<SoundEvent> YJ_KUCHIAKEENAHORA = register("yj.kuchiakeenahora");
+
+    public static final RegistrySupplier<SoundEvent> YJ_ATTACK_ICE_TEA = register("yj.attack_ice_tea");
+
     public static final RegistrySupplier<SoundEvent> MEZIKARA_ALL = register("mezikara.all");
     public static final RegistrySupplier<SoundEvent> MEZIKARA_N1 = register("mezikara.n1");
     public static final RegistrySupplier<SoundEvent> MEZIKARA_N2 = register("mezikara.n2");

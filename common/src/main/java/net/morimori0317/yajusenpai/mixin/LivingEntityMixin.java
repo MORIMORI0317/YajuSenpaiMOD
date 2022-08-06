@@ -1,11 +1,13 @@
 package net.morimori0317.yajusenpai.mixin;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -19,11 +21,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements YJLivingEntity {
-
     @Unique
     private boolean ikisugi;
     @Unique
     private Entity grantedIkisugiEntity;
+    @Unique
+    private BlockPos sleepingPos;
+    @Unique
+    private boolean comaSync;
 
     @Inject(method = "eat", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V"))
     private void eat(Level level, ItemStack itemStack, CallbackInfoReturnable<ItemStack> cir) {
@@ -35,7 +40,7 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
 
     @Inject(method = "hurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;playHurtSound(Lnet/minecraft/world/damagesource/DamageSource;)V"))
     private void hurt(DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {
-        ServerHandler.onLivingHurt((LivingEntity) (Object) this, damageSource, f);
+        ServerHandler.onLivingHurtInvoker((LivingEntity) (Object) this, damageSource, f);
     }
 
     @Inject(method = "baseTick", at = @At(value = "HEAD"))
@@ -73,5 +78,31 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     @Override
     public void setGrantedIkisugiEntity(Entity entity) {
         this.grantedIkisugiEntity = entity;
+    }
+
+    @Override
+    public BlockPos getSleepingPos() {
+        return sleepingPos;
+    }
+
+    @Override
+    public void setSleepingPos(BlockPos sleepingPos) {
+        this.sleepingPos = sleepingPos;
+    }
+
+    @Override
+    public boolean isComa() {
+        var ths = (LivingEntity) (Object) this;
+        return ths.hasEffect(YJMobEffects.COMA.get()) || isComaSync();
+    }
+
+    @Override
+    public void setComaSync(boolean comaSync) {
+        this.comaSync = comaSync;
+    }
+
+    @Override
+    public boolean isComaSync() {
+        return comaSync;
     }
 }

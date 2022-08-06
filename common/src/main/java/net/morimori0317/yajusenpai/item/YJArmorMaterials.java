@@ -16,7 +16,7 @@ public enum YJArmorMaterials implements ArmorMaterial {
     YJNIUM("yjnium", 19, new int[]{2, 5, 10, 2}, 9, () -> SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())),
     YJSNPI("yjsnpi", 36, new int[]{3, 6, 8, 3}, 10, YJSoundEvents.YJ_EQUIP, 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJSNPI_INGOT.get())),
     CYCLOPS_SUNGLASSES("cyclops_sunglasses", 194, new int[]{0, 0, 0, 5}, 0xa + 193, YJSoundEvents.CYCLOPS_NAZOOTO, 0, 0, () -> Ingredient.EMPTY),
-    BRIEF("brief", 81, new int[]{0, 7, 0, 0}, 0xb1af, YJSoundEvents.CYCLOPS_NAZOOTO, 0, 0, () -> Ingredient.EMPTY);
+    BRIEF("brief", 81, new int[]{0, 7, 0, 0}, 0xb1af, YJSoundEvents.YJ_BRIEF, 0, 0, () -> Ingredient.EMPTY);
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
     private final int durabilityMultiplier;

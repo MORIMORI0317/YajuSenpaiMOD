@@ -88,6 +88,8 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> YJSNPI_PROLIFERATION_BLOCK = registerFoiled("yjsnpi_proliferation_block", () -> new YJProliferationBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).randomTicks().strength(1f, 0f)));
     public static final RegistrySupplier<Block> YJ_PORTAL = register("yj_portal", () -> new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noLootTable()), null);
 
+    public static final RegistrySupplier<Block> BIG_PILLOW = register("big_pillow", () -> new BigPillowBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOD).strength(0.2F,1200.0F).noOcclusion()));
+
     private static RegistrySupplier<Block> registerFoiled(String name, Supplier<Block> block) {
         return register(name, block, n -> new FoiledBlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }

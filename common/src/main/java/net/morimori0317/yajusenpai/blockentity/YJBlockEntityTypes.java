@@ -13,7 +13,8 @@ import java.util.function.Supplier;
 
 public class YJBlockEntityTypes {
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES_REGISTER = DeferredRegister.create(YajuSenpai.MODID, Registry.BLOCK_ENTITY_TYPE_REGISTRY);
-    public static final RegistrySupplier<BlockEntityType<TheYJPortalBlockEntity>> YJ_PORTAL = register("yj_portal", () -> TheYJPortalBlockEntity::new, YJBlocks.YJ_PORTAL);
+    public static final RegistrySupplier<BlockEntityType<YJPortalBlockEntity>> YJ_PORTAL = register("yj_portal", () -> YJPortalBlockEntity::new, YJBlocks.YJ_PORTAL);
+    public static final RegistrySupplier<BlockEntityType<BigPillowBlockEntity>> BIG_PILLOW = register("big_pillow", () -> BigPillowBlockEntity::new, YJBlocks.BIG_PILLOW);
 
     private static <T extends BlockEntity> RegistrySupplier<BlockEntityType<T>> register(String name, Supplier<BlockEntityType.BlockEntitySupplier<T>> constructor, RegistrySupplier<Block> blocks) {
         return BLOCK_ENTITY_TYPES_REGISTER.register(name, () -> BlockEntityType.Builder.of(constructor.get(), blocks.get()).build(null));

@@ -1009,5 +1009,26 @@
     "sounds": [
       "yajusenpai:kyn/atui28"
     ]
+  },
+  "yj.abarennayo": {
+    "sounds": [
+      "yajusenpai:yj/abarennayo"
+    ]
+  },
+  "yj.brief": {
+    "sounds": [
+      "yajusenpai:yj/brief"
+    ]
+  },
+  "yj.kuchiakeenahora": {
+    "sounds": [
+      "yajusenpai:yj/kuchiakeenahora"
+    ]
+  },
+  "yj.attack_ice_tea": {
+    "sounds": [
+      "yajusenpai:yj/kuchiakeenahora",
+      "yajusenpai:yj/ottodaijoubuka"
+    ]
   }
 }

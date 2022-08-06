@@ -4,6 +4,7 @@ import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.EntityEvent;
 import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.event.events.common.TickEvent;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -15,10 +16,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.SoundType;
+import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.EnityIkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.IkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.YJDamageSource;
+import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.item.CyclopsSunglassesItem;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
@@ -85,7 +88,7 @@ public class ServerHandler {
         return EventResult.pass();
     }
 
-    public static void onLivingHurt(LivingEntity livingEntity, DamageSource source, float amount) {
+    public static void onLivingHurtInvoker(LivingEntity livingEntity, DamageSource source, float amount) {
         if (!livingEntity.getLevel().isClientSide() && source.isFire()) {
             int kc = -1;
             int akc = 0;
@@ -124,10 +127,20 @@ public class ServerHandler {
     }
 
     private static void onPlayerTick(Player player) {
+        YJLivingEntity yjLiving = (YJLivingEntity) player;
+
         if (player instanceof ServerPlayer serverPlayer) {
             for (ItemStack item : serverPlayer.getArmorSlots()) {
                 if (YJUtils.hasGabaAnaDaddyEnchantment(item))
                     futoiSeaChickenTick(serverPlayer);
+            }
+        }
+
+        if (yjLiving.getSleepingPos() != null) {
+            var bs = player.level.getBlockState(yjLiving.getSleepingPos());
+            if (bs.is(YJBlocks.BIG_PILLOW.get())) {
+                var pos = yjLiving.getSleepingPos();
+                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level, yjLiving.getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
             }
         }
     }

@@ -75,5 +75,4 @@ public class YJUtils {
     public static ResourceKey<Level> getYJDimension() {
         return YJ_DIMENSION;
     }
-
 }

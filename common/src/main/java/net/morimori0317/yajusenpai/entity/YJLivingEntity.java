@@ -1,5 +1,6 @@
 package net.morimori0317.yajusenpai.entity;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 
 public interface YJLivingEntity {
@@ -10,4 +11,14 @@ public interface YJLivingEntity {
     Entity getGrantedIkisugiEntity();
 
     void setGrantedIkisugiEntity(Entity entity);
+
+    BlockPos getSleepingPos();
+
+    void setSleepingPos(BlockPos pos);
+
+    boolean isComa();
+
+    boolean isComaSync();
+
+    void setComaSync(boolean comaSync);
 }

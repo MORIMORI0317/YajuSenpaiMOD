@@ -7,6 +7,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.client.YajuSenpaiClient;
+import net.morimori0317.yajusenpai.forge.client.handler.RenderHandlerForge;
 import net.morimori0317.yajusenpai.forge.handler.CommonHandlerForge;
 
 @Mod(YajuSenpai.MODID)
@@ -19,6 +20,7 @@ public class YajuSenpaiForge {
     }
 
     private void doClientStuff(FMLClientSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(RenderHandlerForge.class);
         YajuSenpaiClient.init();
     }
 }

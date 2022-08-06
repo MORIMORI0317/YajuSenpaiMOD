@@ -20,11 +20,10 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.morimori0317.yajusenpai.blockentity.TheYJPortalBlockEntity;
+import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class YJPortalBlock extends BaseEntityBlock {
     protected static final VoxelShape SHAPE = Block.box(0.0D, 6.0D, 0.0D, 16.0D, 12.0D, 16.0D);
@@ -78,6 +77,6 @@ public class YJPortalBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new TheYJPortalBlockEntity(blockPos, blockState);
+        return new YJPortalBlockEntity(blockPos, blockState);
     }
 }

@@ -15,7 +15,8 @@
     "LivingEntityAccessor",
     "LivingEntityMixin",
     "MobMixin",
-    "StructurePieceMixin"
+    "StructurePieceMixin",
+    "WitherBossMixin"
   ],
   "injectors": {
     "defaultRequire": 1
