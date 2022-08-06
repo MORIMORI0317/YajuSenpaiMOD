@@ -54,19 +54,19 @@ public class IceTeaItem extends Item {
         return InteractionResult.PASS;
     }
 
-    public boolean canAttackIceTea(LivingEntity target) {
+    public static boolean canAttackIceTea(LivingEntity target) {
         if (((YJLivingEntity) target).getSleepingPos() != null)
             return false;
         return !((YJLivingEntity) target).isComa();
     }
 
-    public void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
+    public static void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
         target.addEffect(new MobEffectInstance(YJMobEffects.COMA.get(), 10000, 2));
         if (!attacker.level.isClientSide) {
-            attacker.level.playSound(null, attacker, YJSoundEvents.YJ_ATTACK_ICE_TEA.get(), SoundSource.VOICE, 3, 1);
+            attacker.level.playSound(null, attacker, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
 
             if (attacker instanceof ServerPlayer player) {
-                player.getCooldowns().addCooldown(this, 20);
+                player.getCooldowns().addCooldown(YJItems.ICE_TEA.get(), 20);
                 if (!player.getAbilities().instabuild)
                     itemStack.shrink(1);
             } else {

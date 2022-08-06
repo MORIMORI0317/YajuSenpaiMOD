@@ -35,7 +35,7 @@ public class SoftSmartphoneItem extends Item {
             return InteractionResultHolder.pass(itemStack);
 
         var entities = level.getEntitiesOfClass(LivingEntity.class, getArea(player));
-        if (entities.stream().noneMatch(e -> e != player && ((YJLivingEntity) e).getSleepingPos() != null && ((YJLivingEntity) e).isComa() && !e.hasEffect(YJMobEffects.IKISUGI.get())))
+        if (entities.stream().noneMatch(e -> e != player && ((YJLivingEntity) e).getSleepingPos() != null && ((YJLivingEntity) e).isComa() && !((YJLivingEntity) e).isIkisugiSleeping()))
             return InteractionResultHolder.pass(itemStack);
 
         player.startUsingItem(interactionHand);
@@ -50,15 +50,14 @@ public class SoftSmartphoneItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
-        if (!level.isClientSide()) {
-            var entities = level.getEntitiesOfClass(LivingEntity.class, getArea(livingEntity));
-            boolean[] flg = {false};
-            entities.stream().filter(e -> e != livingEntity && ((YJLivingEntity) e).getSleepingPos() != null && ((YJLivingEntity) e).isComa() && !e.hasEffect(YJMobEffects.IKISUGI.get())).forEach(e -> {
-                e.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.get(), CommonHandler.IKISUGI_DIE_TIME));
-                ((YJLivingEntity) e).setGrantedIkisugiEntity(livingEntity);
-                flg[0] = true;
-            });
 
+        var entities = level.getEntitiesOfClass(LivingEntity.class, getArea(livingEntity));
+        boolean[] flg = {false};
+        entities.stream().filter(e -> canIkisugi(livingEntity, e)).forEach(e -> {
+            startIkisugi(level, e);
+            flg[0] = true;
+        });
+        if (!level.isClientSide()) {
             if (flg[0])
                 itemStack.hurtAndBreak(1, livingEntity, (livingEntityx) -> livingEntityx.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 
@@ -66,6 +65,18 @@ public class SoftSmartphoneItem extends Item {
                 livingEntity.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.get(), CommonHandler.IKISUGI_DIE_TIME));
         }
         return super.finishUsingItem(itemStack, level, livingEntity);
+    }
+
+    public static boolean canIkisugi(LivingEntity attacker, LivingEntity target) {
+        return target != attacker && ((YJLivingEntity) target).getSleepingPos() != null && ((YJLivingEntity) target).isComa() && !((YJLivingEntity) target).isIkisugiSleeping();
+    }
+
+    public static void startIkisugi(Level level, LivingEntity livingEntity) {
+        if (!level.isClientSide()) {
+            livingEntity.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.get(), CommonHandler.IKISUGI_DIE_TIME));
+            ((YJLivingEntity) livingEntity).setGrantedIkisugiEntity(livingEntity);
+        }
+        ((YJLivingEntity) livingEntity).setIkisugiSleeping(true);
     }
 
     @Override

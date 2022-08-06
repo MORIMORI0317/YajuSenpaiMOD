@@ -2,7 +2,6 @@ package net.morimori0317.yajusenpai.server.handler;
 
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.EntityEvent;
-import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -10,7 +9,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -23,6 +22,9 @@ import net.morimori0317.yajusenpai.entity.IkisugiDamageSource;
 import net.morimori0317.yajusenpai.entity.YJDamageSource;
 import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.item.CyclopsSunglassesItem;
+import net.morimori0317.yajusenpai.item.IceTeaItem;
+import net.morimori0317.yajusenpai.item.SoftSmartphoneItem;
+import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
 import net.morimori0317.yajusenpai.util.YJUtils;
@@ -31,26 +33,24 @@ public class ServerHandler {
     public static void init() {
         TickEvent.PLAYER_POST.register(ServerHandler::onPlayerTick);
         EntityEvent.LIVING_DEATH.register(ServerHandler::onLivingDie);
-        InteractionEvent.INTERACT_ENTITY.register(ServerHandler::onEntityInteract);
+        EntityEvent.LIVING_HURT.register(ServerHandler::onLivingHurt);
     }
 
-    private static EventResult onEntityInteract(Player player, Entity entity, InteractionHand hand) {
-        /*if (!entity.level.isClientSide()) {
-            ItemStack itemStack = player.getItemInHand(hand);
-            if (itemStack.is(YJItems.ICE_TEA.get()) && entity instanceof LivingEntity livingEntity) {
-                if (!player.getCooldowns().isOnCooldown(YJItems.ICE_TEA.get()) && !livingEntity.hasEffect(YJMobEffects.COMA.get())) {
-                    for (Pair<MobEffectInstance, Float> effect : YJItems.ICE_TEA.get().getFoodProperties().getEffects()) {
-                        livingEntity.addEffect(effect.getFirst());
-                    }
+    private static EventResult onLivingHurt(LivingEntity target, DamageSource source, float amount) {
+        if (source instanceof EntityDamageSource entityDamageSource && "mob".equals(entityDamageSource.getMsgId()) && !(entityDamageSource.getEntity() instanceof Player) && entityDamageSource.getEntity() instanceof LivingEntity attacker) {
+            for (InteractionHand hand : InteractionHand.values()) {
+                var item = attacker.getItemInHand(hand);
+                if (item.is(YJItems.ICE_TEA.get()) && IceTeaItem.canAttackIceTea(target)) {
+                    IceTeaItem.attackIceTea(item, attacker, target);
+                    break;
+                }
 
-                    player.level.playSound(null, player, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
-
-                    player.getCooldowns().addCooldown(YJItems.ICE_TEA.get(), 20);
-                    if (!player.getAbilities().instabuild)
-                        itemStack.shrink(1);
+                if (item.is(YJItems.SOFT_SMARTPHONE.get()) && SoftSmartphoneItem.canIkisugi(attacker, target)) {
+                    SoftSmartphoneItem.startIkisugi(attacker.level, target);
+                    break;
                 }
             }
-        }*/
+        }
         return EventResult.pass();
     }
 
@@ -82,7 +82,7 @@ public class ServerHandler {
                 livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ist.getBreakSound(), SoundSource.NEUTRAL, 3, 1);
 
             if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CyclopsSunglassesItem)
-                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.CYCLOPS_AIKISO.get(), SoundSource.NEUTRAL, 3, 1);
+                livingEntity.level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.CYCLOPS_NAZOOTO.get(), SoundSource.NEUTRAL, 3, 1);
         }
 
         return EventResult.pass();

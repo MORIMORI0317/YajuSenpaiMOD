@@ -21,4 +21,8 @@ public interface YJLivingEntity {
     boolean isComaSync();
 
     void setComaSync(boolean comaSync);
+
+    boolean isIkisugiSleeping();
+
+    void setIkisugiSleeping(boolean ikisugiSleeping);
 }

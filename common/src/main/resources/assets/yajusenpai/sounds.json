@@ -1027,8 +1027,8 @@
   },
   "yj.attack_ice_tea": {
     "sounds": [
-      "yajusenpai:yj/kuchiakeenahora",
-      "yajusenpai:yj/ottodaijoubuka"
+      "yajusenpai:yj/ottodaijoubuka",
+      "yajusenpai:yj/kuchiakeenahora"
     ]
   }
 }

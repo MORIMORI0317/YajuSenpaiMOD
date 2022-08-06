@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,6 +25,18 @@ import java.util.Arrays;
 
 public class YJUtils {
     private static final ResourceKey<Level> YJ_DIMENSION = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(YajuSenpai.MODID, "the_yajusenpai"));
+
+    public static boolean legacyYjRandom(RandomSource random) {
+        return random.nextFloat() <= 0.0810f;
+    }
+
+    public static boolean yjRandom(RandomSource random) {
+        return 364 > random.nextInt(1919);
+    }
+
+    public static boolean veryYjRandom(RandomSource random) {
+        return 114514 > random.nextInt(1919810);
+    }
 
     public static boolean hasKatyouEnchantment(ItemStack stack) {
         return EnchantmentHelper.getItemEnchantmentLevel(YJEnchantments.KATYOU_CURSE.get(), stack) > 0;

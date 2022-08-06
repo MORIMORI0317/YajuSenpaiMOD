@@ -29,6 +29,8 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     private BlockPos sleepingPos;
     @Unique
     private boolean comaSync;
+    @Unique
+    private boolean ikisugiSleeping;
 
     @Inject(method = "eat", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V"))
     private void eat(Level level, ItemStack itemStack, CallbackInfoReturnable<ItemStack> cir) {
@@ -104,5 +106,15 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     @Override
     public boolean isComaSync() {
         return comaSync;
+    }
+
+    @Override
+    public boolean isIkisugiSleeping() {
+        return ikisugiSleeping;
+    }
+
+    @Override
+    public void setIkisugiSleeping(boolean ikisugiSleeping) {
+        this.ikisugiSleeping = ikisugiSleeping;
     }
 }
