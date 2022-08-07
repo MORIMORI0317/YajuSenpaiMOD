@@ -45,6 +45,7 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> MUR_BLOCK = register("mur_block", YJMaterial.MUR, () -> YJSoundType.MUR, 1f, 10f);
 
     public static final RegistrySupplier<Block>[] INM_BLOCKs = (RegistrySupplier<Block>[]) new RegistrySupplier[]{YJSNPI_INTERVIEW_BLOCK, YJSNPI_GOMANETSU_BLOCK, YJSNPI_ENNUI_BLOCK, YJSNPI_MEZIKARA_BLOCK, YJSNPI_NEHAN_BLOCK, YJSNPI_SHITARIGAO_BLOCK, YJSNPI_IKISUGI_BLOCK, YJSNPI_IMDKUJ_BLOCK, YJSNPI_KUNEKUNE_BLOCK, YJSNPI_SZKFK_BLOCK, YJSNPI_CCCLKTJM_BLOCK, YJSNPI_CWCWTD_BLOCK, YJSNPI_INTLNGTM_BLOCK, TON_BLOCK, KMR_BLOCK, MUR_BLOCK};
+    public static final RegistrySupplier<Block>[] YJ_BLOCKs = (RegistrySupplier<Block>[]) new RegistrySupplier[]{YJSNPI_INTERVIEW_BLOCK, YJSNPI_GOMANETSU_BLOCK, YJSNPI_ENNUI_BLOCK, YJSNPI_MEZIKARA_BLOCK, YJSNPI_NEHAN_BLOCK, YJSNPI_SHITARIGAO_BLOCK, YJSNPI_IKISUGI_BLOCK, YJSNPI_IMDKUJ_BLOCK, YJSNPI_KUNEKUNE_BLOCK, YJSNPI_SZKFK_BLOCK, YJSNPI_CCCLKTJM_BLOCK, YJSNPI_CWCWTD_BLOCK, YJSNPI_INTLNGTM_BLOCK};
 
     public static final RegistrySupplier<Block> BB = register("bb", Material.STONE, DyeColor.BLUE, () -> SoundType.GLASS, 0.5f, 0.1f, l -> 15);
     public static final RegistrySupplier<Block> GB = register("gb", Material.STONE, DyeColor.GREEN, () -> SoundType.GLASS, 0.5f, 0.1f, l -> 15);
@@ -65,7 +66,7 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> YJ_GRASS = register("yj_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).sound(YJSoundType.YJ_GRASS)));
     public static final RegistrySupplier<Block> TALL_YJ_GRASS = register("tall_yj_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).sound(YJSoundType.YJ_GRASS)), block -> new DoubleHighBlockItem(block, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
-    public static final RegistrySupplier<Block> YJ_ROSE = register("yj_rose", () -> new YJRoseBlock(YJMobEffects.RAW_BEASTFICTION, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistrySupplier<Block> YJ_ROSE = register("yj_rose", () -> new YJRoseBlock(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(YJSoundType.YJ_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 
     public static final RegistrySupplier<Block> YJ_SAPLING = register("yj_sapling", () -> new SaplingBlock(new YJTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(YJSoundType.YJ_GRASS)));
 
@@ -86,9 +87,9 @@ public class YJBlocks {
         return (int) (alevel * 16f) + 1;
     })));
     public static final RegistrySupplier<Block> YJSNPI_PROLIFERATION_BLOCK = registerFoiled("yjsnpi_proliferation_block", () -> new YJProliferationBlock(BlockBehaviour.Properties.of(YJMaterial.YJSNPI).sound(YJSoundType.YJ).randomTicks().strength(1f, 0f)));
-    public static final RegistrySupplier<Block> YJ_PORTAL = register("yj_portal", () -> new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 3600000.0F).noLootTable()), null);
+    public static final RegistrySupplier<Block> YJ_PORTAL = register("yj_portal", () -> new YJPortalBlock(BlockBehaviour.Properties.of(Material.PORTAL, MaterialColor.COLOR_BLACK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 0.5F).noLootTable()), null);
 
-    public static final RegistrySupplier<Block> BIG_PILLOW = register("big_pillow", () -> new BigPillowBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOD).strength(0.2F,1200.0F).noOcclusion()));
+    public static final RegistrySupplier<Block> BIG_PILLOW = register("big_pillow", () -> new BigPillowBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOD).strength(0.2F, 1200.0F).noOcclusion()));
 
     private static RegistrySupplier<Block> registerFoiled(String name, Supplier<Block> block) {
         return register(name, block, n -> new FoiledBlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

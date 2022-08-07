@@ -273,7 +273,6 @@
       "yajusenpai:yj/kataku",
       "yajusenpai:yj/mazuutisaxa",
       "yajusenpai:yj/nijuyonsai",
-      "yajusenpai:yj/nna",
       "yajusenpai:yj/nu",
       "yajusenpai:yj/nuwatikareta",
       "yajusenpai:yj/on",
@@ -1029,6 +1028,30 @@
     "sounds": [
       "yajusenpai:yj/ottodaijoubuka",
       "yajusenpai:yj/kuchiakeenahora"
+    ]
+  },
+  "yj.mood": {
+    "sounds": [
+      "yajusenpai:yj/buttipa",
+      "yajusenpai:yj/dasoutoomoeba",
+      "yajusenpai:yj/fa",
+      "yajusenpai:yj/fookimatii",
+      "yajusenpai:yj/gakuseidesu",
+      "yajusenpai:yj/horahorahora",
+      "yajusenpai:yj/iiyokoiyo",
+      "yajusenpai:yj/kataku",
+      "yajusenpai:yj/mazuutisaxa",
+      "yajusenpai:yj/nijuyonsai",
+      "yajusenpai:yj/nna",
+      "yajusenpai:yj/nu",
+      "yajusenpai:yj/nuwatikareta",
+      "yajusenpai:yj/on",
+      "yajusenpai:yj/onaon",
+      "yajusenpai:yj/osuonegai",
+      "yajusenpai:yj/syu",
+      "yajusenpai:yj/taizyuandsintyou",
+      "yajusenpai:yj/yarimasunexe",
+      "yajusenpai:yj/yokuwakaranakattadesu"
     ]
   }
 }

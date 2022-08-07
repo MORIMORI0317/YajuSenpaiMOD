@@ -9,6 +9,7 @@
     "BowItemMixin",
     "DoorBlockMixin",
     "EntityMixin",
+    "EntityTypeMixin",
     "ExplosionDamageCalculatorMixin",
     "ExplosionMixin",
     "ItemStackMixin",

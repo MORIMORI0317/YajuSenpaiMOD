@@ -3,10 +3,12 @@ package net.morimori0317.yajusenpai.item;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Registry;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.entity.YJEntityTypes;
 
 import java.util.function.Supplier;
 
@@ -57,6 +59,8 @@ public class YJItems {
     public static final RegistrySupplier<Item> CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", () -> new CyclopsSunglassesItem(YJArmorMaterials.CYCLOPS_SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     public static final RegistrySupplier<Item> BRIEF = register("brief", () -> new CyclopsSunglassesItem(YJArmorMaterials.BRIEF, EquipmentSlot.LEGS, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     public static final RegistrySupplier<Item> SOFT_SMARTPHONE = register("soft_smartphone", () -> new SoftSmartphoneItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).durability(19)));
+
+    public static final RegistrySupplier<Item> KATYOU_CAT_SPAWN_EGG = register("katyou_cat_spawn_egg", () -> new SpawnEggItem(YJEntityTypes.KATYOU_CAT.get(), 0xa87668, 0x131311, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
 
     private static RegistrySupplier<Item> register(String name) {
         return register(name, () -> new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

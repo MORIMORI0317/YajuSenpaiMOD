@@ -1,4 +1,4 @@
-package net.morimori0317.yajusenpai.server.world.features;
+package net.morimori0317.yajusenpai.server.level.features;
 
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -46,6 +46,8 @@ public class YJOreFeatures {
     public static final RegistrySupplier<ConfiguredFeature<OreConfiguration, ?>> ORE_TON_BLOCK = register("ore_ton_block", Feature.ORE, () -> new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.TON_BLOCK.get().defaultBlockState(), 33));
     public static final RegistrySupplier<ConfiguredFeature<OreConfiguration, ?>> ORE_KMR_BLOCK = register("ore_kmr_block", Feature.ORE, () -> new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.KMR_BLOCK.get().defaultBlockState(), 33));
     public static final RegistrySupplier<ConfiguredFeature<OreConfiguration, ?>> ORE_MUR_BLOCK = register("ore_mur_block", Feature.ORE, () -> new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.MUR_BLOCK.get().defaultBlockState(), 33));
+
+    public static final RegistrySupplier<ConfiguredFeature<OreConfiguration, ?>> ORE_YJSNPI_EXPLODING_BLOCK = register("ore_yjsnpi_exploding_block", Feature.ORE, () -> new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.YJSNPI_EXPLODING_BLOCK.get().defaultBlockState(), 15));
 
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistrySupplier<ConfiguredFeature<FC, ?>> register(String name, F feature, Supplier<FC> featureConfiguration) {

@@ -8,7 +8,7 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import net.minecraft.world.level.material.FluidState;
-import net.morimori0317.yajusenpai.server.world.features.StructurePieceReplace;
+import net.morimori0317.yajusenpai.server.level.features.StructurePieceReplace;
 import net.morimori0317.yajusenpai.util.YJUtils;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

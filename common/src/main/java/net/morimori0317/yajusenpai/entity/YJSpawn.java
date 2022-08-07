@@ -30,34 +30,35 @@ public class YJSpawn {
         };
         BooleanSupplier yor = () -> (y || r.getAsBoolean());
 
-        boolean vf;
-        if (y) {
-            vf = YJUtils.yjRandom(rs) && YJUtils.yjRandom(rs);
-        } else {
-            vf = YJUtils.veryYjRandom(rs) && YJUtils.veryYjRandom(rs);
-        }
+        if (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin) {
+            boolean vf;
+            if (y) {
+                vf = YJUtils.yjRandom(rs) && YJUtils.yjRandom(rs) && YJUtils.yjRandom(rs);
+            } else {
+                vf = YJUtils.veryYjRandom(rs) && YJUtils.veryYjRandom(rs) && YJUtils.veryYjRandom(rs);
+            }
 
-        if (vf) {
-            mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
-            mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
-            mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOUNE_SWORD.get()));
-            mob.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOU_SHIELD.get()));
+            if (vf) {
+                mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
+                mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
+                mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOUNE_SWORD.get()));
+                mob.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOU_SHIELD.get()));
+            }
         }
-
 
         if (yor.getAsBoolean()) {
             if (mob instanceof EnderMan enderMan) enderMan.setCarriedBlock(createInmItem(rs).defaultBlockState());
         }
 
-        if (!y) {
-            if (r.getAsBoolean()) {
-                if (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin)
+        if (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin) {
+            if (!y) {
+                if (r.getAsBoolean()) {
                     mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
-            }
+                }
 
-            if (r.getAsBoolean()) {
-                if (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin)
+                if (r.getAsBoolean()) {
                     mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
+                }
             }
         }
 

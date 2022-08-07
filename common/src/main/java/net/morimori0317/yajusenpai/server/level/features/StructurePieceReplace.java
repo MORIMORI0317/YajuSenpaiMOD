@@ -1,4 +1,4 @@
-package net.morimori0317.yajusenpai.server.world.features;
+package net.morimori0317.yajusenpai.server.level.features;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +17,7 @@ public class StructurePieceReplace {
     public static final Supplier<Map<Block, Block>> REPLACES = Suppliers.memoize(() -> {
         Map<Block, Block> rep = new HashMap<>();
 
-        //rep.put(Blocks.TNT, YJBlocks.YJSNPI_EXPLODING_BLOCK);
+        rep.put(Blocks.TNT, YJBlocks.YJSNPI_EXPLODING_BLOCK.get());
         rep.put(Blocks.SANDSTONE, YJBlocks.YJSNPI_INTERVIEW_BLOCK.get());
         rep.put(Blocks.SANDSTONE_STAIRS, YJBlocks.YJSNPI_INTERVIEW_BLOCK.get());
         rep.put(Blocks.CUT_SANDSTONE, YJBlocks.YJSNPI_ENNUI_BLOCK.get());

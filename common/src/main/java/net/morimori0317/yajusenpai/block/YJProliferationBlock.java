@@ -26,7 +26,7 @@ public class YJProliferationBlock extends Block {
         for (Direction value : Direction.values()) {
             BlockPos pos = blockPos.relative(value);
             if (serverLevel.getBlockState(pos).isAir()) {
-                serverLevel.setBlock(pos, this.defaultBlockState().setValue(YJ_CONT, blockState.getValue(YJ_CONT) + 1), 2);
+                serverLevel.setBlockAndUpdate(pos, this.defaultBlockState().setValue(YJ_CONT, blockState.getValue(YJ_CONT) + 1));
                 flg = true;
             }
         }

@@ -1,0 +1,7 @@
+{
+  "type": "yajusenpai:yj_house",
+  "biomes": "#yajusenpai:has_structure/yj_house",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}

@@ -1,4 +1,4 @@
-package net.morimori0317.yajusenpai.server.world.features;
+package net.morimori0317.yajusenpai.server.level.features;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;

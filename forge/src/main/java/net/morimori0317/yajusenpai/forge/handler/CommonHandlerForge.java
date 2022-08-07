@@ -7,12 +7,12 @@ import net.morimori0317.yajusenpai.handler.CommonHandler;
 
 public class CommonHandlerForge {
     @SubscribeEvent
-    public static void onLivingTick(LivingEvent.LivingUpdateEvent e) {
-        CommonHandler.onLivingTick(e.getEntityLiving());
+    public static void onLivingTick(LivingEvent.LivingTickEvent e) {
+        CommonHandler.onLivingTick(e.getEntity());
     }
 
     @SubscribeEvent
     public static void onLivingDrop(LivingDropsEvent e) {
-        CommonHandler.onLivingDrop(e.getEntityLiving(), e.getSource(), e.getDrops());
+        CommonHandler.onLivingDrop(e.getEntity(), e.getSource(), e.getDrops());
     }
 }

@@ -4,7 +4,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.morimori0317.yajusenpai.server.world.features.YJTreeFeatures;
+import net.morimori0317.yajusenpai.server.level.features.YJTreeFeatures;
 import org.jetbrains.annotations.Nullable;
 
 public class YJTreeGrower extends AbstractTreeGrower {

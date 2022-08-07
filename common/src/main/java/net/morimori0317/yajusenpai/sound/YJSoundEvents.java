@@ -54,6 +54,7 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> YJ_KUCHIAKEENAHORA = register("yj.kuchiakeenahora");
 
     public static final RegistrySupplier<SoundEvent> YJ_ATTACK_ICE_TEA = register("yj.attack_ice_tea");
+    public static final RegistrySupplier<SoundEvent> YJ_MOOD = register("yj.mood");
 
     public static final RegistrySupplier<SoundEvent> MEZIKARA_ALL = register("mezikara.all");
     public static final RegistrySupplier<SoundEvent> MEZIKARA_N1 = register("mezikara.n1");
