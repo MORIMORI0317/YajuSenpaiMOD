@@ -4,9 +4,8 @@ import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.entity.Entity;
 
 public class EnityIkisugiDamageSource extends EntityDamageSource {
-
     public EnityIkisugiDamageSource(Entity entity) {
-        super("ikisugi", entity);
+        super("ikisugi_by_entity", entity);
         bypassInvul();
         bypassEnchantments();
         bypassMagic();

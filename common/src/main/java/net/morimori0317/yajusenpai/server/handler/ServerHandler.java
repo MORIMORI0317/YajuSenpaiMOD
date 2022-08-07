@@ -46,7 +46,7 @@ public class ServerHandler {
                 }
 
                 if (item.is(YJItems.SOFT_SMARTPHONE.get()) && SoftSmartphoneItem.canIkisugi(attacker, target)) {
-                    SoftSmartphoneItem.startIkisugi(attacker.level, target);
+                    SoftSmartphoneItem.startIkisugi(attacker.level, attacker, target);
                     break;
                 }
             }

@@ -24,15 +24,19 @@ public class YJPotions {
     public static final Map<RegistrySupplier<Potion>, Potion> RAW = new HashMap<>();
 
     public static final RegistrySupplier<Potion> BEASTFICTION = register("beastfiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), 20 * 490));
-    public static final RegistrySupplier<Potion> LONG_BEASTFICTION = register("long_beastfiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), 20 * 1159));
+    public static final RegistrySupplier<Potion> LONG_BEASTFICTION = register("long_beastfiction", "beastfiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), 20 * 1159));
     public static final RegistrySupplier<Potion> IKISUGI = register("ikisugi", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.IKISUGI), 20 * 65));
     public static final RegistrySupplier<Potion> COMA = register("coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 1800));
-    public static final RegistrySupplier<Potion> LONG_COMA = register("long_coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 4800));
-    public static final RegistrySupplier<Potion> STRONG_COMA = register("strong_coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 1800, 3));
+    public static final RegistrySupplier<Potion> LONG_COMA = register("long_coma", "coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 4800));
+    public static final RegistrySupplier<Potion> STRONG_COMA = register("strong_coma", "coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 1800, 3));
 
     private static RegistrySupplier<Potion> register(@Nullable String name, Supplier<MobEffectInstance>... mobEffectInstances) {
+        return register(name, name, mobEffectInstances);
+    }
+
+    private static RegistrySupplier<Potion> register(@Nullable String name, @Nullable String potionName, Supplier<MobEffectInstance>... mobEffectInstances) {
         MobEffectInstance[] effects = Arrays.stream(mobEffectInstances).map(Supplier::get).toList().toArray(new MobEffectInstance[0]);
-        var p = new Potion(name, effects);
+        var p = new Potion(potionName, effects);
         var rs = POTIONS.register(name, () -> p);
         RAW.put(rs, p);
         return rs;

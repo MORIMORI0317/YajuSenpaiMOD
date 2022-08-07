@@ -54,7 +54,6 @@ public class YJItems {
     public static final RegistrySupplier<Item> BAKED_POTATO_SENPAI = register("baked_potato_senpai", () -> new Item((new Item.Properties()).tab(YJCreativeModeTab.MOD_TAB).food(YJFoods.YJ_BAKED_POTATO.get())));
 
     public static final RegistrySupplier<Item> JAKEN_YORUIKIMASYOUNE_SWORD = register("jaken_yoruikimasyoune_sword", () -> new JakenSwordItem(YJTiers.JAKEN_YORUIKIMASYOUNE, 16, 806F, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
-    //邪堅夜逝魔障 - 錬
     public static final RegistrySupplier<Item> JAKEN_YORUIKIMASYOU_SHIELD = register("jaken_yoruikimasyou_shield", () -> new JakenShieldItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).durability(114514)));
     public static final RegistrySupplier<Item> CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", () -> new CyclopsSunglassesItem(YJArmorMaterials.CYCLOPS_SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     public static final RegistrySupplier<Item> BRIEF = register("brief", () -> new CyclopsSunglassesItem(YJArmorMaterials.BRIEF, EquipmentSlot.LEGS, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

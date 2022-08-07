@@ -1,5 +1,7 @@
 package net.morimori0317.yajusenpai.entity;
 
+import dev.architectury.networking.NetworkManager;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -37,7 +39,6 @@ public class KatyouCat extends Cat {
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Creeper.class, false));
         this.targetSelector.addGoal(6, new ResetUniversalAngerTargetGoal(this, true));
-
     }
 
     @Override
@@ -81,5 +82,10 @@ public class KatyouCat extends Cat {
     @Override
     public void hiss() {
         this.playSound(YJSoundEvents.KATYOU.get(), this.getSoundVolume(), this.getVoicePitch());
+    }
+
+    @Override
+    public Packet<?> getAddEntityPacket() {
+        return NetworkManager.createAddEntityPacket(this);
     }
 }
