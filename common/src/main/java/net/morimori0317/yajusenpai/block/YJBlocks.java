@@ -74,9 +74,9 @@ public class YJBlocks {
     public static final RegistrySupplier<Block> YJSNPI_ORE = register("yjsnpi_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).sound(YJSoundType.YJ)));
     public static final RegistrySupplier<Block> DEEPSLATE_YJNIUM_ORE = register("deepslate_yjnium_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
     public static final RegistrySupplier<Block> DEEPSLATE_YJSNPI_ORE = register("deepslate_yjsnpi_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).sound(YJSoundType.YJ)));
-    public static final RegistrySupplier<Block> YJNIUM_BLOCK = register("yjnium_block", Material.METAL, () -> SoundType.METAL, 5.0F, 6.0F);
-    public static final RegistrySupplier<Block> RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, () -> SoundType.STONE, 5.0F, 6.0F);
-    public static final RegistrySupplier<Block> RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, () -> YJSoundType.YJ, 5.0F, 6.0F);
+    public static final RegistrySupplier<Block> YJNIUM_BLOCK = register("yjnium_block", Material.METAL, () -> SoundType.METAL, 5.0F, 6.0F, BlockBehaviour.Properties::requiresCorrectToolForDrops);
+    public static final RegistrySupplier<Block> RAW_YJNIUM_BLOCK = register("raw_yjnium_block", Material.STONE, () -> SoundType.STONE, 5.0F, 6.0F, BlockBehaviour.Properties::requiresCorrectToolForDrops);
+    public static final RegistrySupplier<Block> RAW_YJSNPI_BLOCK = register("raw_yjsnpi_block", Material.STONE, () -> YJSoundType.YJ, 5.0F, 6.0F, BlockBehaviour.Properties::requiresCorrectToolForDrops);
 
     public static final RegistrySupplier<Block> POTATOES_SENPAI = register("potatoes_senpai", () -> new YJPotatoBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(YJSoundType.YJ_CROP)), null);
     public static final RegistrySupplier<Block> YJ_HOUSE_DOOR = register("yj_house_door", () -> new YJHouseDoorBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()), b -> new DoubleHighBlockItem(b, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
@@ -97,6 +97,10 @@ public class YJBlocks {
 
     private static RegistrySupplier<Block> register(String name, Material materialIn, DyeColor dyeColor, Supplier<SoundType> sound, float hardness, float resistance, ToIntFunction<BlockState> light) {
         return register(name, () -> new Block(BlockBehaviour.Properties.of(materialIn, dyeColor).sound(sound.get()).strength(hardness, resistance).lightLevel(light)), n -> new BlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+    }
+
+    private static RegistrySupplier<Block> register(String name, Material materialIn, Supplier<SoundType> sound, float hardness, float resistance, Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
+        return register(name, () -> new Block(properties.apply(BlockBehaviour.Properties.of(materialIn).sound(sound.get())).strength(hardness, resistance)), n -> new BlockItem(n, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
     }
 
     private static RegistrySupplier<Block> register(String name, Material materialIn, Supplier<SoundType> sound, float hardness, float resistance) {
