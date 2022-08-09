@@ -23,9 +23,9 @@ public class YJSpawn {
         boolean y = YJUtils.isYJDim(mob.level);
         BooleanSupplier r = () -> {
             if (y) {
-                return YJUtils.legacyYjRandom(rs);
+                return YJUtils.legacyYjRandom(rs) && YJUtils.legacyYjRandom(rs);
             } else {
-                return YJUtils.yjRandom(rs);
+                return YJUtils.yjRandom(rs) && YJUtils.yjRandom(rs);
             }
         };
         BooleanSupplier yor = () -> (y || r.getAsBoolean());
@@ -72,7 +72,7 @@ public class YJSpawn {
             }
         }
 
-        if (YJUtils.veryYjRandom(rs) && (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin)) {
+        if (YJUtils.veryYjRandom(rs) && YJUtils.veryYjRandom(rs) && (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin)) {
             if (y)
                 setFullArmor(mob, true, new ItemStack(YJItems.YJSNPI_HELMET.get()), new ItemStack(YJItems.YJSNPI_CHESTPLATE.get()), new ItemStack(YJItems.YJSNPI_LEGGINGS.get()), new ItemStack(YJItems.YJSNPI_BOOTS.get()), new ItemStack(YJItems.YJSNPI_SWORD.get()), ItemStack.EMPTY);
             else

@@ -21,6 +21,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
 import javax.annotation.Nullable;
@@ -34,35 +35,18 @@ public class YJPortalBlock extends BaseEntityBlock {
 
     @Override
     public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-        if (level instanceof ServerLevel && !entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions() && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((-blockPos.getX()), (-blockPos.getY()), (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
+        if (level instanceof ServerLevel && entity instanceof ServerPlayer serverPlayer && ((YJLivingEntity) entity).canYJPortalUse() && !entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions() && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((-blockPos.getX()), (-blockPos.getY()), (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
             ResourceKey<Level> resourceKey = YJUtils.isYJDim(level) ? Level.OVERWORLD : YJUtils.getYJDimension();
             ServerLevel serverLevel = ((ServerLevel) level).getServer().getLevel(resourceKey);
-            if (serverLevel == null) {
+            if (serverLevel == null)
                 return;
-            }
 
-            if (entity instanceof ServerPlayer serverPlayer) {
-                serverPlayer.fallDistance = 0;
-                serverPlayer.teleportTo(serverLevel, entity.getX() + level.random.nextInt(10) - 5, entity.getY() + 5, entity.getZ() + level.random.nextInt(10) - 5, serverPlayer.getYRot(), serverPlayer.getVoicePitch());
-            } else {
-                entity.teleportTo(entity.getX() + level.random.nextInt(30) - 15, entity.getY() + 5, entity.getZ() + level.random.nextInt(30) - 15);
-                entity.changeDimension(serverLevel);
-            }
-        }
+            YJLivingEntity yjLiving = (YJLivingEntity) entity;
+            yjLiving.setYJPortalUse(false);
+            yjLiving.setYJPortalCoolDown(20 * 3);
 
-        if (level instanceof ServerLevel && !entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions() && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((double) (-blockPos.getX()), (double) (-blockPos.getY()), (double) (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
-            ResourceKey<Level> resourceKey = YJUtils.isYJDim(level) ? Level.OVERWORLD : YJUtils.getYJDimension();
-            ServerLevel serverLevel = ((ServerLevel) level).getServer().getLevel(resourceKey);
-            if (serverLevel == null) {
-                return;
-            }
-            entity.fallDistance = 0;
-            if (entity instanceof ServerPlayer serverPlayer) {
-                serverPlayer.teleportTo(serverLevel, blockPos.getX() + serverLevel.random.nextInt(3) + 3, blockPos.getY() + 1, blockPos.getZ() + serverLevel.random.nextInt(3) + 3, serverPlayer.getYRot(), serverPlayer.getVoicePitch());
-            } else {
-                entity.changeDimension(serverLevel);
-                entity.teleportTo(blockPos.getX() + serverLevel.random.nextInt(3) + 3, blockPos.getY() + 1, blockPos.getZ() + serverLevel.random.nextInt(3) + 3);
-            }
+            serverPlayer.fallDistance = 0;
+            serverPlayer.teleportTo(serverLevel, entity.getX(), entity.getY(), entity.getZ(), serverPlayer.getYRot(), serverPlayer.getVoicePitch());
         }
     }
 

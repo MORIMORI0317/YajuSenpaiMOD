@@ -3,20 +3,20 @@ package net.morimori0317.yajusenpai.item;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Registry;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class YJItems {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(YajuSenpai.MODID, Registry.ITEM_REGISTRY);
     public static final RegistrySupplier<Item> ICON = register("icon", () -> new Item(new Item.Properties()));
-    public static final RegistrySupplier<Item> YJ_CORE = register("yj_core");
-    public static final RegistrySupplier<Item> YJ_STAR = register("yj_star", () -> new SimpleFoiledItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistrySupplier<Item> YJ_CORE = register("yj_core", p -> p.rarity(Rarity.RARE));
+    public static final RegistrySupplier<Item> YJ_STAR = register("yj_star", () -> new YJStarItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).rarity(Rarity.UNCOMMON)));
 
     public static final RegistrySupplier<Item> YJNIUM_INGOT = register("yjnium_ingot");
     public static final RegistrySupplier<Item> YJNIUM_NUGGET = register("yjnium_nugget");
@@ -60,6 +60,10 @@ public class YJItems {
     public static final RegistrySupplier<Item> SOFT_SMARTPHONE = register("soft_smartphone", () -> new SoftSmartphoneItem(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB).durability(19)));
 
     public static final RegistrySupplier<Item> KATYOU_CAT_SPAWN_EGG = register("katyou_cat_spawn_egg", () -> new SpawnEggItem(YJEntityTypes.KATYOU_CAT.get(), 0xa87668, 0x131311, new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));
+
+    private static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item.Properties> propertiesFunc) {
+        return register(name, () -> new Item(propertiesFunc.apply(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB))));
+    }
 
     private static RegistrySupplier<Item> register(String name) {
         return register(name, () -> new Item(new Item.Properties().tab(YJCreativeModeTab.MOD_TAB)));

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "yjnium_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "yajusenpai:compat/yjnium_nugget"
+    }
+  },
+  "result": {
+    "item": "yajusenpai:yjnium_ingot"
+  }
+}

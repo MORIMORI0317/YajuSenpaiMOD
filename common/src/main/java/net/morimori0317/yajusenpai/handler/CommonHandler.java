@@ -15,7 +15,7 @@ import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
-import net.morimori0317.yajusenpai.util.YJEntityUtil;
+import net.morimori0317.yajusenpai.util.YJEntityUtils;
 import net.morimori0317.yajusenpai.util.YJPlayerUtils;
 
 import java.util.Collection;
@@ -60,6 +60,12 @@ public class CommonHandler {
                     }
                 }
             }
+
+            if (yjLiving.getYJPortalCoolDown() > 0)
+                yjLiving.setYJPortalCoolDown(yjLiving.getYJPortalCoolDown() - 1);
+
+            if (!yjLiving.canYJPortalUse() && yjLiving.getYJPortalCoolDown() <= 0 && !livingEntity.level.getBlockState(livingEntity.blockPosition()).is(YJBlocks.YJ_PORTAL.get()))
+                yjLiving.setYJPortalUse(true);
         }
 
         if (yjLiving.getSleepingPos() != null && (!BigPillowBlockEntity.canComa(livingEntity) || !livingEntity.level.getBlockState(yjLiving.getSleepingPos()).is(YJBlocks.BIG_PILLOW.get()))) {
@@ -74,6 +80,6 @@ public class CommonHandler {
 
     public static void onLivingDrop(LivingEntity livingEntity, DamageSource source, Collection<ItemEntity> drops) {
         if (livingEntity.getMaxHealth() >= 100 && (source == YJDamageSource.IKISUGI || source instanceof EnityIkisugiDamageSource))
-            drops.add(YJEntityUtil.createItemEntity(new ItemStack(YJItems.YJ_STAR.get()), livingEntity.level, livingEntity.position().x, livingEntity.position().y, livingEntity.position().z));
+            drops.add(YJEntityUtils.createItemEntity(new ItemStack(YJItems.YJ_STAR.get()), livingEntity.level, livingEntity.position().x, livingEntity.position().y, livingEntity.position().z));
     }
 }

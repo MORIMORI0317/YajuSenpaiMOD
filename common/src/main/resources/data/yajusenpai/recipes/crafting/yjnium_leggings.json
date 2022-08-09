@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "tag": "yajusenpai:compat/yjnium_ingot"
+    }
+  },
+  "result": {
+    "item": "yajusenpai:yjnium_leggings"
+  }
+}

@@ -95,7 +95,7 @@ public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterlogged
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (((YJLivingEntity) player).getSleepingPos() != null)
+        if (((YJLivingEntity) player).getSleepingPos() != null || !level.dimensionType().bedWorks())
             return InteractionResult.PASS;
 
         if (level.isClientSide) {

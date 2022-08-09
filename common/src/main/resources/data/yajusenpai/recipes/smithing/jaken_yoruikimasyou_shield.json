@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "yajusenpai:yj_core"
+  },
+  "base": {
+    "item": "minecraft:shield"
+  },
+  "result": {
+    "item": "yajusenpai:jaken_yoruikimasyou_shield"
+  }
+}

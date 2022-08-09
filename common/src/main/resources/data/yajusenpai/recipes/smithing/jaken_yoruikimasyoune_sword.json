@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "yajusenpai:yj_core"
+  },
+  "base": {
+    "item": "yajusenpai:yjsnpi_sword"
+  },
+  "result": {
+    "item": "yajusenpai:jaken_yoruikimasyoune_sword"
+  }
+}

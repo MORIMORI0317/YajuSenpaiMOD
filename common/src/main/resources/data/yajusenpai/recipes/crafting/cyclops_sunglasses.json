@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "yajusenpai:compat/iron_ingot"
+    },
+    "B": {
+      "tag": "yajusenpai:compat/netherite_ingot"
+    },
+    "C": {
+      "tag": "yajusenpai:compat/tinted_glass"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "BCB",
+    "AAA"
+  ],
+  "result": {
+    "item": "yajusenpai:cyclops_sunglasses"
+  }
+}

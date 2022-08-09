@@ -25,4 +25,12 @@ public interface YJLivingEntity {
     boolean isIkisugiSleeping();
 
     void setIkisugiSleeping(boolean ikisugiSleeping);
+
+    int getYJPortalCoolDown();
+
+    void setYJPortalCoolDown(int coolDown);
+
+    boolean canYJPortalUse();
+
+    void setYJPortalUse(boolean use);
 }

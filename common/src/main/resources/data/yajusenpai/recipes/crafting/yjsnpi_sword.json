@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "yajusenpai:compat/yjsnpi_ingot"
+    }
+  },
+  "result": {
+    "item": "yajusenpai:yjsnpi_sword"
+  }
+}

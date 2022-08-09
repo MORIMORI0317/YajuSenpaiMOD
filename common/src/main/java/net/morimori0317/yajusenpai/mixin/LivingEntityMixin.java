@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.CombatTracker;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,7 +13,9 @@ import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJUtils;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,6 +24,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements YJLivingEntity {
+    @Shadow
+    @Final
+    private CombatTracker combatTracker;
     @Unique
     private boolean ikisugi;
     @Unique
@@ -31,6 +37,10 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     private boolean comaSync;
     @Unique
     private boolean ikisugiSleeping;
+    @Unique
+    private int yjPortalCoolDown;
+    @Unique
+    private boolean yjPortalUse;
 
     @Inject(method = "eat", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V"))
     private void eat(Level level, ItemStack itemStack, CallbackInfoReturnable<ItemStack> cir) {
@@ -116,5 +126,25 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     @Override
     public void setIkisugiSleeping(boolean ikisugiSleeping) {
         this.ikisugiSleeping = ikisugiSleeping;
+    }
+
+    @Override
+    public void setYJPortalCoolDown(int coolDown) {
+        this.yjPortalCoolDown = coolDown;
+    }
+
+    @Override
+    public int getYJPortalCoolDown() {
+        return this.yjPortalCoolDown;
+    }
+
+    @Override
+    public boolean canYJPortalUse() {
+        return yjPortalUse;
+    }
+
+    @Override
+    public void setYJPortalUse(boolean use) {
+        this.yjPortalUse = use;
     }
 }

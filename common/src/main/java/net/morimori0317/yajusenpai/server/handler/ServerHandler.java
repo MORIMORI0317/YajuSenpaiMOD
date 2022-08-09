@@ -10,6 +10,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.EntityDamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -51,6 +52,21 @@ public class ServerHandler {
                 }
             }
         }
+
+        boolean jakenShield = false;
+        for (InteractionHand hand : InteractionHand.values()) {
+            if (target.getItemInHand(hand).is(YJItems.JAKEN_YORUIKIMASYOU_SHIELD.get())) {
+                jakenShield = true;
+                break;
+            }
+        }
+        if (jakenShield && target.getRandom().nextInt(19) == 0) {
+            target.level.playSound(null, target, YJSoundEvents.YJ_NU.get(), SoundSource.NEUTRAL, 5, 1);
+            target.addEffect(new MobEffectInstance(YJMobEffects.BEASTFICTION.get(), 20 * 3, 0));
+            return EventResult.interruptFalse();
+        }
+
+
         return EventResult.pass();
     }
 

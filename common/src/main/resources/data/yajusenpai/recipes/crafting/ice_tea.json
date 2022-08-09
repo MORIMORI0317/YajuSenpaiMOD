@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "yajusenpai:compat/wheat"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "pattern": [
+    "AAA",
+    " B "
+  ],
+  "result": {
+    "item": "yajusenpai:ice_tea"
+  }
+}
