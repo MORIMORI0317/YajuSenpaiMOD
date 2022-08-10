@@ -2,8 +2,6 @@ package net.morimori0317.yajusenpai;
 
 import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.morimori0317.yajusenpai.alchemy.YJPotions;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.blockentity.YJBlockEntityTypes;
@@ -11,6 +9,7 @@ import net.morimori0317.yajusenpai.client.YajuSenpaiClient;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;
+import net.morimori0317.yajusenpai.item.YJComposters;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.painting.YJPaintings;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
@@ -44,5 +43,9 @@ public class YajuSenpai {
         EnvExecutor.runInEnv(Env.CLIENT, () -> YajuSenpaiClient::preInit);
         //https://misode.github.io/dimension/
         //https://github.com/misode/vanilla-worldgen/tree/master/worldgen/biome
+    }
+
+    public static void setup() {
+        YJComposters.setup();
     }
 }

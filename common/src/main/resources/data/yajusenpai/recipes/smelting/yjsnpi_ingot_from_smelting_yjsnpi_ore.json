@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "yjsnpi_ingot",
+  "ingredient": {
+    "item": "yajusenpai:yjsnpi_ore"
+  },
+  "result": "yajusenpai:yjsnpi_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

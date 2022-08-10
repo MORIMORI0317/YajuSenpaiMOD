@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "yajusenpai:yjsnpi_pickaxe"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_shovel"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_axe"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_hoe"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_sword"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_helmet"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_chestplate"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_leggings"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_boots"
+    },
+    {
+      "item": "yajusenpai:yjsnpi_horse_armor"
+    }
+  ],
+  "result": "yajusenpai:yjsnpi_nugget",
+  "experience": 0.1,
+  "cookingtime": 200
+}

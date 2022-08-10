@@ -9,6 +9,7 @@ public class YajuSenpaiFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         YajuSenpai.init();
+        YajuSenpai.setup();
         FabricBrewingSetup.init();
         ServerHandlerFabric.init();
     }

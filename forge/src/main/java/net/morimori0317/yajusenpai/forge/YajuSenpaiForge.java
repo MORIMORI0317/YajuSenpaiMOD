@@ -25,6 +25,7 @@ public class YajuSenpaiForge {
     }
 
     private void setup(FMLCommonSetupEvent e) {
+        YajuSenpai.setup();
         ForgeBrewingSetup.setup();
     }
 

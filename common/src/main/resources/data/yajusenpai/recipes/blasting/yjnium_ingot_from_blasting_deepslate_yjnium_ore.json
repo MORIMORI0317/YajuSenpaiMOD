@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "yjnium_ingot",
+  "ingredient": {
+    "item": "yajusenpai:deepslate_yjnium_ore"
+  },
+  "result": "yajusenpai:yjnium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

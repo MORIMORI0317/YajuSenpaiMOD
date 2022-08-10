@@ -5,3 +5,4 @@ accessible method net/minecraft/data/worldgen/features/VegetationFeatures grassP
 accessible field net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer shieldModel Lnet/minecraft/client/model/ShieldModel;
 accessible field net/minecraft/world/level/Explosion fire Z
 accessible method net/minecraft/world/item/alchemy/PotionBrewing addMix (Lnet/minecraft/world/item/alchemy/Potion;Lnet/minecraft/world/item/Item;Lnet/minecraft/world/item/alchemy/Potion;)V
+accessible method net/minecraft/world/level/block/ComposterBlock add (FLnet/minecraft/world/level/ItemLike;)V
