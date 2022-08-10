@@ -20,7 +20,7 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: |
-          ./gradlew build publish curseforge modrinth --stacktrace --no-daemon
+          ./gradlew build publish curseforge --stacktrace --no-daemon
         env:
           curesforgeapikey: ${{secrets.CURESFORGEAPIKEY}}
           githubtoken: ${{secrets.GITHUBTOKEN}}
