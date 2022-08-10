@@ -5,7 +5,6 @@ import net.morimori0317.yajusenpai.client.renderer.YjBlockRenderTypes;
 import net.morimori0317.yajusenpai.client.renderer.blockentity.YJBlockRenderers;
 import net.morimori0317.yajusenpai.client.renderer.entity.YJEntityRenderers;
 import net.morimori0317.yajusenpai.client.renderer.item.YJItemRenderers;
-import net.morimori0317.yajusenpai.client.resources.YJClientPackSource;
 import net.morimori0317.yajusenpai.explatform.client.YJClientExpectPlatform;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.networking.YJPackets;

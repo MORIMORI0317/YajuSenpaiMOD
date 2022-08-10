@@ -1,12 +1,15 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
 architectury {
     platformSetupLoomIde()
     fabric()
 }
-
+repositories {
+    maven { url "https://maven.terraformersmc.com/releases/" }
+}
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 }
@@ -25,6 +28,7 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
     modApi "me.shedaniel:RoughlyEnoughItems-fabric:9.1.520"
+    modApi "com.terraformersmc:modmenu:4.0.4"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -69,16 +73,40 @@ components.java {
     }
 }
 
-publishing {
-    publications {
-        mavenFabric(MavenPublication) {
-            artifactId = rootProject.archives_base_name + "-" + project.name
-            from components.java
+curseforge {
+    if (System.getenv('curesforgeapikey') != null && "${project.curesforge_id}" != '') {
+        apiKey = System.getenv('curesforgeapikey')
+        project {
+            id = "${rootProject.curesforge_id}"
+
+            changelog = '';
+
+            releaseType = "${rootProject.release_type}"
+            addGameVersion "${rootProject.minecraft_version}"
+            addGameVersion 'Java 17'
+            addGameVersion "Fabric"
+            addGameVersion "Quilt"
+            addGameVersion "1.19.1"
+            addGameVersion "1.19.2"
+
+            relations {
+                requiredDependency "fabric-api"
+                requiredDependency "architectury-api"
+            }
+
+            mainArtifact(file("${project.buildDir}/libs/${rootProject.archives_base_name}-${project.name}-${rootProject.minecraft_version}-${project.mod_version}.jar")) {
+                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-Fabric"
+            }
+
+            addArtifact(file("${project.buildDir}/libs/${rootProject.archives_base_name}-${project.name}-${rootProject.minecraft_version}-${project.mod_version}-sources.jar")) {
+                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-Fabric-sources"
+            }
+            afterEvaluate {
+                uploadTask.dependsOn("build")
+            }
         }
     }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-    repositories {
-        // Add repositories to publish to here.
+    options {
+        forgeGradleIntegration = false
     }
 }

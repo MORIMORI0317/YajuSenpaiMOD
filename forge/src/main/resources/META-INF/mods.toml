@@ -1,6 +1,5 @@
 modLoader = "javafml"
 loaderVersion = "[41,)"
-#issueTrackerURL = ""
 license = "GNU LGPLv3"
 
 [[mods]]
@@ -8,10 +7,41 @@ modId = "yajusenpai"
 version = "${version}"
 displayName = "Yaju Senpai"
 authors = "MORIMORI0317"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod"
+issueTrackerURL = "https://github.com/MORIMORI0317/YajuSenpaiMOD/issues"
 description = '''
-The ikisugi mod...
+The Ikisugi MOD.使用BB
+野樹先輩BB
+https://www.nicovideo.jp/watch/sm26250744
+りんごＢＢ
+https://www.nicovideo.jp/watch/sm18145645
+サイクロップス先輩のバイザー・サングラスＢＢ.XMEN
+https://www.nicovideo.jp/watch/sm25377226
+野獣先輩のでか枕BB
+https://www.nicovideo.jp/watch/sm19360333
+など...
+
+使用音源
+淫ク☆ Sounds
+https://inc-sounds.net/
+課長こわれる　ドマラCD
+https://www.nicovideo.jp/watch/sm22464402
+サイクロップス先輩　ドラマCD　long ver.
+https://www.nicovideo.jp/watch/sm26268020
+など...
+
+参考MOD
+野獣先輩MOD
+https://web.archive.org/web/20160713103301/http://forum.minecraftuser.jp/viewtopic.php?f=13&t=1758&p=208860#p208860
+野　獣　ブ　ロ　ッ　ク.mod
+https://www.nicovideo.jp/watch/sm29641439
+など...
 '''
-#logoFile = ""
+logoFile = "logo.png"
+updateJSONURL="https://raw.githubusercontent.com/MORIMORI0317/YajuSenpaiMOD/master/update_check.json"
+
+[modproperties.iammusicplayer]
+catalogueImageIcon = "icon.png"
 
 [[dependencies.yajusenpai]]
 modId = "forge"

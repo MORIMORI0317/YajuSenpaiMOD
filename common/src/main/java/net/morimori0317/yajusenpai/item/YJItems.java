@@ -5,7 +5,6 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Registry;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;

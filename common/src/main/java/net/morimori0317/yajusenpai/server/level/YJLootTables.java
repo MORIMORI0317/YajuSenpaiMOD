@@ -16,10 +16,11 @@ import net.morimori0317.yajusenpai.item.YJItems;
 
 public class YJLootTables {
     private static final ResourceLocation ZOMBIE = new ResourceLocation("entities/zombie");
+    private static final ResourceLocation ZOMBIE_VILLAGER = new ResourceLocation("entities/zombie_villager");
     private static final ResourceLocation HUSK = new ResourceLocation("entities/husk");
 
     public static void onLootTableModify(LootTables lootManager, ResourceLocation id, LootTableModify modifyAccess) {
-        if (ZOMBIE.equals(id) || HUSK.equals(id)) {
+        if (ZOMBIE.equals(id) || HUSK.equals(id) || ZOMBIE_VILLAGER.equals(id)) {
             var pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.025f / 3f))
                     .when(LootItemKilledByPlayerCondition.killedByPlayer())
