@@ -16,13 +16,13 @@
     "2020-1.2.1": "Update for MC 1.16.2 and recipe bug fix"
   },
   "1.19": {
-    "1.4": "The 2022 Release."
+    "2022-1.4": "The 2022 Release."
   },
   "1.19.1": {
-    "1.4": "The 2022 Release."
+    "2022-1.4": "The 2022 Release."
   },
   "1.19.2": {
-    "1.4": "The 2022 Release."
+    "2022-1.4": "The 2022 Release."
   },
   "promos": {
     "1.16.1-latest": "2020-1.2",
@@ -35,11 +35,11 @@
     "1.16.4-recommended": "2020-1.2.1",
     "1.16.5-latest": "2020-1.2.1",
     "1.16.5-recommended": "2020-1.2.1",
-    "1.19-latest": "1.4",
-    "1.19-recommended": "1.4",
-    "1.19.1-latest": "1.4",
-    "1.19.1-recommended": "1.4",
-    "1.19.2-latest": "1.4",
-    "1.19.2-recommended": "1.4"
+    "1.19-latest": "2022-1.4",
+    "1.19-recommended": "2022-1.4",
+    "1.19.1-latest": "2022-1.4",
+    "1.19.1-recommended": "2022-1.4",
+    "1.19.2-latest": "2022-1.4",
+    "1.19.2-recommended": "2022-1.4"
   }
 }
