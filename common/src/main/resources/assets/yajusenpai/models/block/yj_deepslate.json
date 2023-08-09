@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "yajusenpai:block/yj_deepslate",
-    "side": "yajusenpai:block/yj_deepslate"
-  }
-}

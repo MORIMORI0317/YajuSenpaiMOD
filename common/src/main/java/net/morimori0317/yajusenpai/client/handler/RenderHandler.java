@@ -14,10 +14,10 @@ public class RenderHandler {
         var pos = ((YJLivingEntity) livingEntity).getSleepingPos();
         if (pos == null) return;
 
-        if (!livingEntity.level.getBlockState(livingEntity.blockPosition()).is(YJBlocks.BIG_PILLOW.get()))
+        if (!livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.BIG_PILLOW.get()))
             return;
 
-        var bs = livingEntity.level.getBlockState(pos);
+        var bs = livingEntity.level().getBlockState(pos);
         if (!bs.is(YJBlocks.BIG_PILLOW.get())) return;
 
         var direction = bs.getValue(BigPillowBlock.FACING);

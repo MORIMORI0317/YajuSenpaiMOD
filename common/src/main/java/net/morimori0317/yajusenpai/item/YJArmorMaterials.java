@@ -1,76 +1,106 @@
 package net.morimori0317.yajusenpai.item;
 
-import dev.architectury.platform.Platform;
+import com.google.common.base.Suppliers;
+import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
+import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum YJArmorMaterials implements ArmorMaterial {
-    YJNIUM("yjnium", 19, new int[]{2, 5, 10, 2}, 9, () -> SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())),
-    YJSNPI("yjsnpi", 36, new int[]{3, 6, 8, 3}, 10, YJSoundEvents.YJ_EQUIP, 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJSNPI_INGOT.get())),
-    CYCLOPS_SUNGLASSES("cyclops_sunglasses", 194, new int[]{0, 0, 0, 5}, 0xa + 193, YJSoundEvents.CYCLOPS_NAZOOTO, 0, 0, () -> Ingredient.EMPTY),
-    BRIEF("brief", 81, new int[]{0, 7, 0, 0}, 0xb1af, YJSoundEvents.YJ_BRIEF, 0, 0, () -> Ingredient.EMPTY);
-    private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
+    YJNIUM("yjnium", 19, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
+        durMul.put(ArmorItem.Type.BOOTS, 2);
+        durMul.put(ArmorItem.Type.LEGGINGS, 5);
+        durMul.put(ArmorItem.Type.CHESTPLATE, 10);
+        durMul.put(ArmorItem.Type.HELMET, 2);
+    }), 9, () -> SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())),
+
+
+    YJSNPI("yjsnpi", 36, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
+        durMul.put(ArmorItem.Type.BOOTS, 3);
+        durMul.put(ArmorItem.Type.LEGGINGS, 6);
+        durMul.put(ArmorItem.Type.CHESTPLATE, 8);
+        durMul.put(ArmorItem.Type.HELMET, 3);
+    }), 10, YJSoundEvents.YJ_EQUIP, 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJSNPI_INGOT.get())),
+
+    CYCLOPS_SUNGLASSES("cyclops_sunglasses", 193, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
+        durMul.put(ArmorItem.Type.BOOTS, 19);
+        durMul.put(ArmorItem.Type.LEGGINGS, 19);
+        durMul.put(ArmorItem.Type.CHESTPLATE, 19);
+        durMul.put(ArmorItem.Type.HELMET, 5);
+    }), 0xa + 193, YJSoundEvents.CYCLOPS_NAZOOTO, 0, 0, () -> Ingredient.of(Items.TINTED_GLASS)),
+
+    BRIEF("brief", 81, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
+        durMul.put(ArmorItem.Type.BOOTS, 19);
+        durMul.put(ArmorItem.Type.LEGGINGS, 7);
+        durMul.put(ArmorItem.Type.CHESTPLATE, 19);
+        durMul.put(ArmorItem.Type.HELMET, 19);
+    }), 931, YJSoundEvents.YJ_NU, 0, 0, () -> Ingredient.of(Items.WHITE_WOOL));
+
     private final String name;
     private final int durabilityMultiplier;
-    private final int[] slotProtections;
+    private final EnumMap<ArmorItem.Type, Integer> protectionFunctionForType;
     private final int enchantmentValue;
     private final Supplier<SoundEvent> sound;
     private final float toughness;
     private final float knockbackResistance;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    YJArmorMaterials(String name, int j, int[] is, int k, Supplier<SoundEvent> soundEvent, float f, float g, Supplier<Ingredient> supplier) {
-        if (Platform.isForge())
-            this.name = YajuSenpai.MODID + ":" + name;
-        else
-            this.name = name;
-
-
-        this.durabilityMultiplier = j;
-        this.slotProtections = is;
-        this.enchantmentValue = k;
-        this.sound = soundEvent;
-        this.toughness = f;
-        this.knockbackResistance = g;
-        this.repairIngredient = new LazyLoadedValue(supplier);
+    YJArmorMaterials(String name, int durabilityMultiplier, EnumMap<ArmorItem.Type, Integer> protectionFunctionForType, int enchantmentValue, Supplier<SoundEvent> sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+        this.name = YajuSenpai.MODID + ":" + name;
+        this.durabilityMultiplier = durabilityMultiplier;
+        this.protectionFunctionForType = protectionFunctionForType;
+        this.enchantmentValue = enchantmentValue;
+        this.sound = Suppliers.memoize(sound::get);
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
+        this.repairIngredient = Suppliers.memoize(repairIngredient::get);
     }
 
-    public int getDurabilityForSlot(EquipmentSlot equipmentSlot) {
-        return HEALTH_PER_SLOT[equipmentSlot.getIndex()] * this.durabilityMultiplier;
+    @Override
+    public int getDurabilityForType(ArmorItem.Type type) {
+        return ArmorMaterials.HEALTH_FUNCTION_FOR_TYPE.get(type) * this.durabilityMultiplier;
     }
 
-    public int getDefenseForSlot(EquipmentSlot equipmentSlot) {
-        return this.slotProtections[equipmentSlot.getIndex()];
+    @Override
+    public int getDefenseForType(ArmorItem.Type type) {
+        return this.protectionFunctionForType.get(type);
     }
 
+    @Override
     public int getEnchantmentValue() {
         return this.enchantmentValue;
     }
 
+    @Override
     public SoundEvent getEquipSound() {
         return this.sound.get();
     }
 
+    @Override
     public Ingredient getRepairIngredient() {
         return this.repairIngredient.get();
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
 
+    @Override
     public float getToughness() {
         return this.toughness;
     }
 
+    @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;
     }

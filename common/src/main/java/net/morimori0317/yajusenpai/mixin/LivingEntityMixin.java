@@ -58,7 +58,7 @@ public abstract class LivingEntityMixin implements YJLivingEntity {
     @Inject(method = "baseTick", at = @At(value = "HEAD"))
     private void baseTick(CallbackInfo ci) {
         var ths = (LivingEntity) (Object) this;
-        if (!ths.level.isClientSide()) {
+        if (!ths.level().isClientSide()) {
             boolean kf = false;
             for (ItemStack item : ths.getArmorSlots()) {
                 if (YJUtils.hasKynEnchantment(item)) {

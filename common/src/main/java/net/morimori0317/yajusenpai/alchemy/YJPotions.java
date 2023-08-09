@@ -2,7 +2,7 @@ package net.morimori0317.yajusenpai.alchemy;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
@@ -20,11 +20,11 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class YJPotions {
-    private static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(YajuSenpai.MODID, Registry.POTION_REGISTRY);
+    private static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(YajuSenpai.MODID, Registries.POTION);
     public static final Map<RegistrySupplier<Potion>, Potion> RAW = new HashMap<>();
 
-    public static final RegistrySupplier<Potion> BEASTFICTION = register("beastfiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), 20 * 490));
-    public static final RegistrySupplier<Potion> LONG_BEASTFICTION = register("long_beastfiction", "beastfiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEASTFICTION), 20 * 1159));
+    public static final RegistrySupplier<Potion> BEAST_FICTION = register("beast_fiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEAST_FICTION), 20 * 490));
+    public static final RegistrySupplier<Potion> LONG_BEAST_FICTION = register("long_beast_fiction", "beast_fiction", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.BEAST_FICTION), 20 * 1159));
     public static final RegistrySupplier<Potion> IKISUGI = register("ikisugi", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.IKISUGI), 20 * 65));
     public static final RegistrySupplier<Potion> COMA = register("coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 1800));
     public static final RegistrySupplier<Potion> LONG_COMA = register("long_coma", "coma", () -> new MobEffectInstance(YJMobEffects.RAW.get(YJMobEffects.COMA), 4800));
@@ -47,13 +47,13 @@ public class YJPotions {
     }
 
     public static void setupBrewing(BrewingRegistryAccess access) {
-        for (RegistrySupplier<Block> yj_block : YJBlocks.YJ_BLOCKs) {
-            access.add(Potions.AWKWARD, yj_block.get().asItem(), BEASTFICTION.get());
+        for (RegistrySupplier<Block> yj_block : YJBlocks.YJ_BLOCKS) {
+            access.add(Potions.AWKWARD, yj_block.get().asItem(), BEAST_FICTION.get());
         }
 
-        access.add(RAW.get(BEASTFICTION), Items.REDSTONE, RAW.get(LONG_BEASTFICTION));
-        access.add(RAW.get(BEASTFICTION), YJItems.YJ_STAR.get(), RAW.get(IKISUGI));
-        access.add(RAW.get(LONG_BEASTFICTION), YJItems.YJ_STAR.get(), RAW.get(IKISUGI));
+        access.add(RAW.get(BEAST_FICTION), Items.REDSTONE, RAW.get(LONG_BEAST_FICTION));
+        access.add(RAW.get(BEAST_FICTION), YJItems.YJ_STAR.get(), RAW.get(IKISUGI));
+        access.add(RAW.get(LONG_BEAST_FICTION), YJItems.YJ_STAR.get(), RAW.get(IKISUGI));
         access.add(Potions.AWKWARD, YJItems.ICE_TEA.get(), RAW.get(COMA));
         access.add(RAW.get(COMA), Items.REDSTONE, RAW.get(LONG_COMA));
         access.add(RAW.get(COMA), Items.GLOWSTONE_DUST, RAW.get(STRONG_COMA));

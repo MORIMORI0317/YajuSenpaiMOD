@@ -24,7 +24,7 @@ public class IceTeaItem extends Item {
 
     @Override
     public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
-        if (!attacker.level.isClientSide() && !(attacker instanceof ServerPlayer player && player.getCooldowns().isOnCooldown(this)) && canAttackIceTea(target)) {
+        if (!attacker.level().isClientSide() && !(attacker instanceof ServerPlayer player && player.getCooldowns().isOnCooldown(this)) && canAttackIceTea(target)) {
             attackIceTea(itemStack, attacker, target);
         }
         return super.hurtEnemy(itemStack, target, attacker);
@@ -49,7 +49,7 @@ public class IceTeaItem extends Item {
     public InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity livingEntity, InteractionHand interactionHand) {
         if (!player.getCooldowns().isOnCooldown(YJItems.ICE_TEA.get()) && canAttackIceTea(livingEntity)) {
             attackIceTea(itemStack, player, livingEntity);
-            return InteractionResult.sidedSuccess(player.level.isClientSide);
+            return InteractionResult.sidedSuccess(player.level().isClientSide);
         }
         return InteractionResult.PASS;
     }
@@ -62,8 +62,8 @@ public class IceTeaItem extends Item {
 
     public static void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
         target.addEffect(new MobEffectInstance(YJMobEffects.COMA.get(), 10000, 2));
-        if (!attacker.level.isClientSide) {
-            attacker.level.playSound(null, attacker, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
+        if (!attacker.level().isClientSide) {
+            attacker.level().playSound(null, attacker, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
 
             if (attacker instanceof ServerPlayer player) {
                 player.getCooldowns().addCooldown(YJItems.ICE_TEA.get(), 20);

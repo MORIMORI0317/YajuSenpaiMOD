@@ -2,13 +2,13 @@ package net.morimori0317.yajusenpai.sound;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.morimori0317.yajusenpai.YajuSenpai;
 
 public class YJSoundEvents {
-    private static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(YajuSenpai.MODID, Registry.SOUND_EVENT_REGISTRY);
+    private static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(YajuSenpai.MODID, Registries.SOUND_EVENT);
     public static final RegistrySupplier<SoundEvent> YJ_BUTTIPA = register("yj.buttipa");
     public static final RegistrySupplier<SoundEvent> YJ_DASOUTOOMOEBA = register("yj.dasoutoomoeba");
     public static final RegistrySupplier<SoundEvent> YJ_DEDEMASUYO = register("yj.dedemasuyo");
@@ -191,7 +191,7 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent>[] KYN_ATUIs = (RegistrySupplier<SoundEvent>[]) new RegistrySupplier[]{KYN_ATUI1, KYN_ATUI2, KYN_ATUI3, KYN_ATUI4, KYN_ATUI5, KYN_ATUI6, KYN_ATUI7, KYN_ATUI8, KYN_ATUI9, KYN_ATUI10, KYN_ATUI11, KYN_ATUI12, KYN_ATUI13, KYN_ATUI14, KYN_ATUI15, KYN_ATUI16, KYN_ATUI17, KYN_ATUI18, KYN_ATUI19, KYN_ATUI20, KYN_ATUI21, KYN_ATUI22, KYN_ATUI23, KYN_ATUI24, KYN_ATUI25, KYN_ATUI26, KYN_ATUI27, KYN_ATUI28};
 
     private static RegistrySupplier<SoundEvent> register(String name) {
-        return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(YajuSenpai.MODID, name)));
+        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(YajuSenpai.MODID, name)));
     }
 
     public static void init() {

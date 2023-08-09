@@ -12,7 +12,7 @@
     "sources": "https://github.com/MORIMORI0317/YajuSenpaiMOD",
     "issues": "https://github.com/MORIMORI0317/YajuSenpaiMOD/issues"
   },
-  "license": "GNU LGPLv3",
+  "license": "Ikisugi GNU LGPLv3",
   "icon": "assets/yajusenpai/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -21,6 +21,9 @@
     ],
     "client": [
       "net.morimori0317.yajusenpai.fabric.client.YajuSenpaiClientFabric"
+    ],
+    "fabric-datagen": [
+      "net.morimori0317.yajusenpai.fabric.data.YajuSenpaiDataGeneratorFabric"
     ]
   },
   "mixins": [
@@ -29,7 +32,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.19",
-    "architectury": ">=5.7.28"
+    "minecraft": ">=1.20.1",
+    "architectury": ">=9.1.10"
   }
 }

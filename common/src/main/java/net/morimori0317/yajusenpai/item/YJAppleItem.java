@@ -28,7 +28,7 @@ public class YJAppleItem extends Item {
             else if (level.random.nextFloat() <= 0.1919)
                 effectInstance = new MobEffectInstance(YJMobEffects.COMA.get(), 20 * 40, 0);
             else if (level.random.nextFloat() <= 0.810)
-                effectInstance = new MobEffectInstance(YJMobEffects.BEASTFICTION.get(), 20 * 60, 0);
+                effectInstance = new MobEffectInstance(YJMobEffects.BEAST_FICTION.get(), 20 * 60, 0);
 
             if (effectInstance != null)
                 livingEntity.addEffect(effectInstance);

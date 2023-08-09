@@ -27,7 +27,7 @@ public class LivingEntityMixin {
         CommonHandler.onLivingDrop(ths, damageSource, drops);
 
         for (ItemEntity drop : drops) {
-            ths.level.addFreshEntity(drop);
+            ths.level().addFreshEntity(drop);
         }
     }
 }

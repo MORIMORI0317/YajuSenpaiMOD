@@ -13,7 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -23,13 +22,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
 import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.util.YJUtils;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 
 public class YJPortalBlock extends BaseEntityBlock {
     protected static final VoxelShape SHAPE = Block.box(0.0D, 6.0D, 0.0D, 16.0D, 12.0D, 16.0D);
 
-    protected YJPortalBlock(BlockBehaviour.Properties properties) {
+    protected YJPortalBlock(Properties properties) {
         super(properties);
     }
 

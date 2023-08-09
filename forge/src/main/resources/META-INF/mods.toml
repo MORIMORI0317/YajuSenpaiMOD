@@ -1,6 +1,6 @@
 modLoader = "javafml"
-loaderVersion = "[41,)"
-license = "GNU LGPLv3"
+loaderVersion = "[47,)"
+license = "Ikisugi GNU LGPLv3"
 
 [[mods]]
 modId = "yajusenpai"
@@ -42,26 +42,26 @@ https://www.nicovideo.jp/watch/sm29641439
 logoFile = "logo.png"
 updateJSONURL="https://raw.githubusercontent.com/MORIMORI0317/YajuSenpaiMOD/master/update_check.json"
 
-[modproperties.iammusicplayer]
+[modproperties.yajusenpai]
 catalogueImageIcon = "icon.png"
 
 [[dependencies.yajusenpai]]
 modId = "forge"
 mandatory = true
-versionRange = "[41,)"
+versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.yajusenpai]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19,)"
+versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.yajusenpai]]
 modId = "architectury"
 mandatory = true
-versionRange = "[5.7.28,)"
+versionRange = "[9.1.10,)"
 ordering = "AFTER"
 side = "BOTH"

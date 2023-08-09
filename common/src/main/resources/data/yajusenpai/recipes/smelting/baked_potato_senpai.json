@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.35,
-  "ingredient": {
-    "item": "yajusenpai:potato_senpai"
-  },
-  "result": "yajusenpai:baked_potato_senpai"
-}

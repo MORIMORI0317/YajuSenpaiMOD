@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "yajusenpai:block/yj_planks",
-    "top": "yajusenpai:block/yj_planks",
-    "side": "yajusenpai:block/yj_planks"
-  }
-}

@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.entity;
 
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -17,8 +18,8 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.level.Level;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 
 public class KatyouCat extends Cat {
     private static final ResourceLocation LOCATION = new ResourceLocation(YajuSenpai.MODID, "textures/entity/katyou_cat.png");
@@ -85,7 +86,7 @@ public class KatyouCat extends Cat {
     }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
         return NetworkManager.createAddEntityPacket(this);
     }
 }

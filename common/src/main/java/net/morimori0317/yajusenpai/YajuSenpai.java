@@ -10,12 +10,9 @@ import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;
 import net.morimori0317.yajusenpai.item.YJComposters;
+import net.morimori0317.yajusenpai.item.YJCreativeModeTabs;
 import net.morimori0317.yajusenpai.item.YJItems;
-import net.morimori0317.yajusenpai.painting.YJPaintings;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
-import net.morimori0317.yajusenpai.server.level.features.YJOreFeatures;
-import net.morimori0317.yajusenpai.server.level.features.YJTreeFeatures;
-import net.morimori0317.yajusenpai.server.level.features.YJVegetationFeatures;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructurePieceType;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructureTypes;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -27,18 +24,15 @@ public class YajuSenpai {
         YJSoundEvents.init();
         YJMobEffects.init();
         YJPotions.init();
+        YJCreativeModeTabs.init();
         YJBlocks.init();
-        YJBlockEntityTypes.init();
         YJEntityTypes.init();
         YJItems.init();
+        YJBlockEntityTypes.init();
         YJEnchantments.init();
-        YJPaintings.init();
         ServerHandler.init();
-        YJTreeFeatures.init();
-        YJOreFeatures.init();
-        YJVegetationFeatures.init();
-        YJStructurePieceType.init();
         YJStructureTypes.init();
+        YJStructurePieceType.init();
 
         EnvExecutor.runInEnv(Env.CLIENT, () -> YajuSenpaiClient::preInit);
         //https://misode.github.io/dimension/

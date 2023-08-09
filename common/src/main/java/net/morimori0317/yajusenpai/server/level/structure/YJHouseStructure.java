@@ -26,7 +26,7 @@ public class YJHouseStructure extends Structure {
         });
     }
 
-    private void generatePieces(StructurePiecesBuilder structurePiecesBuilder, Structure.GenerationContext generationContext) {
+    private void generatePieces(StructurePiecesBuilder structurePiecesBuilder, GenerationContext generationContext) {
         ChunkPos chunkPos = generationContext.chunkPos();
         WorldgenRandom worldgenRandom = generationContext.random();
         BlockPos blockPos = new BlockPos(chunkPos.getMinBlockX(), 90, chunkPos.getMinBlockZ());

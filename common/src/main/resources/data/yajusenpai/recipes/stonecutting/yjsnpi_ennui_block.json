@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "tag": "yajusenpai:yjsnpi_block"
-  },
-  "result": "yajusenpai:yjsnpi_ennui_block"
-}

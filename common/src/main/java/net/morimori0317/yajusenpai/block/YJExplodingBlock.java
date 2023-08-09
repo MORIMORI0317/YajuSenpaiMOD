@@ -82,7 +82,7 @@ public class YJExplodingBlock extends Block {
         int cont = blockState.getValue(YJ_TIMER);
         if (cont >= 146) {
             serverLevel.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
-            serverLevel.explode(null, blockPos.getX() + 0.5d, blockPos.getY() + 0.5d, blockPos.getZ() + 0.5d, 8.10F, blockState.getValue(YJ_FIRE) || isFire(blockState, serverLevel, blockPos), Explosion.BlockInteraction.DESTROY);
+            serverLevel.explode(null, blockPos.getX() + 0.5d, blockPos.getY() + 0.5d, blockPos.getZ() + 0.5d, 8.10F, blockState.getValue(YJ_FIRE) || isFire(blockState, serverLevel, blockPos), Level.ExplosionInteraction.BLOCK);
         } else {
             if (cont == 141 && !YJUtils.isYJDim(serverLevel))
                 serverLevel.playSound(null, blockPos, YJSoundEvents.YJ_NNA.get(), SoundSource.BLOCKS, 3, 1);

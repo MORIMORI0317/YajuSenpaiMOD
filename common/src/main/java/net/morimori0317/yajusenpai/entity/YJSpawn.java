@@ -20,7 +20,7 @@ import java.util.function.BooleanSupplier;
 public class YJSpawn {
     public static void onSpawn(Mob mob) {
         RandomSource rs = mob.getRandom();
-        boolean y = YJUtils.isYJDim(mob.level);
+        boolean y = YJUtils.isYJDim(mob.level());
         BooleanSupplier r = () -> {
             if (y) {
                 return YJUtils.legacyYjRandom(rs) && YJUtils.legacyYjRandom(rs);
@@ -42,7 +42,6 @@ public class YJSpawn {
                 mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
                 mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
                 mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOUNE_SWORD.get()));
-                mob.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(YJItems.JAKEN_YORUIKIMASYOU_SHIELD.get()));
             }
         }
 
@@ -89,7 +88,7 @@ public class YJSpawn {
     }
 
     private static Block createInmItem(RandomSource random) {
-        return YJBlocks.INM_BLOCKs[random.nextInt(YJBlocks.INM_BLOCKs.length)].get();
+        return YJBlocks.INM_BLOCKS[random.nextInt(YJBlocks.INM_BLOCKS.length)].get();
     }
 
     private static void setFullArmor(Mob mob, boolean override, ItemStack head, ItemStack chest, ItemStack leg, ItemStack feet, ItemStack main, ItemStack off) {
