@@ -3,6 +3,7 @@ package net.morimori0317.yajusenpai.server.level.structure;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.commands.PlaceCommand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Mirror;
@@ -11,13 +12,14 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePieceAccessor;
 import net.minecraft.world.level.levelgen.structure.TemplateStructurePiece;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
 public class YJHousePieces {
-    private static final ResourceLocation STRUCTURE_LOCATION_YJ_HOUSE = YJUtils.modLoc("yj_house/yj_tei_v2");
+    private static final ResourceLocation STRUCTURE_LOCATION_YJ_HOUSE = YJUtils.modLoc("yj_house");
 
     public static void addPieces(StructureTemplateManager structureTemplateManager, BlockPos blockPos, Rotation rotation, StructurePieceAccessor structurePieceAccessor, RandomSource randomSource) {
         structurePieceAccessor.addPiece(new YJHousePiece(structureTemplateManager, STRUCTURE_LOCATION_YJ_HOUSE, blockPos, rotation, 21));

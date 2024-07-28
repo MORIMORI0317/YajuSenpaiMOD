@@ -7,7 +7,7 @@ public class YJComposters {
     public static void setup() {
         ComposterBlock.add(0.3F, YJBlocks.YJ_SAPLING.get());
         ComposterBlock.add(0.3F, YJBlocks.YJ_LEAVES.get());
-        ComposterBlock.add(0.3F, YJBlocks.YJ_GRASS.get());
+        ComposterBlock.add(0.3F, YJBlocks.SHORT_YJ_GRASS.get());
         ComposterBlock.add(0.5F, YJBlocks.TALL_YJ_GRASS.get());
         ComposterBlock.add(0.65F, YJBlocks.YJ_ROSE.get());
         ComposterBlock.add(0.65F, YJItems.APPLE_INM.get());

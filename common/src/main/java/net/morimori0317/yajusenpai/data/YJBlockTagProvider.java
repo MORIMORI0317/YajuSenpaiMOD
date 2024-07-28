@@ -75,7 +75,7 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
                 .add(YJBlocks.YJ_PORTAL.get());
 
         providerAccess.tag(BlockTags.REPLACEABLE_BY_TREES)
-                .add(YJBlocks.YJ_GRASS.get(), YJBlocks.TALL_YJ_GRASS.get());
+                .add(YJBlocks.SHORT_YJ_GRASS.get(), YJBlocks.TALL_YJ_GRASS.get());
 
         providerAccess.tag(BlockTags.SAND)
                 .add(YJBlocks.YJ_SAND.get());

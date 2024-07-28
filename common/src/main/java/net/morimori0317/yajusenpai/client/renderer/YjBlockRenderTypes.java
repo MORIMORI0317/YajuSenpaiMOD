@@ -8,7 +8,7 @@ public class YJBlockRenderTypes {
 
     public static void init() {
         RenderTypeRegistry.register(RenderType.cutout(),
-                YJBlocks.YJ_GRASS.get(),
+                YJBlocks.SHORT_YJ_GRASS.get(),
                 YJBlocks.TALL_YJ_GRASS.get(),
                 YJBlocks.YJ_ROSE.get(),
                 YJBlocks.POTTED_YJ_ROSE.get(),

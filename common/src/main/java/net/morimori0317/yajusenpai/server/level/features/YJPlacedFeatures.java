@@ -40,7 +40,7 @@ public class YJPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_INTERVIEW_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_interview_block"));
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_INTLNGTM_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_intlngtm_block"));
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_KUNEKUNE_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_kunekune_block"));
-    public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_MEZIKARA_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_mezikara_block"));
+    public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_MEDIKARA_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_medikara_block"));
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_NEHAN_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_nehan_block"));
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_SHITARIGAO_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_shitarigao_block"));
     public static final ResourceKey<PlacedFeature> ORE_INM_ORE_YJSNPI_SZKFK_BLOCK = ResourceKey.create(Registries.PLACED_FEATURE, YJUtils.modLoc("ore_inm/ore_yjsnpi_szkfk_block"));
@@ -164,9 +164,9 @@ public class YJPlacedFeatures {
             HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureHolderGetter = ctx.lookup(Registries.CONFIGURED_FEATURE);
             return new PlacedFeature(configuredFeatureHolderGetter.getOrThrow(YJOreFeatures.ORE_YJSNPI_KUNEKUNE_BLOCK), inmOrePlacedModifier);
         });
-        register.add(ORE_INM_ORE_YJSNPI_MEZIKARA_BLOCK, ctx -> {
+        register.add(ORE_INM_ORE_YJSNPI_MEDIKARA_BLOCK, ctx -> {
             HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureHolderGetter = ctx.lookup(Registries.CONFIGURED_FEATURE);
-            return new PlacedFeature(configuredFeatureHolderGetter.getOrThrow(YJOreFeatures.ORE_YJSNPI_MEZIKARA_BLOCK), inmOrePlacedModifier);
+            return new PlacedFeature(configuredFeatureHolderGetter.getOrThrow(YJOreFeatures.ORE_YJSNPI_MEDIKARA_BLOCK), inmOrePlacedModifier);
         });
         register.add(ORE_INM_ORE_YJSNPI_NEHAN_BLOCK, ctx -> {
             HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureHolderGetter = ctx.lookup(Registries.CONFIGURED_FEATURE);

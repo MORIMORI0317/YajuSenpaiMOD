@@ -70,8 +70,8 @@ public final class YJBlocks {
     public static final RegistrySupplier<SlabBlock> YJ_SLAB = register("yj_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB).mapColor(MapColor.COLOR_BROWN).sound(YJSoundType.YJ_WOOD.get())));
     public static final RegistrySupplier<StairBlock> YJ_STAIRS = register("yj_stairs", () -> new StairBlock(YJ_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS).mapColor(MapColor.COLOR_BROWN)));
 
-    public static final RegistrySupplier<Block> YJ_GRASS = register("yj_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(YJSoundType.YJ_GRASS.get())));
-    public static final RegistrySupplier<Block> TALL_YJ_GRASS = register("tall_yj_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS).sound(YJSoundType.YJ_GRASS.get())), block -> new DoubleHighBlockItem(block, YJItems.baseProperties()));
+    public static final RegistrySupplier<Block> SHORT_YJ_GRASS = register("short_yj_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).replaceable().noCollission().instabreak().offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY).sound(YJSoundType.YJ_GRASS.get())));
+    public static final RegistrySupplier<Block> TALL_YJ_GRASS = register("tall_yj_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS).replaceable().noCollission().instabreak().offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY).sound(YJSoundType.YJ_GRASS.get())), block -> new DoubleHighBlockItem(block, YJItems.baseProperties()));
 
     public static final RegistrySupplier<Block> YJ_ROSE = register("yj_rose", () -> new YJRoseBlock(YJMobEffects.BEAST_FICTION.vanillaHolder(), 8, BlockBehaviour.Properties.of().noCollission().instabreak().sound(YJSoundType.YJ_GRASS.get()).offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistrySupplier<Block> POTTED_YJ_ROSE = register("potted_yj_rose", () -> Blocks.flowerPot(YJ_ROSE.get()), null);

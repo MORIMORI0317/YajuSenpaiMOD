@@ -160,7 +160,7 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
         nineBlockStorageRecipesWithCustomPacking(providerAccess, exporter, RecipeCategory.MISC, YJItems.YAJUSENPAI_NUGGET.get(), RecipeCategory.MISC, YJItems.YAJUSENPAI_INGOT.get(), "yjsnpi_ingot_from_nuggets", "yjsnpi_ingot");
 
 
- /*       ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, YJItems.YJNIUM_HORSE_ARMOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, YJItems.YJNIUM_HORSE_ARMOR.get())
                 .define('X', YJItemTags.COMPAT_YJNIUM_INGOT)
                 .pattern("X X")
                 .pattern("XXX")
@@ -168,13 +168,13 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy(providerAccess.getHasName(YJItems.YJNIUM_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJNIUM_INGOT))
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, YJItems.YJSNPI_HORSE_ARMOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, YJItems.YAJUSENPAI_HORSE_ARMOR.get())
                 .define('X', YJItemTags.COMPAT_YJSNPI_INGOT)
                 .pattern("X X")
                 .pattern("XXX")
                 .pattern("X X")
-                .unlockedBy(providerAccess.getHasName(YJItems.YJSNPI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
-                .save(exporter);*/
+                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
+                .save(exporter);
 
         nineBlockStorageRecipesRecipesWithCustomUnpacking(providerAccess, exporter, RecipeCategory.MISC, YJItems.YJNIUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, YJBlocks.YJNIUM_BLOCK.get(), "yjnium_ingot_from_yjnium_block", "yjnium_ingot");
 
@@ -196,7 +196,7 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy("has_potato_senpai", providerAccess.has(YJItems.POTATO_SENPAI.get()))
                 .save(exporter);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(YJItems.YJNIUM_PICKAXE.get(), YJItems.YJNIUM_SHOVEL.get(), YJItems.YJNIUM_AXE.get(), YJItems.YJNIUM_HOE.get(), YJItems.YJNIUM_SWORD.get(), YJItems.YJNIUM_HELMET.get(), YJItems.YJNIUM_CHESTPLATE.get(), YJItems.YJNIUM_LEGGINGS.get(), YJItems.YJNIUM_BOOTS.get()/*, YJItems.YJNIUM_HORSE_ARMOR.get()*/), RecipeCategory.MISC, YJItems.YJNIUM_NUGGET.get(), 0.1f, 200)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(YJItems.YJNIUM_PICKAXE.get(), YJItems.YJNIUM_SHOVEL.get(), YJItems.YJNIUM_AXE.get(), YJItems.YJNIUM_HOE.get(), YJItems.YJNIUM_SWORD.get(), YJItems.YJNIUM_HELMET.get(), YJItems.YJNIUM_CHESTPLATE.get(), YJItems.YJNIUM_LEGGINGS.get(), YJItems.YJNIUM_BOOTS.get(), YJItems.YJNIUM_HORSE_ARMOR.get()), RecipeCategory.MISC, YJItems.YJNIUM_NUGGET.get(), 0.1f, 200)
                 .unlockedBy("has_yjnium_pickaxe", providerAccess.has(YJItems.YJNIUM_PICKAXE.get()))
                 .unlockedBy("has_yjnium_shovel", providerAccess.has(YJItems.YJNIUM_SHOVEL.get()))
                 .unlockedBy("has_yjnium_axe", providerAccess.has(YJItems.YJNIUM_AXE.get()))
@@ -206,10 +206,10 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy("has_yjnium_chestplate", providerAccess.has(YJItems.YJNIUM_CHESTPLATE.get()))
                 .unlockedBy("has_yjnium_leggings", providerAccess.has(YJItems.YJNIUM_LEGGINGS.get()))
                 .unlockedBy("has_yjnium_boots", providerAccess.has(YJItems.YJNIUM_BOOTS.get()))
-                //   .unlockedBy("has_yjnium_horse_armor", providerAccess.has(YJItems.YJNIUM_HORSE_ARMOR.get()))
+                .unlockedBy("has_yjnium_horse_armor", providerAccess.has(YJItems.YJNIUM_HORSE_ARMOR.get()))
                 .save(exporter, getSmeltingRecipeName(providerAccess, YJItems.YJNIUM_NUGGET.get()));
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(YJItems.YAJUSENPAI_PICKAXE.get(), YJItems.YAJUSENPAI_SHOVEL.get(), YJItems.YAJUSENPAI_AXE.get(), YJItems.YAJUSENPAI_HOE.get(), YJItems.YAJUSENPAI_SWORD.get(), YJItems.YAJUSENPAI_HELMET.get(), YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItems.YAJUSENPAI_LEGGINGS.get(), YJItems.YAJUSENPAI_BOOTS.get()/*, YJItems.YAJUSENPAI_HORSE_ARMOR.get()*/), RecipeCategory.MISC, YJItems.YAJUSENPAI_NUGGET.get(), 0.1f, 200)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(YJItems.YAJUSENPAI_PICKAXE.get(), YJItems.YAJUSENPAI_SHOVEL.get(), YJItems.YAJUSENPAI_AXE.get(), YJItems.YAJUSENPAI_HOE.get(), YJItems.YAJUSENPAI_SWORD.get(), YJItems.YAJUSENPAI_HELMET.get(), YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItems.YAJUSENPAI_LEGGINGS.get(), YJItems.YAJUSENPAI_BOOTS.get(), YJItems.YAJUSENPAI_HORSE_ARMOR.get()), RecipeCategory.MISC, YJItems.YAJUSENPAI_NUGGET.get(), 0.1f, 200)
                 .unlockedBy("has_yjsnpi_pickaxe", providerAccess.has(YJItems.YAJUSENPAI_PICKAXE.get()))
                 .unlockedBy("has_yjsnpi_shovel", providerAccess.has(YJItems.YAJUSENPAI_SHOVEL.get()))
                 .unlockedBy("has_yjsnpi_axe", providerAccess.has(YJItems.YAJUSENPAI_AXE.get()))
@@ -219,10 +219,10 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy("has_yjsnpi_chestplate", providerAccess.has(YJItems.YAJUSENPAI_CHESTPLATE.get()))
                 .unlockedBy("has_yjsnpi_leggings", providerAccess.has(YJItems.YAJUSENPAI_LEGGINGS.get()))
                 .unlockedBy("has_yjsnpi_boots", providerAccess.has(YJItems.YAJUSENPAI_BOOTS.get()))
-                // .unlockedBy("has_yjsnpi_horse_armor", providerAccess.has(YJItems.YAJUSENPAI_HORSE_ARMOR.get()))
+                .unlockedBy("has_yjsnpi_horse_armor", providerAccess.has(YJItems.YAJUSENPAI_HORSE_ARMOR.get()))
                 .save(exporter, getSmeltingRecipeName(providerAccess, YJItems.YAJUSENPAI_NUGGET.get()));
 
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(YJItems.YJNIUM_PICKAXE.get(), YJItems.YJNIUM_SHOVEL.get(), YJItems.YJNIUM_AXE.get(), YJItems.YJNIUM_HOE.get(), YJItems.YJNIUM_SWORD.get(), YJItems.YJNIUM_HELMET.get(), YJItems.YJNIUM_CHESTPLATE.get(), YJItems.YJNIUM_LEGGINGS.get(), YJItems.YJNIUM_BOOTS.get()/*, YJItems.YJNIUM_HORSE_ARMOR.get()*/), RecipeCategory.MISC, YJItems.YJNIUM_NUGGET.get(), 0.1f, 100)
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(YJItems.YJNIUM_PICKAXE.get(), YJItems.YJNIUM_SHOVEL.get(), YJItems.YJNIUM_AXE.get(), YJItems.YJNIUM_HOE.get(), YJItems.YJNIUM_SWORD.get(), YJItems.YJNIUM_HELMET.get(), YJItems.YJNIUM_CHESTPLATE.get(), YJItems.YJNIUM_LEGGINGS.get(), YJItems.YJNIUM_BOOTS.get(), YJItems.YJNIUM_HORSE_ARMOR.get()), RecipeCategory.MISC, YJItems.YJNIUM_NUGGET.get(), 0.1f, 100)
                 .unlockedBy("has_yjnium_pickaxe", providerAccess.has(YJItems.YJNIUM_PICKAXE.get()))
                 .unlockedBy("has_yjnium_shovel", providerAccess.has(YJItems.YJNIUM_SHOVEL.get()))
                 .unlockedBy("has_yjnium_axe", providerAccess.has(YJItems.YJNIUM_AXE.get()))
@@ -232,10 +232,10 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy("has_yjnium_chestplate", providerAccess.has(YJItems.YJNIUM_CHESTPLATE.get()))
                 .unlockedBy("has_yjnium_leggings", providerAccess.has(YJItems.YJNIUM_LEGGINGS.get()))
                 .unlockedBy("has_yjnium_boots", providerAccess.has(YJItems.YJNIUM_BOOTS.get()))
-                // .unlockedBy("has_yjnium_horse_armor", providerAccess.has(YJItems.YJNIUM_HORSE_ARMOR.get()))
+                .unlockedBy("has_yjnium_horse_armor", providerAccess.has(YJItems.YJNIUM_HORSE_ARMOR.get()))
                 .save(exporter, getBlastingRecipeName(providerAccess, YJItems.YJNIUM_NUGGET.get()));
 
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(YJItems.YAJUSENPAI_PICKAXE.get(), YJItems.YAJUSENPAI_SHOVEL.get(), YJItems.YAJUSENPAI_AXE.get(), YJItems.YAJUSENPAI_HOE.get(), YJItems.YAJUSENPAI_SWORD.get(), YJItems.YAJUSENPAI_HELMET.get(), YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItems.YAJUSENPAI_LEGGINGS.get(), YJItems.YAJUSENPAI_BOOTS.get()/*, YJItems.YAJUSENPAI_HORSE_ARMOR.get()*/), RecipeCategory.MISC, YJItems.YAJUSENPAI_NUGGET.get(), 0.1f, 100)
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(YJItems.YAJUSENPAI_PICKAXE.get(), YJItems.YAJUSENPAI_SHOVEL.get(), YJItems.YAJUSENPAI_AXE.get(), YJItems.YAJUSENPAI_HOE.get(), YJItems.YAJUSENPAI_SWORD.get(), YJItems.YAJUSENPAI_HELMET.get(), YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItems.YAJUSENPAI_LEGGINGS.get(), YJItems.YAJUSENPAI_BOOTS.get(), YJItems.YAJUSENPAI_HORSE_ARMOR.get()), RecipeCategory.MISC, YJItems.YAJUSENPAI_NUGGET.get(), 0.1f, 100)
                 .unlockedBy("has_yjsnpi_pickaxe", providerAccess.has(YJItems.YAJUSENPAI_PICKAXE.get()))
                 .unlockedBy("has_yjsnpi_shovel", providerAccess.has(YJItems.YAJUSENPAI_SHOVEL.get()))
                 .unlockedBy("has_yjsnpi_axe", providerAccess.has(YJItems.YAJUSENPAI_AXE.get()))
@@ -245,7 +245,7 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy("has_yjsnpi_chestplate", providerAccess.has(YJItems.YAJUSENPAI_CHESTPLATE.get()))
                 .unlockedBy("has_yjsnpi_leggings", providerAccess.has(YJItems.YAJUSENPAI_LEGGINGS.get()))
                 .unlockedBy("has_yjsnpi_boots", providerAccess.has(YJItems.YAJUSENPAI_BOOTS.get()))
-                // .unlockedBy("has_yjsnpi_horse_armor", providerAccess.has(YJItems.YAJUSENPAI_HORSE_ARMOR.get()))
+                .unlockedBy("has_yjsnpi_horse_armor", providerAccess.has(YJItems.YAJUSENPAI_HORSE_ARMOR.get()))
                 .save(exporter, getBlastingRecipeName(providerAccess, YJItems.YAJUSENPAI_NUGGET.get()));
 
         cookRecipes(providerAccess, exporter, "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100);

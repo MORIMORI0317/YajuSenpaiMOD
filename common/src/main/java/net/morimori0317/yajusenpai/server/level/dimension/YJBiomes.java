@@ -67,7 +67,7 @@ public class YJBiomes {
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_INTERVIEW_BLOCK);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_INTLNGTM_BLOCK);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_KUNEKUNE_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_MEZIKARA_BLOCK);
+            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_MEDIKARA_BLOCK);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_NEHAN_BLOCK);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_SHITARIGAO_BLOCK);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_SZKFK_BLOCK);

@@ -85,8 +85,8 @@ public class YJBlockLootTableProvider extends BlockLootTableProviderWrapper {
         providerAccess.add(YJBlocks.YJ_SLAB.get(), createSlabItemTable(providerAccess, YJBlocks.YJ_SLAB.get()));
         providerAccess.dropSelf(YJBlocks.YJ_STAIRS.get());
 
-        providerAccess.add(YJBlocks.YJ_GRASS.get(), createGrassDrops(providerAccess, YJBlocks.YJ_GRASS.get()));
-        providerAccess.add(YJBlocks.TALL_YJ_GRASS.get(), createDoublePlantWithSeedDrops(providerAccess, YJBlocks.TALL_YJ_GRASS.get(), YJBlocks.YJ_GRASS.get()));
+        providerAccess.add(YJBlocks.SHORT_YJ_GRASS.get(), createGrassDrops(providerAccess, YJBlocks.SHORT_YJ_GRASS.get()));
+        providerAccess.add(YJBlocks.TALL_YJ_GRASS.get(), createDoublePlantWithSeedDrops(providerAccess, YJBlocks.TALL_YJ_GRASS.get(), YJBlocks.SHORT_YJ_GRASS.get()));
 
         providerAccess.dropSelf(YJBlocks.YJ_ROSE.get());
         dropPottedContents(providerAccess, YJBlocks.POTTED_YJ_ROSE.get());

@@ -142,11 +142,11 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
     }
 
     private static void yjGrass(BlockStateAndModelProviderAccess providerAccess) {
-        TextureMapping textureMapping = TextureMapping.cross(YJBlocks.YJ_GRASS.get());
-        ResourceLocation resourceLocation = ModelTemplates.CROSS.create(YJBlocks.YJ_GRASS.get(), textureMapping, providerAccess.modelOutput());
-        providerAccess.addBlockStateGenerator(createSimpleBlock(YJBlocks.YJ_GRASS.get(), resourceLocation));
+        TextureMapping textureMapping = TextureMapping.cross(YJBlocks.SHORT_YJ_GRASS.get());
+        ResourceLocation resourceLocation = ModelTemplates.CROSS.create(YJBlocks.SHORT_YJ_GRASS.get(), textureMapping, providerAccess.modelOutput());
+        providerAccess.addBlockStateGenerator(createSimpleBlock(YJBlocks.SHORT_YJ_GRASS.get(), resourceLocation));
 
-        providerAccess.simpleFlatBlockItemModel(YJBlocks.YJ_GRASS.get());
+        providerAccess.simpleFlatBlockItemModel(YJBlocks.SHORT_YJ_GRASS.get());
     }
 
     private static void yjLeaves(BlockStateAndModelProviderAccess providerAccess) {

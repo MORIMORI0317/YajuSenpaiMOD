@@ -30,7 +30,7 @@ public class YJOreFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_INTERVIEW_BLOCK = key("ore_yjsnpi_interview_block");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_GOMANETSU_BLOCK = key("ore_yjsnpi_gomanetsu_block");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_ENNUI_BLOCK = key("ore_yjsnpi_ennui_block");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_MEZIKARA_BLOCK = key("ore_yjsnpi_mezikara_block");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_MEDIKARA_BLOCK = key("ore_yjsnpi_medikara_block");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_NEHAN_BLOCK = key("ore_yjsnpi_nehan_block");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_SHITARIGAO_BLOCK = key("ore_yjsnpi_shitarigao_block");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_YJSNPI_IKISUGI_BLOCK = key("ore_yjsnpi_ikisugi_block");
@@ -58,7 +58,7 @@ public class YJOreFeatures {
         register.add(ORE_YJSNPI_INTERVIEW_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.YAJUSENPAI_BLOCK.get().defaultBlockState(), 33)));
         register.add(ORE_YJSNPI_GOMANETSU_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.GOMANETSU_SENPAI_BLOCK.get().defaultBlockState(), 33)));
         register.add(ORE_YJSNPI_ENNUI_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.ENNUI_SENPAI_BLOCK.get().defaultBlockState(), 33)));
-        register.add(ORE_YJSNPI_MEZIKARA_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.MEDIKARA_SENPAI_BLOCK.get().defaultBlockState(), 33)));
+        register.add(ORE_YJSNPI_MEDIKARA_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.MEDIKARA_SENPAI_BLOCK.get().defaultBlockState(), 33)));
         register.add(ORE_YJSNPI_NEHAN_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.NEHAN_SENPAI_BLOCK.get().defaultBlockState(), 33)));
         register.add(ORE_YJSNPI_SHITARIGAO_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.SHITARIGAO_SENPAI_BLOCK.get().defaultBlockState(), 33)));
         register.add(ORE_YJSNPI_IKISUGI_BLOCK, ctx -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_YJ_STONE, YJBlocks.YAJUSENPAI_IKISUGI_BLOCK.get().defaultBlockState(), 33)));

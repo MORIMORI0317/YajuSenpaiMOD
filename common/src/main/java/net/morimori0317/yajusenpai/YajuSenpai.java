@@ -2,6 +2,9 @@ package net.morimori0317.yajusenpai;
 
 import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
+import net.minecraft.server.commands.PlaceCommand;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.morimori0317.yajusenpai.alchemy.YJPotions;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.blockentity.YJBlockEntityTypes;

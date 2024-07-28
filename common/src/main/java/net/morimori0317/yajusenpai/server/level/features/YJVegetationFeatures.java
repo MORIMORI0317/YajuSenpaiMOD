@@ -35,7 +35,7 @@ public class YJVegetationFeatures {
     }
 
     public static void register(RegistriesDatapackProviderWrapper.DynamicRegister<ConfiguredFeature<?, ?>> register) {
-        register.add(YJ_PATCH_GRASS, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(BlockStateProvider.simple(YJBlocks.YJ_GRASS.get()), 32)));
+        register.add(YJ_PATCH_GRASS, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(BlockStateProvider.simple(YJBlocks.SHORT_YJ_GRASS.get()), 32)));
         register.add(YJ_FLOWER_DEFAULT, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(new WeightedStateProvider(createDefaultFlowerBuilder()), 64)));
         register.add(PATCH_BB, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.BB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
         register.add(PATCH_GB, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.GB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
