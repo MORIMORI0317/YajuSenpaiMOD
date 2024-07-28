@@ -14,10 +14,10 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSeriali
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
-import net.morimori0317.yajusenpai.YajuSenpai;
+import net.morimori0317.yajusenpai.util.YJUtils;
 
 public class YJHousePieces {
-    private static final ResourceLocation STRUCTURE_LOCATION_YJ_HOUSE = new ResourceLocation(YajuSenpai.MODID, "yj_house/yj_tei_v2");
+    private static final ResourceLocation STRUCTURE_LOCATION_YJ_HOUSE = YJUtils.modLoc("yj_house/yj_tei_v2");
 
     public static void addPieces(StructureTemplateManager structureTemplateManager, BlockPos blockPos, Rotation rotation, StructurePieceAccessor structurePieceAccessor, RandomSource randomSource) {
         structurePieceAccessor.addPiece(new YJHousePiece(structureTemplateManager, STRUCTURE_LOCATION_YJ_HOUSE, blockPos, rotation, 21));

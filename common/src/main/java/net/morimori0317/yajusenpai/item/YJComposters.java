@@ -10,7 +10,7 @@ public class YJComposters {
         ComposterBlock.add(0.3F, YJBlocks.YJ_GRASS.get());
         ComposterBlock.add(0.5F, YJBlocks.TALL_YJ_GRASS.get());
         ComposterBlock.add(0.65F, YJBlocks.YJ_ROSE.get());
-        ComposterBlock.add(0.65F, YJItems.APPLE.get());
+        ComposterBlock.add(0.65F, YJItems.APPLE_INM.get());
         ComposterBlock.add(0.65F, YJItems.POTATO_SENPAI.get());
         ComposterBlock.add(0.85F, YJItems.BAKED_POTATO_SENPAI.get());
         ComposterBlock.add(1F, YJItems.YJ_STAR.get());

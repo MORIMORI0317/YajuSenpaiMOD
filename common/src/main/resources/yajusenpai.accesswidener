@@ -1,12 +1,9 @@
 accessWidener   v2  named
-accessible field net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer shieldModel Lnet/minecraft/client/model/ShieldModel;
-accessible field net/minecraft/world/level/Explosion fire Z
-accessible field net/minecraft/world/item/ArmorMaterials HEALTH_FUNCTION_FOR_TYPE Ljava/util/EnumMap;
-
-accessible method net/minecraft/world/level/block/ComposterBlock add (FLnet/minecraft/world/level/ItemLike;)V
+accessible method net/minecraft/world/level/block/Blocks leaves (Lnet/minecraft/world/level/block/SoundType;)Lnet/minecraft/world/level/block/Block;
+accessible method net/minecraft/world/level/block/Blocks flowerPot (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/world/level/block/Block;
+accessible method net/minecraft/world/level/block/state/properties/BlockSetType register (Lnet/minecraft/world/level/block/state/properties/BlockSetType;)Lnet/minecraft/world/level/block/state/properties/BlockSetType;
+accessible method net/minecraft/world/entity/animal/Cat setCollarColor (Lnet/minecraft/world/item/DyeColor;)V
 accessible method net/minecraft/data/worldgen/features/TreeFeatures createStraightBlobTree (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;IIII)Lnet/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration$TreeConfigurationBuilder;
 accessible method net/minecraft/data/worldgen/features/VegetationFeatures grassPatch (Lnet/minecraft/world/level/levelgen/feature/stateproviders/BlockStateProvider;I)Lnet/minecraft/world/level/levelgen/feature/configurations/RandomPatchConfiguration;
-accessible method net/minecraft/world/level/block/Blocks leaves (Lnet/minecraft/world/level/block/SoundType;)Lnet/minecraft/world/level/block/LeavesBlock;
-accessible method net/minecraft/world/level/block/Blocks flowerPot (Lnet/minecraft/world/level/block/Block;[Lnet/minecraft/world/flag/FeatureFlag;)Lnet/minecraft/world/level/block/FlowerPotBlock;
-accessible method net/minecraft/world/level/block/state/properties/BlockSetType register (Lnet/minecraft/world/level/block/state/properties/BlockSetType;)Lnet/minecraft/world/level/block/state/properties/BlockSetType;
 accessible method net/minecraft/world/level/levelgen/NoiseRouterData overworld (Lnet/minecraft/core/HolderGetter;Lnet/minecraft/core/HolderGetter;ZZ)Lnet/minecraft/world/level/levelgen/NoiseRouter;
+accessible method net/minecraft/world/level/block/ComposterBlock add (FLnet/minecraft/world/level/ItemLike;)V

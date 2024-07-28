@@ -2,7 +2,6 @@ package net.morimori0317.yajusenpai.client.renderer;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.morimori0317.yajusenpai.client.renderer.blockentity.YJPortalRenderer;
 

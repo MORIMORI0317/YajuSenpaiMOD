@@ -56,13 +56,13 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> YJ_ATTACK_ICE_TEA = register("yj.attack_ice_tea");
     public static final RegistrySupplier<SoundEvent> YJ_MOOD = register("yj.mood");
 
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_ALL = register("mezikara.all");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_N1 = register("mezikara.n1");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_N2 = register("mezikara.n2");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_N3 = register("mezikara.n3");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_HONTAI = register("mezikara.hontai");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_MAEBURI = register("mezikara.maeburi");
-    public static final RegistrySupplier<SoundEvent> MEZIKARA_NS = register("mezikara.ns");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_ALL = register("medikara.all");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_N1 = register("medikara.n1");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_N2 = register("medikara.n2");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_N3 = register("medikara.n3");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_HONTAI = register("medikara.hontai");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_MAEBURI = register("medikara.maeburi");
+    public static final RegistrySupplier<SoundEvent> MEDIKARA_NS = register("medikara.ns");
 
     public static final RegistrySupplier<SoundEvent> TON_ALL = register("ton.all");
     public static final RegistrySupplier<SoundEvent> TON_SEKAINOTON = register("ton.sekainoton");
@@ -92,8 +92,6 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> KATYOU = register("katyou");
     public static final RegistrySupplier<SoundEvent> YJ_IKISUGI_EXPLODING = register("yj.ikisugi_exploding");
     public static final RegistrySupplier<SoundEvent> YJ_IKISUGI_ONRY = register("yj.ikisugi_onry");
-
-    public static final RegistrySupplier<SoundEvent>[] BUTIPA = (RegistrySupplier<SoundEvent>[]) new RegistrySupplier[]{YJ_BU, YJ_TI, YJ_PA};
 
     public static final RegistrySupplier<SoundEvent> TON_AAIISSUNE = register("ton.aaiissune");
     public static final RegistrySupplier<SoundEvent> TON_HAESUGGOIOOKII = register("ton.haesuggoiookii");
@@ -188,10 +186,35 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> KYN_ATUI27 = register("kyn.atui27");
     public static final RegistrySupplier<SoundEvent> KYN_ATUI28 = register("kyn.atui28");
 
-    public static final RegistrySupplier<SoundEvent>[] KYN_ATUIs = (RegistrySupplier<SoundEvent>[]) new RegistrySupplier[]{KYN_ATUI1, KYN_ATUI2, KYN_ATUI3, KYN_ATUI4, KYN_ATUI5, KYN_ATUI6, KYN_ATUI7, KYN_ATUI8, KYN_ATUI9, KYN_ATUI10, KYN_ATUI11, KYN_ATUI12, KYN_ATUI13, KYN_ATUI14, KYN_ATUI15, KYN_ATUI16, KYN_ATUI17, KYN_ATUI18, KYN_ATUI19, KYN_ATUI20, KYN_ATUI21, KYN_ATUI22, KYN_ATUI23, KYN_ATUI24, KYN_ATUI25, KYN_ATUI26, KYN_ATUI27, KYN_ATUI28};
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_END = register("takeda_inm.end");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_WAIT = register("takeda_inm.wait");
+
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_BREAK = register("takeda_inm.break");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_PLACE = register("takeda_inm.place");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_STEP = register("takeda_inm.step");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_HIT = register("takeda_inm.hit");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_FALL = register("takeda_inm.fall");
+
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_BREAK = register("nktidksg.break");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_PLACE = register("nktidksg.place");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_STEP = register("nktidksg.step");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_HIT = register("nktidksg.hit");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_FALL = register("nktidksg.fall");
+
+    public static final RegistrySupplier<SoundEvent> KATYOU_BREAK = register("katyou.break");
+    public static final RegistrySupplier<SoundEvent> KATYOU_PLACE = register("katyou.place");
+    public static final RegistrySupplier<SoundEvent> KATYOU_STEP = register("katyou.step");
+    public static final RegistrySupplier<SoundEvent> KATYOU_HIT = register("katyou.hit");
+    public static final RegistrySupplier<SoundEvent> KATYOU_FALL = register("katyou.fall");
+
+    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_BREAK = register("inari_otoko.break");
+    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_PLACE = register("inari_otoko.place");
+    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_STEP = register("inari_otoko.step");
+    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_HIT = register("inari_otoko.hit");
+    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_FALL = register("inari_otoko.fall");
 
     private static RegistrySupplier<SoundEvent> register(String name) {
-        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(YajuSenpai.MODID, name)));
+        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));
     }
 
     public static void init() {

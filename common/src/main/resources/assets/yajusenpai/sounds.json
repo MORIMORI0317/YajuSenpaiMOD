@@ -71,10 +71,10 @@
       "yajusenpai:yj/mazuutisaxa"
     ]
   },
-  "yj.mezikara": {
-    "subtitle": "yajusenpai.subtitle.yj.mezikara",
+  "yj.medikara": {
+    "subtitle": "yajusenpai.subtitle.yj.medikara",
     "sounds": [
-      "yajusenpai:yj/mezikara"
+      "yajusenpai:yj/medikara"
     ]
   },
   "yj.nijuyonsai": {
@@ -294,48 +294,48 @@
       "yajusenpai:yj/fookimatii"
     ]
   },
-  "mezikara.all": {
-    "subtitle": "yajusenpai.subtitle.mezikara.all",
+  "medikara.all": {
+    "subtitle": "yajusenpai.subtitle.medikara.all",
     "sounds": [
-      "yajusenpai:mezikara/all"
+      "yajusenpai:medikara/all"
     ]
   },
-  "mezikara.n1": {
-    "subtitle": "yajusenpai.subtitle.mezikara.n1",
+  "medikara.n1": {
+    "subtitle": "yajusenpai.subtitle.medikara.n1",
     "sounds": [
-      "yajusenpai:mezikara/n1"
+      "yajusenpai:medikara/n1"
     ]
   },
-  "mezikara.n2": {
+  "medikara.n2": {
     "subtitle": "yajusenpai.subtitle.yj.n2",
     "sounds": [
-      "yajusenpai:mezikara/n2"
+      "yajusenpai:medikara/n2"
     ]
   },
-  "mezikara.n3": {
-    "subtitle": "yajusenpai.subtitle.mezikara.n3",
+  "medikara.n3": {
+    "subtitle": "yajusenpai.subtitle.medikara.n3",
     "sounds": [
-      "yajusenpai:mezikara/n3"
+      "yajusenpai:medikara/n3"
     ]
   },
-  "mezikara.hontai": {
-    "subtitle": "yajusenpai.subtitle.mezikara.hontai",
+  "medikara.hontai": {
+    "subtitle": "yajusenpai.subtitle.medikara.hontai",
     "sounds": [
-      "yajusenpai:mezikara/hontai"
+      "yajusenpai:medikara/hontai"
     ]
   },
-  "mezikara.maeburi": {
-    "subtitle": "yajusenpai.subtitle.mezikara.maeburi",
+  "medikara.maeburi": {
+    "subtitle": "yajusenpai.subtitle.medikara.maeburi",
     "sounds": [
-      "yajusenpai:mezikara/maeburi"
+      "yajusenpai:medikara/maeburi"
     ]
   },
-  "mezikara.ns": {
-    "subtitle": "yajusenpai.subtitle.mezikara.ns",
+  "medikara.ns": {
+    "subtitle": "yajusenpai.subtitle.medikara.ns",
     "sounds": [
-      "yajusenpai:mezikara/n1",
-      "yajusenpai:mezikara/n2",
-      "yajusenpai:mezikara/n3"
+      "yajusenpai:medikara/n1",
+      "yajusenpai:medikara/n2",
+      "yajusenpai:medikara/n3"
     ]
   },
   "ton.all": {
@@ -491,23 +491,24 @@
   "katyou": {
     "subtitle": "yajusenpai.subtitle.katyou",
     "sounds": [
-      "yajusenpai:katyou/katyou1",
-      "yajusenpai:katyou/katyou2",
-      "yajusenpai:katyou/katyou3",
-      "yajusenpai:katyou/katyou4",
-      "yajusenpai:katyou/katyou5",
-      "yajusenpai:katyou/katyou6",
-      "yajusenpai:katyou/katyou7",
-      "yajusenpai:katyou/katyou8",
-      "yajusenpai:katyou/katyou9",
-      "yajusenpai:katyou/katyou10",
-      "yajusenpai:katyou/katyou11",
-      "yajusenpai:katyou/katyou12",
-      "yajusenpai:katyou/katyou13",
-      "yajusenpai:katyou/katyou14",
-      "yajusenpai:katyou/katyou15",
-      "yajusenpai:katyou/katyou16",
-      "yajusenpai:katyou/katyou17"
+      "yajusenpai:katyou/howa",
+      "yajusenpai:katyou/aitai",
+      "yajusenpai:katyou/iya",
+      "yajusenpai:katyou/iyaakituissu",
+      "yajusenpai:katyou/iyayayaya",
+      "yajusenpai:katyou/iya2",
+      "yajusenpai:katyou/fooo",
+      "yajusenpai:katyou/uuun",
+      "yajusenpai:katyou/oniisan_yurusite",
+      "yajusenpai:katyou/oniisan_yurusite2",
+      "yajusenpai:katyou/oniisan_yurusite3",
+      "yajusenpai:katyou/kurukurukurukuru",
+      "yajusenpai:katyou/futoi",
+      "yajusenpai:katyou/fofofoo",
+      "yajusenpai:katyou/kowareru",
+      "yajusenpai:katyou/yurusite",
+      "yajusenpai:katyou/iyayo",
+      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
     ]
   },
   "yj.ikisugi_exploding": {
@@ -1052,6 +1053,177 @@
       "yajusenpai:yj/taizyuandsintyou",
       "yajusenpai:yj/yarimasunexe",
       "yajusenpai:yj/yokuwakaranakattadesu"
+    ]
+  },
+  "takeda_inm.end": {
+    "sounds": [
+      "yajusenpai:takeda_inm/end"
+    ]
+  },
+  "takeda_inm.wait": {
+    "sounds": [
+      "yajusenpai:takeda_inm/wait"
+    ]
+  },
+  "takeda_inm.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:takeda_inm/end"
+    ]
+  },
+  "takeda_inm.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:takeda_inm/voice"
+    ]
+  },
+  "takeda_inm.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:takeda_inm/voice"
+    ]
+  },
+  "takeda_inm.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:takeda_inm/voice"
+    ]
+  },
+  "takeda_inm.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:takeda_inm/wait"
+    ]
+  },
+  "nktidksg.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:nktidksg/uaaa",
+      "yajusenpai:nktidksg/aiki"
+    ]
+  },
+  "nktidksg.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:nktidksg/hyakujuujakudesyoune",
+      "yajusenpai:nktidksg/baramaki",
+      "yajusenpai:nktidksg/ma_hitonamideshou_ne",
+      "yajusenpai:nktidksg/hyakujuugogyrau",
+      "yajusenpai:nktidksg/o_shiri_wa_ne_jishin_aru_ndesu_yo",
+      "yajusenpai:nktidksg/a_zettai_name_sasemasu_yo_sorya"
+    ]
+  },
+  "nktidksg.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:nktidksg/oback",
+      "yajusenpai:nktidksg/aai"
+    ]
+  },
+  "nktidksg.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:nktidksg/aiki"
+    ]
+  },
+  "nktidksg.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:nktidksg/op"
+    ]
+  },
+  "katyou.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:katyou/broken1",
+      "yajusenpai:katyou/broken2",
+      "yajusenpai:katyou/iyaakituissu"
+    ]
+  },
+  "katyou.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:katyou/futoi",
+      "yajusenpai:katyou/iya",
+      "yajusenpai:katyou/iya2",
+      "yajusenpai:katyou/iyaakituissu",
+      "yajusenpai:katyou/ageruwa_anatani",
+      "yajusenpai:katyou/futoiwa",
+      "yajusenpai:katyou/futoiwa2",
+      "yajusenpai:katyou/futoruwa",
+      "yajusenpai:katyou/futoruwa2",
+      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
+    ]
+  },
+  "katyou.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:katyou/iya",
+      "yajusenpai:katyou/oniisan_yurusite",
+      "yajusenpai:katyou/oniisan_yurusite2",
+      "yajusenpai:katyou/oniisan_yurusite3",
+      "yajusenpai:katyou/oniisan_yurusite4",
+      "yajusenpai:katyou/oniisan_yurusite5",
+      "yajusenpai:katyou/oniisan_yurusite6",
+      "yajusenpai:katyou/yurusite",
+      "yajusenpai:katyou/yurusite2",
+      "yajusenpai:katyou/yurusite3"
+    ]
+  },
+  "katyou.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:katyou/iya",
+      "yajusenpai:katyou/iya2",
+      "yajusenpai:katyou/uuun",
+      "yajusenpai:katyou/kowareru",
+      "yajusenpai:katyou/iyayo",
+      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
+    ]
+  },
+  "katyou.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:katyou/fofofoo",
+      "yajusenpai:katyou/kowareru",
+      "yajusenpai:katyou/howa",
+      "yajusenpai:katyou/kurukurukurukuru",
+      "yajusenpai:katyou/iyayayaya"
+    ]
+  },
+  "inari_otoko.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:inari_otoko/fhu",
+      "yajusenpai:inari_otoko/eat_end"
+    ]
+  },
+  "inari_otoko.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:inari_otoko/minarai",
+      "yajusenpai:inari_otoko/jira_ti",
+      "yajusenpai:inari_otoko/toutyaku"
+    ]
+  },
+  "inari_otoko.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:inari_otoko/kaidan"
+    ]
+  },
+  "inari_otoko.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:inari_otoko/haraheri",
+      "yajusenpai:inari_otoko/tabetemobarehenka",
+      "yajusenpai:inari_otoko/hitotugurai"
+    ]
+  },
+  "inari_otoko.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:inari_otoko/seikainooto"
     ]
   }
 }

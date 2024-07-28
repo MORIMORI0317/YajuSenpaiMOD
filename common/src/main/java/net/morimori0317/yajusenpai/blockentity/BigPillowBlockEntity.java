@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.networking.YJPackets;
-import net.morimori0317.yajusenpai.util.YJPlayerUtils;
+import net.morimori0317.yajusenpai.util.YJUtils;
 
 public class BigPillowBlockEntity extends BlockEntity {
     private LivingEntity livingEntity;
@@ -49,9 +49,9 @@ public class BigPillowBlockEntity extends BlockEntity {
 
     private void sendSleepPacket(LivingEntity livingEntity, BlockPos thsBlockPos, BlockPos pos) {
         if (pos != null) {
-            YJPlayerUtils.doPlayers(level, thsBlockPos, p -> NetworkManager.sendToPlayer(p, YJPackets.SLEEP, new YJPackets.SleepMessage(livingEntity.getId(), pos, false).toFBB()));
+            YJUtils.doPlayers(getLevel(), thsBlockPos, p -> NetworkManager.sendToPlayer(p, new YJPackets.SleepMessage(livingEntity.getId(), pos, false)));
         } else {
-            YJPlayerUtils.doPlayers(level, thsBlockPos, p -> NetworkManager.sendToPlayer(p, YJPackets.SLEEP, new YJPackets.SleepMessage(livingEntity.getId(), BlockPos.ZERO, true).toFBB()));
+            YJUtils.doPlayers(getLevel(), thsBlockPos, p -> NetworkManager.sendToPlayer(p, new YJPackets.SleepMessage(livingEntity.getId(), BlockPos.ZERO, true)));
         }
     }
 

@@ -5,7 +5,6 @@ import com.mojang.math.Axis;
 import org.jetbrains.annotations.NotNull;
 
 public class YJRenderUtils {
-
     public static void poseRotateX(@NotNull PoseStack poseStack, float angle) {
         poseStack.mulPose(Axis.XP.rotationDegrees(angle));
     }

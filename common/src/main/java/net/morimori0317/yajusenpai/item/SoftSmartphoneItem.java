@@ -1,5 +1,6 @@
 package net.morimori0317.yajusenpai.item;
 
+
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -59,10 +60,10 @@ public class SoftSmartphoneItem extends Item {
         });
         if (!level.isClientSide()) {
             if (flg[0])
-                itemStack.hurtAndBreak(1, livingEntity, (livingEntityx) -> livingEntityx.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+                itemStack.hurtAndBreak(1, livingEntity, EquipmentSlot.MAINHAND);
 
             if (flg[0] && livingEntity.getRandom().nextInt(19) == 0)
-                livingEntity.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.get(), CommonHandler.IKISUGI_DIE_TIME));
+                livingEntity.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.vanillaHolder(), CommonHandler.IKISUGI_DIE_TIME));
         }
         return super.finishUsingItem(itemStack, level, livingEntity);
     }
@@ -73,14 +74,15 @@ public class SoftSmartphoneItem extends Item {
 
     public static void startIkisugi(Level level, LivingEntity attacker, LivingEntity target) {
         if (!level.isClientSide()) {
-            target.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.get(), CommonHandler.IKISUGI_DIE_TIME));
+            target.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.vanillaHolder(), CommonHandler.IKISUGI_DIE_TIME));
             ((YJLivingEntity) target).setGrantedIkisugiEntity(attacker);
         }
         ((YJLivingEntity) target).setIkisugiSleeping(true);
     }
 
     @Override
-    public int getUseDuration(ItemStack itemStack) {
+    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
         return 20 * 2 + 10;
     }
+
 }

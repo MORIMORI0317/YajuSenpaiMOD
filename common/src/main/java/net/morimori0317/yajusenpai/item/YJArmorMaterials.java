@@ -1,107 +1,85 @@
 package net.morimori0317.yajusenpai.item;
 
-import com.google.common.base.Suppliers;
+import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.Util;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorMaterials;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.morimori0317.yajusenpai.YajuSenpai;
-import net.morimori0317.yajusenpai.sound.YJSoundEvents;
+import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.util.RegistryHolderEntry;
+import net.morimori0317.yajusenpai.util.YJUtils;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.function.Supplier;
 
-public enum YJArmorMaterials implements ArmorMaterial {
-    YJNIUM("yjnium", 19, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
-        durMul.put(ArmorItem.Type.BOOTS, 2);
-        durMul.put(ArmorItem.Type.LEGGINGS, 5);
-        durMul.put(ArmorItem.Type.CHESTPLATE, 10);
-        durMul.put(ArmorItem.Type.HELMET, 2);
-    }), 9, () -> SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())),
+public class YJArmorMaterials {
+    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIAL = DeferredRegister.create(YajuSenpai.MODID, Registries.ARMOR_MATERIAL);
 
+    public static final RegistryHolderEntry<ArmorMaterial> YJNIUM = register("yjnium", () -> create("yjnium", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 2);
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
-    YJSNPI("yjsnpi", 36, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
-        durMul.put(ArmorItem.Type.BOOTS, 3);
-        durMul.put(ArmorItem.Type.LEGGINGS, 6);
-        durMul.put(ArmorItem.Type.CHESTPLATE, 8);
-        durMul.put(ArmorItem.Type.HELMET, 3);
-    }), 10, YJSoundEvents.YJ_EQUIP, 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJSNPI_INGOT.get())),
+    public static final RegistryHolderEntry<ArmorMaterial> YAJUSENPAI = register("yajusenpai", () -> create("yajusenpai", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 2);
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
-    CYCLOPS_SUNGLASSES("cyclops_sunglasses", 193, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
-        durMul.put(ArmorItem.Type.BOOTS, 19);
-        durMul.put(ArmorItem.Type.LEGGINGS, 19);
-        durMul.put(ArmorItem.Type.CHESTPLATE, 19);
-        durMul.put(ArmorItem.Type.HELMET, 5);
-    }), 0xa + 193, YJSoundEvents.CYCLOPS_NAZOOTO, 0, 0, () -> Ingredient.of(Items.TINTED_GLASS)),
+    public static final RegistryHolderEntry<ArmorMaterial> CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", () -> create("cyclops_sunglasses", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 2);
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
-    BRIEF("brief", 81, Util.make(new EnumMap<>(ArmorItem.Type.class), (durMul) -> {
-        durMul.put(ArmorItem.Type.BOOTS, 19);
-        durMul.put(ArmorItem.Type.LEGGINGS, 7);
-        durMul.put(ArmorItem.Type.CHESTPLATE, 19);
-        durMul.put(ArmorItem.Type.HELMET, 19);
-    }), 931, YJSoundEvents.YJ_NU, 0, 0, () -> Ingredient.of(Items.WHITE_WOOL));
+    public static final RegistryHolderEntry<ArmorMaterial> BRIEF = register("brief", () -> create("brief", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 2);
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
-    private final String name;
-    private final int durabilityMultiplier;
-    private final EnumMap<ArmorItem.Type, Integer> protectionFunctionForType;
-    private final int enchantmentValue;
-    private final Supplier<SoundEvent> sound;
-    private final float toughness;
-    private final float knockbackResistance;
-    private final Supplier<Ingredient> repairIngredient;
+    public static final RegistryHolderEntry<ArmorMaterial> O_BACK = register("o_back", () -> create("o_back", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 2);
+    }), 110, SoundEvents.ARMOR_EQUIP_IRON, 0, 0, () -> Ingredient.of(YJBlocks.NKTIDKSG_BLOCK.get())));
 
-    YJArmorMaterials(String name, int durabilityMultiplier, EnumMap<ArmorItem.Type, Integer> protectionFunctionForType, int enchantmentValue, Supplier<SoundEvent> sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        this.name = YajuSenpai.MODID + ":" + name;
-        this.durabilityMultiplier = durabilityMultiplier;
-        this.protectionFunctionForType = protectionFunctionForType;
-        this.enchantmentValue = enchantmentValue;
-        this.sound = Suppliers.memoize(sound::get);
-        this.toughness = toughness;
-        this.knockbackResistance = knockbackResistance;
-        this.repairIngredient = Suppliers.memoize(repairIngredient::get);
+    private static ArmorMaterial create(String name, EnumMap<ArmorItem.Type, Integer> enumMap, int i, Holder<SoundEvent> arg, float f, float g, Supplier<Ingredient> supplier) {
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(YJUtils.modLoc(name)));
+        return create(enumMap, i, arg, f, g, supplier, list);
     }
 
-    @Override
-    public int getDurabilityForType(ArmorItem.Type type) {
-        return ArmorMaterials.HEALTH_FUNCTION_FOR_TYPE.get(type) * this.durabilityMultiplier;
+    private static ArmorMaterial create(EnumMap<ArmorItem.Type, Integer> enumMap, int i, Holder<SoundEvent> arg, float f, float g, Supplier<Ingredient> supplier, List<ArmorMaterial.Layer> list) {
+        EnumMap<ArmorItem.Type, Integer> enumMap2 = new EnumMap<>(ArmorItem.Type.class);
+        ArmorItem.Type[] var9 = ArmorItem.Type.values();
+        for (ArmorItem.Type type : var9) {
+            enumMap2.put(type, enumMap.get(type));
+        }
+        return new ArmorMaterial(enumMap2, i, arg, supplier, list, f, g);
     }
 
-    @Override
-    public int getDefenseForType(ArmorItem.Type type) {
-        return this.protectionFunctionForType.get(type);
+    private static RegistryHolderEntry<ArmorMaterial> register(String name, Supplier<ArmorMaterial> effectSupplier) {
+        return new RegistryHolderEntry<>(ARMOR_MATERIAL.register(name, effectSupplier));
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return this.enchantmentValue;
-    }
-
-    @Override
-    public SoundEvent getEquipSound() {
-        return this.sound.get();
-    }
-
-    @Override
-    public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public float getToughness() {
-        return this.toughness;
-    }
-
-    @Override
-    public float getKnockbackResistance() {
-        return this.knockbackResistance;
+    public static void init() {
+        ARMOR_MATERIAL.register();
     }
 }

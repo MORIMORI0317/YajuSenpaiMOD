@@ -1,10 +1,12 @@
 {
   "required": true,
   "package": "net.morimori0317.yajusenpai.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
   "client": [
   ],
   "mixins": [
+    "BlockBehaviourMixin",
     "BowItemMixin",
     "EntityMixin",
     "EntityTypeMixin",
@@ -14,7 +16,6 @@
     "LivingEntityAccessor",
     "LivingEntityMixin",
     "MobMixin",
-    "StructurePieceMixin",
     "WitherBossMixin"
   ],
   "injectors": {

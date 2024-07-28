@@ -6,9 +6,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -23,7 +23,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
-public class YJExplodingBlock extends Block {
+import java.util.function.BiConsumer;
+
+public class YJExplodingBlock extends InmBaseBlock {
     public static final IntegerProperty YJ_TIMER = YJBlockStateProperties.YJ_EX_TIMER;
     public static final BooleanProperty YJ_START = YJBlockStateProperties.YJ_EX_STARTED;
     public static final BooleanProperty YJ_FIRE = YJBlockStateProperties.YJ_EX_FIRE;
@@ -34,9 +36,9 @@ public class YJExplodingBlock extends Block {
     }
 
     @Override
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+    protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         if (blockState.getValue(YJ_START))
-            return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+            return super.useWithoutItem(blockState, level, blockPos, player, blockHitResult);
 
         if (!level.isClientSide())
             startIkisugi(blockState, level, blockPos);
@@ -45,11 +47,11 @@ public class YJExplodingBlock extends Block {
     }
 
     public static void startIkisugi(BlockState blockState, LevelAccessor serverLevel, BlockPos blockPos, boolean fire) {
-        if (!blockState.is(YJBlocks.YJSNPI_EXPLODING_BLOCK.get()) || blockState.getValue(YJ_START))
+        if (!blockState.is(YJBlocks.EXPLOSION_YAJUSENPAI_BLOCK.get()) || blockState.getValue(YJ_START))
             return;
 
         serverLevel.setBlock(blockPos, blockState.setValue(YJ_START, true).setValue(YJ_FIRE, fire).setValue(YJ_TIMER, 0), 2);
-        serverLevel.scheduleTick(blockPos, YJBlocks.YJSNPI_EXPLODING_BLOCK.get(), 0);
+        serverLevel.scheduleTick(blockPos, YJBlocks.EXPLOSION_YAJUSENPAI_BLOCK.get(), 0);
         serverLevel.playSound(null, blockPos, YJSoundEvents.YJ_IKISUGI_ONRY.get(), SoundSource.BLOCKS, 3, 1);
     }
 
@@ -77,7 +79,7 @@ public class YJExplodingBlock extends Block {
 
     @Override
     public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (!blockState.is(YJBlocks.YJSNPI_EXPLODING_BLOCK.get()) || !blockState.getValue(YJ_START))
+        if (!blockState.is(YJBlocks.EXPLOSION_YAJUSENPAI_BLOCK.get()) || !blockState.getValue(YJ_START))
             return;
         int cont = blockState.getValue(YJ_TIMER);
         if (cont >= 146) {
@@ -95,7 +97,7 @@ public class YJExplodingBlock extends Block {
     public void wasExploded(Level level, BlockPos blockPos, Explosion explosion) {
         if (!level.isClientSide) {
             level.setBlock(blockPos, this.defaultBlockState(), 2);
-            startIkisugi(level.getBlockState(blockPos), level, blockPos, explosion.fire);
+            startIkisugi(level.getBlockState(blockPos), level, blockPos, false /*explosion.fire*/);
         }
     }
 
@@ -118,5 +120,12 @@ public class YJExplodingBlock extends Block {
     @Override
     public boolean dropFromExplosion(Explosion explosion) {
         return false;
+    }
+
+    @Override
+    protected void onExplosionHit(BlockState blockState, Level level, BlockPos blockPos, Explosion explosion, BiConsumer<ItemStack, BlockPos> biConsumer) {
+        startIkisugi(blockState, level, blockPos);
+
+        super.onExplosionHit(blockState, level, blockPos, explosion, biConsumer);
     }
 }

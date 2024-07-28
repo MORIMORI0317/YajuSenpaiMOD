@@ -1,31 +1,40 @@
 package net.morimori0317.yajusenpai.item;
 
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
-import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.sound.YJSoundEvents;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.morimori0317.yajusenpai.util.YJUtils;
 
-public class JakenSwordItem extends SwordItem {
-    public JakenSwordItem(Tier tier, int i, float f, Properties properties) {
-        super(tier, i, f, properties);
+public class JakenSwordItem extends SwordItem implements YJToolItem {
+    public static final ResourceLocation JAKEN_ENTITY_INTERACTION_RANGE_ID = YJUtils.modLoc("jaken_entity_interaction_range");
+    public static final ResourceLocation JAKEN_BLOCK_INTERACTION_RANGE_ID = YJUtils.modLoc("jaken_block_interaction_range");
+
+    public JakenSwordItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
-        if (!target.level().isClientSide()) {
-            SoundEvent soundEvent = YJSoundEvents.YJ_ATTACK.get();
-            if (attacker.getRandom().nextInt(114514) <= 810) {
-           //     target.hurt(YJDamageSource.ikisugi(attacker), 114514);
-                soundEvent = YJSoundEvents.YJ_NU.get();
-                attacker.addEffect(new MobEffectInstance(YJMobEffects.BEAST_FICTION.get(), 200, 0));
-            }
-            attacker.level().playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), soundEvent, SoundSource.NEUTRAL, 5, 1);
-        }
-        return super.hurtEnemy(itemStack, target, attacker);
+    public void postHurtEnemy(ItemStack itemStack, LivingEntity target, LivingEntity attacker) {
+        YJToolItem.hurtEnemy(target, attacker, true);
+        super.postHurtEnemy(itemStack, target, attacker);
+    }
+
+    public static ItemAttributeModifiers createJakenAttributes(Tier tier, int i, float f) {
+        ItemAttributeModifiers ret = SwordItem.createAttributes(tier, i, f);
+
+        ret = ret.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE,
+                new AttributeModifier(JAKEN_ENTITY_INTERACTION_RANGE_ID, 3.64, AttributeModifier.Operation.ADD_VALUE),
+                EquipmentSlotGroup.MAINHAND);
+        ret = ret.withModifierAdded(Attributes.BLOCK_INTERACTION_RANGE,
+                new AttributeModifier(JAKEN_BLOCK_INTERACTION_RANGE_ID, 3.64, AttributeModifier.Operation.ADD_VALUE),
+                EquipmentSlotGroup.MAINHAND);
+
+        return ret;
     }
 }

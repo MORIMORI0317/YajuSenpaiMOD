@@ -1,29 +1,40 @@
 package net.morimori0317.yajusenpai.fabric.data;
 
 import com.google.common.collect.ImmutableList;
-import dev.felnull.otyacraftengine.data.provider.IntrinsicHolderTagsProviderWrapper;
-import dev.felnull.otyacraftengine.data.provider.ItemTagProviderWrapper;
-import dev.felnull.otyacraftengine.fabric.data.CrossDataGeneratorAccesses;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.block.YJBlockTags;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.data.YajuSenpaiDataGenerator;
+import net.morimori0317.yajusenpai.data.cross.CrossDataGeneratorAccess;
+import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
+import net.morimori0317.yajusenpai.data.cross.provider.ItemTagProviderWrapper;
+import net.morimori0317.yajusenpai.fabric.data.cross.CrossDataGeneratorAccesses;
 import net.morimori0317.yajusenpai.fabric.item.YJItemTagsFabric;
 import net.morimori0317.yajusenpai.item.YJItemTags;
 import net.morimori0317.yajusenpai.item.YJItems;
 
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
+    private final AtomicReference<CrossDataGeneratorAccess> dataGeneratorAccess = new AtomicReference<>();
+
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-        YajuSenpaiDataGenerator.init(CrossDataGeneratorAccesses.create(fabricDataGenerator));
+        dataGeneratorAccess.set(CrossDataGeneratorAccesses.create(fabricDataGenerator));
+        YajuSenpaiDataGenerator.init(dataGeneratorAccess.get());
     }
+
+    @Override
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        YajuSenpaiDataGenerator.buildRegistry(registryBuilder);
+    }
+
 
     public static void generateBlockTag(IntrinsicHolderTagsProviderWrapper.IntrinsicTagProviderAccess<Block> providerAccess) {
         providerAccess.tag(ConventionalBlockTags.ORES)
@@ -34,7 +45,7 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
         providerAccess.copy(ConventionalBlockTags.ORES, ConventionalItemTags.ORES);
 
         providerAccess.tag(ConventionalItemTags.FOODS)
-                .add(YJItems.APPLE.get(), YJItems.ICE_TEA.get(), YJItems.POTATO_SENPAI.get(), YJItems.BAKED_POTATO_SENPAI.get());
+                .add(YJItems.APPLE_INM.get(), YJItems.ICE_TEA.get(), YJItems.POTATO_SENPAI.get(), YJItems.BAKED_POTATO_SENPAI.get());
 
         providerAccess.tag(YJItemTagsFabric.GLOWSTONE_BLOCKS)
                 .add(Items.GLOWSTONE);
@@ -52,10 +63,10 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
                 .add(YJBlocks.RAW_YJNIUM_BLOCK.get().asItem());
 
         providerAccess.tag(YJItemTagsFabric.RAW_YJSNPI_ORES)
-                .add(YJItems.RAW_YJSNPI.get());
+                .add(YJItems.RAW_YAJUSENPAI.get());
 
         providerAccess.tag(YJItemTagsFabric.RAW_YJSNPI_BLOCKS)
-                .add(YJBlocks.RAW_YJSNPI_BLOCK.get().asItem());
+                .add(YJBlocks.RAW_YAJUSENPAI_BLOCK.get().asItem());
 
         providerAccess.tag(YJItemTagsFabric.WHEAT_CROPS)
                 .add(Items.WHEAT);
@@ -70,10 +81,10 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
                 .add(YJItems.YJNIUM_NUGGET.get());
 
         providerAccess.tag(YJItemTagsFabric.YJSNPI_INGOTS)
-                .add(YJItems.YJSNPI_INGOT.get());
+                .add(YJItems.YAJUSENPAI_INGOT.get());
 
         providerAccess.tag(YJItemTagsFabric.YJSNPI_NUGGETS)
-                .add(YJItems.YJSNPI_NUGGET.get());
+                .add(YJItems.YAJUSENPAI_NUGGET.get());
 
         providerAccess.tag(YJItemTags.COMPAT_BLUE_DYE)
                 .addVanillaTag(ConventionalItemTags.BLUE_DYES);

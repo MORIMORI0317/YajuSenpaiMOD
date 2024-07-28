@@ -30,6 +30,10 @@ public class YJItemTags {
     public static final TagKey<Item> COMPAT_YJSNPI_INGOT = bind("compat/yjsnpi_ingot");
     public static final TagKey<Item> COMPAT_YJSNPI_NUGGET = bind("compat/yjsnpi_nugget");
 
+    public static final TagKey<Item> KATYOU_BROKEN_ENCHANTABLE = bind("enchantable/katyou_broken");
+    public static final TagKey<Item> GABA_ANA_DADDY_ENCHANTABLE = bind("enchantable/gaba_ana_daddy");
+    public static final TagKey<Item> KYN_ENCHANTABLE = bind("enchantable/kyn");
+
     private static TagKey<Item> bind(String id) {
         return TagKey.create(Registries.ITEM, YJUtils.modLoc(id));
     }

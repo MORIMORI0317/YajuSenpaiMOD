@@ -1,5 +1,6 @@
 package net.morimori0317.yajusenpai.entity;
 
+
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -67,13 +68,13 @@ public class YJSpawn {
                 mob.setDropChance(EquipmentSlot.HEAD, 1f);
             }
             if (mob instanceof Vindicator) {
-                mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(YJItems.YJSNPI_AXE.get()));
+                mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(YJItems.YAJUSENPAI_AXE.get()));
             }
         }
 
         if (YJUtils.veryYjRandom(rs) && YJUtils.veryYjRandom(rs) && (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin)) {
             if (y)
-                setFullArmor(mob, true, new ItemStack(YJItems.YJSNPI_HELMET.get()), new ItemStack(YJItems.YJSNPI_CHESTPLATE.get()), new ItemStack(YJItems.YJSNPI_LEGGINGS.get()), new ItemStack(YJItems.YJSNPI_BOOTS.get()), new ItemStack(YJItems.YJSNPI_SWORD.get()), ItemStack.EMPTY);
+                setFullArmor(mob, true, new ItemStack(YJItems.YAJUSENPAI_HELMET.get()), new ItemStack(YJItems.YAJUSENPAI_CHESTPLATE.get()), new ItemStack(YJItems.YAJUSENPAI_LEGGINGS.get()), new ItemStack(YJItems.YAJUSENPAI_BOOTS.get()), new ItemStack(YJItems.YAJUSENPAI_SWORD.get()), ItemStack.EMPTY);
             else
                 setFullArmor(mob, true, new ItemStack(YJItems.YJNIUM_HELMET.get()), new ItemStack(YJItems.YJNIUM_CHESTPLATE.get()), new ItemStack(YJItems.YJNIUM_LEGGINGS.get()), new ItemStack(YJItems.YJNIUM_BOOTS.get()), new ItemStack(YJItems.YJNIUM_SWORD.get()), ItemStack.EMPTY);
         }

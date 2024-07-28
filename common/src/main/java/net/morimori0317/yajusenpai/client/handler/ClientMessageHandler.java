@@ -7,10 +7,10 @@ import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 
 public class ClientMessageHandler {
-    private static final Minecraft mc = Minecraft.getInstance();
 
     public static void onComaSyncMessage(YJPackets.ComaSyncMessage message, NetworkManager.PacketContext packetContext) {
         packetContext.queue(() -> {
+            Minecraft mc = Minecraft.getInstance();
             var entity = mc.level.getEntity(message.entityId());
             if (entity instanceof LivingEntity livingEntity) {
                 YJLivingEntity yjLiving = (YJLivingEntity) livingEntity;
@@ -21,6 +21,7 @@ public class ClientMessageHandler {
 
     public static void onSleepMessage(YJPackets.SleepMessage message, NetworkManager.PacketContext packetContext) {
         packetContext.queue(() -> {
+            Minecraft mc = Minecraft.getInstance();
             var entity = mc.level.getEntity(message.entityId());
             if (entity instanceof LivingEntity livingEntity) {
                 if (message.del()) {

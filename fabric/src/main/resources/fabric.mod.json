@@ -8,7 +8,7 @@
     "MORIMORI0317"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-yjsnpi-mod",
+    "homepage": "https://modrinth.com/mod/yaju-senpai",
     "sources": "https://github.com/MORIMORI0317/YajuSenpaiMOD",
     "issues": "https://github.com/MORIMORI0317/YajuSenpaiMOD/issues"
   },
@@ -32,7 +32,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.20.1",
-    "architectury": ">=9.1.10"
+    "minecraft": ">=1.21",
+    "architectury": ">=13.0.1"
   }
 }

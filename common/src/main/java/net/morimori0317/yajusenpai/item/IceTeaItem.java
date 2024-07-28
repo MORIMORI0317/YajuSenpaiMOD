@@ -15,9 +15,9 @@ import net.minecraft.world.item.UseAnim;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
+import org.jetbrains.annotations.NotNull;
 
 public class IceTeaItem extends Item {
-
     public IceTeaItem(Properties properties) {
         super(properties);
     }
@@ -31,22 +31,22 @@ public class IceTeaItem extends Item {
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack itemStack) {
+    public @NotNull UseAnim getUseAnimation(ItemStack itemStack) {
         return UseAnim.DRINK;
     }
 
     @Override
-    public SoundEvent getDrinkingSound() {
+    public @NotNull SoundEvent getDrinkingSound() {
         return SoundEvents.HONEY_DRINK;
     }
 
     @Override
-    public SoundEvent getEatingSound() {
+    public @NotNull SoundEvent getEatingSound() {
         return SoundEvents.HONEY_DRINK;
     }
 
     @Override
-    public InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity livingEntity, InteractionHand interactionHand) {
+    public @NotNull InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity livingEntity, InteractionHand interactionHand) {
         if (!player.getCooldowns().isOnCooldown(YJItems.ICE_TEA.get()) && canAttackIceTea(livingEntity)) {
             attackIceTea(itemStack, player, livingEntity);
             return InteractionResult.sidedSuccess(player.level().isClientSide);
@@ -61,14 +61,17 @@ public class IceTeaItem extends Item {
     }
 
     public static void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {
-        target.addEffect(new MobEffectInstance(YJMobEffects.COMA.get(), 10000, 2));
         if (!attacker.level().isClientSide) {
-            attacker.level().playSound(null, attacker, YJSoundEvents.YJ_OTTODAIJOUBUKA.get(), SoundSource.VOICE, 3, 1);
+            target.addEffect(new MobEffectInstance(YJMobEffects.COMA.vanillaHolder(), 10000, 2));
+
+            SoundEvent soundEvent = attacker.getRandom().nextInt(19) == 0 ? YJSoundEvents.YJ_KUCHIAKEENAHORA.get() : YJSoundEvents.YJ_OTTODAIJOUBUKA.get();
+            attacker.level().playSound(null, attacker, soundEvent, SoundSource.NEUTRAL, 3, 1);
 
             if (attacker instanceof ServerPlayer player) {
                 player.getCooldowns().addCooldown(YJItems.ICE_TEA.get(), 20);
-                if (!player.getAbilities().instabuild)
+                if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);
+                }
             } else {
                 itemStack.shrink(1);
             }

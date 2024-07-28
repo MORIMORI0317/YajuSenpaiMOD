@@ -1,9 +1,9 @@
 package net.morimori0317.yajusenpai.block;
 
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -31,6 +31,8 @@ import net.morimori0317.yajusenpai.entity.YJLivingEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+    public static final MapCodec<BigPillowBlock> CODEC = simpleCodec(BigPillowBlock::new);
+
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape ATARIZ = Block.box(3, 0, 0, 13, 3, 16);
@@ -40,6 +42,11 @@ public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterlogged
         super(properties);
 
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -94,7 +101,7 @@ public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterlogged
     }
 
     @Override
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+    protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         if (((YJLivingEntity) player).getSleepingPos() != null || !level.dimensionType().bedWorks())
             return InteractionResult.PASS;
 

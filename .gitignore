@@ -19,5 +19,5 @@ classes/
 *.launch
 
 
-forge/src/generated/
+neoforge/src/generated/
 fabric/src/main/generated/

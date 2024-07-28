@@ -1,6 +1,6 @@
 package net.morimori0317.yajusenpai.server.level.structure;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Rotation;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilde
 import java.util.Optional;
 
 public class YJHouseStructure extends Structure {
-    public static final Codec<YJHouseStructure> CODEC = simpleCodec(YJHouseStructure::new);
+    public static final MapCodec<YJHouseStructure> CODEC = simpleCodec(YJHouseStructure::new);
 
     protected YJHouseStructure(StructureSettings structureSettings) {
         super(structureSettings);

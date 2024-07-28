@@ -6,21 +6,16 @@ architectury {
     platformSetupLoomIde()
     fabric()
 }
+def generatedResources = file("src/main/generated")
 
 sourceSets {
     main {
-        resources {
-            srcDirs += [
-                    'src/main/generated'
-            ]
-        }
+        resources.srcDir generatedResources
     }
 }
 
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
-
-    mixin { useLegacyMixinAp = true }
 
     runs {
         datagen {
@@ -28,38 +23,37 @@ loom {
 
             name "Minecraft Data"
             vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.output-dir=${generatedResources}"
 
             runDir "run"
         }
     }
 }
+
 assemble.dependsOn runDatagen
 
 configurations {
     common
-    shadowCommon
+    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentFabric.extendsFrom common
 }
 
 repositories {
-    maven { url "https://maven.terraformersmc.com/releases/" }//modmenu
+    maven { url "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-
+    // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    modApi("dev.felnull:otyacraftengine-fabric:${rootProject.oe_version}")
     modRuntimeOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}"
-    modRuntimeOnly "me.shedaniel.cloth:cloth-config-fabric:${rootProject.cloth_config_version}"
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
 }
 
@@ -75,19 +69,13 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    archiveClassifier.set("dev-shadow")
+    archiveClassifier = "dev-shadow"
 }
 
 remapJar {
     injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    archiveClassifier.set(null)
-    setArchivesBaseName("${rootProject.archives_base_name}-${project.name}-mc${rootProject.minecraft_version}")
-}
-
-jar {
-    archiveClassifier.set("dev")
 }
 
 sourcesJar {
@@ -99,5 +87,19 @@ sourcesJar {
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
+    }
+}
+
+publishing {
+    publications {
+        mavenFabric(MavenPublication) {
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
     }
 }

@@ -1,7 +1,6 @@
 package net.morimori0317.yajusenpai.server.level.features;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.resources.ResourceKey;
@@ -13,12 +12,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.data.cross.provider.RegistriesDatapackProviderWrapper;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
 import java.util.List;
 
 public class YJVegetationFeatures {
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> YJ_PATCH_GRASS = key("yj_patch_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> YJ_FLOWER_DEFAULT = key("yj_flower_default");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BB = key("patch_bb");
@@ -35,11 +34,11 @@ public class YJVegetationFeatures {
         return b;
     }
 
-    public static void registerBuilder(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        context.register(YJ_PATCH_GRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(BlockStateProvider.simple(YJBlocks.YJ_GRASS.get()), 32)));
-        context.register(YJ_FLOWER_DEFAULT, new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(new WeightedStateProvider(createDefaultFlowerBuilder()), 64)));
-        context.register(PATCH_BB, new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.BB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
-        context.register(PATCH_GB, new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.GB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
-        context.register(PATCH_RB, new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.RB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
+    public static void register(RegistriesDatapackProviderWrapper.DynamicRegister<ConfiguredFeature<?, ?>> register) {
+        register.add(YJ_PATCH_GRASS, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(BlockStateProvider.simple(YJBlocks.YJ_GRASS.get()), 32)));
+        register.add(YJ_FLOWER_DEFAULT, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(new WeightedStateProvider(createDefaultFlowerBuilder()), 64)));
+        register.add(PATCH_BB, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.BB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
+        register.add(PATCH_GB, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.GB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
+        register.add(PATCH_RB, ctx -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(YJBlocks.RB.get())), List.of(YJBlocks.YJ_DIRT.get()))));
     }
 }

@@ -1,11 +1,19 @@
 package net.morimori0317.yajusenpai.explatform.data.fabric;
 
-import dev.felnull.otyacraftengine.data.provider.IntrinsicHolderTagsProviderWrapper;
-import dev.felnull.otyacraftengine.data.provider.ItemTagProviderWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataProvider;
 import net.minecraft.world.level.block.Block;
+import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
+import net.morimori0317.yajusenpai.data.cross.provider.ItemTagProviderWrapper;
 import net.morimori0317.yajusenpai.fabric.data.YajuSenpaiDataGeneratorFabric;
 
+import java.util.concurrent.CompletableFuture;
+
 public class YJDataExpectPlatformImpl {
+    public static CompletableFuture<HolderLookup.Provider> getRegistriesDatapackProviderLookup(DataProvider provider) {
+        return null;
+    }
+
     public static void generateBlockTag(IntrinsicHolderTagsProviderWrapper.IntrinsicTagProviderAccess<Block> providerAccess) {
         YajuSenpaiDataGeneratorFabric.generateBlockTag(providerAccess);
     }

@@ -7,14 +7,14 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
 import net.morimori0317.yajusenpai.client.renderer.YJRenderType;
+import net.morimori0317.yajusenpai.util.YJUtils;
 import org.joml.Matrix4f;
 
 public class YJPortalRenderer<T extends YJPortalBlockEntity> implements BlockEntityRenderer<T> {
-    public static final ResourceLocation YJ_SKY_LOCATION = new ResourceLocation(YajuSenpai.MODID, "textures/block/yjsnpi_interview_block.png");
-    public static final ResourceLocation YJ_PORTAL_LOCATION = new ResourceLocation(YajuSenpai.MODID, "textures/entity/yj_portal.png");
+    public static final ResourceLocation YJ_SKY_LOCATION = YJUtils.modLoc("textures/block/yjsnpi_interview_block.png");
+    public static final ResourceLocation YJ_PORTAL_LOCATION = YJUtils.modLoc("textures/entity/yj_portal.png");
     private static final RenderType YJ_PORTAL = YJRenderType.yjPortal();
 
     @Override
@@ -35,12 +35,12 @@ public class YJPortalRenderer<T extends YJPortalBlockEntity> implements BlockEnt
     }
 
     private void renderFace(T theEndPortalBlockEntity, Matrix4f matrix4f, VertexConsumer vertexConsumer, float f, float g, float h, float i, float j, float k, float l, float m, Direction direction) {
-        if (direction.getAxis() == Direction.Axis.Y) {
+    /*    if (direction.getAxis() == Direction.Axis.Y) {
             vertexConsumer.vertex(matrix4f, f, h, j).endVertex();
             vertexConsumer.vertex(matrix4f, g, h, k).endVertex();
             vertexConsumer.vertex(matrix4f, g, i, l).endVertex();
             vertexConsumer.vertex(matrix4f, f, i, m).endVertex();
-        }
+        }*/
 
     }
 

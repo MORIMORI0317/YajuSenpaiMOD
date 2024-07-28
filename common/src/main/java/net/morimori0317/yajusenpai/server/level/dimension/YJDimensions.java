@@ -1,70 +1,36 @@
 package net.morimori0317.yajusenpai.server.level.dimension;
 
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.*;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.FixedBiomeSource;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.minecraft.world.level.levelgen.DensityFunction;
+import net.minecraft.world.level.levelgen.DensityFunctions;
+import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
+import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
+import net.morimori0317.yajusenpai.data.cross.provider.RegistriesDatapackProviderWrapper;
 import net.morimori0317.yajusenpai.util.YJUtils;
-
-import java.util.List;
 
 public class YJDimensions {
     public static final ResourceKey<LevelStem> THE_YAJUSENPAI_DIMENSION = ResourceKey.create(Registries.LEVEL_STEM, YJUtils.modLoc("the_yajusenpai"));
-    public static final ResourceKey<NoiseGeneratorSettings> YAJUSENPAI_NOISE_SETTINGS = ResourceKey.create(Registries.NOISE_SETTINGS, YJUtils.modLoc("yajusenpai"));
-    public static final ResourceKey<Biome> YAJUSENPAI_BIOME = ResourceKey.create(Registries.BIOME, YJUtils.modLoc("yajusenpai"));
 
-    public static RegistrySetBuilder addToBuilder(RegistrySetBuilder builder) {
-        builder = builder.add(Registries.BIOME, context -> {
-            context.register(YAJUSENPAI_BIOME, YJBiomes.createYJBiome(context));
+    //https://misode.github.io/dimension/
+    //https://github.com/misode/vanilla-worldgen/tree/master/worldgen/biome
+
+    public static void register(RegistriesDatapackProviderWrapper.DynamicRegister<LevelStem> register) {
+        register.add(THE_YAJUSENPAI_DIMENSION, ctx -> {
+            HolderGetter<DimensionType> dimensionTypeHolderGetter = ctx.lookup(Registries.DIMENSION_TYPE);
+            HolderGetter<NoiseGeneratorSettings> noiseGeneratorSettingsHolderGetter = ctx.lookup(Registries.NOISE_SETTINGS);
+            HolderGetter<Biome> biomeSourceHolderGetter = ctx.lookup(Registries.BIOME);
+
+            return new LevelStem(dimensionTypeHolderGetter.getOrThrow(BuiltinDimensionTypes.OVERWORLD),
+                    new NoiseBasedChunkGenerator(new FixedBiomeSource(biomeSourceHolderGetter.getOrThrow(YJBiomes.YAJUSENPAI_BIOME)), noiseGeneratorSettingsHolderGetter.getOrThrow(YJNoiseGeneratorSettings.YAJUSENPAI_NOISE_SETTINGS)));
         });
-
-        builder = builder.add(Registries.NOISE_SETTINGS, context -> {
-            context.register(YAJUSENPAI_NOISE_SETTINGS, yajusenpaiNoiseGeneratorSetting(context));
-        });
-
-        builder = builder.add(Registries.LEVEL_STEM, context -> {
-            HolderGetter<DimensionType> dimensionTypeHolderGetter = context.lookup(Registries.DIMENSION_TYPE);
-            HolderGetter<NoiseGeneratorSettings> noiseGeneratorSettingsHolderGetter = context.lookup(Registries.NOISE_SETTINGS);
-            HolderGetter<Biome> biomeSourceHolderGetter = context.lookup(Registries.BIOME);
-
-            context.register(THE_YAJUSENPAI_DIMENSION, new LevelStem(dimensionTypeHolderGetter.getOrThrow(BuiltinDimensionTypes.OVERWORLD),
-                    new NoiseBasedChunkGenerator(new FixedBiomeSource(biomeSourceHolderGetter.getOrThrow(YAJUSENPAI_BIOME)), noiseGeneratorSettingsHolderGetter.getOrThrow(YAJUSENPAI_NOISE_SETTINGS))));
-        });
-
-        return builder;
-    }
-
-    private static NoiseGeneratorSettings yajusenpaiNoiseGeneratorSetting(BootstapContext<NoiseGeneratorSettings> context) {
-        HolderGetter<DensityFunction> densityFunctionHolderGetter = context.lookup(Registries.DENSITY_FUNCTION);
-        HolderGetter<NormalNoise.NoiseParameters> noiseParametersHolderGetter = context.lookup(Registries.NOISE);
-
-        NoiseSettings noiseSettings = NoiseSettings.create(-64, 384, 1, 2);
-        NoiseRouter noiseRouter = NoiseRouterData.overworld(densityFunctionHolderGetter, noiseParametersHolderGetter, false, false);
-        SurfaceRules.RuleSource ruleSource = YJSurfaceRuleData.yjDimension();
-
-        List<Climate.ParameterPoint> spawns = new OverworldBiomeBuilder().spawnTarget();
-
-        return new NoiseGeneratorSettings(noiseSettings,
-                YJBlocks.YJ_STONE.get().defaultBlockState(),
-                Blocks.WATER.defaultBlockState(),
-                noiseRouter,
-                ruleSource,
-                spawns,
-                63,
-                false,
-                true,
-                true,
-                false);
     }
 
     private static DensityFunction noiseGradientDensity(DensityFunction densityFunction, DensityFunction densityFunction2) {
@@ -81,7 +47,7 @@ public class YJDimensions {
     }
 
     private static ResourceKey<DensityFunction> createDensityFunctionKey(String string) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(string));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, ResourceLocation.parse(string));
     }
 
     private static DensityFunction slide(DensityFunction densityFunction, int i, int j, int k, int l, double d, int m, int n, double e) {

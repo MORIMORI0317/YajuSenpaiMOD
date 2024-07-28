@@ -1,35 +1,121 @@
 package net.morimori0317.yajusenpai.util;
 
+import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
+import dev.architectury.utils.value.IntValue;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerChunkCache;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.Unit;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.chunk.LevelChunk;
 import net.morimori0317.yajusenpai.YajuSenpai;
-import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.block.YJSoundType;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
-import net.morimori0317.yajusenpai.entity.YJDamageTypeTags;
+import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.item.YJItems;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
+import java.util.function.Consumer;
 
-public class YJUtils {
-    private static final ResourceKey<Level> YJ_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(YajuSenpai.MODID, "the_yajusenpai"));
+public final class YJUtils {
+    private static final ResourceKey<Level> YJ_DIMENSION = ResourceKey.create(Registries.DIMENSION, modLoc("the_yajusenpai"));
 
     public static ResourceLocation modLoc(String path) {
-        return new ResourceLocation(YajuSenpai.MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, path);
+    }
+
+    public static void ikisugiKill(LivingEntity target, LivingEntity attacker) {
+        for (int i = 0; i < 19; i++) {
+            target.hurt(target.damageSources().genericKill(), 114514);
+            if (!target.isAlive()) {
+                break;
+            }
+        }
+    }
+
+    public static boolean isYJDim(Level level) {
+        return level.dimension() == YJ_DIMENSION;
+    }
+
+    public static IntValue refToVal(LocalIntRef ref) {
+        return new IntValue() {
+            @Override
+            public void accept(int value) {
+                ref.set(value);
+            }
+
+            @Override
+            public int getAsInt() {
+                return ref.get();
+            }
+        };
+    }
+
+    public static void giveItemToPlayer(@NotNull ServerPlayer player, @NotNull ItemStack stack) {
+        if (!player.addItem(stack))
+            player.drop(stack, false, true);
+    }
+
+    public static void giveItemToEntity(@NotNull Entity entity, @NotNull ItemStack stack) {
+        ItemEntity itemEntity = new ItemEntity(entity.level(), (double) entity.getX(), (double) entity.getY(), (double) entity.getZ(), stack);
+        itemEntity.setDefaultPickUpDelay();
+        entity.level().addFreshEntity(itemEntity);
+    }
+
+    public static ItemStack createFutoiSeaChicken() {
+        ItemStack stack = new ItemStack(Items.CHICKEN);
+
+        stack.set(DataComponents.CUSTOM_NAME, Component.translatable("item.yajusenpai.futoi_sea_chicken")
+                .withStyle(Style.EMPTY.withBold(true).withItalic(false)));
+        stack.set(YJDataComponents.FUTOI_SEA_CHICKEN.get(), Unit.INSTANCE);
+
+        return stack;
+    }
+
+    public static boolean isYJSound(Entity entity) {
+        if (entity instanceof LivingEntity livingEntity) {
+            if (livingEntity.hasEffect(YJMobEffects.BEAST_FICTION.vanillaHolder()))
+                return true;
+
+            boolean flg1 = livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(YJItems.YAJUSENPAI_HELMET.get());
+            boolean flg2 = livingEntity.getItemBySlot(EquipmentSlot.CHEST).is(YJItems.YAJUSENPAI_CHESTPLATE.get());
+            boolean flg3 = livingEntity.getItemBySlot(EquipmentSlot.LEGS).is(YJItems.YAJUSENPAI_LEGGINGS.get());
+            boolean flg4 = livingEntity.getItemBySlot(EquipmentSlot.FEET).is(YJItems.YAJUSENPAI_BOOTS.get());
+
+            return flg1 && flg2 && flg3 && flg4;
+        }
+        return false;
+    }
+
+    public static YJSoundType getInmSoundType(ItemStack stack) {
+        return null;
+    }
+
+    public static void doPlayers(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull Consumer<ServerPlayer> playerConsumer) {
+        LevelChunk lch = (LevelChunk) level.getChunk(pos);
+        doPlayers(lch, playerConsumer);
+    }
+
+    public static void doPlayers(@NotNull LevelChunk chunk, @NotNull Consumer<ServerPlayer> playerConsumer) {
+        ((ServerChunkCache) chunk.getLevel().getChunkSource()).chunkMap.getPlayers(chunk.getPos(), false).forEach(playerConsumer);
+    }
+
+    public static ResourceKey<Level> getYJDimension() {
+        return YJ_DIMENSION;
     }
 
     public static boolean legacyYjRandom(RandomSource random) {
@@ -42,57 +128,5 @@ public class YJUtils {
 
     public static boolean veryYjRandom(RandomSource random) {
         return 114514 > random.nextInt(1919810);
-    }
-
-    public static boolean hasKatyouEnchantment(ItemStack stack) {
-        return EnchantmentHelper.getItemEnchantmentLevel(YJEnchantments.KATYOU_CURSE.get(), stack) > 0;
-    }
-
-    public static boolean hasGabaAnaDaddyEnchantment(ItemStack stack) {
-        return EnchantmentHelper.getItemEnchantmentLevel(YJEnchantments.GABA_ANA_DADDY_CURSE.get(), stack) > 0;
-    }
-
-    public static boolean hasKynEnchantment(ItemStack stack) {
-        return EnchantmentHelper.getItemEnchantmentLevel(YJEnchantments.KYN_CURSE.get(), stack) > 0;
-    }
-
-    public static ItemStack createFutoiSeaChicken() {
-        var ch = new ItemStack(Items.CHICKEN);
-        ch.setHoverName(Component.translatable("item.yajusenpai.futoi_sea_chicken").withStyle(Style.EMPTY.withBold(true).withItalic(false)));
-        ch.getOrCreateTag().putBoolean("futoi_sea_chicken", true);
-        return ch;
-    }
-
-    public static boolean isYJSound(Entity entity) {
-        if (entity instanceof LivingEntity livingEntity) {
-            if (livingEntity.hasEffect(YJMobEffects.BEAST_FICTION.get()))
-                return true;
-
-            boolean flg1 = livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(YJItems.YJSNPI_HELMET.get());
-            boolean flg2 = livingEntity.getItemBySlot(EquipmentSlot.CHEST).is(YJItems.YJSNPI_CHESTPLATE.get());
-            boolean flg3 = livingEntity.getItemBySlot(EquipmentSlot.LEGS).is(YJItems.YJSNPI_LEGGINGS.get());
-            boolean flg4 = livingEntity.getItemBySlot(EquipmentSlot.FEET).is(YJItems.YJSNPI_BOOTS.get());
-
-            return flg1 && flg2 && flg3 && flg4;
-        }
-        return false;
-    }
-
-    public static YJSoundType getInmSoundType(ItemStack stack) {
-        if (stack.getItem() instanceof BlockItem blockItem && Arrays.stream(YJBlocks.INM_BLOCKS).anyMatch(n -> n.get() == blockItem.getBlock()) && blockItem.getBlock().getSoundType(blockItem.getBlock().defaultBlockState()) instanceof YJSoundType soundType)
-            return soundType;
-        return null;
-    }
-
-    public static boolean isYJDim(Level level) {
-        return level.dimension() == YJ_DIMENSION;
-    }
-
-    public static ResourceKey<Level> getYJDimension() {
-        return YJ_DIMENSION;
-    }
-
-    public static boolean isIkisugiDamage(DamageSource damageSource) {
-        return damageSource.is(YJDamageTypeTags.IS_IKISUGI);
     }
 }

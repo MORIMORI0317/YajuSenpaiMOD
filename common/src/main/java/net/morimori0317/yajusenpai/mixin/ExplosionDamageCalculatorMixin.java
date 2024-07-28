@@ -19,7 +19,7 @@ import java.util.Optional;
 public class ExplosionDamageCalculatorMixin {
     @Inject(method = "getBlockExplosionResistance", at = @At("HEAD"), cancellable = true)
     private void getBlockExplosionResistance(Explosion explosion, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, FluidState fluidState, CallbackInfoReturnable<Optional<Float>> cir) {
-        if (blockState.is(YJBlocks.YJSNPI_EXPLODING_BLOCK.get()) && blockState.getValue(YJExplodingBlock.YJ_START))
+        if (blockState.is(YJBlocks.EXPLOSION_YAJUSENPAI_BLOCK.get()) && blockState.getValue(YJExplodingBlock.YJ_START))
             cir.setReturnValue(blockState.isAir() && fluidState.isEmpty() ? Optional.empty() : Optional.of(Math.max(114514, fluidState.getExplosionResistance())));
     }
 }

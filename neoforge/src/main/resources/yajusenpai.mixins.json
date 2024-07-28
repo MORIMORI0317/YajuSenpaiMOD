@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "net.morimori0317.yajusenpai.neoforge.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "plugin": "net.morimori0317.yajusenpai.neoforge.mixin.YJMixinPluginNeoForge",
+  "client": [
+  ],
+  "mixins": [
+    "ItemStackMixin",
+    "data.BlockStateProviderAccessor",
+    "data.DataMainMixin",
+    "data.ModelBuilderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

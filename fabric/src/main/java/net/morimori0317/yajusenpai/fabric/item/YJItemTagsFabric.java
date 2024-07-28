@@ -21,6 +21,6 @@ public class YJItemTagsFabric {
     public static final TagKey<Item> YJSNPI_NUGGETS = bind("yjsnpi_nuggets");
 
     private static TagKey<Item> bind(String id) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("c", id));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", id));
     }
 }

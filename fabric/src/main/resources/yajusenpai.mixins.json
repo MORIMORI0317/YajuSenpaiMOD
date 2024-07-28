@@ -1,13 +1,17 @@
 {
   "required": true,
   "package": "net.morimori0317.yajusenpai.fabric.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
+  "plugin": "net.morimori0317.yajusenpai.fabric.mixin.YJMixinPluginFabric",
   "client": [
     "client.LivingEntityRendererMixin"
   ],
   "mixins": [
-    "LivingEntityMixin"
+    "ItemStackMixin",
+    "LivingEntityMixin",
+    "data.DynamicRegistriesImplMixin",
+    "data.FabricDataGenHelperMixin"
   ],
   "injectors": {
     "defaultRequire": 1

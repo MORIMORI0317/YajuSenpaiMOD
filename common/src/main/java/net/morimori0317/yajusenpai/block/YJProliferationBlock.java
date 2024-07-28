@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
-public class YJProliferationBlock extends Block {
+public class YJProliferationBlock extends InmBaseBlock {
     public static final IntegerProperty YJ_CONT = YJBlockStateProperties.YJ_PR_CONT;
 
     public YJProliferationBlock(Properties properties) {

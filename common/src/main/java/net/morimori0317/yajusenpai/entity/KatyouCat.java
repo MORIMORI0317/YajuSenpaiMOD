@@ -1,9 +1,11 @@
 package net.morimori0317.yajusenpai.entity;
 
+
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,9 +22,8 @@ import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import org.jetbrains.annotations.Nullable;
 
-
 public class KatyouCat extends Cat {
-    private static final ResourceLocation LOCATION = new ResourceLocation(YajuSenpai.MODID, "textures/entity/katyou_cat.png");
+    private static final ResourceLocation LOCATION = ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, "textures/entity/katyou_cat.png");
 
     public KatyouCat(EntityType<? extends Cat> entityType, Level level) {
         super(entityType, level);
@@ -43,17 +44,18 @@ public class KatyouCat extends Cat {
     }
 
     @Override
-    public ResourceLocation getResourceLocation() {
+    public ResourceLocation getTextureId() {
         return LOCATION;
     }
 
+    @Nullable
     @Override
     public Cat getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
         Cat cat = YJEntityTypes.KATYOU_CAT.get().create(serverLevel);
         if (ageableMob instanceof KatyouCat) {
             if (this.isTame()) {
                 cat.setOwnerUUID(this.getOwnerUUID());
-                cat.setTame(true);
+                cat.setTame(true, true);
                 if (this.random.nextBoolean()) {
                     cat.setCollarColor(this.getCollarColor());
                 } else {
@@ -86,7 +88,7 @@ public class KatyouCat extends Cat {
     }
 
     @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return NetworkManager.createAddEntityPacket(this);
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity serverEntity) {
+        return NetworkManager.createAddEntityPacket(this, serverEntity);
     }
 }

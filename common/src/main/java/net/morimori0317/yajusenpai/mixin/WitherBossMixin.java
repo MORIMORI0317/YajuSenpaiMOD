@@ -21,7 +21,7 @@ public class WitherBossMixin extends Monster {
 
     @Inject(method = "addEffect", at = @At("HEAD"), cancellable = true)
     private void addEffectInvoker(MobEffectInstance mobEffectInstance, Entity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (mobEffectInstance.getEffect() == YJMobEffects.IKISUGI.get() || mobEffectInstance.getEffect() == YJMobEffects.COMA.get())
+        if (mobEffectInstance.getEffect().is(YJMobEffects.IKISUGI.vanillaHolder()) || mobEffectInstance.getEffect().is(YJMobEffects.COMA.vanillaHolder()))
             cir.setReturnValue(super.addEffect(mobEffectInstance, entity));
     }
 }
