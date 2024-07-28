@@ -16,6 +16,8 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
+import net.morimori0317.yajusenpai.sound.InmFamilySound;
 import net.morimori0317.yajusenpai.item.YJCreativeModeTabs;
 import net.morimori0317.yajusenpai.item.YJItems;
 
@@ -26,33 +28,39 @@ public final class YJBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(YajuSenpai.MODID, Registries.BLOCK);
     private static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(YajuSenpai.MODID, Registries.ITEM);
 
-    public static final RegistrySupplier<Block> YAJUSENPAI_BLOCK = register("yajusenpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> YAJUSENPAI_IKISUGI_BLOCK = register("yajusenpai_ikisugi_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> GOMANETSU_SENPAI_BLOCK = register("gomanetsu_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> ENNUI_SENPAI_BLOCK = register("ennui_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> YAJUSENPAI_BLOCK = register("yajusenpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> YAJUSENPAI_IKISUGI_BLOCK = register("yajusenpai_ikisugi_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> GOMANETSU_SENPAI_BLOCK = register("gomanetsu_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> ENNUI_SENPAI_BLOCK = register("ennui_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
     public static final RegistrySupplier<Block> MEDIKARA_SENPAI_BLOCK = register("medikara_senpai_block", () -> new MedikaraBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLUE)
             .sound(YJSoundType.MEDIKARA.get())
             .strength(1f, 10f)));
-    public static final RegistrySupplier<Block> NEHAN_SENPAI_BLOCK = register("nehan_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> SHITARIGAO_SENPAI_BLOCK = register("shitarigao_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BLUE));
-    public static final RegistrySupplier<Block> IMDKUJ_SENPAI_BLOCK = register("imdkuj_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_RED));
-    public static final RegistrySupplier<Block> KUNEKUNE_SENPAI_BLOCK = register("kunekune_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BLUE));
-    public static final RegistrySupplier<Block> SZKFK_SENPAI_BLOCK = register("szkfk_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> CCCLKTJM_SENPAI_BLOCK = register("ccclktjm_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> CWCWTD_SENPAI_BLOCK = register("cwcwtd_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> INTLNGTM_SENPAI_BLOCK = register("intlngtm_senpai_block", () -> inmBlock(YJSoundType.YJ.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> NEHAN_SENPAI_BLOCK = register("nehan_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> SHITARIGAO_SENPAI_BLOCK = register("shitarigao_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
+    public static final RegistrySupplier<Block> IMDKUJ_SENPAI_BLOCK = register("imdkuj_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_RED));
+    public static final RegistrySupplier<Block> KUNEKUNE_SENPAI_BLOCK = register("kunekune_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
+    public static final RegistrySupplier<Block> SZKFK_SENPAI_BLOCK = register("szkfk_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> CCCLKTJM_SENPAI_BLOCK = register("ccclktjm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> CWCWTD_SENPAI_BLOCK = register("cwcwtd_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> INTLNGTM_SENPAI_BLOCK = register("intlngtm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
 
-    public static final RegistrySupplier<Block> TON_BLOCK = register("ton_block", () -> inmBlock(YJSoundType.TON.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> KMR_BLOCK = register("kmr_block", () -> inmBlock(YJSoundType.KMR.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> MUR_BLOCK = register("mur_block", () -> inmBlock(YJSoundType.MUR.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> NKTIDKSG_BLOCK = register("nktidksg_block", () -> inmBlock(YJSoundType.NKTIDKSG.get(), MapColor.COLOR_LIGHT_GRAY));
+    public static final RegistrySupplier<Block> TON_BLOCK = register("ton_block", () -> inmBlock(InmFamilySounds.TON, YJSoundType.TON.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> KMR_BLOCK = register("kmr_block", () -> inmBlock(InmFamilySounds.KMR, YJSoundType.KMR.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> MUR_BLOCK = register("mur_block", () -> inmBlock(InmFamilySounds.MUR, YJSoundType.MUR.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> NKTIDKSG_BLOCK = register("nktidksg_block", () -> inmBlock(InmFamilySounds.NKTIDKSG, YJSoundType.NKTIDKSG.get(), MapColor.COLOR_LIGHT_GRAY));
     public static final RegistrySupplier<Block> TAKEDA_INM_BLOCK = register("takeda_inm_block", () -> new TakedaInmBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_RED)
             .sound(YJSoundType.TAKEDA_INM.get())
             .strength(0.1f, 0)));
-    public static final RegistrySupplier<Block> KATYOU_BLOCK = register("katyou_block", () -> inmBlock(YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
-    public static final RegistrySupplier<Block> INARI_OTOKO_BLOCK = register("inari_otoko_block", () -> inmBlock(YJSoundType.INARI_OTOKO.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> KATYOU_BLOCK = register("katyou_block", () -> inmBlock(InmFamilySounds.KATYOU, YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
+    public static final RegistrySupplier<Block> SECOND_INARI_OTOKO_BLOCK = register("second_inari_otoko_block", () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> AKYS_BLOCK = register("akys_block", () -> inmBlock(InmFamilySounds.AKYS, YJSoundType.AKYS.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> GO_BLOCK = register("go_block", () -> new InmBaseBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLUE)
+            .lightLevel(it -> 15)
+            .sound(YJSoundType.GO.get())
+            .strength(1.75f, 9999)));
 
     public static final RegistrySupplier<Block> BB = register("bb", () -> backMaterialBlock(MapColor.COLOR_BLUE));
     public static final RegistrySupplier<Block> GB = register("gb", () -> backMaterialBlock(MapColor.COLOR_LIGHT_GREEN));
@@ -80,23 +88,23 @@ public final class YJBlocks {
     public static final RegistrySupplier<Block> POTTED_YJ_SAPLING = register("potted_yj_sapling", () -> Blocks.flowerPot(YJ_SAPLING.get()), null);
 
     public static final RegistrySupplier<Block> YJNIUM_ORE = register("yjnium_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
-    public static final RegistrySupplier<Block> YAJUSENPAI_ORE = register("yajusenpai_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE).sound(YJSoundType.YJ.get())));
+    public static final RegistrySupplier<Block> YAJUSENPAI_ORE = register("yajusenpai_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE).sound(YJSoundType.YAJUSENPAI.get())));
     public static final RegistrySupplier<Block> DEEPSLATE_YJNIUM_ORE = register("deepslate_yjnium_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
-    public static final RegistrySupplier<Block> DEEPSLATE_YAJUSENPAI_ORE = register("deepslate_yajusenpai_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE).sound(YJSoundType.YJ.get())));
+    public static final RegistrySupplier<Block> DEEPSLATE_YAJUSENPAI_ORE = register("deepslate_yajusenpai_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE).sound(YJSoundType.YAJUSENPAI.get())));
     public static final RegistrySupplier<Block> YJNIUM_BLOCK = register("yjnium_block", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<Block> RAW_YJNIUM_BLOCK = register("raw_yjnium_block", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<Block> RAW_YAJUSENPAI_BLOCK = register("raw_yajusenpai_block", () -> new Block(BlockBehaviour.Properties.of().sound(YJSoundType.YJ.get()).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> RAW_YAJUSENPAI_BLOCK = register("raw_yajusenpai_block", () -> new Block(BlockBehaviour.Properties.of().sound(YJSoundType.YAJUSENPAI.get()).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> POTATOES_SENPAI = register("potatoes_senpai", () -> new YJPotatoBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(YJSoundType.YJ_CROP.get())), null);
     public static final RegistrySupplier<Block> YJ_HOUSE_DOOR = register("yj_house_door", () -> new YJHouseDoorBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).requiresCorrectToolForDrops().strength(5.0F, 0).sound(SoundType.METAL).noOcclusion()), b -> new DoubleHighBlockItem(b, new Item.Properties().arch$tab(YJCreativeModeTabs.MOD_TAB)));
 
-    public static final RegistrySupplier<Block> EXPLOSION_YAJUSENPAI_BLOCK = registerFoiled("explosion_yajusenpai_block", () -> new YJExplodingBlock(BlockBehaviour.Properties.of().sound(YJSoundType.YJ.get()).strength(1f, 0f).lightLevel(value -> {
+    public static final RegistrySupplier<Block> EXPLOSION_YAJUSENPAI_BLOCK = registerFoiled("explosion_yajusenpai_block", () -> new YJExplodingBlock(BlockBehaviour.Properties.of().sound(YJSoundType.YAJUSENPAI.get()).strength(1f, 0f).lightLevel(value -> {
         float level = ((float) value.getValue(YJExplodingBlock.YJ_TIMER) % 14f) / 14;
         float alevel = Math.min(level, 1f - level) * 2f;
         return (int) (alevel * 16f) + 1;
     })));
 
-    public static final RegistrySupplier<Block> PROLIFERATION_YAJUSENPAI_BLOCK = registerFoiled("proliferation_yajusenpai_block", () -> new YJProliferationBlock(BlockBehaviour.Properties.of().sound(YJSoundType.YJ.get()).randomTicks().strength(1f, 0f)));
+    public static final RegistrySupplier<Block> PROLIFERATION_YAJUSENPAI_BLOCK = registerFoiled("proliferation_yajusenpai_block", () -> new YJProliferationBlock(BlockBehaviour.Properties.of().sound(YJSoundType.YAJUSENPAI.get()).randomTicks().strength(1f, 0f)));
     public static final RegistrySupplier<Block> YJ_PORTAL = register("yj_portal", () -> new YJPortalBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).pushReaction(PushReaction.BLOCK).noCollission().lightLevel((blockStatex) -> 15).strength(-1.0F, 0.5F).noLootTable()), null);
 
     public static final RegistrySupplier<Block> BIG_PILLOW = register("big_pillow", () -> new BigPillowBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(0.2F, 1200.0F).noOcclusion()));
@@ -125,8 +133,8 @@ public final class YJBlocks {
         BLOCK_ITEMS.register();
     }
 
-    private static Block inmBlock(SoundType soundType, MapColor mapColor) {
-        return new InmBaseBlock(BlockBehaviour.Properties.of().mapColor(mapColor).strength(1f, 10f).sound(soundType));
+    private static Block inmBlock(InmFamilySound inmFamilySound, SoundType soundType, MapColor mapColor) {
+        return new InmBaseBlock(inmFamilySound, BlockBehaviour.Properties.of().mapColor(mapColor).strength(1f, 10f).sound(soundType));
     }
 
     private static Block backMaterialBlock(MapColor mapColor) {

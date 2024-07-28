@@ -9,12 +9,13 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 
 import java.util.function.BiConsumer;
 
 public class TakedaInmBlock extends InmBaseBlock {
     public TakedaInmBlock(Properties properties) {
-        super(properties);
+        super(InmFamilySounds.TAKEDA_INM, properties);
     }
 
     @Override

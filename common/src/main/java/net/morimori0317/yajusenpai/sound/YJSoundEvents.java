@@ -48,6 +48,7 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> YJ_DAMEGE = register("yj.damege");
     public static final RegistrySupplier<SoundEvent> YJ_OVERWRITE = register("yj.overwrite");
     public static final RegistrySupplier<SoundEvent> YJ_ATTACK = register("yj.attack");
+    public static final RegistrySupplier<SoundEvent> YJ_DIE = register("yj.die");
 
     public static final RegistrySupplier<SoundEvent> YJ_ABARENNAYO = register("yj.abarennayo");
     public static final RegistrySupplier<SoundEvent> YJ_BRIEF = register("yj.brief");
@@ -111,6 +112,9 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> TON_STEP = register("ton.step");
     public static final RegistrySupplier<SoundEvent> TON_HIT = register("ton.hit");
     public static final RegistrySupplier<SoundEvent> TON_FALL = register("ton.fall");
+    public static final RegistrySupplier<SoundEvent> TON_ATTACK = register("ton.attack");
+    public static final RegistrySupplier<SoundEvent> TON_DAMAGE = register("ton.damage");
+    public static final RegistrySupplier<SoundEvent> TON_DIE = register("ton.die");
 
     public static final RegistrySupplier<SoundEvent> KMR_ARIGATOGOZAIMASU = register("kmr.arigatogozaimasu");
     public static final RegistrySupplier<SoundEvent> KMR_E = register("kmr.e");
@@ -126,6 +130,9 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> KMR_STEP = register("kmr.step");
     public static final RegistrySupplier<SoundEvent> KMR_HIT = register("kmr.hit");
     public static final RegistrySupplier<SoundEvent> KMR_FALL = register("kmr.fall");
+    public static final RegistrySupplier<SoundEvent> KMR_ATTACK = register("kmr.attack");
+    public static final RegistrySupplier<SoundEvent> KMR_DAMAGE = register("kmr.damage");
+    public static final RegistrySupplier<SoundEvent> KMR_DIE = register("kmr.die");
 
     public static final RegistrySupplier<SoundEvent> MUR_ASSOKKA = register("mur.assokka");
     public static final RegistrySupplier<SoundEvent> MUR_ATARIMAEDAYONA = register("mur.atarimaedayona");
@@ -150,6 +157,9 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> MUR_STEP = register("mur.step");
     public static final RegistrySupplier<SoundEvent> MUR_HIT = register("mur.hit");
     public static final RegistrySupplier<SoundEvent> MUR_FALL = register("mur.fall");
+    public static final RegistrySupplier<SoundEvent> MUR_ATTACK = register("mur.attack");
+    public static final RegistrySupplier<SoundEvent> MUR_DAMAGE = register("mur.damage");
+    public static final RegistrySupplier<SoundEvent> MUR_DIE = register("mur.die");
 
     public static final RegistrySupplier<SoundEvent> GABAANADADDY_OREMOITCHAU = register("gabaanadaddy.oremoitchau");
     public static final RegistrySupplier<SoundEvent> GABAANADADDY_FUTOI_SEA_CHICKEN_GAHOSHII = register("gabaanadaddy.futoi_sea_chicken_gahoshii");
@@ -194,24 +204,54 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_STEP = register("takeda_inm.step");
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_HIT = register("takeda_inm.hit");
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_FALL = register("takeda_inm.fall");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_ATTACK = register("takeda_inm.attack");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_DAMAGE = register("takeda_inm.damage");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_DIE = register("takeda_inm.die");
 
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_BREAK = register("nktidksg.break");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_PLACE = register("nktidksg.place");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_STEP = register("nktidksg.step");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_HIT = register("nktidksg.hit");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_FALL = register("nktidksg.fall");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_ATTACK = register("nktidksg.attack");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_DAMAGE = register("nktidksg.damage");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_DIE = register("nktidksg.die");
 
     public static final RegistrySupplier<SoundEvent> KATYOU_BREAK = register("katyou.break");
     public static final RegistrySupplier<SoundEvent> KATYOU_PLACE = register("katyou.place");
     public static final RegistrySupplier<SoundEvent> KATYOU_STEP = register("katyou.step");
     public static final RegistrySupplier<SoundEvent> KATYOU_HIT = register("katyou.hit");
     public static final RegistrySupplier<SoundEvent> KATYOU_FALL = register("katyou.fall");
+    public static final RegistrySupplier<SoundEvent> KATYOU_ATTACK = register("katyou.attack");
+    public static final RegistrySupplier<SoundEvent> KATYOU_DAMAGE = register("katyou.damage");
+    public static final RegistrySupplier<SoundEvent> KATYOU_DIE = register("katyou.die");
 
-    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_BREAK = register("inari_otoko.break");
-    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_PLACE = register("inari_otoko.place");
-    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_STEP = register("inari_otoko.step");
-    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_HIT = register("inari_otoko.hit");
-    public static final RegistrySupplier<SoundEvent> INARI_OTOKO_FALL = register("inari_otoko.fall");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_BREAK = register("second_inari_otoko.break");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_PLACE = register("second_inari_otoko.place");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_STEP = register("second_inari_otoko.step");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_HIT = register("second_inari_otoko.hit");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_FALL = register("second_inari_otoko.fall");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_ATTACK = register("second_inari_otoko.attack");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_DAMAGE = register("second_inari_otoko.damage");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_DIE = register("second_inari_otoko.die");
+
+    public static final RegistrySupplier<SoundEvent> AKYS_BREAK = register("akys.break");
+    public static final RegistrySupplier<SoundEvent> AKYS_PLACE = register("akys.place");
+    public static final RegistrySupplier<SoundEvent> AKYS_STEP = register("akys.step");
+    public static final RegistrySupplier<SoundEvent> AKYS_HIT = register("akys.hit");
+    public static final RegistrySupplier<SoundEvent> AKYS_FALL = register("akys.fall");
+    public static final RegistrySupplier<SoundEvent> AKYS_ATTACK = register("akys.attack");
+    public static final RegistrySupplier<SoundEvent> AKYS_DAMAGE = register("akys.damage");
+    public static final RegistrySupplier<SoundEvent> AKYS_DIE = register("akys.die");
+
+    public static final RegistrySupplier<SoundEvent> GO_BREAK = register("go.break");
+    public static final RegistrySupplier<SoundEvent> GO_PLACE = register("go.place");
+    public static final RegistrySupplier<SoundEvent> GO_STEP = register("go.step");
+    public static final RegistrySupplier<SoundEvent> GO_HIT = register("go.hit");
+    public static final RegistrySupplier<SoundEvent> GO_FALL = register("go.fall");
+    public static final RegistrySupplier<SoundEvent> GO_ATTACK = register("go.attack");
+    public static final RegistrySupplier<SoundEvent> GO_DAMAGE = register("go.damage");
+    public static final RegistrySupplier<SoundEvent> GO_DIE = register("go.die");
 
     private static RegistrySupplier<SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));

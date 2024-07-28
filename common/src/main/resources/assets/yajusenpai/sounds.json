@@ -248,14 +248,19 @@
   "yj.damege": {
     "subtitle": "yajusenpai.subtitle.yj.damege",
     "sounds": [
-      "yajusenpai:yj/fa",
       "yajusenpai:yj/hun",
       "yajusenpai:yj/iiyokoiyo",
-      "yajusenpai:yj/nna",
       "yajusenpai:yj/nu",
       "yajusenpai:yj/on",
       "yajusenpai:yj/onaon",
       "yajusenpai:yj/za"
+    ]
+  },
+  "yj.die": {
+    "sounds": [
+      "yajusenpai:yj/nna",
+      "yajusenpai:yj/fa",
+      "yajusenpai:yj/nuwatikareta"
     ]
   },
   "yj.overwrite": {
@@ -508,7 +513,7 @@
       "yajusenpai:katyou/kowareru",
       "yajusenpai:katyou/yurusite",
       "yajusenpai:katyou/iyayo",
-      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
+      "yajusenpai:katyou/mokkori_okasareru_no_iya"
     ]
   },
   "yj.ikisugi_exploding": {
@@ -630,6 +635,30 @@
       "yajusenpai:ton/yametekudasaiyohonotni"
     ]
   },
+  "ton.attack": {
+    "sounds": [
+      "yajusenpai:ton/honotuniookkiisune",
+      "yajusenpai:ton/senapai",
+      "yajusenpai:ton/haesuggoiookii",
+      "yajusenpai:ton/aaiissune"
+    ]
+  },
+  "ton.damage": {
+    "sounds": [
+      "yajusenpai:ton/yametekudasaiyohonotni",
+      "yajusenpai:ton/yametekudasaiyo",
+      "yajusenpai:ton/tadokorosanmazuidesuyo",
+      "yajusenpai:ton/nanisurunsuka",
+      "yajusenpai:ton/mazuidesuyo",
+      "yajusenpai:ton/iytyottohontoni",
+      "yajusenpai:ton/iytyottohontoni"
+    ]
+  },
+  "ton.die": {
+    "sounds": [
+      "yajusenpai:ton/sekainoton"
+    ]
+  },
   "kmr.arigatogozaimasu": {
     "sounds": [
       "yajusenpai:kmr/arigatogozaimasu"
@@ -702,6 +731,25 @@
   },
   "kmr.fall": {
     "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:kmr/yametekureyo"
+    ]
+  },
+  "kmr.attack": {
+    "sounds": [
+      "yajusenpai:kmr/arigatogozaimasu",
+      "yajusenpai:kmr/naokidesu",
+      "yajusenpai:kmr/nandemiruhituyougaarundesuka"
+    ]
+  },
+  "kmr.damage": {
+    "sounds": [
+      "yajusenpai:kmr/iyamitenaidesuyo",
+      "yajusenpai:kmr/iyaxasonna",
+      "yajusenpai:kmr/iyasonnnakoto"
+    ]
+  },
+  "kmr.die": {
     "sounds": [
       "yajusenpai:kmr/yametekureyo"
     ]
@@ -838,6 +886,33 @@
     "subtitle": "subtitles.entity.generic.big_fall",
     "sounds": [
       "yajusenpai:mur/iizokore"
+    ]
+  },
+  "mur.attack": {
+    "sounds": [
+      "yajusenpai:mur/uresiidaro",
+      "yajusenpai:mur/usotukezettaimitetazo",
+      "yajusenpai:mur/tiratiramitetadaro",
+      "yajusenpai:mur/mitakeryamiseteyaruyo",
+      "yajusenpai:mur/iizokore",
+      "yajusenpai:mur/atarimaedayona",
+      "yajusenpai:mur/miroyomiroyo"
+    ]
+  },
+  "mur.damage": {
+    "sounds": [
+      "yajusenpai:mur/ossudana",
+      "yajusenpai:mur/oimate",
+      "yajusenpai:mur/ikiteena",
+      "yajusenpai:mur/dousukkana",
+      "yajusenpai:mur/harahettana",
+      "yajusenpai:mur/attu"
+    ]
+  },
+  "mur.die": {
+    "sounds": [
+      "yajusenpai:mur/assokka",
+      "yajusenpai:mur/pottyama"
     ]
   },
   "gabaanadaddy.oremoitchau": {
@@ -1095,6 +1170,21 @@
       "yajusenpai:takeda_inm/wait"
     ]
   },
+  "takeda_inm.attack": {
+    "sounds": [
+      "yajusenpai:takeda_inm/voice"
+    ]
+  },
+  "takeda_inm.damage": {
+    "sounds": [
+      "yajusenpai:takeda_inm/voice"
+    ]
+  },
+  "takeda_inm.die": {
+    "sounds": [
+      "yajusenpai:takeda_inm/end"
+    ]
+  },
   "nktidksg.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
@@ -1132,6 +1222,27 @@
       "yajusenpai:nktidksg/op"
     ]
   },
+  "nktidksg.attack": {
+    "sounds": [
+      "yajusenpai:nktidksg/a_zettai_name_sasemasu_yo_sorya",
+      "yajusenpai:nktidksg/aai",
+      "yajusenpai:nktidksg/baramaki",
+      "yajusenpai:nktidksg/hyakujuujakudesyoune",
+      "yajusenpai:nktidksg/hyakujuugogyrau"
+    ]
+  },
+  "nktidksg.damage": {
+    "sounds": [
+      "yajusenpai:nktidksg/o_shiri_wa_ne_jishin_aru_ndesu_yo",
+      "yajusenpai:nktidksg/ma_hitonamideshou_ne"
+    ]
+  },
+  "nktidksg.die": {
+    "sounds": [
+      "yajusenpai:nktidksg/aiki",
+      "yajusenpai:nktidksg/uaaa"
+    ]
+  },
   "katyou.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
@@ -1152,7 +1263,7 @@
       "yajusenpai:katyou/futoiwa2",
       "yajusenpai:katyou/futoruwa",
       "yajusenpai:katyou/futoruwa2",
-      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
+      "yajusenpai:katyou/mokkori_okasareru_no_iya"
     ]
   },
   "katyou.step": {
@@ -1178,7 +1289,7 @@
       "yajusenpai:katyou/uuun",
       "yajusenpai:katyou/kowareru",
       "yajusenpai:katyou/iyayo",
-      "yajusenpai:katyou/mokkori_okasareru_no_iya.wav"
+      "yajusenpai:katyou/mokkori_okasareru_no_iya"
     ]
   },
   "katyou.fall": {
@@ -1191,39 +1302,227 @@
       "yajusenpai:katyou/iyayayaya"
     ]
   },
-  "inari_otoko.break": {
+  "katyou.attack": {
+    "sounds": [
+      "yajusenpai:katyou/ageruwa_anatani",
+      "yajusenpai:katyou/mokkori_okasareru_no_iya",
+      "yajusenpai:katyou/kurukurukurukuru",
+      "yajusenpai:katyou/howa",
+      "yajusenpai:katyou/futoi",
+      "yajusenpai:katyou/futoiwa",
+      "yajusenpai:katyou/futoiwa2",
+      "yajusenpai:katyou/futoruwa",
+      "yajusenpai:katyou/futoruwa2",
+      "yajusenpai:katyou/fofofoo"
+    ]
+  },
+  "katyou.damage": {
+    "sounds": [
+      "yajusenpai:katyou/aitai",
+      "yajusenpai:katyou/iya",
+      "yajusenpai:katyou/iya2",
+      "yajusenpai:katyou/iyaakituissu",
+      "yajusenpai:katyou/iyayayaya",
+      "yajusenpai:katyou/iyayo",
+      "yajusenpai:katyou/kowareru",
+      "yajusenpai:katyou/oniisan_yurusite",
+      "yajusenpai:katyou/oniisan_yurusite5",
+      "yajusenpai:katyou/uuun",
+      "yajusenpai:katyou/yurusite"
+    ]
+  },
+  "katyou.die": {
+    "sounds": [
+      "yajusenpai:katyou/broken1",
+      "yajusenpai:katyou/broken2"
+    ]
+  },
+  "second_inari_otoko.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      "yajusenpai:inari_otoko/fhu",
-      "yajusenpai:inari_otoko/eat_end"
+      "yajusenpai:second_inari_otoko/fhu",
+      "yajusenpai:second_inari_otoko/eat_end"
     ]
   },
-  "inari_otoko.place": {
+  "second_inari_otoko.place": {
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      "yajusenpai:inari_otoko/minarai",
-      "yajusenpai:inari_otoko/jira_ti",
-      "yajusenpai:inari_otoko/toutyaku"
+      "yajusenpai:second_inari_otoko/minarai",
+      "yajusenpai:second_inari_otoko/jira_ti",
+      "yajusenpai:second_inari_otoko/toutyaku"
     ]
   },
-  "inari_otoko.step": {
+  "second_inari_otoko.step": {
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      "yajusenpai:inari_otoko/kaidan"
+      "yajusenpai:second_inari_otoko/kaidan"
     ]
   },
-  "inari_otoko.hit": {
+  "second_inari_otoko.hit": {
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      "yajusenpai:inari_otoko/haraheri",
-      "yajusenpai:inari_otoko/tabetemobarehenka",
-      "yajusenpai:inari_otoko/hitotugurai"
+      "yajusenpai:second_inari_otoko/haraheri",
+      "yajusenpai:second_inari_otoko/tabetemobarehenka",
+      "yajusenpai:second_inari_otoko/hitotugurai"
     ]
   },
-  "inari_otoko.fall": {
+  "second_inari_otoko.fall": {
     "subtitle": "subtitles.entity.generic.big_fall",
     "sounds": [
-      "yajusenpai:inari_otoko/seikainooto"
+      "yajusenpai:second_inari_otoko/seikainooto"
+    ]
+  },
+  "second_inari_otoko.attack": {
+    "sounds": [
+      "yajusenpai:second_inari_otoko/eat_end",
+      "yajusenpai:second_inari_otoko/hitotugurai",
+      "yajusenpai:second_inari_otoko/toutyaku",
+      "yajusenpai:second_inari_otoko/minarai"
+    ]
+  },
+  "second_inari_otoko.damage": {
+    "sounds": [
+      "yajusenpai:second_inari_otoko/haraheri",
+      "yajusenpai:second_inari_otoko/jira_ti",
+      "yajusenpai:second_inari_otoko/tabetemobarehenka"
+    ]
+  },
+  "second_inari_otoko.die": {
+    "sounds": [
+      "yajusenpai:second_inari_otoko/fhu"
+    ]
+  },
+  "akys.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:akys/not_human_mirror",
+      "yajusenpai:akys/kyoukyara"
+    ]
+  },
+  "akys.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:akys/comeon",
+      "yajusenpai:akys/full_throttle",
+      "yajusenpai:akys/give_you_batu",
+      "yajusenpai:akys/goodhip",
+      "yajusenpai:akys/karate_jikijiki",
+      "yajusenpai:akys/marunage",
+      "yajusenpai:akys/mynameisakys",
+      "yajusenpai:akys/reforge"
+    ]
+  },
+  "akys.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:akys/dageki",
+      "yajusenpai:akys/dageki2"
+    ]
+  },
+  "akys.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:akys/not_kill_bug",
+      "yajusenpai:akys/not_teikou",
+      "yajusenpai:akys/muteki",
+      "yajusenpai:akys/kyoukyara",
+      "yajusenpai:akys/henji"
+    ]
+  },
+  "akys.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:akys/your_my_toys"
+    ]
+  },
+  "akys.attack": {
+    "sounds": [
+      "yajusenpai:akys/dageki",
+      "yajusenpai:akys/dageki2"
+    ]
+  },
+  "akys.damage": {
+    "sounds": [
+      "yajusenpai:akys/comeon",
+      "yajusenpai:akys/full_throttle",
+      "yajusenpai:akys/kyoukyara",
+      "yajusenpai:akys/muteki",
+      "yajusenpai:akys/not_kill_bug",
+      "yajusenpai:akys/not_teikou"
+    ]
+  },
+  "akys.die": {
+    "sounds": [
+      "yajusenpai:akys/marunage",
+      "yajusenpai:akys/not_human_mirror"
+    ]
+  },
+  "go.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:go/douridene",
+      "yajusenpai:go/end",
+      "yajusenpai:go/heeki",
+      "yajusenpai:go/take_your_time"
+    ]
+  },
+  "go.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:go/30micutes_5man",
+      "yajusenpai:go/aagood",
+      "yajusenpai:go/aagood2",
+      "yajusenpai:go/baramaku",
+      "yajusenpai:go/chachacha",
+      "yajusenpai:go/kimari"
+    ]
+  },
+  "go.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:go/aagood",
+      "yajusenpai:go/aagood2",
+      "yajusenpai:go/good_muscle",
+      "yajusenpai:go/good3",
+      "yajusenpai:go/goodbody",
+      "yajusenpai:go/goodbody2"
+    ]
+  },
+  "go.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:go/chachacha",
+      "yajusenpai:go/good_muscle",
+      "yajusenpai:go/imsorry"
+    ]
+  },
+  "go.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:go/buybeer"
+    ]
+  },
+  "go.attack": {
+    "sounds": [
+      "yajusenpai:go/30micutes_5man",
+      "yajusenpai:go/baramaki2",
+      "yajusenpai:go/toutyaku",
+      "yajusenpai:go/chachacha"
+    ]
+  },
+  "go.damage": {
+    "sounds": [
+      "yajusenpai:go/douridene",
+      "yajusenpai:go/end",
+      "yajusenpai:go/good_muscle",
+      "yajusenpai:go/heeki",
+      "yajusenpai:go/take_your_time"
+    ]
+  },
+  "go.die": {
+    "sounds": [
+      "yajusenpai:go/kimari",
+      "yajusenpai:go/imsorry"
     ]
   }
 }

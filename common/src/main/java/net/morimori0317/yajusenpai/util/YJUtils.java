@@ -101,10 +101,6 @@ public final class YJUtils {
         return false;
     }
 
-    public static YJSoundType getInmSoundType(ItemStack stack) {
-        return null;
-    }
-
     public static void doPlayers(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull Consumer<ServerPlayer> playerConsumer) {
         LevelChunk lch = (LevelChunk) level.getChunk(pos);
         doPlayers(lch, playerConsumer);

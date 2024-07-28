@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
@@ -31,7 +32,7 @@ public class YJExplodingBlock extends InmBaseBlock {
     public static final BooleanProperty YJ_FIRE = YJBlockStateProperties.YJ_EX_FIRE;
 
     public YJExplodingBlock(Properties properties) {
-        super(properties);
+        super(InmFamilySounds.YAJUSENPAI, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(YJ_TIMER, 0).setValue(YJ_START, false).setValue(YJ_FIRE, false));
     }
 

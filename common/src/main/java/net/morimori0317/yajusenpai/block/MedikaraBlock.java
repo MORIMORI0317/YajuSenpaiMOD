@@ -8,13 +8,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
 public class MedikaraBlock extends InmBaseBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
     public MedikaraBlock(Properties properties) {
-        super(properties);
+        super(InmFamilySounds.YAJUSENPAI_MEDIKARA, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
     }
 

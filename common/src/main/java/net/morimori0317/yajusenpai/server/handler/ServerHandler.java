@@ -18,10 +18,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
+import net.morimori0317.yajusenpai.block.InmBaseBlock;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
@@ -84,18 +86,33 @@ public final class ServerHandler {
     private static EventResult onLivingHurt(LivingEntity target, DamageSource source, float amount) {
         Entity attacker = source.getEntity();
 
-        if (attacker instanceof LivingEntity livingAttacekr) {
+        if (attacker instanceof LivingEntity livingAttacker) {
             for (InteractionHand hand : InteractionHand.values()) {
-                var item = livingAttacekr.getItemInHand(hand);
+                var item = livingAttacker.getItemInHand(hand);
                 if (item.is(YJItems.ICE_TEA.get()) && IceTeaItem.canAttackIceTea(target)) {
-                    IceTeaItem.attackIceTea(item, livingAttacekr, target);
+                    IceTeaItem.attackIceTea(item, livingAttacker, target);
                     break;
                 }
 
-                if (item.is(YJItems.SOFT_SMARTPHONE.get()) && SoftSmartphoneItem.canIkisugi(livingAttacekr, target)) {
-                    SoftSmartphoneItem.startIkisugi(livingAttacekr.level(), livingAttacekr, target);
+                if (item.is(YJItems.SOFT_SMARTPHONE.get()) && SoftSmartphoneItem.canIkisugi(livingAttacker, target)) {
+                    SoftSmartphoneItem.startIkisugi(livingAttacker.level(), livingAttacker, target);
                     break;
                 }
+            }
+
+            InmBaseBlock inmBlock = null;
+
+            if (livingAttacker.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+                inmBlock = inmBaseBlock;
+            } else {
+                ItemStack weapon = source.getWeaponItem();
+                if (weapon != null && weapon.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+                    inmBlock = inmBaseBlock;
+                }
+            }
+
+            if (inmBlock != null) {
+                inmBlock.onAttack(livingAttacker.level(), livingAttacker);
             }
         }
 
@@ -120,15 +137,18 @@ public final class ServerHandler {
                         level.playSound(null, attackerEntity.getX(), attackerEntity.getY(), attackerEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.VOICE, 3, 1);
                     }
                 }
-            } else if (livingEntity.hasEffect(YJMobEffects.COMA.vanillaHolder())) {
-                level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.TON_SEKAINOTON.get(), SoundSource.VOICE, 3, 1);
-            } else if (YJUtils.isYJSound(livingEntity)) {
-                level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.NEUTRAL, 3, 1);
             } else {
-                SoundType headSoundType = YJUtils.getInmSoundType(livingEntity.getItemBySlot(EquipmentSlot.HEAD));
-                if (headSoundType != null) {
-                    level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), headSoundType.getBreakSound(), SoundSource.NEUTRAL, 3, 1);
+                if (livingEntity.hasEffect(YJMobEffects.COMA.vanillaHolder())) {
+                    level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.TON_SEKAINOTON.get(), SoundSource.VOICE, 3, 1);
                 }
+
+                if (YJUtils.isYJSound(livingEntity)) {
+                    level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_NNA.get(), SoundSource.NEUTRAL, 3, 1);
+                }
+            }
+
+            if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+                inmBaseBlock.onHeadEquipmentDie(level, livingEntity);
             }
 
             if (headStack.is(YJItems.CYCLOPS_SUNGLASSES.get())) {
@@ -284,9 +304,8 @@ public final class ServerHandler {
             livingEntity.level().playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_DAMEGE.get(), SoundSource.NEUTRAL, 3, 1);
         }
 
-        SoundType ist = YJUtils.getInmSoundType(livingEntity.getItemBySlot(EquipmentSlot.HEAD));
-        if (ist != null) {
-            livingEntity.level().playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ist.getHitSound(), SoundSource.NEUTRAL, 3, 1);
+        if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+            inmBaseBlock.onHeadEquipmentDamage(level, livingEntity);
         }
 
         if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(YJItems.CYCLOPS_SUNGLASSES.get())) {

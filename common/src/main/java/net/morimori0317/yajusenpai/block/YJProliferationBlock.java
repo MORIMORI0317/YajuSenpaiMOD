@@ -9,13 +9,14 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
 public class YJProliferationBlock extends InmBaseBlock {
     public static final IntegerProperty YJ_CONT = YJBlockStateProperties.YJ_PR_CONT;
 
     public YJProliferationBlock(Properties properties) {
-        super(properties);
+        super(InmFamilySounds.YAJUSENPAI, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(YJ_CONT, 0));
     }
 
