@@ -13,7 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import org.jetbrains.annotations.NotNull;
 
@@ -55,9 +55,9 @@ public class IceTeaItem extends Item {
     }
 
     public static boolean canAttackIceTea(LivingEntity target) {
-        if (((YJLivingEntity) target).getSleepingPos() != null)
+        if (((YJLivingEntityAccessor) target).yajuSenpai$getSleepingPos() != null)
             return false;
-        return !((YJLivingEntity) target).isComa();
+        return !((YJLivingEntityAccessor) target).yajuSenpai$isComa();
     }
 
     public static void attackIceTea(ItemStack itemStack, LivingEntity attacker, LivingEntity target) {

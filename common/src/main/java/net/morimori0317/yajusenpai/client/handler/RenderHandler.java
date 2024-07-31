@@ -6,12 +6,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.morimori0317.yajusenpai.block.BigPillowBlock;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.client.util.YJRenderUtils;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 
 public class RenderHandler {
     public static void onLivingRenderPre(LivingEntity livingEntity, PoseStack poseStack) {
         poseStack.pushPose();
-        var pos = ((YJLivingEntity) livingEntity).getSleepingPos();
+        var pos = ((YJLivingEntityAccessor) livingEntity).yajuSenpai$getSleepingPos();
         if (pos == null) return;
 
         if (!livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.BIG_PILLOW.get()))

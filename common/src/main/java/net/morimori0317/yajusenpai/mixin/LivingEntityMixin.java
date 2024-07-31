@@ -12,7 +12,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin implements YJLivingEntity {
+public class LivingEntityMixin implements YJLivingEntityAccessor {
 
     @Unique
     private boolean yajuSenpai$ikisugi;
@@ -78,78 +78,78 @@ public class LivingEntityMixin implements YJLivingEntity {
     }
 
     @Override
-    public boolean isIkisugi() {
+    public boolean yajuSenpai$isIkisugi() {
         return yajuSenpai$ikisugi;
     }
 
     @Override
-    public void setIkisugi(boolean ikisugi) {
+    public void yajuSenpai$setIkisugi(boolean ikisugi) {
         this.yajuSenpai$ikisugi = ikisugi;
     }
 
     @Override
-    public Entity getGrantedIkisugiEntity() {
+    public Entity yajuSenpai$getGrantedIkisugiEntity() {
         return yajuSenpai$grantedIkisugiEntity;
     }
 
     @Override
-    public void setGrantedIkisugiEntity(Entity entity) {
+    public void yajuSenpai$setGrantedIkisugiEntity(Entity entity) {
         this.yajuSenpai$grantedIkisugiEntity = entity;
     }
 
     @Override
-    public BlockPos getSleepingPos() {
+    public BlockPos yajuSenpai$getSleepingPos() {
         return yajuSenpai$sleepingPos;
     }
 
     @Override
-    public void setSleepingPos(BlockPos sleepingPos) {
+    public void yajuSenpai$setSleepingPos(BlockPos sleepingPos) {
         this.yajuSenpai$sleepingPos = sleepingPos;
     }
 
     @Override
-    public boolean isComa() {
+    public boolean yajuSenpai$isComa() {
         var ths = (LivingEntity) (Object) this;
-        return ths.hasEffect(YJMobEffects.COMA.vanillaHolder()) || isComaSync();
+        return ths.hasEffect(YJMobEffects.COMA.vanillaHolder()) || yajuSenpai$isComaSync();
     }
 
     @Override
-    public void setComaSync(boolean comaSync) {
+    public void yajuSenpai$setComaSync(boolean comaSync) {
         this.yajuSenpai$comaSync = comaSync;
     }
 
     @Override
-    public boolean isComaSync() {
+    public boolean yajuSenpai$isComaSync() {
         return yajuSenpai$comaSync;
     }
 
     @Override
-    public boolean isIkisugiSleeping() {
+    public boolean yajuSenpai$isIkisugiSleeping() {
         return yajuSenpai$ikisugiSleeping;
     }
 
     @Override
-    public void setIkisugiSleeping(boolean ikisugiSleeping) {
+    public void yajuSenpai$setIkisugiSleeping(boolean ikisugiSleeping) {
         this.yajuSenpai$ikisugiSleeping = ikisugiSleeping;
     }
 
     @Override
-    public void setYJPortalCoolDown(int coolDown) {
+    public void yajuSenpai$setYJPortalCoolDown(int coolDown) {
         this.yajuSenpai$yjPortalCoolDown = coolDown;
     }
 
     @Override
-    public int getYJPortalCoolDown() {
+    public int yajuSenpai$getYJPortalCoolDown() {
         return this.yajuSenpai$yjPortalCoolDown;
     }
 
     @Override
-    public boolean canYJPortalUse() {
+    public boolean yajuSenpai$canYJPortalUse() {
         return yajuSenpai$yjPortalUse;
     }
 
     @Override
-    public void setYJPortalUse(boolean use) {
+    public void yajuSenpai$setYJPortalUse(boolean use) {
         this.yajuSenpai$yjPortalUse = use;
     }
 }

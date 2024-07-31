@@ -14,7 +14,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.handler.CommonHandler;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
@@ -32,11 +32,11 @@ public class SoftSmartphoneItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemStack = player.getItemInHand(interactionHand);
 
-        if (((YJLivingEntity) player).isComa())
+        if (((YJLivingEntityAccessor) player).yajuSenpai$isComa())
             return InteractionResultHolder.pass(itemStack);
 
         var entities = level.getEntitiesOfClass(LivingEntity.class, getArea(player));
-        if (entities.stream().noneMatch(e -> e != player && ((YJLivingEntity) e).getSleepingPos() != null && ((YJLivingEntity) e).isComa() && !((YJLivingEntity) e).isIkisugiSleeping()))
+        if (entities.stream().noneMatch(e -> e != player && ((YJLivingEntityAccessor) e).yajuSenpai$getSleepingPos() != null && ((YJLivingEntityAccessor) e).yajuSenpai$isComa() && !((YJLivingEntityAccessor) e).yajuSenpai$isIkisugiSleeping()))
             return InteractionResultHolder.pass(itemStack);
 
         player.startUsingItem(interactionHand);
@@ -69,15 +69,15 @@ public class SoftSmartphoneItem extends Item {
     }
 
     public static boolean canIkisugi(LivingEntity attacker, LivingEntity target) {
-        return target != attacker && ((YJLivingEntity) target).getSleepingPos() != null && ((YJLivingEntity) target).isComa() && !((YJLivingEntity) target).isIkisugiSleeping();
+        return target != attacker && ((YJLivingEntityAccessor) target).yajuSenpai$getSleepingPos() != null && ((YJLivingEntityAccessor) target).yajuSenpai$isComa() && !((YJLivingEntityAccessor) target).yajuSenpai$isIkisugiSleeping();
     }
 
     public static void startIkisugi(Level level, LivingEntity attacker, LivingEntity target) {
         if (!level.isClientSide()) {
             target.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.vanillaHolder(), CommonHandler.IKISUGI_DIE_TIME));
-            ((YJLivingEntity) target).setGrantedIkisugiEntity(attacker);
+            ((YJLivingEntityAccessor) target).yajuSenpai$setGrantedIkisugiEntity(attacker);
         }
-        ((YJLivingEntity) target).setIkisugiSleeping(true);
+        ((YJLivingEntityAccessor) target).yajuSenpai$setIkisugiSleeping(true);
     }
 
     @Override

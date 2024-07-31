@@ -16,6 +16,7 @@
     "LivingEntityAccessor",
     "LivingEntityMixin",
     "MobMixin",
+    "ServerPlayerMixin",
     "StructurePieceMixin",
     "WitherBossMixin"
   ],

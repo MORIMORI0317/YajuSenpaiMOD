@@ -7,7 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageSources;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypes;
 import net.morimori0317.yajusenpai.item.YJItems;
@@ -22,34 +22,34 @@ public class CommonHandler {
 
 
     public static void onLivingTick(LivingEntity livingEntity) {
-        YJLivingEntity yjLiving = (YJLivingEntity) livingEntity;
+        YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) livingEntity;
 
         if (!livingEntity.level().isClientSide()) {
             var effect = livingEntity.getEffect(YJMobEffects.IKISUGI.vanillaHolder());
             if (livingEntity.hasEffect(YJMobEffects.IKISUGI.vanillaHolder()) && effect != null) {
                 if (effect.getDuration() <= 20) {
                     livingEntity.removeEffect(YJMobEffects.IKISUGI.vanillaHolder());
-                    livingEntity.hurt(YJDamageSources.ikisugi(livingEntity.level(), yjLiving.getGrantedIkisugiEntity()), 114514f);
+                    livingEntity.hurt(YJDamageSources.ikisugi(livingEntity.level(), yjLiving.yajuSenpai$getGrantedIkisugiEntity()), 114514f);
                 }
 
-                if (effect.getDuration() <= IKISUGI_DIE_TIME && !yjLiving.isIkisugi()) {
-                    yjLiving.setIkisugi(true);
+                if (effect.getDuration() <= IKISUGI_DIE_TIME && !yjLiving.yajuSenpai$isIkisugi()) {
+                    yjLiving.yajuSenpai$setIkisugi(true);
                     livingEntity.level().playSound(null, livingEntity, YJSoundEvents.YJ_IKISUGI_ONRY.get(), SoundSource.VOICE, 3, 1);
                 }
 
             } else {
-                yjLiving.setIkisugi(false);
-                yjLiving.setGrantedIkisugiEntity(null);
+                yjLiving.yajuSenpai$setIkisugi(false);
+                yjLiving.yajuSenpai$setGrantedIkisugiEntity(null);
             }
 
             boolean coma = livingEntity.hasEffect(YJMobEffects.COMA.vanillaHolder());
 
-            if (coma != yjLiving.isComaSync()) {
-                yjLiving.setComaSync(coma);
+            if (coma != yjLiving.yajuSenpai$isComaSync()) {
+                yjLiving.yajuSenpai$setComaSync(coma);
                 YJUtils.doPlayers(livingEntity.level(), livingEntity.blockPosition(), p -> NetworkManager.sendToPlayer(p, new YJPackets.ComaSyncMessage(livingEntity.getId(), coma)));
             }
 
-            if (livingEntity.hasEffect(YJMobEffects.COMA.vanillaHolder()) && yjLiving.getSleepingPos() == null) {
+            if (livingEntity.hasEffect(YJMobEffects.COMA.vanillaHolder()) && yjLiving.yajuSenpai$getSleepingPos() == null) {
                 var efct = livingEntity.getEffect(YJMobEffects.COMA.vanillaHolder());
                 if (efct != null) {
                     float ra = ((float) efct.getAmplifier() + 1) / 256f;
@@ -59,11 +59,11 @@ public class CommonHandler {
                 }
             }
 
-            if (yjLiving.getYJPortalCoolDown() > 0)
-                yjLiving.setYJPortalCoolDown(yjLiving.getYJPortalCoolDown() - 1);
+            if (yjLiving.yajuSenpai$getYJPortalCoolDown() > 0)
+                yjLiving.yajuSenpai$setYJPortalCoolDown(yjLiving.yajuSenpai$getYJPortalCoolDown() - 1);
 
-            if (!yjLiving.canYJPortalUse() && yjLiving.getYJPortalCoolDown() <= 0 && !livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.YJ_PORTAL.get()))
-                yjLiving.setYJPortalUse(true);
+            if (!yjLiving.yajuSenpai$canYJPortalUse() && yjLiving.yajuSenpai$getYJPortalCoolDown() <= 0 && !livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.YJ_PORTAL.get()))
+                yjLiving.yajuSenpai$setYJPortalUse(true);
         }
     }
 

@@ -23,8 +23,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.morimori0317.yajusenpai.YajuSenpai;
-import net.morimori0317.yajusenpai.block.YJSoundType;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
+import net.morimori0317.yajusenpai.explatform.YJExpectPlatform;
 import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.item.YJItems;
 import org.jetbrains.annotations.NotNull;
@@ -124,5 +124,9 @@ public final class YJUtils {
 
     public static boolean veryYjRandom(RandomSource random) {
         return 114514 > random.nextInt(1919810);
+    }
+
+    public static boolean isFood(ItemStack stack, LivingEntity livingEntity) {
+        return YJExpectPlatform.isFood(stack, livingEntity);
     }
 }

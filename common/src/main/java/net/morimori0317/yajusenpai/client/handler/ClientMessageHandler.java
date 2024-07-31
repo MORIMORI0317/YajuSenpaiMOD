@@ -3,7 +3,7 @@ package net.morimori0317.yajusenpai.client.handler;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.LivingEntity;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 
 public class ClientMessageHandler {
@@ -13,8 +13,8 @@ public class ClientMessageHandler {
             Minecraft mc = Minecraft.getInstance();
             var entity = mc.level.getEntity(message.entityId());
             if (entity instanceof LivingEntity livingEntity) {
-                YJLivingEntity yjLiving = (YJLivingEntity) livingEntity;
-                yjLiving.setComaSync(message.coma());
+                YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) livingEntity;
+                yjLiving.yajuSenpai$setComaSync(message.coma());
             }
         });
     }
@@ -25,9 +25,9 @@ public class ClientMessageHandler {
             var entity = mc.level.getEntity(message.entityId());
             if (entity instanceof LivingEntity livingEntity) {
                 if (message.del()) {
-                    ((YJLivingEntity) livingEntity).setSleepingPos(null);
+                    ((YJLivingEntityAccessor) livingEntity).yajuSenpai$setSleepingPos(null);
                 } else {
-                    ((YJLivingEntity) livingEntity).setSleepingPos(message.pos());
+                    ((YJLivingEntityAccessor) livingEntity).yajuSenpai$setSleepingPos(message.pos());
                 }
             }
         });

@@ -16,6 +16,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
+import net.morimori0317.yajusenpai.item.InariOtokoBlockItem;
 import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.InmFamilySound;
 import net.morimori0317.yajusenpai.item.YJCreativeModeTabs;
@@ -54,7 +55,9 @@ public final class YJBlocks {
             .sound(YJSoundType.TAKEDA_INM.get())
             .strength(0.1f, 0)));
     public static final RegistrySupplier<Block> KATYOU_BLOCK = register("katyou_block", () -> inmBlock(InmFamilySounds.KATYOU, YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
-    public static final RegistrySupplier<Block> SECOND_INARI_OTOKO_BLOCK = register("second_inari_otoko_block", () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> SECOND_INARI_OTOKO_BLOCK = register("second_inari_otoko_block",
+            () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE),
+            it -> new InariOtokoBlockItem(it, YJItems.baseProperties()));
     public static final RegistrySupplier<Block> AKYS_BLOCK = register("akys_block", () -> inmBlock(InmFamilySounds.AKYS, YJSoundType.AKYS.get(), MapColor.COLOR_ORANGE));
     public static final RegistrySupplier<Block> GO_BLOCK = register("go_block", () -> new InmBaseBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLUE)

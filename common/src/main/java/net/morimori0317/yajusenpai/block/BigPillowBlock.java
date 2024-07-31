@@ -27,7 +27,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.morimori0317.yajusenpai.blockentity.BigPillowBlockEntity;
 import net.morimori0317.yajusenpai.blockentity.YJBlockEntityTypes;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
@@ -102,7 +102,7 @@ public class BigPillowBlock extends BaseEntityBlock implements SimpleWaterlogged
 
     @Override
     protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
-        if (((YJLivingEntity) player).getSleepingPos() != null || !level.dimensionType().bedWorks())
+        if (((YJLivingEntityAccessor) player).yajuSenpai$getSleepingPos() != null || !level.dimensionType().bedWorks())
             return InteractionResult.PASS;
 
         if (level.isClientSide) {

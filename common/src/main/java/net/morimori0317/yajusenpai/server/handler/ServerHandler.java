@@ -22,12 +22,11 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.SoundType;
 import net.morimori0317.yajusenpai.block.InmBaseBlock;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageSources;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypeTags;
 import net.morimori0317.yajusenpai.explatform.YJExpectPlatform;
@@ -315,21 +314,21 @@ public final class ServerHandler {
     }
 
     private static void onPlayerTick(Player player) {
-        YJLivingEntity yjLiving = (YJLivingEntity) player;
+        YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) player;
 
-        if (yjLiving.getSleepingPos() != null) {
-            var bs = player.level().getBlockState(yjLiving.getSleepingPos());
+        if (yjLiving.yajuSenpai$getSleepingPos() != null) {
+            var bs = player.level().getBlockState(yjLiving.yajuSenpai$getSleepingPos());
             if (bs.is(YJBlocks.BIG_PILLOW.get())) {
-                var pos = yjLiving.getSleepingPos();
-                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
+                var pos = yjLiving.yajuSenpai$getSleepingPos();
+                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.yajuSenpai$getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
             }
         }
 
-        if (yjLiving.getSleepingPos() != null) {
-            var bs = player.level().getBlockState(yjLiving.getSleepingPos());
+        if (yjLiving.yajuSenpai$getSleepingPos() != null) {
+            var bs = player.level().getBlockState(yjLiving.yajuSenpai$getSleepingPos());
             if (bs.is(YJBlocks.BIG_PILLOW.get())) {
-                var pos = yjLiving.getSleepingPos();
-                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
+                var pos = yjLiving.yajuSenpai$getSleepingPos();
+                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.yajuSenpai$getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
             }
         }
     }

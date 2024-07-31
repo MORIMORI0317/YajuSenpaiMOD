@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
@@ -24,21 +24,21 @@ public class BigPillowBlockEntity extends BlockEntity {
         if (!level.isClientSide()) {
             var area = new AABB(blockPos.getX() - 5, blockPos.getY(), blockPos.getZ() - 5, blockPos.getX() + 5, blockPos.getY() + 5, blockPos.getZ() + 5);
             if (blockEntity.livingEntity != null) {
-                if (blockEntity.livingEntity.isAlive() && area.contains(blockEntity.livingEntity.position()) && blockPos.equals(((YJLivingEntity) blockEntity.livingEntity).getSleepingPos())) {
+                if (blockEntity.livingEntity.isAlive() && area.contains(blockEntity.livingEntity.position()) && blockPos.equals(((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$getSleepingPos())) {
                     blockEntity.livingEntity.setPos(blockPos.getX() + 0.5, blockPos.getY() + blockState.getCollisionShape(level, blockPos).max(Direction.Axis.Y), blockPos.getZ() + 0.5);
                 } else {
-                    if (((YJLivingEntity) blockEntity.livingEntity).getSleepingPos() != null)
+                    if (((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$getSleepingPos() != null)
                         blockEntity.sendSleepPacket(blockEntity.livingEntity, blockPos, null);
-                    ((YJLivingEntity) blockEntity.livingEntity).setSleepingPos(null);
+                    ((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$setSleepingPos(null);
 
                     blockEntity.livingEntity = null;
                 }
             } else {
                 var entities = level.getEntitiesOfClass(LivingEntity.class, area);
                 for (LivingEntity entity : entities) {
-                    if (((YJLivingEntity) entity).getSleepingPos() == null && canComa(entity)) {
+                    if (((YJLivingEntityAccessor) entity).yajuSenpai$getSleepingPos() == null && canComa(entity)) {
                         blockEntity.livingEntity = entity;
-                        ((YJLivingEntity) entity).setSleepingPos(blockPos);
+                        ((YJLivingEntityAccessor) entity).yajuSenpai$setSleepingPos(blockPos);
                         blockEntity.sendSleepPacket(entity, blockPos, blockPos);
                         break;
                     }
@@ -60,6 +60,6 @@ public class BigPillowBlockEntity extends BlockEntity {
             return false;
         if (livingEntity.getMaxHealth() >= 100 && (livingEntity.getHealth() / livingEntity.getMaxHealth()) >= 0.3)
             return false;
-        return livingEntity.isAlive() && ((YJLivingEntity) livingEntity).isComa();
+        return livingEntity.isAlive() && ((YJLivingEntityAccessor) livingEntity).yajuSenpai$isComa();
     }
 }

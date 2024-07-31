@@ -1341,7 +1341,8 @@
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
       "yajusenpai:second_inari_otoko/fhu",
-      "yajusenpai:second_inari_otoko/eat_end"
+      "yajusenpai:second_inari_otoko/ya_chotto_yamete_kudasai",
+      "yajusenpai:second_inari_otoko/u"
     ]
   },
   "second_inari_otoko.place": {
@@ -1349,7 +1350,9 @@
     "sounds": [
       "yajusenpai:second_inari_otoko/minarai",
       "yajusenpai:second_inari_otoko/jira_ti",
-      "yajusenpai:second_inari_otoko/toutyaku"
+      "yajusenpai:second_inari_otoko/toutyaku",
+      "yajusenpai:second_inari_otoko/aza_su",
+      "yajusenpai:second_inari_otoko/chodo_itadakimasu"
     ]
   },
   "second_inari_otoko.step": {
@@ -1363,7 +1366,9 @@
     "sounds": [
       "yajusenpai:second_inari_otoko/haraheri",
       "yajusenpai:second_inari_otoko/tabetemobarehenka",
-      "yajusenpai:second_inari_otoko/hitotugurai"
+      "yajusenpai:second_inari_otoko/iya_soredake_wa",
+      "yajusenpai:second_inari_otoko/iya_oyakata_dake_ni_wa",
+      "yajusenpai:second_inari_otoko/ya_boku_wa_madana_idesu"
     ]
   },
   "second_inari_otoko.fall": {
@@ -1375,21 +1380,33 @@
   "second_inari_otoko.attack": {
     "sounds": [
       "yajusenpai:second_inari_otoko/eat_end",
-      "yajusenpai:second_inari_otoko/hitotugurai",
       "yajusenpai:second_inari_otoko/toutyaku",
-      "yajusenpai:second_inari_otoko/minarai"
+      "yajusenpai:second_inari_otoko/minarai",
+      "yajusenpai:second_inari_otoko/chodo_itadakimasu",
+      "yajusenpai:second_inari_otoko/aza_su",
+      "yajusenpai:second_inari_otoko/do_doshimashita",
+      "yajusenpai:second_inari_otoko/e_son_na_kotode_idesu_ka",
+      "yajusenpai:second_inari_otoko/hitotugurai"
     ]
   },
   "second_inari_otoko.damage": {
     "sounds": [
       "yajusenpai:second_inari_otoko/haraheri",
       "yajusenpai:second_inari_otoko/jira_ti",
-      "yajusenpai:second_inari_otoko/tabetemobarehenka"
+      "yajusenpai:second_inari_otoko/tabetemobarehenka",
+      "yajusenpai:second_inari_otoko/iya_soredake_wa",
+      "yajusenpai:second_inari_otoko/ya_chotto_yamete_kudasai"
     ]
   },
   "second_inari_otoko.die": {
     "sounds": [
-      "yajusenpai:second_inari_otoko/fhu"
+      "yajusenpai:second_inari_otoko/u"
+    ]
+  },
+  "second_inari_otoko.eat": {
+    "sounds": [
+      "yajusenpai:second_inari_otoko/hitotsu_kurai_tabetemo_barehen_ka",
+      "yajusenpai:second_inari_otoko/eat_end"
     ]
   },
   "akys.break": {
@@ -1506,7 +1523,6 @@
     "sounds": [
       "yajusenpai:go/30micutes_5man",
       "yajusenpai:go/baramaki2",
-      "yajusenpai:go/toutyaku",
       "yajusenpai:go/chachacha"
     ]
   },

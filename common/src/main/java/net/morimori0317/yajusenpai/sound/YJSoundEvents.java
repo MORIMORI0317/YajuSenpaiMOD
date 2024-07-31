@@ -234,6 +234,7 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_ATTACK = register("second_inari_otoko.attack");
     public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_DAMAGE = register("second_inari_otoko.damage");
     public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_DIE = register("second_inari_otoko.die");
+    public static final RegistrySupplier<SoundEvent> SECOND_INARI_OTOKO_EAT = register("second_inari_otoko.eat");
 
     public static final RegistrySupplier<SoundEvent> AKYS_BREAK = register("akys.break");
     public static final RegistrySupplier<SoundEvent> AKYS_PLACE = register("akys.place");

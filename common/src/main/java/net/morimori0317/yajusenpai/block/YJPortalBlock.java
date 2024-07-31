@@ -23,7 +23,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
-import net.morimori0317.yajusenpai.entity.YJLivingEntity;
+import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.util.YJUtils;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,15 +42,15 @@ public class YJPortalBlock extends BaseEntityBlock {
 
     @Override
     public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-        if (level instanceof ServerLevel && entity instanceof ServerPlayer serverPlayer && ((YJLivingEntity) entity).canYJPortalUse() && !entity.isPassenger() && !entity.isVehicle() && entity.canUsePortal(false) && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((-blockPos.getX()), (-blockPos.getY()), (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
+        if (level instanceof ServerLevel && entity instanceof ServerPlayer serverPlayer && ((YJLivingEntityAccessor) entity).yajuSenpai$canYJPortalUse() && !entity.isPassenger() && !entity.isVehicle() && entity.canUsePortal(false) && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((-blockPos.getX()), (-blockPos.getY()), (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
             ResourceKey<Level> resourceKey = YJUtils.isYJDim(level) ? Level.OVERWORLD : YJUtils.getYJDimension();
             ServerLevel serverLevel = ((ServerLevel) level).getServer().getLevel(resourceKey);
             if (serverLevel == null)
                 return;
 
-            YJLivingEntity yjLiving = (YJLivingEntity) entity;
-            yjLiving.setYJPortalUse(false);
-            yjLiving.setYJPortalCoolDown(20 * 3);
+            YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) entity;
+            yjLiving.yajuSenpai$setYJPortalUse(false);
+            yjLiving.yajuSenpai$setYJPortalCoolDown(20 * 3);
 
             serverPlayer.fallDistance = 0;
             serverPlayer.teleportTo(serverLevel, entity.getX(), entity.getY(), entity.getZ(), serverPlayer.getYRot(), serverPlayer.getVoicePitch());
