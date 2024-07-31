@@ -1,6 +1,5 @@
 package net.morimori0317.yajusenpai.data;
 
-import com.google.common.collect.Streams;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.core.Direction;
@@ -14,7 +13,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.morimori0317.yajusenpai.block.BigPillowBlock;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.block.YJExplodingBlock;
@@ -26,14 +24,13 @@ import net.morimori0317.yajusenpai.data.cross.provider.BlockStateAndModelProvide
 import net.morimori0317.yajusenpai.util.YJUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrapper {
+
     public YJBlockStateAndModelProvider(PackOutput packOutput, CrossDataGeneratorAccess crossDataGeneratorAccess) {
         super(packOutput, crossDataGeneratorAccess);
     }
@@ -62,7 +59,7 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.KATYOU_BLOCK.get());
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.SECOND_INARI_OTOKO_BLOCK.get());
         rndInmBlock(providerAccess, YJBlocks.AKYS_BLOCK.get(), "akys_block_0", "akys_block_1", "akys_block_2");
-        rndInmBlock(providerAccess, YJBlocks.GO_BLOCK.get(), "go_block_0", "go_block_1");
+        goBlock(providerAccess);
 
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.BB.get());
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.GB.get());
@@ -104,7 +101,16 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
         bigPillow(providerAccess);
     }
 
+    private void goBlock(BlockStateAndModelProviderAccess providerAccess) {
+        rndInmBlock(providerAccess, false, YJBlocks.GO_BLOCK.get(), "go_block_0", "go_block_1");
+        providerAccess.parentedBlockItemModel(YJBlocks.GO_BLOCK.get(), YJUtils.modLoc("item/go_block_impl"));
+    }
+
     private void rndInmBlock(BlockStateAndModelProviderAccess providerAccess, Block block, String id, String... ids) {
+        rndInmBlock(providerAccess, true, block, id, ids);
+    }
+
+    private void rndInmBlock(BlockStateAndModelProviderAccess providerAccess, boolean generateItemModel, Block block, String id, String... ids) {
         List<Variant> variants = new ArrayList<>();
 
         FileModel fileModel = providerAccess.cubeAllBlockModel(YJUtils.modLoc(id), FileTexture.of(YJUtils.modLoc("block/" + id)));
@@ -117,7 +123,10 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
         }
 
         providerAccess.addBlockStateGenerator(MultiVariantGenerator.multiVariant(block, variants.toArray(Variant[]::new)));
-        providerAccess.simpleBlockItemModel(block, fileModel);
+
+        if (generateItemModel) {
+            providerAccess.simpleBlockItemModel(block, fileModel);
+        }
     }
 
     private void bigPillow(BlockStateAndModelProviderAccess providerAccess) {

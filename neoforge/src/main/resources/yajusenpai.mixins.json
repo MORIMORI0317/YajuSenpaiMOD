@@ -5,6 +5,7 @@
   "minVersion": "0.8",
   "plugin": "net.morimori0317.yajusenpai.neoforge.mixin.YJMixinPluginNeoForge",
   "client": [
+    "client.BlockEntityWithoutLevelRendererMixin"
   ],
   "mixins": [
     "ItemStackMixin",

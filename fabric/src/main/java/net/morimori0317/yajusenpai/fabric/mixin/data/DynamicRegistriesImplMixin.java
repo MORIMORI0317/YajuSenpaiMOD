@@ -16,11 +16,11 @@ import java.util.Set;
 
 @Mixin(DynamicRegistriesImpl.class)
 public class DynamicRegistriesImplMixin {
-    @Shadow
+    @Shadow(remap = false)
     @Final
     public static Set<ResourceKey<? extends Registry<?>>> DYNAMIC_REGISTRY_KEYS;
 
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private static List<RegistryDataLoader.RegistryData<?>> DYNAMIC_REGISTRIES;
 
