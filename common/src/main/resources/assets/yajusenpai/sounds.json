@@ -1540,5 +1540,95 @@
       "yajusenpai:go/kimari",
       "yajusenpai:go/imsorry"
     ]
+  },
+  "hide.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:hide/aa1",
+      "yajusenpai:hide/aa2",
+      "yajusenpai:hide/aa3",
+      "yajusenpai:hide/help3",
+      "yajusenpai:hide/voe"
+    ]
+  },
+  "hide.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:hide/namae",
+      "yajusenpai:hide/deru",
+      "yajusenpai:hide/gekou",
+      "yajusenpai:hide/not"
+    ]
+  },
+  "hide.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:hide/help2",
+      "yajusenpai:hide/oky"
+    ]
+  },
+  "hide.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:hide/help1",
+      "yajusenpai:hide/hit1",
+      "yajusenpai:hide/itai",
+      "yajusenpai:hide/muri",
+      "yajusenpai:hide/uu"ew
+    ]
+  },
+  "hide.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:hide/gohoubi",
+      "yajusenpai:hide/yametikuri"
+    ]
+  },
+  "hide.attack": {
+    "sounds": [
+      "yajusenpai:hide/aa1",
+      "yajusenpai:hide/aa2",
+      "yajusenpai:hide/aa3",
+      "yajusenpai:hide/namae",
+      "yajusenpai:hide/deru"
+    ]
+  },
+  "hide.damage": {
+    "sounds": [
+      "yajusenpai:hide/itai",
+      "yajusenpai:hide/hit1",
+      "yajusenpai:hide/help1",
+      "yajusenpai:hide/muri",
+      "yajusenpai:hide/not",
+      "yajusenpai:hide/oky",
+      "yajusenpai:hide/yametikuri"
+    ]
+  },
+  "hide.die": {
+    "sounds": [
+      "yajusenpai:hide/help3",
+      "yajusenpai:hide/voe",
+      "yajusenpai:hide/out",
+      "yajusenpai:hide/gohoubi"
+    ]
+  },
+  "hide.fire_damage": {
+    "sounds": [
+      "yajusenpai:hide/fire1",
+      "yajusenpai:hide/fire2",
+      "yajusenpai:hide/fire3",
+      "yajusenpai:hide/fire4"
+    ]
+  },
+  "hide.water_damage": {
+    "sounds": [
+      "yajusenpai:hide/cold1",
+      "yajusenpai:hide/oboreru"
+    ]
+  },
+  "hide.explosion_damage": {
+    "sounds": [
+      "yajusenpai:hide/explosion"
+    ]
   }
 }

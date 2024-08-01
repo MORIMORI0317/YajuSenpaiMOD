@@ -4,7 +4,9 @@ import com.google.common.collect.Streams;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.CakeBlock;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
@@ -46,7 +48,8 @@ public class InariOtokoEater {
                 .map(player::getItemBySlot);
 
         List<ItemStack> foods = Streams.concat(invItems, eqItems)
-                .filter(it -> YJUtils.isFood(it, player))
+                .filter(it -> YJUtils.isFood(it, player) ||
+                        (it.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof CakeBlock))
                 .toList();
 
         if (foods.isEmpty()) {

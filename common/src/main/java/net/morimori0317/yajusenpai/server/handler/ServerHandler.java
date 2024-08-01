@@ -304,7 +304,7 @@ public final class ServerHandler {
         }
 
         if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
-            inmBaseBlock.onHeadEquipmentDamage(level, livingEntity);
+            inmBaseBlock.onHeadEquipmentDamage(level, source, livingEntity);
         }
 
         if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(YJItems.CYCLOPS_SUNGLASSES.get())) {

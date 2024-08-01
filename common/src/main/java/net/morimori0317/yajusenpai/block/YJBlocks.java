@@ -64,6 +64,10 @@ public final class YJBlocks {
             .lightLevel(it -> 15)
             .sound(YJSoundType.GO.get())
             .strength(1.75f, 9999)));
+    public static final RegistrySupplier<Block> HIDE_BLOCK = register("hide_block", () -> new InmBaseBlock(InmFamilySounds.HIDE, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_WHITE)
+            .sound(YJSoundType.HIDE.get())
+            .strength(10.0F, 3600000.0F)));
 
     public static final RegistrySupplier<Block> BB = register("bb", () -> backMaterialBlock(MapColor.COLOR_BLUE));
     public static final RegistrySupplier<Block> GB = register("gb", () -> backMaterialBlock(MapColor.COLOR_LIGHT_GREEN));

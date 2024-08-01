@@ -60,6 +60,7 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.SECOND_INARI_OTOKO_BLOCK.get());
         rndInmBlock(providerAccess, YJBlocks.AKYS_BLOCK.get(), "akys_block_0", "akys_block_1", "akys_block_2");
         goBlock(providerAccess);
+        rndInmBlock(providerAccess, YJBlocks.HIDE_BLOCK.get(), "hide_block_0", "hide_block_1", "hide_block_2");
 
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.BB.get());
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.GB.get());

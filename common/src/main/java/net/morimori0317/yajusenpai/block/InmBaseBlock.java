@@ -1,7 +1,10 @@
 package net.morimori0317.yajusenpai.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
@@ -30,8 +33,18 @@ public class InmBaseBlock extends Block {
         super.onExplosionHit(blockState, level, blockPos, explosion, biConsumer);
     }
 
-    public void onHeadEquipmentDamage(Level level, LivingEntity livingEntity) {
-        level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), inmFamilySound.damage().get(), SoundSource.NEUTRAL, 3, 1);
+    public void onHeadEquipmentDamage(Level level, DamageSource source, LivingEntity livingEntity) {
+        SoundEvent soundEvent = inmFamilySound.damage().get();
+
+        if (source.is(DamageTypeTags.IS_FIRE) && inmFamilySound.fireDamage() != null) {
+            soundEvent = inmFamilySound.fireDamage().get();
+        } else if (source.is(DamageTypeTags.IS_DROWNING) && inmFamilySound.waterDamage() != null) {
+            soundEvent = inmFamilySound.waterDamage().get();
+        } else if (source.is(DamageTypeTags.IS_EXPLOSION) && inmFamilySound.explosionDamage() != null) {
+            soundEvent = inmFamilySound.explosionDamage().get();
+        }
+
+        level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), soundEvent, SoundSource.NEUTRAL, 3, 1);
     }
 
     public void onHeadEquipmentDie(Level level, LivingEntity livingEntity) {
