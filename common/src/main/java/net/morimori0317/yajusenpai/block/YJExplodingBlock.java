@@ -26,7 +26,7 @@ import net.morimori0317.yajusenpai.util.YJUtils;
 
 import java.util.function.BiConsumer;
 
-public class YJExplodingBlock extends InmBaseBlock {
+public class YJExplodingBlock extends InmBlock {
     public static final IntegerProperty YJ_TIMER = YJBlockStateProperties.YJ_EX_TIMER;
     public static final BooleanProperty YJ_START = YJBlockStateProperties.YJ_EX_STARTED;
     public static final BooleanProperty YJ_FIRE = YJBlockStateProperties.YJ_EX_FIRE;

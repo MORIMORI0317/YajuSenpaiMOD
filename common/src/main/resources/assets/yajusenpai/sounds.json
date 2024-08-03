@@ -1612,7 +1612,7 @@
       "yajusenpai:hide/gohoubi"
     ]
   },
-  "hide.fire_damage": {
+  "hide.fire": {
     "sounds": [
       "yajusenpai:hide/fire1",
       "yajusenpai:hide/fire2",
@@ -1620,13 +1620,13 @@
       "yajusenpai:hide/fire4"
     ]
   },
-  "hide.water_damage": {
+  "hide.water": {
     "sounds": [
       "yajusenpai:hide/cold1",
       "yajusenpai:hide/oboreru"
     ]
   },
-  "hide.explosion_damage": {
+  "hide.explosion": {
     "sounds": [
       "yajusenpai:hide/explosion"
     ]

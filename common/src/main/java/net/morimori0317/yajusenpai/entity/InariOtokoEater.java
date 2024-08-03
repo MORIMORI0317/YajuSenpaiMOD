@@ -25,9 +25,9 @@ public class InariOtokoEater {
             if (stack != null && !stack.isEmpty()) {
                 stack.shrink(1);
                 serverPlayer.level().playSound(null, serverPlayer, YJSoundEvents.SECOND_INARI_OTOKO_EAT.get(), SoundSource.PLAYERS, 1f, 1f);
-                cooldown = 20 * 3 + serverPlayer.getRandom().nextInt(20 * 2);
             }
 
+            cooldown = 20 * 3 + serverPlayer.getRandom().nextInt(20 * 2);
             eat = false;
         }
 

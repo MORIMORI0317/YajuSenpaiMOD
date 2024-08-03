@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
-public class YJProliferationBlock extends InmBaseBlock {
+public class YJProliferationBlock extends InmBlock {
     public static final IntegerProperty YJ_CONT = YJBlockStateProperties.YJ_PR_CONT;
 
     public YJProliferationBlock(Properties properties) {

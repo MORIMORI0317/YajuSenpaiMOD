@@ -13,7 +13,7 @@ import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 
 import java.util.function.BiConsumer;
 
-public class TakedaInmBlock extends InmBaseBlock {
+public class TakedaInmBlock extends InmBlock {
     public TakedaInmBlock(Properties properties) {
         super(InmFamilySounds.TAKEDA_INM, properties);
     }

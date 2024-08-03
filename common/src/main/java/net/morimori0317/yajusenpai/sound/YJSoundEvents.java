@@ -262,9 +262,9 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> HIDE_ATTACK = register("hide.attack");
     public static final RegistrySupplier<SoundEvent> HIDE_DAMAGE = register("hide.damage");
     public static final RegistrySupplier<SoundEvent> HIDE_DIE = register("hide.die");
-    public static final RegistrySupplier<SoundEvent> HIDE_DAMAGE_FIRE = register("hide.fire_damage");
-    public static final RegistrySupplier<SoundEvent> HIDE_DAMAGE_WATER = register("hide.water_damage");
-    public static final RegistrySupplier<SoundEvent> HIDE_DAMAGE_EXPLOSION = register("hide.explosion_damage");
+    public static final RegistrySupplier<SoundEvent> HIDE_FIRE = register("hide.fire");
+    public static final RegistrySupplier<SoundEvent> HIDE_WATER = register("hide.water");
+    public static final RegistrySupplier<SoundEvent> HIDE_EXPLOSION = register("hide.explosion");
 
     private static RegistrySupplier<SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));

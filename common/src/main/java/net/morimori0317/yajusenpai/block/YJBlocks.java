@@ -59,12 +59,12 @@ public final class YJBlocks {
             () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE),
             it -> new InariOtokoBlockItem(it, YJItems.baseProperties()));
     public static final RegistrySupplier<Block> AKYS_BLOCK = register("akys_block", () -> inmBlock(InmFamilySounds.AKYS, YJSoundType.AKYS.get(), MapColor.COLOR_ORANGE));
-    public static final RegistrySupplier<Block> GO_BLOCK = register("go_block", () -> new InmBaseBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> GO_BLOCK = register("go_block", () -> new InmBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLUE)
             .lightLevel(it -> 15)
             .sound(YJSoundType.GO.get())
             .strength(1.75f, 9999)));
-    public static final RegistrySupplier<Block> HIDE_BLOCK = register("hide_block", () -> new InmBaseBlock(InmFamilySounds.HIDE, BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> HIDE_BLOCK = register("hide_block", () -> new HideBlock(InmFamilySounds.HIDE, BlockBehaviour.Properties.of()
             .mapColor(MapColor.TERRACOTTA_WHITE)
             .sound(YJSoundType.HIDE.get())
             .strength(10.0F, 3600000.0F)));
@@ -141,7 +141,7 @@ public final class YJBlocks {
     }
 
     private static Block inmBlock(InmFamilySound inmFamilySound, SoundType soundType, MapColor mapColor) {
-        return new InmBaseBlock(inmFamilySound, BlockBehaviour.Properties.of().mapColor(mapColor).strength(1f, 10f).sound(soundType));
+        return new InmBlock(inmFamilySound, BlockBehaviour.Properties.of().mapColor(mapColor).strength(1f, 10f).sound(soundType));
     }
 
     private static Block backMaterialBlock(MapColor mapColor) {

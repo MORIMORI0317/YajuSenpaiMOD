@@ -15,10 +15,10 @@ import net.morimori0317.yajusenpai.sound.InmFamilySound;
 
 import java.util.function.BiConsumer;
 
-public class InmBaseBlock extends Block {
+public class InmBlock extends Block {
     private final InmFamilySound inmFamilySound;
 
-    public InmBaseBlock(InmFamilySound inmFamilySound, Properties properties) {
+    public InmBlock(InmFamilySound inmFamilySound, Properties properties) {
         super(properties);
         this.inmFamilySound = inmFamilySound;
     }

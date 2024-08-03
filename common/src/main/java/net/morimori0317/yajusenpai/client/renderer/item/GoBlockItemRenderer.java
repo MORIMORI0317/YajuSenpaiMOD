@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.client.renderer.item;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -38,7 +39,7 @@ public class GoBlockItemRenderer implements BEWLItemRenderer {
             poseStack.translate(-0.5, -0.5, -0.5);
         }
 
-        YJRenderUtils.renderModel(poseStack, vc, model, light, overlay);
+        YJRenderUtils.renderModel(poseStack, vc, model, LightTexture.FULL_BRIGHT, overlay);
         poseStack.popPose();
 
         if (displayContext == ItemDisplayContext.GUI) {

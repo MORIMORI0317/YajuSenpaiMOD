@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 
-public class MedikaraBlock extends InmBaseBlock {
+public class MedikaraBlock extends InmBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
     public MedikaraBlock(Properties properties) {

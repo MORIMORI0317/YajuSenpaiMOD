@@ -165,8 +165,8 @@ public class InmFamilySounds {
             YJSoundEvents.HIDE_ATTACK,// 攻撃時
             YJSoundEvents.HIDE_DAMAGE, // 被ダメージ時
             YJSoundEvents.HIDE_DIE,    // 死亡時
-            YJSoundEvents.HIDE_DAMAGE_FIRE, // 被ダメージ時 (火)
-            YJSoundEvents.HIDE_DAMAGE_WATER, // 被ダメージ時 (水)
-            YJSoundEvents.HIDE_DAMAGE_EXPLOSION // 被ダメージ時 (爆発)
+            YJSoundEvents.HIDE_FIRE, // 被ダメージ時 (火)
+            YJSoundEvents.HIDE_WATER, // 被ダメージ時 (水)
+            YJSoundEvents.HIDE_EXPLOSION // 被ダメージ時 (爆発)
     );
 }

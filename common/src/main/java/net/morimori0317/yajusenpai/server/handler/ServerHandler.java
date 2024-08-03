@@ -22,7 +22,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.morimori0317.yajusenpai.block.InmBaseBlock;
+import net.morimori0317.yajusenpai.block.InmBlock;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
@@ -99,13 +99,13 @@ public final class ServerHandler {
                 }
             }
 
-            InmBaseBlock inmBlock = null;
+            InmBlock inmBlock = null;
 
-            if (livingAttacker.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+            if (livingAttacker.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBlock inmBaseBlock) {
                 inmBlock = inmBaseBlock;
             } else {
                 ItemStack weapon = source.getWeaponItem();
-                if (weapon != null && weapon.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+                if (weapon != null && weapon.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBlock inmBaseBlock) {
                     inmBlock = inmBaseBlock;
                 }
             }
@@ -146,7 +146,7 @@ public final class ServerHandler {
                 }
             }
 
-            if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+            if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBlock inmBaseBlock) {
                 inmBaseBlock.onHeadEquipmentDie(level, livingEntity);
             }
 
@@ -303,7 +303,7 @@ public final class ServerHandler {
             livingEntity.level().playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), YJSoundEvents.YJ_DAMEGE.get(), SoundSource.NEUTRAL, 3, 1);
         }
 
-        if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBaseBlock inmBaseBlock) {
+        if (livingEntity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof InmBlock inmBaseBlock) {
             inmBaseBlock.onHeadEquipmentDamage(level, source, livingEntity);
         }
 
