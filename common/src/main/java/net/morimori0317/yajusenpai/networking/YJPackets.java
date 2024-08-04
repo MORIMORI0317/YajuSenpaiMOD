@@ -43,6 +43,11 @@ public class YJPackets {
         NetworkManager.registerReceiver(NetworkManager.s2c(), SLEEP_TYPE, SLEEP_CODEC, ClientMessageHandler::onSleepMessage);
     }
 
+    public static void serverInit() {
+        NetworkManager.registerS2CPayloadType(COMA_SYNC_TYPE, COMA_SYNC_CODEC);
+        NetworkManager.registerS2CPayloadType(SLEEP_TYPE, SLEEP_CODEC);
+    }
+
     public record ComaSyncMessage(int entityId, boolean coma) implements PacketMessage, CustomPacketPayload {
         private ComaSyncMessage(RegistryFriendlyByteBuf bf) {
             this(bf.readInt(), bf.readBoolean());

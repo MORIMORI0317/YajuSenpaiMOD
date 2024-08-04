@@ -2,9 +2,6 @@ package net.morimori0317.yajusenpai;
 
 import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
-import net.minecraft.server.commands.PlaceCommand;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.morimori0317.yajusenpai.alchemy.YJPotions;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.blockentity.YJBlockEntityTypes;
@@ -13,6 +10,7 @@ import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;
 import net.morimori0317.yajusenpai.item.*;
+import net.morimori0317.yajusenpai.networking.YJPackets;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructurePieceType;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructureTypes;
@@ -39,6 +37,7 @@ public class YajuSenpai {
         ServerHandler.init();
 
         EnvExecutor.runInEnv(Env.CLIENT, () -> YajuSenpaiClient::preInit);
+        EnvExecutor.runInEnv(Env.SERVER, () -> YJPackets::serverInit);
     }
 
     public static void setup() {
