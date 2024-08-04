@@ -1243,6 +1243,11 @@
       "yajusenpai:nktidksg/uaaa"
     ]
   },
+  "nktidksg.o_back": {
+    "sounds": [
+      "yajusenpai:nktidksg/oback"
+    ]
+  },
   "katyou.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
@@ -1629,6 +1634,108 @@
   "hide.explosion": {
     "sounds": [
       "yajusenpai:hide/explosion"
+    ]
+  },
+  "kbtit.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:kbtit/itte_e",
+      "yajusenpai:kbtit/itte_e_na_oe",
+      "yajusenpai:kbtit/kami_yatta_na_oi",
+      "yajusenpai:kbtit/kamu_n_jane_e_yo_oi",
+      "yajusenpai:kbtit/kanashi_na",
+      "yajusenpai:kbtit/mo_yurusane_ekara_na",
+      "yajusenpai:kbtit/mo_yuruseru_zo_oi",
+      "yajusenpai:kbtit/moshiwake_naisu",
+      "yajusenpai:kbtit/oi",
+      "yajusenpai:kbtit/omachi_shitemasu",
+      "yajusenpai:kbtit/oon",
+      "yajusenpai:kbtit/shinji_ran_ne",
+      "yajusenpai:kbtit/ussodaro_omae"
+    ]
+  },
+  "kbtit.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:kbtit/ban",
+      "yajusenpai:kbtit/hello",
+      "yajusenpai:kbtit/kasikomari",
+      "yajusenpai:kbtit/nasu",
+      "yajusenpai:kbtit/nasu2",
+      "yajusenpai:kbtit/beer",
+      "yajusenpai:kbtit/kanpai",
+      "yajusenpai:kbtit/kasikomari",
+      "yajusenpai:kbtit/konkai_chokyo_suru_shonen_wa_mamoru",
+      "yajusenpai:kbtit/minasan_gobusatashiteorimasu",
+      "yajusenpai:kbtit/monzetsu_shonen_senzoku_chokyoshi_no_takuya_tomoshimasu",
+      "yajusenpai:kbtit/omae_majishan_mitaida_na",
+      "yajusenpai:kbtit/otiro",
+      "yajusenpai:kbtit/soredewa_goran_kudasai"
+    ]
+  },
+  "kbtit.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:kbtit/ban"
+    ]
+  },
+  "kbtit.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:kbtit/ketsubinta",
+      "yajusenpai:kbtit/binta"
+    ]
+  },
+  "kbtit.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:kbtit/all",
+      "yajusenpai:kbtit/igaito_hayaku_ochita_na",
+      "yajusenpai:kbtit/otiro_long",
+      "yajusenpai:kbtit/otitana"
+    ]
+  },
+  "kbtit.attack": {
+    "sounds": [
+      "yajusenpai:kbtit/ban",
+      "yajusenpai:kbtit/rogoku",
+      "yajusenpai:kbtit/atsukatta_ka",
+      "yajusenpai:kbtit/baka_jane",
+      "yajusenpai:kbtit/dare_mo_konai_ze_koko",
+      "yajusenpai:kbtit/human_unti",
+      "yajusenpai:kbtit/igaito_hayaku_ochita_na",
+      "yajusenpai:kbtit/kakkoi_ze",
+      "yajusenpai:kbtit/kimochi_ii_ka",
+      "yajusenpai:kbtit/kimochi_iidaro",
+      "yajusenpai:kbtit/nakayoku_shi_tero",
+      "yajusenpai:kbtit/otiro",
+      "yajusenpai:kbtit/otitana",
+      "yajusenpai:kbtit/sikomigai",
+      "yajusenpai:kbtit/ussodaro_omae",
+      "yajusenpai:kbtit/utenn",
+      "yajusenpai:kbtit/yakedo_suru_tokodatta_na"
+    ]
+  },
+  "kbtit.damage": {
+    "sounds": [
+      "yajusenpai:kbtit/atchi",
+      "yajusenpai:kbtit/itte_e",
+      "yajusenpai:kbtit/itte_e_na_oe",
+      "yajusenpai:kbtit/kami_yatta_na_oi",
+      "yajusenpai:kbtit/kamu_n_jane_e_yo_oi",
+      "yajusenpai:kbtit/mo_yurusane_ekara_na",
+      "yajusenpai:kbtit/mo_yuruseru_zo_oi",
+      "yajusenpai:kbtit/moshiwake_naisu",
+      "yajusenpai:kbtit/oi",
+      "yajusenpai:kbtit/okyakusamadarouga",
+      "yajusenpai:kbtit/shinji_ran_ne",
+      "yajusenpai:kbtit/uwa_atchi_inakore"
+    ]
+  },
+  "kbtit.die": {
+    "sounds": [
+      "yajusenpai:kbtit/kanashi_na",
+      "yajusenpai:kbtit/kanpai"
     ]
   }
 }

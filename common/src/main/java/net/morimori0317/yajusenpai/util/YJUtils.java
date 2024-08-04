@@ -1,8 +1,10 @@
 package net.morimori0317.yajusenpai.util;
 
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
+import dev.architectury.registry.registries.RegistrySupplier;
 import dev.architectury.utils.value.IntValue;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -128,5 +130,9 @@ public final class YJUtils {
 
     public static boolean isFood(ItemStack stack, LivingEntity livingEntity) {
         return YJExpectPlatform.isFood(stack, livingEntity);
+    }
+
+    public static <T> Holder<T> vanillaHolder(RegistrySupplier<T> registrySupplier) {
+        return registrySupplier.getRegistrar().getHolder(registrySupplier.getKey());
     }
 }

@@ -23,12 +23,12 @@ public class BigPillowBlockEntity extends BlockEntity {
     public static void tick(Level level, BlockPos blockPos, BlockState blockState, BigPillowBlockEntity blockEntity) {
         if (!level.isClientSide()) {
             var area = new AABB(blockPos.getX() - 5, blockPos.getY(), blockPos.getZ() - 5, blockPos.getX() + 5, blockPos.getY() + 5, blockPos.getZ() + 5);
+
             if (blockEntity.livingEntity != null) {
                 if (blockEntity.livingEntity.isAlive() && area.contains(blockEntity.livingEntity.position()) && blockPos.equals(((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$getSleepingPos())) {
                     blockEntity.livingEntity.setPos(blockPos.getX() + 0.5, blockPos.getY() + blockState.getCollisionShape(level, blockPos).max(Direction.Axis.Y), blockPos.getZ() + 0.5);
                 } else {
-                    if (((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$getSleepingPos() != null)
-                        blockEntity.sendSleepPacket(blockEntity.livingEntity, blockPos, null);
+                    blockEntity.sendSleepPacket(blockEntity.livingEntity, blockPos, null);
                     ((YJLivingEntityAccessor) blockEntity.livingEntity).yajuSenpai$setSleepingPos(null);
 
                     blockEntity.livingEntity = null;

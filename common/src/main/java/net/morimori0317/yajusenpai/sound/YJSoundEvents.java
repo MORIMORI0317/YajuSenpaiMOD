@@ -216,6 +216,7 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_ATTACK = register("nktidksg.attack");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_DAMAGE = register("nktidksg.damage");
     public static final RegistrySupplier<SoundEvent> NKTIDKSG_DIE = register("nktidksg.die");
+    public static final RegistrySupplier<SoundEvent> NKTIDKSG_O_BACK = register("nktidksg.o_back");
 
     public static final RegistrySupplier<SoundEvent> KATYOU_BREAK = register("katyou.break");
     public static final RegistrySupplier<SoundEvent> KATYOU_PLACE = register("katyou.place");
@@ -265,6 +266,15 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> HIDE_FIRE = register("hide.fire");
     public static final RegistrySupplier<SoundEvent> HIDE_WATER = register("hide.water");
     public static final RegistrySupplier<SoundEvent> HIDE_EXPLOSION = register("hide.explosion");
+
+    public static final RegistrySupplier<SoundEvent> KBTIT_BREAK = register("kbtit.break");
+    public static final RegistrySupplier<SoundEvent> KBTIT_PLACE = register("kbtit.place");
+    public static final RegistrySupplier<SoundEvent> KBTIT_STEP = register("kbtit.step");
+    public static final RegistrySupplier<SoundEvent> KBTIT_HIT = register("kbtit.hit");
+    public static final RegistrySupplier<SoundEvent> KBTIT_FALL = register("kbtit.fall");
+    public static final RegistrySupplier<SoundEvent> KBTIT_ATTACK = register("kbtit.attack");
+    public static final RegistrySupplier<SoundEvent> KBTIT_DAMAGE = register("kbtit.damage");
+    public static final RegistrySupplier<SoundEvent> KBTIT_DIE = register("kbtit.die");
 
     private static RegistrySupplier<SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));

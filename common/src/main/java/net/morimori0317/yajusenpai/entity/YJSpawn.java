@@ -1,6 +1,7 @@
 package net.morimori0317.yajusenpai.entity;
 
 
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -11,17 +12,22 @@ import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.item.YJItems;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeTags;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
+import java.util.List;
 import java.util.function.BooleanSupplier;
 
 public class YJSpawn {
     public static void onSpawn(Mob mob) {
+        Level level = mob.level();
         RandomSource rs = mob.getRandom();
-        boolean y = YJUtils.isYJDim(mob.level());
+        boolean y = YJUtils.isYJDim(level) || level.getBiome(mob.blockPosition()).is(YJBiomeTags.IS_YAJUSENPAI);
+
         BooleanSupplier r = () -> {
             if (y) {
                 return YJUtils.legacyYjRandom(rs) && YJUtils.legacyYjRandom(rs);
@@ -47,24 +53,26 @@ public class YJSpawn {
         }
 
         if (yor.getAsBoolean()) {
-            if (mob instanceof EnderMan enderMan) enderMan.setCarriedBlock(createInmItem(rs).defaultBlockState());
+            if (mob instanceof EnderMan enderMan) enderMan.setCarriedBlock(createInmItem(rs, y).defaultBlockState());
         }
 
         if (mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin) {
-            if (!y) {
-                if (r.getAsBoolean()) {
-                    mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
-                }
+            if (!y && r.getAsBoolean()) {
+                mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(YJItems.CYCLOPS_SUNGLASSES.get()));
+            }
 
-                if (r.getAsBoolean()) {
-                    mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
-                }
+            if (r.getAsBoolean()) {
+                mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.BRIEF.get()));
+            }
+
+            if (rs.nextInt(110) == 0) {
+                mob.setItemSlot(EquipmentSlot.LEGS, new ItemStack(YJItems.O_BACK.get()));
             }
         }
 
-        if (y) {
+        if (y || rs.nextFloat() < 0.01919) {
             if (mob instanceof Vex || mob instanceof AbstractIllager || mob instanceof AbstractVillager || mob instanceof Zombie || mob instanceof AbstractSkeleton || mob instanceof Piglin) {
-                mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(createInmItem(rs)));
+                mob.setItemSlot(EquipmentSlot.HEAD, new ItemStack(createInmItem(rs, y)));
                 mob.setDropChance(EquipmentSlot.HEAD, 1f);
             }
             if (mob instanceof Vindicator) {
@@ -88,8 +96,20 @@ public class YJSpawn {
         }
     }
 
-    private static Block createInmItem(RandomSource random) {
-        return YJBlocks.INM_BLOCKS[random.nextInt(YJBlocks.INM_BLOCKS.length)].get();
+    private static Block createInmItem(RandomSource random, boolean yjFlag) {
+        List<RegistrySupplier<Block>> list;
+
+        if (yjFlag) {
+            if (random.nextFloat() < 0.810) {
+                list = YJBlocks.YJ_BLOCKS;
+            } else {
+                list = YJBlocks.NON_YJ_BLOCKS;
+            }
+        } else {
+            list = YJBlocks.INM_BLOCKS;
+        }
+
+        return list.get(random.nextInt(list.size())).get();
     }
 
     private static void setFullArmor(Mob mob, boolean override, ItemStack head, ItemStack chest, ItemStack leg, ItemStack feet, ItemStack main, ItemStack off) {

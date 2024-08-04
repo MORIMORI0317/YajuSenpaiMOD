@@ -155,7 +155,6 @@ public class InmFamilySounds {
             null // 被ダメージ時 (爆発)
     );
 
-
     public static final InmFamilySound HIDE = new InmFamilySound(
             YJSoundEvents.HIDE_BREAK, // ブロック破壊
             YJSoundEvents.HIDE_STEP,  //ブロック歩行
@@ -168,5 +167,19 @@ public class InmFamilySounds {
             YJSoundEvents.HIDE_FIRE, // 被ダメージ時 (火)
             YJSoundEvents.HIDE_WATER, // 被ダメージ時 (水)
             YJSoundEvents.HIDE_EXPLOSION // 被ダメージ時 (爆発)
+    );
+
+    public static final InmFamilySound KBTIT = new InmFamilySound(
+            YJSoundEvents.KBTIT_BREAK, // ブロック破壊
+            YJSoundEvents.KBTIT_STEP,  //ブロック歩行
+            YJSoundEvents.KBTIT_PLACE, // ブロック設置
+            YJSoundEvents.KBTIT_HIT,   // ブロック殴打
+            YJSoundEvents.KBTIT_FALL,  // ブロック落下
+            YJSoundEvents.KBTIT_ATTACK,// 攻撃時
+            YJSoundEvents.KBTIT_DAMAGE, // 被ダメージ時
+            YJSoundEvents.KBTIT_DIE,    // 死亡時
+            null, // 被ダメージ時 (火)
+            null, // 被ダメージ時 (水)
+            null // 被ダメージ時 (爆発)
     );
 }

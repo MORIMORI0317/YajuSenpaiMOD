@@ -62,14 +62,17 @@ public class SoftSmartphoneItem extends Item {
             if (flg[0])
                 itemStack.hurtAndBreak(1, livingEntity, EquipmentSlot.MAINHAND);
 
-            if (flg[0] && livingEntity.getRandom().nextInt(19) == 0)
+            if (flg[0] && livingEntity.getRandom().nextInt(1919) == 0)
                 livingEntity.addEffect(new MobEffectInstance(YJMobEffects.IKISUGI.vanillaHolder(), CommonHandler.IKISUGI_DIE_TIME));
         }
         return super.finishUsingItem(itemStack, level, livingEntity);
     }
 
     public static boolean canIkisugi(LivingEntity attacker, LivingEntity target) {
-        return target != attacker && ((YJLivingEntityAccessor) target).yajuSenpai$getSleepingPos() != null && ((YJLivingEntityAccessor) target).yajuSenpai$isComa() && !((YJLivingEntityAccessor) target).yajuSenpai$isIkisugiSleeping();
+        return target != attacker &&
+                ((YJLivingEntityAccessor) target).yajuSenpai$getSleepingPos() != null &&
+                ((YJLivingEntityAccessor) target).yajuSenpai$isComa() &&
+                !((YJLivingEntityAccessor) target).yajuSenpai$isIkisugiSleeping();
     }
 
     public static void startIkisugi(Level level, LivingEntity attacker, LivingEntity target) {

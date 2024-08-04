@@ -323,13 +323,5 @@ public final class ServerHandler {
                 player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.yajuSenpai$getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
             }
         }
-
-        if (yjLiving.yajuSenpai$getSleepingPos() != null) {
-            var bs = player.level().getBlockState(yjLiving.yajuSenpai$getSleepingPos());
-            if (bs.is(YJBlocks.BIG_PILLOW.get())) {
-                var pos = yjLiving.yajuSenpai$getSleepingPos();
-                player.setPos(pos.getX() + 0.5, pos.getY() + bs.getCollisionShape(player.level(), yjLiving.yajuSenpai$getSleepingPos()).max(Direction.Axis.Y), pos.getZ() + 0.5);
-            }
-        }
     }
 }

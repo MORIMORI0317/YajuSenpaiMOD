@@ -7,6 +7,7 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.dimension.LevelStem;
@@ -19,6 +20,7 @@ import net.morimori0317.yajusenpai.data.cross.CrossDataGeneratorAccess;
 import net.morimori0317.yajusenpai.data.cross.provider.RegistriesDatapackProviderWrapper;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantments;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypes;
+import net.morimori0317.yajusenpai.entity.decoration.YJPaintingVariants;
 import net.morimori0317.yajusenpai.server.level.dimension.YJBiomes;
 import net.morimori0317.yajusenpai.server.level.dimension.YJDimensions;
 import net.morimori0317.yajusenpai.server.level.dimension.YJNoiseGeneratorSettings;
@@ -82,6 +84,10 @@ public class YJRegistriesDatapackProvider extends RegistriesDatapackProviderWrap
         DynamicRegister<Structure> structureRegister = new DynamicRegister<>(Registries.STRUCTURE);
         YJStructures.register(structureRegister);
         registers.add(structureRegister);
+
+        DynamicRegister<PaintingVariant> paintingVariantRegister = new DynamicRegister<>(Registries.PAINTING_VARIANT);
+        YJPaintingVariants.register(paintingVariantRegister);
+        registers.add(paintingVariantRegister);
 
         return registers;
     }

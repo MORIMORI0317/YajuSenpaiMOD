@@ -11,7 +11,7 @@ public final class RegistryHolderEntry<T> {
     private final Supplier<Holder<T>> vanillaHolder;
 
     public RegistryHolderEntry(RegistrySupplier<T> registrySupplier) {
-        this.vanillaHolder = Suppliers.memoize(() -> Objects.requireNonNull(registrySupplier.getRegistrar().getHolder(registrySupplier.getKey())));
+        this.vanillaHolder = Suppliers.memoize(() -> Objects.requireNonNull(YJUtils.vanillaHolder(registrySupplier)));
     }
 
     public Holder<T> vanillaHolder() {

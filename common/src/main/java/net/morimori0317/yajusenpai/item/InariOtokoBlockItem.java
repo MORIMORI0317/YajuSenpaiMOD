@@ -2,14 +2,13 @@ package net.morimori0317.yajusenpai.item;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.entity.InariOtokoAccessor;
 import net.morimori0317.yajusenpai.entity.InariOtokoEater;
 
-public class InariOtokoBlockItem extends BlockItem {
+public class InariOtokoBlockItem extends InmBlockItem {
     public InariOtokoBlockItem(Block block, Properties properties) {
         super(block, properties);
     }

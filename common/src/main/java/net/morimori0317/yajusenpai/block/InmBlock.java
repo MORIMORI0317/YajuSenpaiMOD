@@ -23,6 +23,10 @@ public class InmBlock extends Block {
         this.inmFamilySound = inmFamilySound;
     }
 
+    public InmFamilySound getInmFamilySound() {
+        return inmFamilySound;
+    }
+
     @Override
     protected void onExplosionHit(BlockState blockState, Level level, BlockPos blockPos, Explosion explosion, BiConsumer<ItemStack, BlockPos> biConsumer) {
 

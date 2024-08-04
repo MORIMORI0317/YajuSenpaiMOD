@@ -1,7 +1,9 @@
 package net.morimori0317.yajusenpai.block;
 
+import com.google.common.collect.ImmutableList;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.Util;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.ColorRGBA;
@@ -17,11 +19,13 @@ import net.minecraft.world.level.material.PushReaction;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.item.InariOtokoBlockItem;
+import net.morimori0317.yajusenpai.item.InmBlockItem;
 import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.InmFamilySound;
 import net.morimori0317.yajusenpai.item.YJCreativeModeTabs;
 import net.morimori0317.yajusenpai.item.YJItems;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -29,45 +33,46 @@ public final class YJBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(YajuSenpai.MODID, Registries.BLOCK);
     private static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(YajuSenpai.MODID, Registries.ITEM);
 
-    public static final RegistrySupplier<Block> YAJUSENPAI_BLOCK = register("yajusenpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> YAJUSENPAI_IKISUGI_BLOCK = register("yajusenpai_ikisugi_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> GOMANETSU_SENPAI_BLOCK = register("gomanetsu_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> ENNUI_SENPAI_BLOCK = register("ennui_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> MEDIKARA_SENPAI_BLOCK = register("medikara_senpai_block", () -> new MedikaraBlock(BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> YAJUSENPAI_BLOCK = registerInm("yajusenpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> YAJUSENPAI_IKISUGI_BLOCK = registerInm("yajusenpai_ikisugi_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> GOMANETSU_SENPAI_BLOCK = registerInm("gomanetsu_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> ENNUI_SENPAI_BLOCK = registerInm("ennui_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> MEDIKARA_SENPAI_BLOCK = registerInm("medikara_senpai_block", () -> new MedikaraBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLUE)
             .sound(YJSoundType.MEDIKARA.get())
             .strength(1f, 10f)));
-    public static final RegistrySupplier<Block> NEHAN_SENPAI_BLOCK = register("nehan_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> SHITARIGAO_SENPAI_BLOCK = register("shitarigao_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
-    public static final RegistrySupplier<Block> IMDKUJ_SENPAI_BLOCK = register("imdkuj_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_RED));
-    public static final RegistrySupplier<Block> KUNEKUNE_SENPAI_BLOCK = register("kunekune_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
-    public static final RegistrySupplier<Block> SZKFK_SENPAI_BLOCK = register("szkfk_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> CCCLKTJM_SENPAI_BLOCK = register("ccclktjm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> CWCWTD_SENPAI_BLOCK = register("cwcwtd_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> INTLNGTM_SENPAI_BLOCK = register("intlngtm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> NEHAN_SENPAI_BLOCK = registerInm("nehan_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> SHITARIGAO_SENPAI_BLOCK = registerInm("shitarigao_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
+    public static final RegistrySupplier<Block> IMDKUJ_SENPAI_BLOCK = registerInm("imdkuj_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_RED));
+    public static final RegistrySupplier<Block> KUNEKUNE_SENPAI_BLOCK = registerInm("kunekune_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BLUE));
+    public static final RegistrySupplier<Block> SZKFK_SENPAI_BLOCK = registerInm("szkfk_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> CCCLKTJM_SENPAI_BLOCK = registerInm("ccclktjm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> CWCWTD_SENPAI_BLOCK = registerInm("cwcwtd_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> INTLNGTM_SENPAI_BLOCK = registerInm("intlngtm_senpai_block", () -> inmBlock(InmFamilySounds.YAJUSENPAI, YJSoundType.YAJUSENPAI.get(), MapColor.COLOR_BROWN));
 
-    public static final RegistrySupplier<Block> TON_BLOCK = register("ton_block", () -> inmBlock(InmFamilySounds.TON, YJSoundType.TON.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> KMR_BLOCK = register("kmr_block", () -> inmBlock(InmFamilySounds.KMR, YJSoundType.KMR.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> MUR_BLOCK = register("mur_block", () -> inmBlock(InmFamilySounds.MUR, YJSoundType.MUR.get(), MapColor.COLOR_BROWN));
-    public static final RegistrySupplier<Block> NKTIDKSG_BLOCK = register("nktidksg_block", () -> inmBlock(InmFamilySounds.NKTIDKSG, YJSoundType.NKTIDKSG.get(), MapColor.COLOR_LIGHT_GRAY));
-    public static final RegistrySupplier<Block> TAKEDA_INM_BLOCK = register("takeda_inm_block", () -> new TakedaInmBlock(BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> TON_BLOCK = registerInm("ton_block", () -> inmBlock(InmFamilySounds.TON, YJSoundType.TON.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> KMR_BLOCK = registerInm("kmr_block", () -> inmBlock(InmFamilySounds.KMR, YJSoundType.KMR.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> MUR_BLOCK = registerInm("mur_block", () -> inmBlock(InmFamilySounds.MUR, YJSoundType.MUR.get(), MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<Block> NKTIDKSG_BLOCK = registerInm("nktidksg_block", () -> inmBlock(InmFamilySounds.NKTIDKSG, YJSoundType.NKTIDKSG.get(), MapColor.COLOR_LIGHT_GRAY));
+    public static final RegistrySupplier<Block> TAKEDA_INM_BLOCK = registerInm("takeda_inm_block", () -> new TakedaInmBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_RED)
             .sound(YJSoundType.TAKEDA_INM.get())
             .strength(0.1f, 0)));
-    public static final RegistrySupplier<Block> KATYOU_BLOCK = register("katyou_block", () -> inmBlock(InmFamilySounds.KATYOU, YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
+    public static final RegistrySupplier<Block> KATYOU_BLOCK = registerInm("katyou_block", () -> inmBlock(InmFamilySounds.KATYOU, YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
     public static final RegistrySupplier<Block> SECOND_INARI_OTOKO_BLOCK = register("second_inari_otoko_block",
             () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE),
             it -> new InariOtokoBlockItem(it, YJItems.baseProperties()));
-    public static final RegistrySupplier<Block> AKYS_BLOCK = register("akys_block", () -> inmBlock(InmFamilySounds.AKYS, YJSoundType.AKYS.get(), MapColor.COLOR_ORANGE));
-    public static final RegistrySupplier<Block> GO_BLOCK = register("go_block", () -> new InmBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> AKYS_BLOCK = registerInm("akys_block", () -> inmBlock(InmFamilySounds.AKYS, YJSoundType.AKYS.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> GO_BLOCK = registerInm("go_block", () -> new InmBlock(InmFamilySounds.GO, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLUE)
             .lightLevel(it -> 15)
             .sound(YJSoundType.GO.get())
             .strength(1.75f, 9999)));
-    public static final RegistrySupplier<Block> HIDE_BLOCK = register("hide_block", () -> new HideBlock(InmFamilySounds.HIDE, BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<Block> HIDE_BLOCK = registerInm("hide_block", () -> new HideBlock(InmFamilySounds.HIDE, BlockBehaviour.Properties.of()
             .mapColor(MapColor.TERRACOTTA_WHITE)
             .sound(YJSoundType.HIDE.get())
             .strength(10.0F, 3600000.0F)));
+    public static final RegistrySupplier<Block> KBTIT_BLOCK = registerInm("kbtit_block", () -> inmBlock(InmFamilySounds.KBTIT, YJSoundType.KBTIT.get(), MapColor.COLOR_ORANGE));
 
     public static final RegistrySupplier<Block> BB = register("bb", () -> backMaterialBlock(MapColor.COLOR_BLUE));
     public static final RegistrySupplier<Block> GB = register("gb", () -> backMaterialBlock(MapColor.COLOR_LIGHT_GREEN));
@@ -116,8 +121,42 @@ public final class YJBlocks {
 
     public static final RegistrySupplier<Block> BIG_PILLOW = register("big_pillow", () -> new BigPillowBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(0.2F, 1200.0F).noOcclusion()));
 
-    public static final RegistrySupplier<Block>[] INM_BLOCKS = (RegistrySupplier<Block>[]) new RegistrySupplier[]{YAJUSENPAI_BLOCK, GOMANETSU_SENPAI_BLOCK, ENNUI_SENPAI_BLOCK, MEDIKARA_SENPAI_BLOCK, NEHAN_SENPAI_BLOCK, SHITARIGAO_SENPAI_BLOCK, YAJUSENPAI_IKISUGI_BLOCK, IMDKUJ_SENPAI_BLOCK, KUNEKUNE_SENPAI_BLOCK, SZKFK_SENPAI_BLOCK, CCCLKTJM_SENPAI_BLOCK, CWCWTD_SENPAI_BLOCK, INTLNGTM_SENPAI_BLOCK, TON_BLOCK, KMR_BLOCK, MUR_BLOCK};
-    public static final RegistrySupplier<Block>[] YJ_BLOCKS = (RegistrySupplier<Block>[]) new RegistrySupplier[]{YAJUSENPAI_BLOCK, GOMANETSU_SENPAI_BLOCK, ENNUI_SENPAI_BLOCK, MEDIKARA_SENPAI_BLOCK, NEHAN_SENPAI_BLOCK, SHITARIGAO_SENPAI_BLOCK, YAJUSENPAI_IKISUGI_BLOCK, IMDKUJ_SENPAI_BLOCK, KUNEKUNE_SENPAI_BLOCK, SZKFK_SENPAI_BLOCK, CCCLKTJM_SENPAI_BLOCK, CWCWTD_SENPAI_BLOCK, INTLNGTM_SENPAI_BLOCK};
+    public static final List<RegistrySupplier<Block>> YJ_BLOCKS = ImmutableList.of(
+            YAJUSENPAI_BLOCK,
+            GOMANETSU_SENPAI_BLOCK,
+            ENNUI_SENPAI_BLOCK,
+            MEDIKARA_SENPAI_BLOCK,
+            NEHAN_SENPAI_BLOCK,
+            SHITARIGAO_SENPAI_BLOCK,
+            YAJUSENPAI_IKISUGI_BLOCK,
+            IMDKUJ_SENPAI_BLOCK,
+            KUNEKUNE_SENPAI_BLOCK,
+            SZKFK_SENPAI_BLOCK,
+            CCCLKTJM_SENPAI_BLOCK,
+            CWCWTD_SENPAI_BLOCK,
+            INTLNGTM_SENPAI_BLOCK
+    );
+
+    public static final List<RegistrySupplier<Block>> NON_YJ_BLOCKS = ImmutableList.of(
+            TON_BLOCK,
+            KMR_BLOCK,
+            MUR_BLOCK,
+            NKTIDKSG_BLOCK,
+            TAKEDA_INM_BLOCK,
+            KATYOU_BLOCK,
+            SECOND_INARI_OTOKO_BLOCK,
+            AKYS_BLOCK,
+            GO_BLOCK,
+            HIDE_BLOCK,
+            KBTIT_BLOCK
+    );
+
+    public static final List<RegistrySupplier<Block>> INM_BLOCKS = Util.make(() -> {
+        ImmutableList.Builder<RegistrySupplier<Block>> builder = new ImmutableList.Builder<>();
+        builder.addAll(YJ_BLOCKS);
+        builder.addAll(NON_YJ_BLOCKS);
+        return builder.build();
+    });
 
     private static RegistrySupplier<Block> registerFoiled(String name, Supplier<Block> block) {
         return register(name, block, n -> new BlockItem(n, YJItems.baseProperties()
@@ -126,6 +165,10 @@ public final class YJBlocks {
 
     private static <T extends Block> RegistrySupplier<T> register(String name, Supplier<T> block) {
         return register(name, block, n -> new BlockItem(n, YJItems.baseProperties()));
+    }
+
+    private static <T extends Block> RegistrySupplier<T> registerInm(String name, Supplier<T> block) {
+        return register(name, block, n -> new InmBlockItem(n, YJItems.baseProperties()));
     }
 
     private static <T extends Block> RegistrySupplier<T> register(String name, Supplier<T> block, Function<T, Item> blockItem) {

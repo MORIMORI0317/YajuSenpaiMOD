@@ -17,6 +17,7 @@ public class YajuSenpaiDataGenerator {
         access.addProviderWrapper((packOutput, lookup, generatorAccess) -> new YJDamageTypeTagsProvider(packOutput, lookup, generatorAccess, registriesDatapackProvider));
         access.addProviderWrapper((packOutput, lookup, generatorAccess) -> new YJEnchantmentTagsProvider(packOutput, lookup, generatorAccess, registriesDatapackProvider));
         access.addProviderWrapper((packOutput, lookup, generatorAccess) -> new YJBiomeTagsProvider(packOutput, lookup, generatorAccess, registriesDatapackProvider));
+        access.addProviderWrapper((packOutput, lookup, generatorAccess) -> new YJPaintingVariantTagsProvider(packOutput, lookup, generatorAccess, registriesDatapackProvider));
     }
 
     public static void buildRegistry(RegistrySetBuilder registryBuilder) {

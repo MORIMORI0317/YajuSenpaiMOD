@@ -11,6 +11,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.sound.YJSoundEvents;
 import net.morimori0317.yajusenpai.util.RegistryHolderEntry;
 import net.morimori0317.yajusenpai.util.YJUtils;
 
@@ -26,40 +27,40 @@ public class YJArmorMaterials {
         enumMap.put(ArmorItem.Type.LEGGINGS, 5);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
         enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 2);
+        enumMap.put(ArmorItem.Type.BODY, 5);
     }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> YAJUSENPAI = register("yajusenpai", () -> create("yajusenpai", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 2);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 2);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+        enumMap.put(ArmorItem.Type.BOOTS, 3);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
+        enumMap.put(ArmorItem.Type.HELMET, 3);
+        enumMap.put(ArmorItem.Type.BODY, 11);
+    }), 10, YJUtils.vanillaHolder(YJSoundEvents.YJ_EQUIP), 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", () -> create("cyclops_sunglasses", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 2);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 2);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+        enumMap.put(ArmorItem.Type.BOOTS, 19);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 19);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 19);
+        enumMap.put(ArmorItem.Type.HELMET, 5);
+        enumMap.put(ArmorItem.Type.BODY, 19);
+    }), 0xA + 193, YJUtils.vanillaHolder(YJSoundEvents.CYCLOPS_NAZOOTO), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> BRIEF = register("brief", () -> create("brief", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 2);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 2);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 1.4F, 1.4F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+        enumMap.put(ArmorItem.Type.BOOTS, 19);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 7);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 19);
+        enumMap.put(ArmorItem.Type.HELMET, 19);
+        enumMap.put(ArmorItem.Type.BODY, 19);
+    }), 931, YJUtils.vanillaHolder(YJSoundEvents.YJ_NU), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> O_BACK = register("o_back", () -> create("o_back", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 2);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 10);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 2);
-    }), 110, SoundEvents.ARMOR_EQUIP_IRON, 0, 0, () -> Ingredient.of(YJBlocks.NKTIDKSG_BLOCK.get())));
+        enumMap.put(ArmorItem.Type.BOOTS, 110);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 7);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 110);
+        enumMap.put(ArmorItem.Type.HELMET, 110);
+        enumMap.put(ArmorItem.Type.BODY, 110);
+    }), 110, YJUtils.vanillaHolder(YJSoundEvents.NKTIDKSG_O_BACK), 0, 0, () -> Ingredient.of(YJBlocks.NKTIDKSG_BLOCK.get())));
 
     private static ArmorMaterial create(String name, EnumMap<ArmorItem.Type, Integer> enumMap, int i, Holder<SoundEvent> arg, float f, float g, Supplier<Ingredient> supplier) {
         List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(YJUtils.modLoc(name)));

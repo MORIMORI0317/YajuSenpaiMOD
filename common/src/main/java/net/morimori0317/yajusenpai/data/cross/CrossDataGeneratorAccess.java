@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
@@ -79,6 +80,8 @@ public interface CrossDataGeneratorAccess {
     TagsProvider<Enchantment> createEnchantmentTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup, EnchantmentTagsProviderWrapper enchantmentTagsProviderWrapper, RegistriesDatapackProviderWrapper registriesDatapackProviderWrapper);
 
     TagsProvider<Biome> createBiomeTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup, BiomeTagsProviderWrapper biomeTagsProviderWrapper, RegistriesDatapackProviderWrapper registriesDatapackProviderWrapper);
+
+    TagsProvider<PaintingVariant> createPaintingVariantTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup, PaintingVariantTagsProviderWrapper paintingVariantTagsProviderWrapper, RegistriesDatapackProviderWrapper registriesDatapackProviderWrapper);
 
     DataProvider createBasicProvider(BasicProviderWrapper basicProviderWrapper);
 

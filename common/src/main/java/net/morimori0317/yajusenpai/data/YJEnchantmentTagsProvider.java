@@ -34,5 +34,6 @@ public class YJEnchantmentTagsProvider extends EnchantmentTagsProviderWrapper {
         providerAccess.tag(EnchantmentTags.CURSE)
                 .add(YJEnchantments.KATYOU_BROKEN, YJEnchantments.GABA_ANA_DADDY, YJEnchantments.KYN);
 
+
     }
 }

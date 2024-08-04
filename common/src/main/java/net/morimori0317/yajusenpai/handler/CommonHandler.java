@@ -6,6 +6,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.morimori0317.yajusenpai.block.YJBlocks;
+import net.morimori0317.yajusenpai.blockentity.BigPillowBlockEntity;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.entity.damagesource.YJDamageSources;
@@ -19,7 +20,6 @@ import java.util.function.Consumer;
 
 public class CommonHandler {
     public static int IKISUGI_DIE_TIME = 20 * 8 + 3;
-
 
     public static void onLivingTick(LivingEntity livingEntity) {
         YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) livingEntity;
@@ -62,8 +62,15 @@ public class CommonHandler {
             if (yjLiving.yajuSenpai$getYJPortalCoolDown() > 0)
                 yjLiving.yajuSenpai$setYJPortalCoolDown(yjLiving.yajuSenpai$getYJPortalCoolDown() - 1);
 
+            if (yjLiving.yajuSenpai$getSleepingPos() != null && (!BigPillowBlockEntity.canComa(livingEntity) || !livingEntity.level().getBlockState(yjLiving.yajuSenpai$getSleepingPos()).is(YJBlocks.BIG_PILLOW.get()))) {
+                yjLiving.yajuSenpai$setSleepingPos(null);
+            }
+
             if (!yjLiving.yajuSenpai$canYJPortalUse() && yjLiving.yajuSenpai$getYJPortalCoolDown() <= 0 && !livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.YJ_PORTAL.get()))
                 yjLiving.yajuSenpai$setYJPortalUse(true);
+
+            if (yjLiving.yajuSenpai$isIkisugiSleeping() && yjLiving.yajuSenpai$getSleepingPos() == null)
+                yjLiving.yajuSenpai$setIkisugiSleeping(false);
         }
     }
 
