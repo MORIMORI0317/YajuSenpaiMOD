@@ -7,6 +7,7 @@ import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.morimori0317.yajusenpai.data.cross.provider.RegistriesDatapackProviderWrapper;
 import net.morimori0317.yajusenpai.server.level.features.YJPlacedFeatures;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -52,31 +53,20 @@ public class YJBiomes {
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJNIUM_MIDDLE);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJNIUM_SMALL);
             biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJNIUM_UPPER);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJSNPI);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJSNPI_LOWER);
+            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YAJUSENPAI);
+            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YAJUSENPAI_LOWER);
 
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_KMR_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_MUR_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_TON_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_CCCLKTJM_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_CWCWTD_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_ENNUI_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_GOMANETSU_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_IKISUGI_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_IMDKUJ_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_INTERVIEW_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_INTLNGTM_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_KUNEKUNE_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_MEDIKARA_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_NEHAN_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_SHITARIGAO_BLOCK);
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_INM_ORE_YJSNPI_SZKFK_BLOCK);
+            YJPlacedFeatures.INM_BLOCK_CHUNK_YJDIM.forEach((inmBlockGen, key) -> addInmOreFeature(biomeGenerationSettings, key));
 
-            biomeGenerationSettings.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, YJPlacedFeatures.ORE_YJSNPI_EXPLODING_BLOCK);
+            addInmOreFeature(biomeGenerationSettings, YJPlacedFeatures.CHUNK_EXPLODING_YAJUSENPAI_BLOCK_LOWER);
 
             builder.generationSettings(biomeGenerationSettings.build());
 
             return builder.build();
         });
+    }
+
+    private static void addInmOreFeature(BiomeGenerationSettings.Builder builder, ResourceKey<PlacedFeature> key) {
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, key);
     }
 }

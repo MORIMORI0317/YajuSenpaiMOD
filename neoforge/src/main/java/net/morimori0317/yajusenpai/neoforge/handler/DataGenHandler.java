@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.neoforge.handler;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.block.YJBlockTags;
@@ -9,11 +10,14 @@ import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.data.YajuSenpaiDataGenerator;
 import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
 import net.morimori0317.yajusenpai.data.cross.provider.ItemTagProviderWrapper;
+import net.morimori0317.yajusenpai.data.cross.provider.TagProviderWrapper;
 import net.morimori0317.yajusenpai.item.YJItemTags;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.neoforge.block.YJBlockTagsNeoForge;
 import net.morimori0317.yajusenpai.neoforge.data.cross.CrossDataGeneratorAccesses;
 import net.morimori0317.yajusenpai.neoforge.item.YJItemTagsNeoForge;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeTags;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomes;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.Tags;
@@ -183,5 +187,15 @@ public class DataGenHandler {
 
         providerAccess.tag(YJItemTags.COMPAT_YJSNPI_NUGGET)
                 .addTag(YJItemTagsNeoForge.NUGGETS_YJSNPI);
+    }
+
+    public static void generateBiomeTag(TagProviderWrapper.TagProviderAccess<Biome, TagProviderWrapper.TagAppenderWrapper<Biome>> providerAccess) {
+        providerAccess.tag(YJBiomeTags.HAS_YJ_HOUSE)
+                .addVanillaTag(Tags.Biomes.IS_OVERWORLD)
+                .addVanillaTag(Tags.Biomes.IS_NETHER)
+                .addVanillaTag(Tags.Biomes.IS_OUTER_END_ISLAND);
+
+        providerAccess.tag(Tags.Biomes.IS_PLAINS)
+                .add(YJBiomes.YAJUSENPAI_BIOME);
     }
 }

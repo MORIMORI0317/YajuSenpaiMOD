@@ -12,6 +12,7 @@ import net.morimori0317.yajusenpai.entity.YJEntityTypes;
 import net.morimori0317.yajusenpai.item.*;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeModifications;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructurePieceType;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructureTypes;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -35,6 +36,7 @@ public class YajuSenpai {
         YJStructurePieceType.init();
 
         ServerHandler.init();
+        YJBiomeModifications.init();
 
         EnvExecutor.runInEnv(Env.CLIENT, () -> YajuSenpaiClient::preInit);
         EnvExecutor.runInEnv(Env.SERVER, () -> YJPackets::serverInit);

@@ -7,6 +7,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.morimori0317.yajusenpai.data.cross.CrossDataGeneratorAccess;
 import net.morimori0317.yajusenpai.data.cross.provider.BiomeTagsProviderWrapper;
 import net.morimori0317.yajusenpai.data.cross.provider.RegistriesDatapackProviderWrapper;
+import net.morimori0317.yajusenpai.explatform.data.YJDataExpectPlatform;
 import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeTags;
 import net.morimori0317.yajusenpai.server.level.dimension.YJBiomes;
 
@@ -39,5 +40,7 @@ public class YJBiomeTagsProvider extends BiomeTagsProviderWrapper {
 
         providerAccess.tag(YJBiomeTags.IS_YAJUSENPAI)
                 .add(YJBiomes.YAJUSENPAI_BIOME);
+
+        YJDataExpectPlatform.generateBiomeTag(providerAccess);
     }
 }

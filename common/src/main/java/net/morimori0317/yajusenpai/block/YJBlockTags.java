@@ -14,6 +14,7 @@ public class YJBlockTags {
     public static final TagKey<Block> YJ_LOGS = bind("yj_logs");
     public static final TagKey<Block> YJNIUM_ORES = bind("yjnium_ores");
     public static final TagKey<Block> YJSNPI_ORES = bind("yjsnpi_ores");
+    public static final TagKey<Block> INM_BLOCK_REPLACEABLES = bind("inm_block_replaceables");
 
     private static TagKey<Block> bind(String id) {
         return TagKey.create(Registries.BLOCK, YJUtils.modLoc(id));

@@ -1,9 +1,11 @@
 package net.morimori0317.yajusenpai.data;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.morimori0317.yajusenpai.block.YJBlockTags;
 import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.data.cross.CrossDataGeneratorAccess;
@@ -123,6 +125,14 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
                         , YJBlocks.KUNEKUNE_SENPAI_BLOCK.get(), YJBlocks.SZKFK_SENPAI_BLOCK.get()
                         , YJBlocks.CCCLKTJM_SENPAI_BLOCK.get(), YJBlocks.CWCWTD_SENPAI_BLOCK.get()
                         , YJBlocks.INTLNGTM_SENPAI_BLOCK.get());
+
+        providerAccess.tag(YJBlockTags.INM_BLOCK_REPLACEABLES)
+                .add(Blocks.END_STONE)
+                .addTags(ImmutableList.of(YJBlockTags.BASE_YJ_STONE_YJDIM, YJBlockTags.YJ_DEEPSLATE_ORE_REPLACEABLES, YJBlockTags.YJ_STONE_ORE_REPLACEABLES))
+                .addVanillaTag(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
+                .addVanillaTag(BlockTags.STONE_ORE_REPLACEABLES)
+                .addVanillaTag(BlockTags.BASE_STONE_NETHER)
+                .addVanillaTag(BlockTags.BASE_STONE_OVERWORLD);
 
         YJDataExpectPlatform.generateBlockTag(providerAccess);
     }

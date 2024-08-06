@@ -3,10 +3,12 @@ package net.morimori0317.yajusenpai.fabric.data;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.block.YJBlockTags;
 import net.morimori0317.yajusenpai.block.YJBlocks;
@@ -14,10 +16,13 @@ import net.morimori0317.yajusenpai.data.YajuSenpaiDataGenerator;
 import net.morimori0317.yajusenpai.data.cross.CrossDataGeneratorAccess;
 import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
 import net.morimori0317.yajusenpai.data.cross.provider.ItemTagProviderWrapper;
+import net.morimori0317.yajusenpai.data.cross.provider.TagProviderWrapper;
 import net.morimori0317.yajusenpai.fabric.data.cross.CrossDataGeneratorAccesses;
 import net.morimori0317.yajusenpai.fabric.item.YJItemTagsFabric;
 import net.morimori0317.yajusenpai.item.YJItemTags;
 import net.morimori0317.yajusenpai.item.YJItems;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeTags;
+import net.morimori0317.yajusenpai.server.level.dimension.YJBiomes;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -136,5 +141,16 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
 
         providerAccess.tag(YJItemTags.COMPAT_YJSNPI_NUGGET)
                 .addTag(YJItemTagsFabric.YJSNPI_NUGGETS);
+    }
+
+
+    public static void generateBiomeTag(TagProviderWrapper.TagProviderAccess<Biome, TagProviderWrapper.TagAppenderWrapper<Biome>> providerAccess) {
+        providerAccess.tag(YJBiomeTags.HAS_YJ_HOUSE)
+                .addVanillaTag(ConventionalBiomeTags.IS_OVERWORLD)
+                .addVanillaTag(ConventionalBiomeTags.IS_NETHER)
+                .addVanillaTag(ConventionalBiomeTags.IS_OUTER_END_ISLAND);
+
+        providerAccess.tag(ConventionalBiomeTags.IS_PLAINS)
+                .add(YJBiomes.YAJUSENPAI_BIOME);
     }
 }
