@@ -24,6 +24,7 @@ public class YJSoundType extends SoundType {
     public static final Supplier<SoundType> GO = createYJSoundType(1.3f, InmFamilySounds.GO);
     public static final Supplier<SoundType> HIDE = createYJSoundType(1.2f, InmFamilySounds.HIDE);
     public static final Supplier<SoundType> KBTIT = createYJSoundType(1.2f, InmFamilySounds.KBTIT);
+    public static final Supplier<SoundType> ONDISK = createYJSoundType(1.2f, InmFamilySounds.ONDISK);
 
     public static final Supplier<SoundType> YJ_STONE = createSoundType(1.0F, 1.0F, () -> SoundEvents.STONE_BREAK, YJSoundEvents.YJ_STEP, () -> SoundEvents.STONE_PLACE, () -> SoundEvents.STONE_HIT, YJSoundEvents.YJ_FALL);
     public static final Supplier<SoundType> YJ_GRAVEL = createSoundType(1.0F, 1.0F, () -> SoundEvents.GRAVEL_BREAK, YJSoundEvents.YJ_STEP, () -> SoundEvents.GRAVEL_PLACE, () -> SoundEvents.GRAVEL_HIT, YJSoundEvents.YJ_FALL);

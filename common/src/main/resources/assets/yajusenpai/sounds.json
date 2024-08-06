@@ -1735,7 +1735,90 @@
   "kbtit.die": {
     "sounds": [
       "yajusenpai:kbtit/kanashi_na",
-      "yajusenpai:kbtit/kanpai"
+      "yajusenpai:kbtit/kanpai",
+      "yajusenpai:ondisk/ore_chotto_kawatta_shumi_ga_aru_ndesu"
+    ]
+  },
+  "ondisk.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:ondisk/help",
+      "yajusenpai:ondisk/nante_iu_no_ka_na_torihikidesu_yo",
+      "yajusenpai:ondisk/ore_zutto_omotteta_ndesu_yo",
+      "yajusenpai:ondisk/orenimo_chotto_mawashite_kudasai_yo",
+      "yajusenpai:ondisk/imscared",
+      "yajusenpai:ondisk/sonna_koe_agenaide_kudasai_yo"
+    ]
+  },
+  "ondisk.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:ondisk/alive",
+      "yajusenpai:ondisk/alive2",
+      "yajusenpai:ondisk/art",
+      "yajusenpai:ondisk/goldmedal",
+      "yajusenpai:ondisk/goldmedal2",
+      "yajusenpai:ondisk/goodhip",
+      "yajusenpai:ondisk/help2",
+      "yajusenpai:ondisk/sato",
+      "yajusenpai:ondisk/oto_mo_kawatte_kimashita_yo"
+    ]
+  },
+  "ondisk.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:ondisk/metal"
+    ]
+  },
+  "ondisk.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:ondisk/chanto_hatakenai_janaidesu_ka",
+      "yajusenpai:ondisk/dandan_kaikan_ni_natte_kimashita_ka",
+      "yajusenpai:ondisk/do_shimashita",
+      "yajusenpai:ondisk/do_shimasu",
+      "yajusenpai:ondisk/hip",
+      "yajusenpai:ondisk/kouiuno"
+    ]
+  },
+  "ondisk.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:ondisk/metal"
+    ]
+  },
+  "ondisk.attack": {
+    "sounds": [
+      "yajusenpai:ondisk/art",
+      "yajusenpai:ondisk/baramaki",
+      "yajusenpai:ondisk/dandan_kaikan_ni_natte_kimashita_ka",
+      "yajusenpai:ondisk/do_shimashita",
+      "yajusenpai:ondisk/do_shimasu",
+      "yajusenpai:ondisk/goldmedal",
+      "yajusenpai:ondisk/goldmedal2",
+      "yajusenpai:ondisk/goodhip",
+      "yajusenpai:ondisk/hip",
+      "yajusenpai:ondisk/kouiuno",
+      "yajusenpai:ondisk/ore_chotto_kawatta_shumi_ga_aru_ndesu",
+      "yajusenpai:ondisk/oto_mo_kawatte_kimashita_yo"
+    ]
+  },
+  "ondisk.damage": {
+    "sounds": [
+      "yajusenpai:ondisk/chanto_hatakenai_janaidesu_ka",
+      "yajusenpai:ondisk/ikimasuyo",
+      "yajusenpai:ondisk/imscared",
+      "yajusenpai:ondisk/nante_iu_no_ka_na_torihikidesu_yo",
+      "yajusenpai:ondisk/ore_zutto_omotteta_ndesu_yo",
+      "yajusenpai:ondisk/sonna_koe_agenaide_kudasai_yo"
+    ]
+  },
+  "ondisk.die": {
+    "sounds": [
+      "yajusenpai:ondisk/help",
+      "yajusenpai:ondisk/help2",
+      "yajusenpai:ondisk/orenimo_chotto_mawashite_kudasai_yo",
+      "yajusenpai:ondisk/trouble"
     ]
   }
 }

@@ -72,6 +72,7 @@ public class YJBlockLootTableProvider extends BlockLootTableProviderWrapper {
         providerAccess.dropSelf(YJBlocks.GO_BLOCK.get());
         providerAccess.dropSelf(YJBlocks.HIDE_BLOCK.get());
         providerAccess.dropSelf(YJBlocks.KBTIT_BLOCK.get());
+        providerAccess.dropSelf(YJBlocks.ONDISK_BLOCK.get());
 
         providerAccess.dropSelf(YJBlocks.BB.get());
         providerAccess.dropSelf(YJBlocks.GB.get());

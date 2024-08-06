@@ -182,4 +182,19 @@ public class InmFamilySounds {
             null, // 被ダメージ時 (水)
             null // 被ダメージ時 (爆発)
     );
+
+
+    public static final InmFamilySound ONDISK = new InmFamilySound(
+            YJSoundEvents.ONDISK_BREAK, // ブロック破壊
+            YJSoundEvents.ONDISK_STEP,  //ブロック歩行
+            YJSoundEvents.ONDISK_PLACE, // ブロック設置
+            YJSoundEvents.ONDISK_HIT,   // ブロック殴打
+            YJSoundEvents.ONDISK_FALL,  // ブロック落下
+            YJSoundEvents.ONDISK_ATTACK,// 攻撃時
+            YJSoundEvents.ONDISK_DAMAGE, // 被ダメージ時
+            YJSoundEvents.ONDISK_DIE,    // 死亡時
+            null, // 被ダメージ時 (火)
+            null, // 被ダメージ時 (水)
+            null // 被ダメージ時 (爆発)
+    );
 }

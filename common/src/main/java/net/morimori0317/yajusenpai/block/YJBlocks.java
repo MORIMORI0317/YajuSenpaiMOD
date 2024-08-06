@@ -73,6 +73,7 @@ public final class YJBlocks {
             .sound(YJSoundType.HIDE.get())
             .strength(10.0F, 3600000.0F)));
     public static final RegistrySupplier<Block> KBTIT_BLOCK = registerInm("kbtit_block", () -> inmBlock(InmFamilySounds.KBTIT, YJSoundType.KBTIT.get(), MapColor.COLOR_ORANGE));
+    public static final RegistrySupplier<Block> ONDISK_BLOCK = registerInm("ondisk_block", () -> inmBlock(InmFamilySounds.ONDISK, YJSoundType.ONDISK.get(), MapColor.COLOR_ORANGE));
 
     public static final RegistrySupplier<Block> BB = register("bb", () -> backMaterialBlock(MapColor.COLOR_BLUE));
     public static final RegistrySupplier<Block> GB = register("gb", () -> backMaterialBlock(MapColor.COLOR_LIGHT_GREEN));
@@ -148,7 +149,8 @@ public final class YJBlocks {
             AKYS_BLOCK,
             GO_BLOCK,
             HIDE_BLOCK,
-            KBTIT_BLOCK
+            KBTIT_BLOCK,
+            ONDISK_BLOCK
     );
 
     public static final List<RegistrySupplier<Block>> INM_BLOCKS = Util.make(() -> {

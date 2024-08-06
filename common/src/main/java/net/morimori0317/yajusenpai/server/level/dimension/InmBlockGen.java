@@ -32,7 +32,8 @@ public enum InmBlockGen {
     AKYS(YJBlocks.AKYS_BLOCK, "akys", false, false),
     GO(YJBlocks.GO_BLOCK, "go", false, false),
     HIDE(YJBlocks.HIDE_BLOCK, "hide", false, false),
-    KBTIT(YJBlocks.KBTIT_BLOCK, "kbtit", false, false);
+    KBTIT(YJBlocks.KBTIT_BLOCK, "kbtit", false, false),
+    ONDISK(YJBlocks.ONDISK_BLOCK, "ondisk", false, false);
 
     private final Supplier<Block> block;
     private final String name;

@@ -276,6 +276,15 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> KBTIT_DAMAGE = register("kbtit.damage");
     public static final RegistrySupplier<SoundEvent> KBTIT_DIE = register("kbtit.die");
 
+    public static final RegistrySupplier<SoundEvent> ONDISK_BREAK = register("ondisk.break");
+    public static final RegistrySupplier<SoundEvent> ONDISK_PLACE = register("ondisk.place");
+    public static final RegistrySupplier<SoundEvent> ONDISK_STEP = register("ondisk.step");
+    public static final RegistrySupplier<SoundEvent> ONDISK_HIT = register("ondisk.hit");
+    public static final RegistrySupplier<SoundEvent> ONDISK_FALL = register("ondisk.fall");
+    public static final RegistrySupplier<SoundEvent> ONDISK_ATTACK = register("ondisk.attack");
+    public static final RegistrySupplier<SoundEvent> ONDISK_DAMAGE = register("ondisk.damage");
+    public static final RegistrySupplier<SoundEvent> ONDISK_DIE = register("ondisk.die");
+
     private static RegistrySupplier<SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));
     }
