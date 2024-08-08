@@ -98,6 +98,7 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
         providerAccess.tag(YJBlockTags.BASE_YJ_STONE_YJDIM)
                 .add(YJBlocks.YJ_STONE.get(), YJBlocks.YJ_DEEPSLATE.get());
 
+
         providerAccess.tag(YJBlockTags.INM_BLOCK)
                 .add(YJBlocks.TON_BLOCK.getKey(), YJBlocks.KMR_BLOCK.getKey(), YJBlocks.MUR_BLOCK.getKey())
                 .addTag(YJBlockTags.YJSNPI_BLOCK);

@@ -50,6 +50,6 @@ public class YJDamageTypeTagsProvider extends DamageTypeTagsProviderWrapper {
                 .add(YJDamageTypes.IKISUGI);
 
         providerAccess.tag(YJDamageTypeTags.IS_IKISUGI)
-                .add(YJDamageTypes.IKISUGI);
+                .add(YJDamageTypes.IKISUGI, YJDamageTypes.PLAYER_IKISUGI);
     }
 }

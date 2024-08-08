@@ -197,4 +197,18 @@ public class InmFamilySounds {
             null, // 被ダメージ時 (水)
             null // 被ダメージ時 (爆発)
     );
+
+    public static final InmFamilySound AUCTION_OTOKO = new InmFamilySound(
+            YJSoundEvents.AUCTION_OTOKO_BREAK, // ブロック破壊
+            YJSoundEvents.AUCTION_OTOKO_STEP,  //ブロック歩行
+            YJSoundEvents.AUCTION_OTOKO_PLACE, // ブロック設置
+            YJSoundEvents.AUCTION_OTOKO_HIT,   // ブロック殴打
+            YJSoundEvents.AUCTION_OTOKO_FALL,  // ブロック落下
+            YJSoundEvents.AUCTION_OTOKO_ATTACK,// 攻撃時
+            YJSoundEvents.AUCTION_OTOKO_DAMAGE, // 被ダメージ時
+            YJSoundEvents.AUCTION_OTOKO_DIE,    // 死亡時
+            null, // 被ダメージ時 (火)
+            null, // 被ダメージ時 (水)
+            null // 被ダメージ時 (爆発)
+    );
 }

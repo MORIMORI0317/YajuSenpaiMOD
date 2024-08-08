@@ -1820,5 +1820,122 @@
       "yajusenpai:ondisk/orenimo_chotto_mawashite_kudasai_yo",
       "yajusenpai:ondisk/trouble"
     ]
+  },
+  "auction_otoko.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "yajusenpai:auction_otoko/fall",
+      "yajusenpai:auction_otoko/fall2",
+      "yajusenpai:auction_otoko/hagire",
+      "yajusenpai:auction_otoko/hip",
+      "yajusenpai:auction_otoko/it_hard",
+      "yajusenpai:auction_otoko/kimari",
+      "yajusenpai:auction_otoko/munetoka",
+      "yajusenpai:auction_otoko/mutiuti",
+      "yajusenpai:auction_otoko/nanigadekiru",
+      "yajusenpai:auction_otoko/sibui"
+    ]
+  },
+  "auction_otoko.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "yajusenpai:auction_otoko/start",
+      "yajusenpai:auction_otoko/30",
+      "yajusenpai:auction_otoko/aruke",
+      "yajusenpai:auction_otoko/back",
+      "yajusenpai:auction_otoko/beginner",
+      "yajusenpai:auction_otoko/beginner2",
+      "yajusenpai:auction_otoko/candle",
+      "yajusenpai:auction_otoko/dekirukamo",
+      "yajusenpai:auction_otoko/m",
+      "yajusenpai:auction_otoko/one_voice",
+      "yajusenpai:auction_otoko/onemore",
+      "yajusenpai:auction_otoko/onemore2",
+      "yajusenpai:auction_otoko/onemore3",
+      "yajusenpai:auction_otoko/onemore4"
+    ]
+  },
+  "auction_otoko.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "yajusenpai:auction_otoko/30_2",
+      "yajusenpai:auction_otoko/30_3",
+      "yajusenpai:auction_otoko/40",
+      "yajusenpai:auction_otoko/50",
+      "yajusenpai:auction_otoko/50_2",
+      "yajusenpai:auction_otoko/60",
+      "yajusenpai:auction_otoko/70",
+      "yajusenpai:auction_otoko/80",
+      "yajusenpai:auction_otoko/85",
+      "yajusenpai:auction_otoko/90",
+      "yajusenpai:auction_otoko/95",
+      "yajusenpai:auction_otoko/100",
+      "yajusenpai:auction_otoko/100_2",
+      "yajusenpai:auction_otoko/120",
+      "yajusenpai:auction_otoko/120_2"
+    ]
+  },
+  "auction_otoko.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "yajusenpai:auction_otoko/hi",
+      "yajusenpai:auction_otoko/30_2",
+      "yajusenpai:auction_otoko/30_3",
+      "yajusenpai:auction_otoko/40",
+      "yajusenpai:auction_otoko/50",
+      "yajusenpai:auction_otoko/50_2",
+      "yajusenpai:auction_otoko/60",
+      "yajusenpai:auction_otoko/70",
+      "yajusenpai:auction_otoko/80",
+      "yajusenpai:auction_otoko/85",
+      "yajusenpai:auction_otoko/90",
+      "yajusenpai:auction_otoko/95",
+      "yajusenpai:auction_otoko/100",
+      "yajusenpai:auction_otoko/100_2",
+      "yajusenpai:auction_otoko/120",
+      "yajusenpai:auction_otoko/120_2"
+    ]
+  },
+  "auction_otoko.fall": {
+    "subtitle": "subtitles.entity.generic.big_fall",
+    "sounds": [
+      "yajusenpai:auction_otoko/allstar"
+    ]
+  },
+  "auction_otoko.attack": {
+    "sounds": [
+      "yajusenpai:auction_otoko/aruke",
+      "yajusenpai:auction_otoko/back",
+      "yajusenpai:auction_otoko/beginner",
+      "yajusenpai:auction_otoko/beginner2",
+      "yajusenpai:auction_otoko/candle",
+      "yajusenpai:auction_otoko/dekirukamo",
+      "yajusenpai:auction_otoko/fall",
+      "yajusenpai:auction_otoko/fall2",
+      "yajusenpai:auction_otoko/hip",
+      "yajusenpai:auction_otoko/it_hard",
+      "yajusenpai:auction_otoko/m",
+      "yajusenpai:auction_otoko/mutiuti",
+      "yajusenpai:auction_otoko/nanigadekiru",
+      "yajusenpai:auction_otoko/munetoka"
+    ]
+  },
+  "auction_otoko.damage": {
+    "sounds": [
+      "yajusenpai:auction_otoko/hi",
+      "yajusenpai:auction_otoko/hagire",
+      "yajusenpai:auction_otoko/one_voice",
+      "yajusenpai:auction_otoko/onemore",
+      "yajusenpai:auction_otoko/onemore2",
+      "yajusenpai:auction_otoko/onemore3",
+      "yajusenpai:auction_otoko/onemore4",
+      "yajusenpai:auction_otoko/sibui",
+      "yajusenpai:auction_otoko/start"
+    ]
+  },
+  "auction_otoko.die": {
+    "sounds": [
+      "yajusenpai:auction_otoko/kimari"
+    ]
   }
 }

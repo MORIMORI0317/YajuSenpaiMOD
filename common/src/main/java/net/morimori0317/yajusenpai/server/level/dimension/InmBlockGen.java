@@ -33,7 +33,8 @@ public enum InmBlockGen {
     GO(YJBlocks.GO_BLOCK, "go", false, false),
     HIDE(YJBlocks.HIDE_BLOCK, "hide", false, false),
     KBTIT(YJBlocks.KBTIT_BLOCK, "kbtit", false, false),
-    ONDISK(YJBlocks.ONDISK_BLOCK, "ondisk", false, false);
+    ONDISK(YJBlocks.ONDISK_BLOCK, "ondisk", false, false),
+    AUCTION_OTOKO(YJBlocks.AUCTION_OTOKO_BLOCK, "auction_otoko", false, false);
 
     private final Supplier<Block> block;
     private final String name;

@@ -285,6 +285,15 @@ public class YJSoundEvents {
     public static final RegistrySupplier<SoundEvent> ONDISK_DAMAGE = register("ondisk.damage");
     public static final RegistrySupplier<SoundEvent> ONDISK_DIE = register("ondisk.die");
 
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_BREAK = register("auction_otoko.break");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_PLACE = register("auction_otoko.place");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_STEP = register("auction_otoko.step");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_HIT = register("auction_otoko.hit");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_FALL = register("auction_otoko.fall");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_ATTACK = register("auction_otoko.attack");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_DAMAGE = register("auction_otoko.damage");
+    public static final RegistrySupplier<SoundEvent> AUCTION_OTOKO_DIE = register("auction_otoko.die");
+
     private static RegistrySupplier<SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, name)));
     }

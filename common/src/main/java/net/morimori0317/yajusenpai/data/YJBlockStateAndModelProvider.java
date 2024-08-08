@@ -63,6 +63,7 @@ public class YJBlockStateAndModelProvider extends BlockStateAndModelProviderWrap
         rndInmBlock(providerAccess, YJBlocks.HIDE_BLOCK.get(), "hide_block_0", "hide_block_1", "hide_block_2");
         rndInmBlock(providerAccess, YJBlocks.KBTIT_BLOCK.get(), "kbtit_block_0", "kbtit_block_1", "kbtit_block_2");
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.ONDISK_BLOCK.get());
+        rndInmBlock(providerAccess, YJBlocks.AUCTION_OTOKO_BLOCK.get(), "auction_otoko_block_0", "auction_otoko_block_1", "auction_otoko_block_2");
 
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.BB.get());
         providerAccess.simpleCubeBlockStateModelAndItemModel(YJBlocks.GB.get());
