@@ -1140,6 +1140,11 @@
       "yajusenpai:takeda_inm/wait"
     ]
   },
+  "takeda_inm.blood": {
+    "sounds": [
+      "yajusenpai:takeda_inm/blood"
+    ]
+  },
   "takeda_inm.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
@@ -1942,7 +1947,6 @@
       "yajusenpai:auction_otoko/85",
       "yajusenpai:auction_otoko/90",
       "yajusenpai:auction_otoko/95",
-      "yajusenpai:auction_otoko/100",
       "yajusenpai:auction_otoko/100_2",
       "yajusenpai:auction_otoko/120",
       "yajusenpai:auction_otoko/120_2"

@@ -1,5 +1,6 @@
 package net.morimori0317.yajusenpai.client;
 
+import net.morimori0317.yajusenpai.client.particle.YJClientParticleProviders;
 import net.morimori0317.yajusenpai.client.renderer.YJBlockRenderTypes;
 import net.morimori0317.yajusenpai.client.renderer.blockentity.YJBlockRenderers;
 import net.morimori0317.yajusenpai.client.renderer.entity.YJEntityRenderers;
@@ -17,6 +18,7 @@ public class YajuSenpaiClient {
         YJItemProperties.init();
         YJBlockRenderers.init();
         YJItemRenderers.init();
+        YJClientParticleProviders.init();
 
         YJPackets.clientInit();
     }

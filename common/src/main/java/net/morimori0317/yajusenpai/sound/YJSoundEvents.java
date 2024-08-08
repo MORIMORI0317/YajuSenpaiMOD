@@ -198,6 +198,7 @@ public class YJSoundEvents {
 
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_END = register("takeda_inm.end");
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_WAIT = register("takeda_inm.wait");
+    public static final RegistrySupplier<SoundEvent> TAKEDA_INM_BLOOD = register("takeda_inm.blood");
 
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_BREAK = register("takeda_inm.break");
     public static final RegistrySupplier<SoundEvent> TAKEDA_INM_PLACE = register("takeda_inm.place");

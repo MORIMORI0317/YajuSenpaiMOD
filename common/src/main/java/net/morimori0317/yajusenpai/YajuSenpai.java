@@ -9,8 +9,10 @@ import net.morimori0317.yajusenpai.client.YajuSenpaiClient;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
 import net.morimori0317.yajusenpai.entity.YJEntityTypes;
+import net.morimori0317.yajusenpai.entity.YJVillagerTrades;
 import net.morimori0317.yajusenpai.item.*;
 import net.morimori0317.yajusenpai.networking.YJPackets;
+import net.morimori0317.yajusenpai.particles.YJParticleTypes;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.server.level.dimension.YJBiomeModifications;
 import net.morimori0317.yajusenpai.server.level.structure.YJStructurePieceType;
@@ -34,6 +36,7 @@ public class YajuSenpai {
         YJEntityTypes.init();
         YJStructureTypes.init();
         YJStructurePieceType.init();
+        YJParticleTypes.init();
 
         ServerHandler.init();
         YJBiomeModifications.init();
@@ -44,5 +47,6 @@ public class YajuSenpai {
 
     public static void setup() {
         YJComposters.setup();
+        YJVillagerTrades.setup();
     }
 }

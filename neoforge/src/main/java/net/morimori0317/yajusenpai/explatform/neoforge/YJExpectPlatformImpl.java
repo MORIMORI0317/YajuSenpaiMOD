@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.explatform.neoforge;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ElytraItem;
@@ -55,5 +56,9 @@ public class YJExpectPlatformImpl {
 
     public static boolean isOboreruBlock(Level level, BlockPos blockPos, BlockState state) {
         return state.getFluidState().is(Tags.Fluids.WATER);
+    }
+
+    public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
+        return new SimpleParticleType(overrideLimiter);
     }
 }

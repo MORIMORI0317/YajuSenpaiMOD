@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.explatform;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -26,6 +27,11 @@ public class YJExpectPlatform {
 
     @ExpectPlatform
     public static boolean isOboreruBlock(Level level, BlockPos blockPos, BlockState state) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
         throw new AssertionError();
     }
 }

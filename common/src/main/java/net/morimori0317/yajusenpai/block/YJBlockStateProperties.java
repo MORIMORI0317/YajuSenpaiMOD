@@ -8,4 +8,5 @@ public class YJBlockStateProperties {
     public static final BooleanProperty YJ_EX_STARTED = BooleanProperty.create("yj_start");
     public static final BooleanProperty YJ_EX_FIRE = BooleanProperty.create("yj_fire");
     public static final IntegerProperty YJ_PR_CONT = IntegerProperty.create("yj_cont", 0, 364);
+    public static final BooleanProperty END = BooleanProperty.create("end");
 }

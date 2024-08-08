@@ -1,9 +1,11 @@
 package net.morimori0317.yajusenpai.explatform.fabric;
 
 import net.fabricmc.fabric.api.entity.event.v1.FabricElytraItem;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalFluidTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
@@ -27,5 +29,9 @@ public class YJExpectPlatformImpl {
 
     public static boolean isOboreruBlock(Level level, BlockPos blockPos, BlockState state) {
         return state.getFluidState().is(ConventionalFluidTags.WATER);
+    }
+
+    public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
+        return FabricParticleTypes.simple(overrideLimiter);
     }
 }
