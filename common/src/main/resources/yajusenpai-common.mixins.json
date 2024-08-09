@@ -13,6 +13,7 @@
     "ExplosionDamageCalculatorMixin",
     "ExplosionMixin",
     "ItemStackMixin",
+    "LightningBoltMixin",
     "LivingEntityAccessor",
     "LivingEntityMixin",
     "MobMixin",

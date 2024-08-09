@@ -6,10 +6,8 @@ import dev.architectury.utils.value.IntValue;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,12 +27,12 @@ import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.explatform.YJExpectPlatform;
 import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.item.YJItems;
+import net.morimori0317.yajusenpai.server.level.dimension.YJDimensions;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
 public final class YJUtils {
-    private static final ResourceKey<Level> YJ_DIMENSION = ResourceKey.create(Registries.DIMENSION, modLoc("the_yajusenpai"));
 
     public static ResourceLocation modLoc(String path) {
         return ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, path);
@@ -50,7 +48,7 @@ public final class YJUtils {
     }
 
     public static boolean isYJDim(Level level) {
-        return level.dimension() == YJ_DIMENSION;
+        return level.dimension() == YJDimensions.YJ_DIM;
     }
 
     public static IntValue refToVal(LocalIntRef ref) {
@@ -110,10 +108,6 @@ public final class YJUtils {
 
     public static void doPlayers(@NotNull LevelChunk chunk, @NotNull Consumer<ServerPlayer> playerConsumer) {
         ((ServerChunkCache) chunk.getLevel().getChunkSource()).chunkMap.getPlayers(chunk.getPos(), false).forEach(playerConsumer);
-    }
-
-    public static ResourceKey<Level> getYJDimension() {
-        return YJ_DIMENSION;
     }
 
     public static boolean legacyYjRandom(RandomSource random) {

@@ -52,10 +52,11 @@ public class TakedaInmBlock extends InmBlock {
 
         if (loc == null) {
             level.destroyBlock(blockPos, false, entity);
+            Vec3 pos = blockPos.getCenter();
             level.sendParticles(YJParticleTypes.TAKEDA_END.get(),
-                    blockPos.getX() + 0.5f,
-                    blockPos.getY() + 0.5f,
-                    blockPos.getZ() + 0.5f,
+                    pos.x,
+                    pos.y,
+                    pos.z,
                     0, 0, 0, 0, 0);
         } else {
             level.playSound(null, blockPos, YJSoundEvents.TAKEDA_INM_BLOOD.get(), SoundSource.BLOCKS, 5, 1);
@@ -79,11 +80,14 @@ public class TakedaInmBlock extends InmBlock {
         }
 
         serverLevel.destroyBlock(blockPos, false);
+
+        Vec3 pos = blockPos.getCenter();
         serverLevel.sendParticles(YJParticleTypes.TAKEDA_END.get(),
-                blockPos.getX() + 0.5f,
-                blockPos.getY() + 0.5f,
-                blockPos.getZ() + 0.5f,
+                pos.x,
+                pos.y,
+                pos.z,
                 0, 0, 0, 0, 0);
+
     }
 
     @Override

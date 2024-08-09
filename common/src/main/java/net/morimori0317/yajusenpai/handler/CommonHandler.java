@@ -66,11 +66,16 @@ public class CommonHandler {
                 yjLiving.yajuSenpai$setSleepingPos(null);
             }
 
-            if (!yjLiving.yajuSenpai$canYJPortalUse() && yjLiving.yajuSenpai$getYJPortalCoolDown() <= 0 && !livingEntity.level().getBlockState(livingEntity.blockPosition()).is(YJBlocks.YJ_PORTAL.get()))
-                yjLiving.yajuSenpai$setYJPortalUse(true);
+            if (!yjLiving.yajuSenpai$canYJPortalUse() &&
+                    yjLiving.yajuSenpai$getYJPortalCoolDown() <= 0 &&
+                    livingEntity.level().getBlockStates(livingEntity.getBoundingBox()).noneMatch(it -> it.is(YJBlocks.YJ_PORTAL.get()))) {
 
-            if (yjLiving.yajuSenpai$isIkisugiSleeping() && yjLiving.yajuSenpai$getSleepingPos() == null)
+                yjLiving.yajuSenpai$setYJPortalUse(true);
+            }
+
+            if (yjLiving.yajuSenpai$isIkisugiSleeping() && yjLiving.yajuSenpai$getSleepingPos() == null) {
                 yjLiving.yajuSenpai$setIkisugiSleeping(false);
+            }
         }
     }
 

@@ -18,12 +18,9 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
-import net.morimori0317.yajusenpai.item.InariOtokoBlockItem;
-import net.morimori0317.yajusenpai.item.InmBlockItem;
+import net.morimori0317.yajusenpai.item.*;
 import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.InmFamilySound;
-import net.morimori0317.yajusenpai.item.YJCreativeModeTabs;
-import net.morimori0317.yajusenpai.item.YJItems;
 
 import java.util.List;
 import java.util.function.Function;
@@ -54,10 +51,11 @@ public final class YJBlocks {
     public static final RegistrySupplier<Block> KMR_BLOCK = registerInm("kmr_block", () -> inmBlock(InmFamilySounds.KMR, YJSoundType.KMR.get(), MapColor.COLOR_BROWN));
     public static final RegistrySupplier<Block> MUR_BLOCK = registerInm("mur_block", () -> inmBlock(InmFamilySounds.MUR, YJSoundType.MUR.get(), MapColor.COLOR_BROWN));
     public static final RegistrySupplier<Block> NKTIDKSG_BLOCK = registerInm("nktidksg_block", () -> inmBlock(InmFamilySounds.NKTIDKSG, YJSoundType.NKTIDKSG.get(), MapColor.COLOR_LIGHT_GRAY));
-    public static final RegistrySupplier<Block> TAKEDA_INM_BLOCK = registerInm("takeda_inm_block", () -> new TakedaInmBlock(BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED)
-            .sound(YJSoundType.TAKEDA_INM.get())
-            .strength(0.1f, 0)));
+    public static final RegistrySupplier<Block> TAKEDA_INM_BLOCK = register("takeda_inm_block", () -> new TakedaInmBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(YJSoundType.TAKEDA_INM.get())
+                    .strength(0.1f, 0)),
+            it -> new TakedaInmBlockItem(it, YJItems.baseProperties()));
     public static final RegistrySupplier<Block> KATYOU_BLOCK = registerInm("katyou_block", () -> inmBlock(InmFamilySounds.KATYOU, YJSoundType.KATYOU.get(), MapColor.COLOR_LIGHT_GRAY));
     public static final RegistrySupplier<Block> SECOND_INARI_OTOKO_BLOCK = register("second_inari_otoko_block",
             () -> inmBlock(InmFamilySounds.SECOND_INARI_OTOKO, YJSoundType.SECOND_INARI_OTOKO.get(), MapColor.COLOR_ORANGE),

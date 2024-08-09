@@ -13,7 +13,7 @@ import net.morimori0317.yajusenpai.util.YJUtils;
 import org.joml.Matrix4f;
 
 public class YJPortalRenderer<T extends YJPortalBlockEntity> implements BlockEntityRenderer<T> {
-    public static final ResourceLocation YJ_SKY_LOCATION = YJUtils.modLoc("textures/block/yjsnpi_interview_block.png");
+    public static final ResourceLocation YJ_SKY_LOCATION = YJUtils.modLoc("textures/block/yajusenpai_block.png");
     public static final ResourceLocation YJ_PORTAL_LOCATION = YJUtils.modLoc("textures/entity/yj_portal.png");
     private static final RenderType YJ_PORTAL = YJRenderType.yjPortal();
 
@@ -35,12 +35,12 @@ public class YJPortalRenderer<T extends YJPortalBlockEntity> implements BlockEnt
     }
 
     private void renderFace(T theEndPortalBlockEntity, Matrix4f matrix4f, VertexConsumer vertexConsumer, float f, float g, float h, float i, float j, float k, float l, float m, Direction direction) {
-    /*    if (direction.getAxis() == Direction.Axis.Y) {
-            vertexConsumer.vertex(matrix4f, f, h, j).endVertex();
-            vertexConsumer.vertex(matrix4f, g, h, k).endVertex();
-            vertexConsumer.vertex(matrix4f, g, i, l).endVertex();
-            vertexConsumer.vertex(matrix4f, f, i, m).endVertex();
-        }*/
+        if (theEndPortalBlockEntity.shouldRenderFace(direction)) {
+            vertexConsumer.addVertex(matrix4f, f, h, j);
+            vertexConsumer.addVertex(matrix4f, g, h, k);
+            vertexConsumer.addVertex(matrix4f, g, i, l);
+            vertexConsumer.addVertex(matrix4f, f, i, m);
+        }
 
     }
 

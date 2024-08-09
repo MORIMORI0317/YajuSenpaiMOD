@@ -1,6 +1,8 @@
 package net.morimori0317.yajusenpai.item;
 
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -36,7 +38,7 @@ public class YJArmorMaterials {
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
         enumMap.put(ArmorItem.Type.BODY, 11);
-    }), 10, YJUtils.vanillaHolder(YJSoundEvents.YJ_EQUIP), 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+    }), 10, soundHolder(YJSoundEvents.YJ_EQUIP), 1.9F, 1.9F, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> CYCLOPS_SUNGLASSES = register("cyclops_sunglasses", () -> create("cyclops_sunglasses", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
         enumMap.put(ArmorItem.Type.BOOTS, 19);
@@ -44,7 +46,7 @@ public class YJArmorMaterials {
         enumMap.put(ArmorItem.Type.CHESTPLATE, 19);
         enumMap.put(ArmorItem.Type.HELMET, 5);
         enumMap.put(ArmorItem.Type.BODY, 19);
-    }), 0xA + 193, YJUtils.vanillaHolder(YJSoundEvents.CYCLOPS_NAZOOTO), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+    }), 0xA + 193, soundHolder(YJSoundEvents.CYCLOPS_NAZOOTO), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> BRIEF = register("brief", () -> create("brief", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
         enumMap.put(ArmorItem.Type.BOOTS, 19);
@@ -52,7 +54,7 @@ public class YJArmorMaterials {
         enumMap.put(ArmorItem.Type.CHESTPLATE, 19);
         enumMap.put(ArmorItem.Type.HELMET, 19);
         enumMap.put(ArmorItem.Type.BODY, 19);
-    }), 931, YJUtils.vanillaHolder(YJSoundEvents.YJ_NU), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
+    }), 931, soundHolder(YJSoundEvents.YJ_NU), 0, 0, () -> Ingredient.of(YJItems.YJNIUM_INGOT.get())));
 
     public static final RegistryHolderEntry<ArmorMaterial> O_BACK = register("o_back", () -> create("o_back", Util.make(new EnumMap<>(ArmorItem.Type.class), (enumMap) -> {
         enumMap.put(ArmorItem.Type.BOOTS, 110);
@@ -60,7 +62,7 @@ public class YJArmorMaterials {
         enumMap.put(ArmorItem.Type.CHESTPLATE, 110);
         enumMap.put(ArmorItem.Type.HELMET, 110);
         enumMap.put(ArmorItem.Type.BODY, 110);
-    }), 110, YJUtils.vanillaHolder(YJSoundEvents.NKTIDKSG_O_BACK), 0, 0, () -> Ingredient.of(YJBlocks.NKTIDKSG_BLOCK.get())));
+    }), 110, soundHolder(YJSoundEvents.NKTIDKSG_O_BACK), 0, 0, () -> Ingredient.of(YJBlocks.NKTIDKSG_BLOCK.get())));
 
     private static ArmorMaterial create(String name, EnumMap<ArmorItem.Type, Integer> enumMap, int i, Holder<SoundEvent> arg, float f, float g, Supplier<Ingredient> supplier) {
         List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(YJUtils.modLoc(name)));
@@ -82,5 +84,12 @@ public class YJArmorMaterials {
 
     public static void init() {
         ARMOR_MATERIAL.register();
+    }
+
+    private static Holder<SoundEvent> soundHolder(RegistrySupplier<SoundEvent> soundEventRegistrySupplier) {
+        if (Platform.isFabric()) {
+            return YJUtils.vanillaHolder(soundEventRegistrySupplier);
+        }
+        return soundEventRegistrySupplier;
     }
 }

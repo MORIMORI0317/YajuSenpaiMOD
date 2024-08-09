@@ -5,33 +5,31 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Portal;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.morimori0317.yajusenpai.blockentity.YJPortalBlockEntity;
 import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
-import net.morimori0317.yajusenpai.util.YJUtils;
+import net.morimori0317.yajusenpai.server.level.dimension.YJDimensions;
 import org.jetbrains.annotations.Nullable;
 
-public class YJPortalBlock extends BaseEntityBlock {
+public class YJPortalBlock extends BaseEntityBlock implements Portal {
     public static final MapCodec<YJPortalBlock> CODEC = simpleCodec(YJPortalBlock::new);
-    protected static final VoxelShape SHAPE = Block.box(0.0D, 6.0D, 0.0D, 16.0D, 12.0D, 16.0D);
+    protected static final VoxelShape SHAPE = Block.box(0.0, 6.0, 0.0, 16.0, 12.0, 16.0);
 
-    protected YJPortalBlock(BlockBehaviour.Properties properties) {
+    protected YJPortalBlock(Properties properties) {
         super(properties);
     }
 
@@ -41,30 +39,45 @@ public class YJPortalBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-        if (level instanceof ServerLevel && entity instanceof ServerPlayer serverPlayer && ((YJLivingEntityAccessor) entity).yajuSenpai$canYJPortalUse() && !entity.isPassenger() && !entity.isVehicle() && entity.canUsePortal(false) && Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move((-blockPos.getX()), (-blockPos.getY()), (-blockPos.getZ()))), blockState.getShape(level, blockPos), BooleanOp.AND)) {
-            ResourceKey<Level> resourceKey = YJUtils.isYJDim(level) ? Level.OVERWORLD : YJUtils.getYJDimension();
-            ServerLevel serverLevel = ((ServerLevel) level).getServer().getLevel(resourceKey);
-            if (serverLevel == null)
-                return;
+    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return new YJPortalBlockEntity(blockPos, blockState);
+    }
 
-            YJLivingEntityAccessor yjLiving = (YJLivingEntityAccessor) entity;
-            yjLiving.yajuSenpai$setYJPortalUse(false);
-            yjLiving.yajuSenpai$setYJPortalCoolDown(20 * 3);
+    @Override
+    public @Nullable DimensionTransition getPortalDestination(ServerLevel serverLevel, Entity entity, BlockPos blockPos) {
+        ResourceKey<Level> resourceKey = serverLevel.dimension() == YJDimensions.YJ_DIM ? Level.OVERWORLD : YJDimensions.YJ_DIM;
+        ServerLevel serverLevel2 = serverLevel.getServer().getLevel(resourceKey);
 
-            serverPlayer.fallDistance = 0;
-            serverPlayer.teleportTo(serverLevel, entity.getX(), entity.getY(), entity.getZ(), serverPlayer.getYRot(), serverPlayer.getVoicePitch());
+        if (serverLevel2 == null) {
+            return null;
         }
+
+        return new DimensionTransition(serverLevel2,
+                entity.position(),
+                entity.getDeltaMovement(),
+                entity.getYRot(),
+                entity.getXRot(),
+                DimensionTransition.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET));
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
-        return ItemStack.EMPTY;
+    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return SHAPE;
     }
 
     @Override
-    public boolean canBeReplaced(BlockState blockState, Fluid fluid) {
-        return false;
+    protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+        if (entity instanceof YJLivingEntityAccessor yjAccessor) {
+            if (entity.canUsePortal(false) &&
+                    yjAccessor.yajuSenpai$canYJPortalUse() &&
+                    Shapes.joinIsNotEmpty(Shapes.create(entity.getBoundingBox().move(-blockPos.getX(), -blockPos.getY(), -blockPos.getZ())), blockState.getShape(level, blockPos), BooleanOp.AND)) {
+
+                yjAccessor.yajuSenpai$setYJPortalUse(false);
+                yjAccessor.yajuSenpai$setYJPortalCoolDown(20 * 3);
+
+                entity.setAsInsidePortal(this, blockPos);
+            }
+        }
     }
 
     @Override
@@ -75,14 +88,9 @@ public class YJPortalBlock extends BaseEntityBlock {
         level.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0D, 0.0D, 0.0D);
     }
 
-    @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        return SHAPE;
-    }
 
-    @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new YJPortalBlockEntity(blockPos, blockState);
+    public boolean canBeReplaced(BlockState blockState, Fluid fluid) {
+        return false;
     }
 }

@@ -4,6 +4,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.FixedBiomeSource;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
@@ -18,6 +19,7 @@ import net.morimori0317.yajusenpai.util.YJUtils;
 
 public class YJDimensions {
     public static final ResourceKey<LevelStem> THE_YAJUSENPAI_DIMENSION = ResourceKey.create(Registries.LEVEL_STEM, YJUtils.modLoc("the_yajusenpai"));
+    public static final ResourceKey<Level> YJ_DIM = ResourceKey.create(Registries.DIMENSION, YJUtils.modLoc("the_yajusenpai"));
 
     //https://misode.github.io/dimension/
     //https://github.com/misode/vanilla-worldgen/tree/master/worldgen/biome
