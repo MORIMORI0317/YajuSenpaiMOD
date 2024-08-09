@@ -50,4 +50,31 @@ public class YJSoundType extends SoundType {
                 inmFamilySound.blockHit().get(),
                 inmFamilySound.blockFall().get());
     }
+
+    @Override
+    public float getPitch() {
+        boolean yjStepFlg = YJSoundTypeFlags.PLAY_STEP_FLAG.get();
+        YJSoundTypeFlags.PLAY_STEP_FLAG.set(false);
+
+        boolean yjStep08Flg = YJSoundTypeFlags.PLAY_STEP_0_8_FLAG.get();
+        YJSoundTypeFlags.PLAY_STEP_0_8_FLAG.set(false);
+
+        boolean yjHitFlg = YJSoundTypeFlags.PLAY_HIT_FLAG.get();
+        YJSoundTypeFlags.PLAY_HIT_FLAG.set(false);
+
+        boolean yjFallFlg = YJSoundTypeFlags.PLAY_FALL_FLAG.get();
+        YJSoundTypeFlags.PLAY_FALL_FLAG.set(false);
+
+        if (yjStepFlg) {
+            return 1f;
+        } else if (yjStep08Flg) {
+            return 1f / 0.8f;
+        } else if (yjHitFlg) {
+            return 1f / 0.5f;
+        } else if (yjFallFlg) {
+            return 1f / 0.75f;
+        }
+
+        return super.getPitch();
+    }
 }

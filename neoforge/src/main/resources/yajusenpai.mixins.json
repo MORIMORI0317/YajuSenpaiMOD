@@ -8,6 +8,7 @@
     "client.BlockEntityWithoutLevelRendererMixin"
   ],
   "mixins": [
+    "EntityMixin",
     "ItemStackMixin",
     "data.BlockStateProviderAccessor",
     "data.DataMainMixin",

@@ -1193,8 +1193,7 @@
   "nktidksg.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      "yajusenpai:nktidksg/uaaa",
-      "yajusenpai:nktidksg/aiki"
+      "yajusenpai:nktidksg/uaaa"
     ]
   },
   "nktidksg.place": {
@@ -1584,7 +1583,10 @@
       "yajusenpai:hide/hit1",
       "yajusenpai:hide/itai",
       "yajusenpai:hide/muri",
-      "yajusenpai:hide/uu"
+      "yajusenpai:hide/uu",
+      "yajusenpai:hide/aa1",
+      "yajusenpai:hide/aa2",
+      "yajusenpai:hide/aa3"
     ]
   },
   "hide.fall": {

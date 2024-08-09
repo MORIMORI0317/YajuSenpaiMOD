@@ -4,15 +4,20 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
+    "client.LevelClientMixin",
+    "client.LevelRendererMixin",
+    "client.MultiPlayerGameModeMixin"
   ],
   "mixins": [
     "BlockBehaviourMixin",
+    "BlockItemMixin",
     "BowItemMixin",
     "EntityMixin",
     "EntityTypeMixin",
     "ExplosionDamageCalculatorMixin",
     "ExplosionMixin",
     "ItemStackMixin",
+    "LevelMixin",
     "LightningBoltMixin",
     "LivingEntityAccessor",
     "LivingEntityMixin",

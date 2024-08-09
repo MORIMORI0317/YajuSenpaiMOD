@@ -1,8 +1,10 @@
 package net.morimori0317.yajusenpai.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,13 +12,18 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.SoundType;
+import net.morimori0317.yajusenpai.block.YJSoundType;
+import net.morimori0317.yajusenpai.block.YJSoundTypeFlags;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.enchantment.YJEnchantmentEffectComponents;
 import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
 import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.server.handler.ServerHandler;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,7 +31,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin implements YJLivingEntityAccessor {
+public abstract class LivingEntityMixin implements YJLivingEntityAccessor {
+
+    @Shadow
+    public abstract void forceAddEffect(MobEffectInstance mobEffectInstance, @Nullable Entity entity);
 
     @Unique
     private boolean yajuSenpai$ikisugi;
@@ -75,6 +85,20 @@ public class LivingEntityMixin implements YJLivingEntityAccessor {
                 ths.igniteForSeconds(3);
             }
         }
+    }
+
+    @Inject(method = "playBlockFallSound", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/LivingEntity;playSound(Lnet/minecraft/sounds/SoundEvent;FF)V", ordinal = 0))
+    private void playBlockFallSoundInject(CallbackInfo ci, @Local(ordinal = 0) SoundType soundType) {
+        if (soundType instanceof YJSoundType) {
+            YJSoundTypeFlags.PLAY_FALL_FLAG.set(true);
+        }
+    }
+
+    @Inject(method = "playBlockFallSound", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/LivingEntity;playSound(Lnet/minecraft/sounds/SoundEvent;FF)V", ordinal = 0, shift = At.Shift.AFTER))
+    private void playBlockFallSoundInject2(CallbackInfo ci) {
+        YJSoundTypeFlags.PLAY_FALL_FLAG.set(false);
     }
 
     @Override

@@ -8,6 +8,7 @@
     "client.LivingEntityRendererMixin"
   ],
   "mixins": [
+    "EntityMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
     "data.DynamicRegistriesImplMixin",
