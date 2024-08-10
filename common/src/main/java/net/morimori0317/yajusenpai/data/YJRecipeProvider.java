@@ -75,6 +75,15 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .unlockedBy(providerAccess.getHasName(Items.NETHERITE_INGOT), providerAccess.has(YJItemTags.COMPAT_NETHERITE_INGOT))
                 .save(exporter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, YJItems.O_BACK.get())
+                .define('A', Items.PINK_WOOL)
+                .define('B', YJItemTags.COMPAT_NETHERITE_INGOT)
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern(" B ")
+                .unlockedBy(providerAccess.getHasName(Items.NETHERITE_INGOT), providerAccess.has(YJItemTags.COMPAT_NETHERITE_INGOT))
+                .save(exporter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, YJItems.ICE_TEA.get())
                 .define('A', YJItemTags.COMPAT_WHEAT)
                 .define('B', Items.GLASS_BOTTLE)
