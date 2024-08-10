@@ -96,13 +96,13 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
         providerAccess.copy(YJBlockTagsFabric.STORAGE_BLOCKS_RAW_YAJUSENPAI, YJItemTagsFabric.STORAGE_BLOCKS_RAW_YAJUSENPAI);
 
         providerAccess.tag(ConventionalItemTags.FOODS)
-                .add(YJItems.ICE_TEA.get());
+                .add(YJItems.ICE_TEA.get(), YJItems.BAKED_POTATO_SENPAI.get());
 
         providerAccess.tag(ConventionalItemTags.FRUITS_FOODS)
                 .add(YJItems.APPLE_INM.get());
 
         providerAccess.tag(ConventionalItemTags.VEGETABLES_FOODS)
-                .add(YJItems.POTATO_SENPAI.get(), YJItems.BAKED_POTATO_SENPAI.get());
+                .add(YJItems.POTATO_SENPAI.get());
 
         providerAccess.tag(YJItemTagsFabric.GLOWSTONE_BLOCKS)
                 .add(Items.GLOWSTONE);

@@ -19,6 +19,7 @@ public class YJLootTables {
     private static final ResourceLocation ZOMBIE = ResourceLocation.withDefaultNamespace("entities/zombie");
     private static final ResourceLocation ZOMBIE_VILLAGER = ResourceLocation.withDefaultNamespace("entities/zombie_villager");
     private static final ResourceLocation HUSK = ResourceLocation.withDefaultNamespace("entities/husk");
+    private static final ResourceLocation END_CITY_TREASURE = ResourceLocation.withDefaultNamespace("chests/end_city_treasure");
 
     public static void onLootTableModify(ResourceKey<LootTable> key, LootEvent.LootTableModificationContext context, boolean builtin) {
         ResourceLocation id = key.location();
@@ -32,7 +33,12 @@ public class YJLootTables {
             context.addPool(pool);
         }
 
-        if (id.getPath().startsWith("chests/") || id.getPath().startsWith("gameplay/")) {
+        if (id.getPath().startsWith("chests/") ||
+                id.getPath().startsWith("gameplay/") ||
+                id.getPath().startsWith("archaeology/") ||
+                id.getPath().startsWith("pots/") ||
+                id.getPath().startsWith("spawners/")) {
+            
             var pool = LootPool.lootPool().setRolls(UniformGenerator.between(1, 3))
                     .when(LootItemRandomChanceCondition.randomChance(0.114514f));
 
@@ -42,6 +48,13 @@ public class YJLootTables {
 
             pool = pool.add(LootItem.lootTableItem(YJBlocks.EXPLOSION_YAJUSENPAI_BLOCK.get()));
             pool = pool.add(LootItem.lootTableItem(YJBlocks.PROLIFERATION_YAJUSENPAI_BLOCK.get()));
+
+            context.addPool(pool);
+        }
+
+        if (END_CITY_TREASURE.equals(id)) {
+            LootPool.Builder pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                    .when(LootItemRandomChanceCondition.randomChance(0.0110f));
 
             context.addPool(pool);
         }

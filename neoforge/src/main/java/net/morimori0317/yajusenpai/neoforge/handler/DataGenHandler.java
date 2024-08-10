@@ -198,6 +198,48 @@ public class DataGenHandler {
 
         providerAccess.tag(Tags.Items.TOOLS)
                 .add(YJItems.SOFT_SMARTPHONE.get());
+
+        providerAccess.tag(Tags.Items.FOODS)
+                .add(YJItems.ICE_TEA.get(), YJItems.BAKED_POTATO_SENPAI.get());
+
+        providerAccess.tag(Tags.Items.FOODS_FRUITS)
+                .add(YJItems.APPLE_INM.get());
+
+        providerAccess.tag(Tags.Items.FOODS_VEGETABLES)
+                .add(YJItems.POTATO_SENPAI.get());
+
+        providerAccess.tag(YJItemTagsNeoForge.DRINKS)
+                .addTags(ImmutableList.of(
+                        YJItemTagsNeoForge.TEA,
+                        YJItemTagsNeoForge.ICE_TEA,
+                        YJItemTagsNeoForge.ICETEA,
+                        YJItemTagsNeoForge.DRINKS_TEA,
+                        YJItemTagsNeoForge.DRINKS_ICE_TEA,
+                        YJItemTagsNeoForge.DRINKS_ICETEA
+                ));
+
+        providerAccess.tag(YJItemTagsNeoForge.TEA)
+                .add(YJItems.ICE_TEA.get());
+        providerAccess.tag(YJItemTagsNeoForge.ICE_TEA)
+                .add(YJItems.ICE_TEA.get());
+        providerAccess.tag(YJItemTagsNeoForge.ICETEA)
+                .add(YJItems.ICE_TEA.get());
+        providerAccess.tag(YJItemTagsNeoForge.DRINKS_TEA)
+                .add(YJItems.ICE_TEA.get());
+        providerAccess.tag(YJItemTagsNeoForge.DRINKS_ICE_TEA)
+                .add(YJItems.ICE_TEA.get());
+        providerAccess.tag(YJItemTagsNeoForge.DRINKS_ICETEA)
+                .add(YJItems.ICE_TEA.get());
+
+        providerAccess.tag(YJItemTagsNeoForge.FRUITS)
+                .addTags(ImmutableList.of(
+                        YJItemTagsNeoForge.APPLE,
+                        YJItemTagsNeoForge.FRUITS_APPLE
+                ));
+        providerAccess.tag(YJItemTagsNeoForge.APPLE)
+                .add(YJItems.APPLE_INM.get());
+        providerAccess.tag(YJItemTagsNeoForge.FRUITS_APPLE)
+                .add(YJItems.APPLE_INM.get());
     }
 
     public static void generateBiomeTag(TagProviderWrapper.TagProviderAccess<Biome, TagProviderWrapper.TagAppenderWrapper<Biome>> providerAccess) {
