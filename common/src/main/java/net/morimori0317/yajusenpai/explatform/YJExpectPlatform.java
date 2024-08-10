@@ -34,4 +34,9 @@ public class YJExpectPlatform {
     public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
         throw new AssertionError();
     }
+
+    @ExpectPlatform
+    public static boolean isBoss(LivingEntity livingEntity) {
+        throw new AssertionError();
+    }
 }

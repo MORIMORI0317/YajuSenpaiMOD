@@ -9,8 +9,7 @@ import net.morimori0317.yajusenpai.block.YJBlocks;
 import net.morimori0317.yajusenpai.blockentity.BigPillowBlockEntity;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.entity.YJLivingEntityAccessor;
-import net.morimori0317.yajusenpai.entity.damagesource.YJDamageSources;
-import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypes;
+import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypeTags;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.networking.YJPackets;
 import net.morimori0317.yajusenpai.sound.YJSoundEvents;
@@ -29,7 +28,7 @@ public class CommonHandler {
             if (livingEntity.hasEffect(YJMobEffects.IKISUGI.vanillaHolder()) && effect != null) {
                 if (effect.getDuration() <= 20) {
                     livingEntity.removeEffect(YJMobEffects.IKISUGI.vanillaHolder());
-                    livingEntity.hurt(YJDamageSources.ikisugi(livingEntity.level(), yjLiving.yajuSenpai$getGrantedIkisugiEntity()), 114514f);
+                    YJUtils.ikisugiKill(livingEntity, yjLiving.yajuSenpai$getGrantedIkisugiEntity());
                 }
 
                 if (effect.getDuration() <= IKISUGI_DIE_TIME && !yjLiving.yajuSenpai$isIkisugi()) {
@@ -80,7 +79,7 @@ public class CommonHandler {
     }
 
     public static void onLivingDrop(LivingEntity livingEntity, DamageSource source, Consumer<ItemStack> dropAppender) {
-        if (livingEntity.getMaxHealth() >= 100 && source.is(YJDamageTypes.IKISUGI)) {
+        if (YJUtils.isBoss(livingEntity) && source.is(YJDamageTypeTags.IS_IKISUGI)) {
             dropAppender.accept(new ItemStack(YJItems.YJ_STAR.get()));
         }
     }

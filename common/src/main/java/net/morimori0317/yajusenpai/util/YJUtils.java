@@ -24,6 +24,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
+import net.morimori0317.yajusenpai.entity.damagesource.YJDamageSources;
 import net.morimori0317.yajusenpai.explatform.YJExpectPlatform;
 import net.morimori0317.yajusenpai.item.YJDataComponents;
 import net.morimori0317.yajusenpai.item.YJItems;
@@ -38,9 +39,13 @@ public final class YJUtils {
         return ResourceLocation.fromNamespaceAndPath(YajuSenpai.MODID, path);
     }
 
-    public static void ikisugiKill(LivingEntity target, LivingEntity attacker) {
+    public static boolean isBoss(LivingEntity livingEntity) {
+        return YJExpectPlatform.isBoss(livingEntity);
+    }
+
+    public static void ikisugiKill(LivingEntity target, Entity attacker) {
         for (int i = 0; i < 19; i++) {
-            target.hurt(target.damageSources().genericKill(), 114514);
+            target.hurt(YJDamageSources.ikisugi(target.level(), attacker), 114514);
             if (!target.isAlive()) {
                 break;
             }

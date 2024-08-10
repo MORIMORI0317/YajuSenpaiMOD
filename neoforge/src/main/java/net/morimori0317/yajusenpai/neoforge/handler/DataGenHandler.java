@@ -1,6 +1,7 @@
 package net.morimori0317.yajusenpai.neoforge.handler;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -11,6 +12,7 @@ import net.morimori0317.yajusenpai.data.YajuSenpaiDataGenerator;
 import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
 import net.morimori0317.yajusenpai.data.cross.provider.ItemTagProviderWrapper;
 import net.morimori0317.yajusenpai.data.cross.provider.TagProviderWrapper;
+import net.morimori0317.yajusenpai.entity.damagesource.YJDamageTypes;
 import net.morimori0317.yajusenpai.item.YJItemTags;
 import net.morimori0317.yajusenpai.item.YJItems;
 import net.morimori0317.yajusenpai.neoforge.block.YJBlockTagsNeoForge;
@@ -46,8 +48,8 @@ public class DataGenHandler {
         providerAccess.tag(YJBlockTagsNeoForge.ORES_YJNIUM)
                 .addTag(YJBlockTags.YJNIUM_ORES);
 
-        providerAccess.tag(YJBlockTagsNeoForge.ORES_YJSNPI)
-                .addTag(YJBlockTags.YJSNPI_ORES);
+        providerAccess.tag(YJBlockTagsNeoForge.ORES_YAJUSENPAI)
+                .addTag(YJBlockTags.YAJUSENPAI_ORES);
 
         providerAccess.tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE)
                 .add(YJBlocks.DEEPSLATE_YJNIUM_ORE.get(), YJBlocks.DEEPSLATE_YAJUSENPAI_ORE.get());
@@ -58,7 +60,7 @@ public class DataGenHandler {
         providerAccess.tag(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM)
                 .add(YJBlocks.RAW_YJNIUM_BLOCK.get());
 
-        providerAccess.tag(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI)
+        providerAccess.tag(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YAJUSENPAI)
                 .add(YJBlocks.RAW_YAJUSENPAI_BLOCK.get());
 
         providerAccess.tag(YJBlockTagsNeoForge.STORAGE_BLOCKS_YJNIUM)
@@ -68,7 +70,8 @@ public class DataGenHandler {
                 .add(YJBlocks.YJ_GRAVEL.get());
 
         providerAccess.tag(Tags.Blocks.ORES)
-                .addTags(ImmutableList.of(YJBlockTagsNeoForge.ORES_YJNIUM, YJBlockTagsNeoForge.ORES_YJSNPI));
+                .addOptional(YJBlockTagsNeoForge.ORES_YJNIUM.location())
+                .addOptional(YJBlockTagsNeoForge.ORES_YAJUSENPAI.location());
 
         providerAccess.tag(Tags.Blocks.SANDS)
                 .add(YJBlocks.YJ_SAND.get());
@@ -77,7 +80,12 @@ public class DataGenHandler {
                 .add(YJBlocks.YJ_STONE.get(), YJBlocks.YJ_DEEPSLATE.get());
 
         providerAccess.tag(Tags.Blocks.STORAGE_BLOCKS)
-                .addTags(ImmutableList.of(YJBlockTagsNeoForge.STORAGE_BLOCKS_YJNIUM, YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM, YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI));
+                .addOptionalTag(YJBlockTagsNeoForge.STORAGE_BLOCKS_YJNIUM.location())
+                .addOptionalTag(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM.location())
+                .addOptionalTag(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YAJUSENPAI.location());
+
+        providerAccess.tag(Tags.Blocks.ORE_RATES_SINGULAR)
+                .add(YJBlocks.YJNIUM_ORE.get(), YJBlocks.DEEPSLATE_YJNIUM_ORE.get(), YJBlocks.YAJUSENPAI_ORE.get(), YJBlocks.DEEPSLATE_YAJUSENPAI_ORE.get());
     }
 
     public static void generateItemTag(ItemTagProviderWrapper.ItemTagProviderAccess providerAccess) {
@@ -85,11 +93,11 @@ public class DataGenHandler {
         providerAccess.copy(Tags.Blocks.COBBLESTONES_NORMAL, Tags.Items.COBBLESTONES_NORMAL);
         providerAccess.copy(Tags.Blocks.ORE_BEARING_GROUND_DEEPSLATE, Tags.Items.ORE_BEARING_GROUND_DEEPSLATE);
         providerAccess.copy(YJBlockTagsNeoForge.ORES_YJNIUM, YJItemTagsNeoForge.ORES_YJNIUM);
-        providerAccess.copy(YJBlockTagsNeoForge.ORES_YJSNPI, YJItemTagsNeoForge.ORES_YJSNPI);
+        providerAccess.copy(YJBlockTagsNeoForge.ORES_YAJUSENPAI, YJItemTagsNeoForge.ORES_YJSNPI);
         providerAccess.copy(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE, Tags.Items.ORES_IN_GROUND_DEEPSLATE);
         providerAccess.copy(Tags.Blocks.ORES_IN_GROUND_STONE, Tags.Items.ORES_IN_GROUND_STONE);
         providerAccess.copy(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM, YJItemTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM);
-        providerAccess.copy(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI, YJItemTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI);
+        providerAccess.copy(YJBlockTagsNeoForge.STORAGE_BLOCKS_RAW_YAJUSENPAI, YJItemTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI);
         providerAccess.copy(YJBlockTagsNeoForge.STORAGE_BLOCKS_YJNIUM, YJItemTagsNeoForge.STORAGE_BLOCKS_YJNIUM);
         providerAccess.copy(Tags.Blocks.GRAVELS, Tags.Items.GRAVELS);
         providerAccess.copy(Tags.Blocks.ORES, Tags.Items.ORES);
@@ -158,10 +166,10 @@ public class DataGenHandler {
         providerAccess.tag(YJItemTags.COMPAT_RAW_YJNIUM_BLOCK)
                 .addTag(YJItemTagsNeoForge.STORAGE_BLOCKS_RAW_YJNIUM);
 
-        providerAccess.tag(YJItemTags.COMPAT_RAW_YJSNPI)
+        providerAccess.tag(YJItemTags.COMPAT_RAW_YAJUSENPAI)
                 .addTag(YJItemTagsNeoForge.RAW_MATERIALS_YJSNPI);
 
-        providerAccess.tag(YJItemTags.COMPAT_RAW_YJSNPI_BLOCK)
+        providerAccess.tag(YJItemTags.COMPAT_RAW_YAJUSENPAI_BLOCK)
                 .addTag(YJItemTagsNeoForge.STORAGE_BLOCKS_RAW_YJSNPI);
 
         providerAccess.tag(YJItemTags.COMPAT_RED_DYE)
@@ -182,11 +190,14 @@ public class DataGenHandler {
         providerAccess.tag(YJItemTags.COMPAT_YJNIUM_NUGGET)
                 .addTag(YJItemTagsNeoForge.NUGGETS_YJNIUM);
 
-        providerAccess.tag(YJItemTags.COMPAT_YJSNPI_INGOT)
+        providerAccess.tag(YJItemTags.COMPAT_YAJUSENPAI_INGOT)
                 .addTag(YJItemTagsNeoForge.INGOTS_YJSNPI);
 
-        providerAccess.tag(YJItemTags.COMPAT_YJSNPI_NUGGET)
+        providerAccess.tag(YJItemTags.COMPAT_YAJUSENPAI_NUGGET)
                 .addTag(YJItemTagsNeoForge.NUGGETS_YJSNPI);
+
+        providerAccess.tag(Tags.Items.TOOLS)
+                .add(YJItems.SOFT_SMARTPHONE.get());
     }
 
     public static void generateBiomeTag(TagProviderWrapper.TagProviderAccess<Biome, TagProviderWrapper.TagAppenderWrapper<Biome>> providerAccess) {
@@ -197,5 +208,11 @@ public class DataGenHandler {
 
         providerAccess.tag(Tags.Biomes.IS_PLAINS)
                 .add(YJBiomes.YAJUSENPAI_BIOME);
+    }
+
+    public static void generateDamageTypeTag(TagProviderWrapper.TagProviderAccess<DamageType, TagProviderWrapper.TagAppenderWrapper<DamageType>> providerAccess) {
+        providerAccess.tag(Tags.DamageTypes.IS_PHYSICAL)
+                .add(YJDamageTypes.IKISUGI)
+                .add(YJDamageTypes.PLAYER_IKISUGI);
     }
 }

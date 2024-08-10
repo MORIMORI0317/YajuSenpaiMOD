@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.explatform.fabric;
 
 import net.fabricmc.fabric.api.entity.event.v1.FabricElytraItem;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalFluidTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -33,5 +34,9 @@ public class YJExpectPlatformImpl {
 
     public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
         return FabricParticleTypes.simple(overrideLimiter);
+    }
+
+    public static boolean isBoss(LivingEntity livingEntity) {
+        return livingEntity.getType().is(ConventionalEntityTypeTags.BOSSES);
     }
 }

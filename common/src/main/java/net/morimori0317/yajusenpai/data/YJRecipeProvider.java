@@ -50,10 +50,10 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, YJBlocks.BIG_PILLOW.get())
                 .define('A', Items.WHITE_WOOL)
-                .define('B', YJItemTags.COMPAT_YJSNPI_INGOT)
+                .define('B', YJItemTags.COMPAT_YAJUSENPAI_INGOT)
                 .pattern("AAA")
                 .pattern("ABA")
-                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
+                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YAJUSENPAI_INGOT))
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, YJItems.BRIEF.get())
@@ -85,11 +85,11 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, YJItems.SOFT_SMARTPHONE.get())
                 .define('A', Items.WHITE_WOOL)
-                .define('B', YJItemTags.COMPAT_YJSNPI_INGOT)
+                .define('B', YJItemTags.COMPAT_YAJUSENPAI_INGOT)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
-                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
+                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YAJUSENPAI_INGOT))
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, YJItems.YJ_CORE.get())
@@ -109,31 +109,31 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .save(exporter);
 
         sword(exporter, providerAccess, YJItems.YJNIUM_SWORD.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        sword(exporter, providerAccess, YJItems.YAJUSENPAI_SWORD.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        sword(exporter, providerAccess, YJItems.YAJUSENPAI_SWORD.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         pickaxe(exporter, providerAccess, YJItems.YJNIUM_PICKAXE.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        pickaxe(exporter, providerAccess, YJItems.YAJUSENPAI_PICKAXE.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        pickaxe(exporter, providerAccess, YJItems.YAJUSENPAI_PICKAXE.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         axe(exporter, providerAccess, YJItems.YJNIUM_AXE.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        axe(exporter, providerAccess, YJItems.YAJUSENPAI_AXE.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        axe(exporter, providerAccess, YJItems.YAJUSENPAI_AXE.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         shovel(exporter, providerAccess, YJItems.YJNIUM_SHOVEL.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        shovel(exporter, providerAccess, YJItems.YAJUSENPAI_SHOVEL.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        shovel(exporter, providerAccess, YJItems.YAJUSENPAI_SHOVEL.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         hoe(exporter, providerAccess, YJItems.YJNIUM_HOE.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        hoe(exporter, providerAccess, YJItems.YAJUSENPAI_HOE.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        hoe(exporter, providerAccess, YJItems.YAJUSENPAI_HOE.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         helmet(exporter, providerAccess, YJItems.YJNIUM_HELMET.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        helmet(exporter, providerAccess, YJItems.YAJUSENPAI_HELMET.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        helmet(exporter, providerAccess, YJItems.YAJUSENPAI_HELMET.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         chestplate(exporter, providerAccess, YJItems.YJNIUM_CHESTPLATE.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        chestplate(exporter, providerAccess, YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        chestplate(exporter, providerAccess, YJItems.YAJUSENPAI_CHESTPLATE.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         leggings(exporter, providerAccess, YJItems.YJNIUM_LEGGINGS.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        leggings(exporter, providerAccess, YJItems.YAJUSENPAI_LEGGINGS.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        leggings(exporter, providerAccess, YJItems.YAJUSENPAI_LEGGINGS.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         boots(exporter, providerAccess, YJItems.YJNIUM_BOOTS.get(), YJItemTags.COMPAT_YJNIUM_INGOT);
-        boots(exporter, providerAccess, YJItems.YAJUSENPAI_BOOTS.get(), YJItemTags.COMPAT_YJSNPI_INGOT);
+        boots(exporter, providerAccess, YJItems.YAJUSENPAI_BOOTS.get(), YJItemTags.COMPAT_YAJUSENPAI_INGOT);
 
         nineBlockStorageRecipes(providerAccess, exporter, RecipeCategory.MISC, YJItems.RAW_YJNIUM.get(), RecipeCategory.BUILDING_BLOCKS, YJBlocks.RAW_YJNIUM_BLOCK.get());
         nineBlockStorageRecipes(providerAccess, exporter, RecipeCategory.MISC, YJItems.RAW_YAJUSENPAI.get(), RecipeCategory.BUILDING_BLOCKS, YJBlocks.RAW_YAJUSENPAI_BLOCK.get());
@@ -169,21 +169,21 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, YJItems.YAJUSENPAI_HORSE_ARMOR.get())
-                .define('X', YJItemTags.COMPAT_YJSNPI_INGOT)
+                .define('X', YJItemTags.COMPAT_YAJUSENPAI_INGOT)
                 .pattern("X X")
                 .pattern("XXX")
                 .pattern("X X")
-                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
+                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YAJUSENPAI_INGOT))
                 .save(exporter);
 
         nineBlockStorageRecipesRecipesWithCustomUnpacking(providerAccess, exporter, RecipeCategory.MISC, YJItems.YJNIUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, YJBlocks.YJNIUM_BLOCK.get(), "yjnium_ingot_from_yjnium_block", "yjnium_ingot");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, YJBlocks.YAJUSENPAI_BLOCK.get())
-                .define('A', YJItemTags.COMPAT_YJSNPI_INGOT)
+                .define('A', YJItemTags.COMPAT_YAJUSENPAI_INGOT)
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
-                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YJSNPI_INGOT))
+                .unlockedBy(providerAccess.getHasName(YJItems.YAJUSENPAI_INGOT.get()), providerAccess.has(YJItemTags.COMPAT_YAJUSENPAI_INGOT))
                 .save(exporter);
 
         oreSmelting(providerAccess, exporter, YJNIUM_SMELTABLES, RecipeCategory.MISC, YJItems.YJNIUM_INGOT.get(), 0.7f, 200, "yjnium_ingot");
@@ -252,8 +252,8 @@ public class YJRecipeProvider extends RecipeProviderWrapper {
         cookRecipes(providerAccess, exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new, 600);
 
         for (final RegistrySupplier<Block> yjBlock : YJBlocks.YJ_BLOCKS) {
-            SingleItemRecipeBuilder.stonecutting(Ingredient.of(YJItemTags.YJSNPI_BLOCK), RecipeCategory.BUILDING_BLOCKS, yjBlock.get())
-                    .unlockedBy("has_yjsnpi_block", providerAccess.has(YJItemTags.YJSNPI_BLOCK))
+            SingleItemRecipeBuilder.stonecutting(Ingredient.of(YJItemTags.YAJUSENPAI_BLOCK), RecipeCategory.BUILDING_BLOCKS, yjBlock.get())
+                    .unlockedBy("has_yjsnpi_block", providerAccess.has(YJItemTags.YAJUSENPAI_BLOCK))
                     .save(exporter, getConversionRecipeName(providerAccess, "yjsnpi_block", yjBlock.get()) + "_stonecutting");
         }
 

@@ -1349,8 +1349,6 @@
   "second_inari_otoko.break": {
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      "yajusenpai:second_inari_otoko/fhu",
-      "yajusenpai:second_inari_otoko/ya_chotto_yamete_kudasai",
       "yajusenpai:second_inari_otoko/u"
     ]
   },
@@ -1361,7 +1359,8 @@
       "yajusenpai:second_inari_otoko/jira_ti",
       "yajusenpai:second_inari_otoko/toutyaku",
       "yajusenpai:second_inari_otoko/aza_su",
-      "yajusenpai:second_inari_otoko/chodo_itadakimasu"
+      "yajusenpai:second_inari_otoko/chodo_itadakimasu",
+      "yajusenpai:second_inari_otoko/fhu"
     ]
   },
   "second_inari_otoko.step": {

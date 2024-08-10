@@ -2,6 +2,7 @@ package net.morimori0317.yajusenpai.explatform.data.fabric;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataProvider;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.morimori0317.yajusenpai.data.cross.provider.IntrinsicHolderTagsProviderWrapper;
@@ -26,5 +27,9 @@ public class YJDataExpectPlatformImpl {
 
     public static void generateBiomeTag(TagProviderWrapper.TagProviderAccess<Biome, TagProviderWrapper.TagAppenderWrapper<Biome>> providerAccess) {
         YajuSenpaiDataGeneratorFabric.generateBiomeTag(providerAccess);
+    }
+
+    public static void generateDamageTypeTag(TagProviderWrapper.TagProviderAccess<DamageType, TagProviderWrapper.TagAppenderWrapper<DamageType>> providerAccess) {
+        YajuSenpaiDataGeneratorFabric.generateDamageTypeTag(providerAccess);
     }
 }

@@ -61,4 +61,8 @@ public class YJExpectPlatformImpl {
     public static SimpleParticleType createSimpleParticleType(boolean overrideLimiter) {
         return new SimpleParticleType(overrideLimiter);
     }
+
+    public static boolean isBoss(LivingEntity livingEntity) {
+        return livingEntity.getType().is(Tags.EntityTypes.BOSSES);
+    }
 }

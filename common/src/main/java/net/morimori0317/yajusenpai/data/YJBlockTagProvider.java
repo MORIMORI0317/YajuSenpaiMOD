@@ -3,6 +3,7 @@ package net.morimori0317.yajusenpai.data;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -98,10 +99,9 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
         providerAccess.tag(YJBlockTags.BASE_YJ_STONE_YJDIM)
                 .add(YJBlocks.YJ_STONE.get(), YJBlocks.YJ_DEEPSLATE.get());
 
-
         providerAccess.tag(YJBlockTags.INM_BLOCK)
-                .add(YJBlocks.TON_BLOCK.getKey(), YJBlocks.KMR_BLOCK.getKey(), YJBlocks.MUR_BLOCK.getKey())
-                .addTag(YJBlockTags.YJSNPI_BLOCK);
+                .add(YJBlocks.NON_YJ_BLOCKS.stream().map(it -> it.getKey()).toArray(ResourceKey[]::new))
+                .addTag(YJBlockTags.YAJUSENPAI_BLOCK);
 
         providerAccess.tag(YJBlockTags.YJ_DEEPSLATE_ORE_REPLACEABLES)
                 .add(YJBlocks.YJ_DEEPSLATE.get());
@@ -115,17 +115,11 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
         providerAccess.tag(YJBlockTags.YJNIUM_ORES)
                 .add(YJBlocks.YJNIUM_ORE.get(), YJBlocks.DEEPSLATE_YJNIUM_ORE.get());
 
-        providerAccess.tag(YJBlockTags.YJSNPI_ORES)
+        providerAccess.tag(YJBlockTags.YAJUSENPAI_ORES)
                 .add(YJBlocks.YAJUSENPAI_BLOCK.get(), YJBlocks.DEEPSLATE_YAJUSENPAI_ORE.get());
 
-        providerAccess.tag(YJBlockTags.YJSNPI_BLOCK)
-                .add(YJBlocks.YAJUSENPAI_BLOCK.get(), YJBlocks.GOMANETSU_SENPAI_BLOCK.get()
-                        , YJBlocks.ENNUI_SENPAI_BLOCK.get(), YJBlocks.MEDIKARA_SENPAI_BLOCK.get()
-                        , YJBlocks.NEHAN_SENPAI_BLOCK.get(), YJBlocks.SHITARIGAO_SENPAI_BLOCK.get()
-                        , YJBlocks.YAJUSENPAI_IKISUGI_BLOCK.get(), YJBlocks.IMDKUJ_SENPAI_BLOCK.get()
-                        , YJBlocks.KUNEKUNE_SENPAI_BLOCK.get(), YJBlocks.SZKFK_SENPAI_BLOCK.get()
-                        , YJBlocks.CCCLKTJM_SENPAI_BLOCK.get(), YJBlocks.CWCWTD_SENPAI_BLOCK.get()
-                        , YJBlocks.INTLNGTM_SENPAI_BLOCK.get());
+        providerAccess.tag(YJBlockTags.YAJUSENPAI_BLOCK)
+                .add(YJBlocks.YJ_BLOCKS.stream().map(it -> it.getKey()).toArray(ResourceKey[]::new));
 
         providerAccess.tag(YJBlockTags.INM_BLOCK_REPLACEABLES)
                 .add(Blocks.END_STONE)
@@ -134,6 +128,9 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
                 .addVanillaTag(BlockTags.STONE_ORE_REPLACEABLES)
                 .addVanillaTag(BlockTags.BASE_STONE_NETHER)
                 .addVanillaTag(BlockTags.BASE_STONE_OVERWORLD);
+
+        providerAccess.tag(YJBlockTags.GO_IS_GOD)
+                .add(YJBlocks.GO_BLOCK.get());
 
         YJDataExpectPlatform.generateBlockTag(providerAccess);
     }

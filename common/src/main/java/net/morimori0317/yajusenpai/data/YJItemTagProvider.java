@@ -70,8 +70,9 @@ public class YJItemTagProvider extends ItemTagProviderWrapper {
         providerAccess.copy(YJBlockTags.INM_BLOCK, YJItemTags.INM_BLOCK);
         providerAccess.copy(YJBlockTags.YJ_LOGS, YJItemTags.YJ_LOGS);
         providerAccess.copy(YJBlockTags.YJNIUM_ORES, YJItemTags.YJNIUM_ORES);
-        providerAccess.copy(YJBlockTags.YJSNPI_BLOCK, YJItemTags.YJSNPI_BLOCK);
-        providerAccess.copy(YJBlockTags.YJSNPI_ORES, YJItemTags.YJSNPI_ORES);
+        providerAccess.copy(YJBlockTags.YAJUSENPAI_BLOCK, YJItemTags.YAJUSENPAI_BLOCK);
+        providerAccess.copy(YJBlockTags.YAJUSENPAI_ORES, YJItemTags.YAJUSENPAI_ORES);
+        providerAccess.copy(YJBlockTags.GO_IS_GOD, YJItemTags.GO_IS_GOD);
 
         providerAccess.tag(ItemTags.AXES)
                 .add(YJItems.YJNIUM_AXE.get(), YJItems.YAJUSENPAI_AXE.get());
@@ -87,6 +88,24 @@ public class YJItemTagProvider extends ItemTagProviderWrapper {
 
         providerAccess.tag(ItemTags.SWORDS)
                 .add(YJItems.YJNIUM_SWORD.get(), YJItems.YAJUSENPAI_SWORD.get(), YJItems.JAKEN_YORUIKIMASYOUNE_SWORD.get());
+
+        providerAccess.tag(ItemTags.FOOT_ARMOR)
+                .add(YJItems.YJNIUM_BOOTS.get(), YJItems.YAJUSENPAI_BOOTS.get());
+
+        providerAccess.tag(ItemTags.LEG_ARMOR)
+                .add(YJItems.YJNIUM_LEGGINGS.get(), YJItems.YAJUSENPAI_LEGGINGS.get(), YJItems.BRIEF.get(), YJItems.O_BACK.get());
+
+        providerAccess.tag(ItemTags.CHEST_ARMOR)
+                .add(YJItems.YJNIUM_CHESTPLATE.get(), YJItems.YAJUSENPAI_CHESTPLATE.get());
+
+        providerAccess.tag(ItemTags.HEAD_ARMOR)
+                .add(YJItems.YJNIUM_HELMET.get(), YJItems.YAJUSENPAI_HELMET.get(), YJItems.CYCLOPS_SUNGLASSES.get());
+
+        providerAccess.tag(ItemTags.HORSE_FOOD)
+                .add(YJItems.APPLE_INM.get());
+
+        providerAccess.tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(YJItems.SOFT_SMARTPHONE.get());
 
         YJDataExpectPlatform.generateItemTag(providerAccess);
     }
