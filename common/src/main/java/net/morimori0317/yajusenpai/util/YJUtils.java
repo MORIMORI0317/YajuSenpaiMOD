@@ -1,6 +1,7 @@
 package net.morimori0317.yajusenpai.util;
 
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.RegistrySupplier;
 import dev.architectury.utils.value.IntValue;
 import net.minecraft.core.BlockPos;
@@ -132,6 +133,10 @@ public final class YJUtils {
     }
 
     public static <T> Holder<T> vanillaHolder(RegistrySupplier<T> registrySupplier) {
-        return registrySupplier.getRegistrar().getHolder(registrySupplier.getKey());
+        if (Platform.isFabric()) {
+            return registrySupplier.getRegistrar().getHolder(registrySupplier.getKey());
+        } else {
+            return registrySupplier.getRegistrar().getHolder(registrySupplier.getId());
+        }
     }
 }

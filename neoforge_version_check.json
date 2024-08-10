@@ -1,0 +1,10 @@
+{
+  "homepage": "https://modrinth.com/mod/yaju-senpai",
+  "1.21": {
+    "2024.0.0": "The 2024 Release."
+  },
+  "promos": {
+    "1.21-latest": "2024.0.0",
+    "1.21-recommended": "2024.0.0"
+  }
+}

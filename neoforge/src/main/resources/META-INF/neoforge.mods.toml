@@ -55,7 +55,7 @@ catalogueImageIcon = "icon.png"
 [[dependencies.yajusenpai]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.0.16-beta,)"
+versionRange = "[21.0.167,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -69,7 +69,7 @@ side = "BOTH"
 [[dependencies.yajusenpai]]
 modId = "architectury"
 type = "required"
-versionRange = "[13.0.1,)"
+versionRange = "[13.0.6,)"
 ordering = "AFTER"
 side = "BOTH"
 

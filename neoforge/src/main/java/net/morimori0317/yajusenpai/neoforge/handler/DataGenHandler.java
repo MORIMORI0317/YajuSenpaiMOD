@@ -202,10 +202,10 @@ public class DataGenHandler {
         providerAccess.tag(Tags.Items.FOODS)
                 .add(YJItems.ICE_TEA.get(), YJItems.BAKED_POTATO_SENPAI.get());
 
-        providerAccess.tag(Tags.Items.FOODS_FRUITS)
+        providerAccess.tag(Tags.Items.FOODS_FRUIT)
                 .add(YJItems.APPLE_INM.get());
 
-        providerAccess.tag(Tags.Items.FOODS_VEGETABLES)
+        providerAccess.tag(Tags.Items.FOODS_VEGETABLE)
                 .add(YJItems.POTATO_SENPAI.get());
 
         providerAccess.tag(YJItemTagsNeoForge.DRINKS)

@@ -240,7 +240,7 @@ public class YajuSenpaiDataGeneratorFabric implements DataGeneratorEntrypoint {
                 .add(YJItems.APPLE_INM.get());
 
         providerAccess.tag(YJItemTagsFabric.NETHER_STARS)
-                .add(YJItems.YJ_STAR.getKey());
+                .add(YJItems.YJ_STAR.get());
 
         providerAccess.tag(ConventionalItemTags.INGOTS)
                 .addTags(ImmutableList.of(YJItemTagsFabric.YJNIUM_INGOTS, YJItemTagsFabric.YAJUSENPAI_INGOTS));

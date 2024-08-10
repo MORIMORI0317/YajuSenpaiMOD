@@ -2,7 +2,6 @@ package net.morimori0317.yajusenpai.neoforge.data.cross.provider;
 
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.tags.EnchantmentTagsProvider;
 import net.morimori0317.yajusenpai.data.cross.provider.BasicProviderWrapper;
 
 import java.util.concurrent.CompletableFuture;

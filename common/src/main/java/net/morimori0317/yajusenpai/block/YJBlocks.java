@@ -19,8 +19,8 @@ import net.minecraft.world.level.material.PushReaction;
 import net.morimori0317.yajusenpai.YajuSenpai;
 import net.morimori0317.yajusenpai.effect.YJMobEffects;
 import net.morimori0317.yajusenpai.item.*;
-import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 import net.morimori0317.yajusenpai.sound.InmFamilySound;
+import net.morimori0317.yajusenpai.sound.InmFamilySounds;
 
 import java.util.List;
 import java.util.function.Function;

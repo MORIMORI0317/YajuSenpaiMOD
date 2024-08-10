@@ -1,8 +1,6 @@
 package net.morimori0317.yajusenpai.explatform.client;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.morimori0317.yajusenpai.client.renderer.item.BEWLItemRenderer;
 

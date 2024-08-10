@@ -3,7 +3,6 @@ package net.morimori0317.yajusenpai.data;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,6 +13,7 @@ import net.morimori0317.yajusenpai.data.cross.provider.BlockTagProviderWrapper;
 import net.morimori0317.yajusenpai.explatform.data.YJDataExpectPlatform;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class YJBlockTagProvider extends BlockTagProviderWrapper {
     public YJBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup, CrossDataGeneratorAccess crossDataGeneratorAccess) {
@@ -100,7 +100,7 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
                 .add(YJBlocks.YJ_STONE.get(), YJBlocks.YJ_DEEPSLATE.get());
 
         providerAccess.tag(YJBlockTags.INM_BLOCK)
-                .add(YJBlocks.NON_YJ_BLOCKS.stream().map(it -> it.getKey()).toArray(ResourceKey[]::new))
+                .add(YJBlocks.NON_YJ_BLOCKS.stream().map(Supplier::get).toArray(Block[]::new))
                 .addTag(YJBlockTags.YAJUSENPAI_BLOCK);
 
         providerAccess.tag(YJBlockTags.YJ_DEEPSLATE_ORE_REPLACEABLES)
@@ -119,7 +119,7 @@ public class YJBlockTagProvider extends BlockTagProviderWrapper {
                 .add(YJBlocks.YAJUSENPAI_BLOCK.get(), YJBlocks.DEEPSLATE_YAJUSENPAI_ORE.get());
 
         providerAccess.tag(YJBlockTags.YAJUSENPAI_BLOCK)
-                .add(YJBlocks.YJ_BLOCKS.stream().map(it -> it.getKey()).toArray(ResourceKey[]::new));
+                .add(YJBlocks.YJ_BLOCKS.stream().map(Supplier::get).toArray(Block[]::new));
 
         providerAccess.tag(YJBlockTags.INM_BLOCK_REPLACEABLES)
                 .add(Blocks.END_STONE)
